@@ -1,0 +1,22 @@
+<hero-carousel style="display:block;width:100%;" eager-load-css="hero-carousel">
+    {% for slide in data.heroCarousel %}
+        <carousel-slide class="{{ (loop.first) ? 'is-active' : '' }}">
+            <img src="{{ slide.image[0].url }}">
+            {% if slide.heading|length or slide.copy|length %}
+                <content-shim>
+                    <div>
+                        {% if slide.heading|length %}
+                            <h1>{{ slide.heading }}</h1>
+                        {% endif %}
+                        {% if slide.copy|length %}
+                            <p>{{ slide.copy }}</p>
+                        {% endif %}
+                        {% if slide.button.url|length %}
+                            <a href="{{ slide.button.url }}" class="g-button -solid -black -wide -tall">{{ slide.button.customText }}</a>
+                        {% endif %}
+                    </div>
+                </content-shim>
+            {% endif %}
+        </carousel-slide>
+    {% endfor %}
+</hero-carousel>

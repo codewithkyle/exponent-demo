@@ -1,4 +1,4 @@
-dateModified: 1574699494
+dateModified: 1575057464
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -6,6 +6,10 @@ email:
 fieldGroups:
   0e5caedc-3ce5-4116-8378-d114d694a4b9:
     name: Common
+  2410ee5f-878f-453b-8a48-bd7b68a81c7b:
+    name: Carousel
+  cd28a480-93fe-445c-b052-5f0ebc13bb6b:
+    name: Hero
 fields:
   2b21fcbf-5341-43c3-a34e-8930968fa5cd:
     name: Body
@@ -65,6 +69,33 @@ fields:
       validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  9629fa55-f666-4eba-8292-f79ae3c7e03b:
+    name: 'Hero Image'
+    handle: heroImage
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Add a Hero Image'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: cd28a480-93fe-445c-b052-5f0ebc13bb6b
   97394d4b-065b-43a0-871d-537d30c81c65:
     name: 'Primary Navigation'
     handle: primaryNavigation
@@ -80,6 +111,21 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  dfbb58ad-c345-4000-a5e2-ea3e9d469265:
+    name: 'Homepage Hero Carousel'
+    handle: homepageHeroCarousel
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: '1'
+      maxBlocks: '3'
+      contentTable: '{{%matrixcontent_homepageherocarousel}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 2410ee5f-878f-453b-8a48-bd7b68a81c7b
   eb6a6693-6c19-4c32-a16a-5216a0b1fb71:
     name: Image
     handle: image
@@ -191,6 +237,143 @@ matrixBlockTypes:
               46abdf61-5ce1-4eab-9df8-a5a3034b1449:
                 required: true
                 sortOrder: 1
+  d398a110-20cf-4e20-8e87-03feacd198b0:
+    field: dfbb58ad-c345-4000-a5e2-ea3e9d469265
+    name: Slide
+    handle: slide
+    sortOrder: 1
+    fields:
+      0469d9d8-9324-45fa-93fc-79987348ce2c:
+        name: Button
+        handle: button
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: typedlinkfield\fields\LinkField
+        settings:
+          allowCustomText: '1'
+          allowedLinkNames:
+            3: entry
+            4: site
+            7: email
+            8: tel
+            9: url
+          allowTarget: ''
+          autoNoReferrer: ''
+          defaultLinkName: entry
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            asset:
+              sources: '*'
+              allowCustomQuery: ''
+            category:
+              sources: '*'
+              allowCustomQuery: ''
+            entry:
+              sources: '*'
+              allowCustomQuery: ''
+            site:
+              sites: '*'
+            user:
+              sources: '*'
+              allowCustomQuery: ''
+            custom:
+              disableValidation: ''
+              allowAliases: ''
+            email:
+              disableValidation: ''
+              allowAliases: ''
+            tel:
+              disableValidation: ''
+              allowAliases: ''
+            url:
+              disableValidation: ''
+              allowAliases: ''
+        contentColumnType: text
+        fieldGroup: null
+      46209e24-75c5-4119-946a-729ff4a5c1d4:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c61870a7-aceb-40db-b4ca-bed01f218eef:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an Image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      d1ccd785-6b6f-44bd-9e8b-8f52971a8ffd:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '3'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      c7e88b63-7da3-4949-9784-5267834dea09:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0469d9d8-9324-45fa-93fc-79987348ce2c:
+                required: false
+                sortOrder: 4
+              46209e24-75c5-4119-946a-729ff4a5c1d4:
+                required: false
+                sortOrder: 2
+              c61870a7-aceb-40db-b4ca-bed01f218eef:
+                required: true
+                sortOrder: 1
+              d1ccd785-6b6f-44bd-9e8b-8f52971a8ffd:
+                required: false
+                sortOrder: 3
 plugins:
   imager:
     edition: standard
@@ -321,18 +504,12 @@ sections:
           47ae6b13-f532-47e8-952a-c676adbf567c:
             tabs:
               -
-                name: Common
+                name: 'Hero Area'
                 sortOrder: 1
                 fields:
-                  406c623a-99fa-40d8-a82c-41d7433bd86d:
-                    required: false
+                  dfbb58ad-c345-4000-a5e2-ea3e9d469265:
+                    required: true
                     sortOrder: 1
-                  465974f7-5f33-43a3-9b61-1745b076e8ba:
-                    required: false
-                    sortOrder: 3
-                  eb6a6693-6c19-4c32-a16a-5216a0b1fb71:
-                    required: false
-                    sortOrder: 2
   78afc566-1070-436c-bfed-09da14d2a064:
     name: Channel
     handle: channel

@@ -1,0 +1,81 @@
+.g-button
+{
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    user-select: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 75ms ease;
+
+    &.-solid
+    {
+        padding: 0 1rem;
+
+        &.-primary
+        {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+
+            &:hover,
+            &:focus
+            {
+                background-color: var(--primary-hover);
+                border-color: var(--primary-hover);
+            }
+
+            &:active
+            {
+                background-color: var(--primary-active);
+                border-color: var(--primary-active);
+            }
+        }
+
+        &.-black
+        {
+            background-color: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+
+            &:hover,
+            &:focus
+            {
+                background-color: var(--primary);
+                border-color: var(--primary);
+            }
+
+            &:active
+            {
+                background-color: var(--primary-active);
+                border-color: var(--primary-active);
+            }
+        }
+    }
+
+    &.-outline
+    {
+        &.-primary
+        {
+            padding: 0 1rem;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+    }
+
+    &.-wide
+    {
+        padding: 0 2rem;
+    }
+
+    &.-tall
+    {
+        height: 52px;
+        line-height: 52px;
+    }
+}
