@@ -4,6 +4,7 @@ hero-carousel
     position: relative;
     min-height: 512px;
     max-height: 100vh;
+    background-color: var(--black);
 
     &::before
     {
@@ -28,6 +29,7 @@ hero-carousel
         opacity: 0;
         visibility: hidden;
         z-index: 1;
+        transition: all 300ms ease-in-out;
 
         &::before
         {
@@ -54,7 +56,7 @@ hero-carousel
             p,
             a
             {
-                animation: fadeInUp 150ms forwards ease-in;
+                animation: fadeInUp 300ms forwards ease-in;
             }
         }
 
@@ -97,7 +99,7 @@ hero-carousel
             font-weight: 200;
             animation-delay: 75ms !important;
             opacity: 0;
-            transform: translateY(1rem);
+            transform: translateY(1.5rem);
         }
 
         p
@@ -111,14 +113,14 @@ hero-carousel
             line-height: 1.618;
             animation-delay: 125ms !important;
             opacity: 0;
-            transform: translateY(1rem);
+            transform: translateY(1.5rem);
         }
 
         a
         {
             animation-delay: 200ms !important;
             opacity: 0;
-            transform: translateY(1rem);
+            transform: translateY(1.5rem);
         }
     }
 }
@@ -127,7 +129,7 @@ hero-carousel
 {
     from
     {
-        transform: translateY(1rem);
+        transform: translateY(1.5rem);
         opacity: 0;
     }
     to
