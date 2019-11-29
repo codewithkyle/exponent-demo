@@ -16,44 +16,75 @@ carousel-controls
         justify-content: center;
         align-items: center;
         flex-flow: column wrap;
+        position: relative;
         
         &::after
         {
             content: "";
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background-color: transparent;
             border-radius: 50%;
             display: inline-block;
-            background-color: rgba(255,255,255,0.3);
-            transform: scale(0.87);
             transition: all 75ms ease;
+            position: absolute;
+        }
+
+        &::before
+        {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0);
+            content: "";
+            display: inline-block;
+            transition: all 75ms ease;
+            box-sizing: border-box;
+            position: absolute;
+            transform: scale(0);
         }
 
         &:hover,
         &:focus
         {
+            &::before
+            {
+                transform: scale(0.6);
+                background-color: rgba(255,255,255,0.87);
+            }
+
             &::after
             {
-                transform: scale(1);
-                background-color: rgba(255,255,255,0.6);
+                border-color: rgba(255,255,255,0.87);
             }
         }
 
         &:active
         {
+            &::before
+            {
+                transform: scale(0.8);
+                background-color: rgba(255,255,255,1);
+            }
+
             &::after
             {
-                background-color: rgba(255,255,255,0.87);
-                transform: scale(0.87);
+                border-color: rgba(255,255,255,1);
             }
         }
 
         &.is-active
         {
+            &::before
+            {
+                transform: scale(0.6);
+                background-color: rgba(255,255,255,1);
+            }
+
             &::after
             {
-                background-color: rgba(255,255,255,0.87);
-                transform: scale(0.87);
+                border-color: rgba(255,255,255,1);
             }
         }
     }

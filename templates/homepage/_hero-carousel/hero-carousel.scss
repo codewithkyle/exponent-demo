@@ -3,13 +3,15 @@ hero-carousel
     display: inline-block;
     position: relative;
     min-height: 512px;
+    max-height: 100vh;
 
     &::before
     {
         content: "";
         display: block;
         width: 100%;
-        padding-bottom: 56.25%;
+        padding-top: 56.25%;
+        box-sizing: border-box;
     }
 
     carousel-slide
