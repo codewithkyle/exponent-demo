@@ -2,6 +2,7 @@ hero-carousel
 {
     display: inline-block;
     position: relative;
+    min-height: 512px;
 
     &::before
     {

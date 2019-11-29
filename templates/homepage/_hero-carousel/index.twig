@@ -19,4 +19,11 @@
             {% endif %}
         </carousel-slide>
     {% endfor %}
+    {% if data.heroCarousel|length > 1 %}
+        <carousel-controls eager-load-css="hero-carousel-controls">
+            {% for slide in data.heroCarousel %}
+                <button class="{{ loop.first ? 'is-active': '' }}" data-index="{{ loop.index0 }}" aria-label="switch to slide {{ loop.index }}"></button>
+            {% endfor %}
+        </carousel-controls>
+    {% endif %}
 </hero-carousel>

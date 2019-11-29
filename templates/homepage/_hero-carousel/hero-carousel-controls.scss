@@ -1,0 +1,60 @@
+carousel-controls
+{
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+
+    button
+    {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+        
+        &::after
+        {
+            content: "";
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: rgba(255,255,255,0.3);
+            transform: scale(0.87);
+            transition: all 75ms ease;
+        }
+
+        &:hover,
+        &:focus
+        {
+            &::after
+            {
+                transform: scale(1);
+                background-color: rgba(255,255,255,0.6);
+            }
+        }
+
+        &:active
+        {
+            &::after
+            {
+                background-color: rgba(255,255,255,0.87);
+                transform: scale(0.87);
+            }
+        }
+
+        &.is-active
+        {
+            &::after
+            {
+                background-color: rgba(255,255,255,0.87);
+                transform: scale(0.87);
+            }
+        }
+    }
+}
