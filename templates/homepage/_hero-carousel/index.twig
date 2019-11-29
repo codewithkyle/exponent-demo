@@ -1,4 +1,4 @@
-<hero-carousel style="display:block;width:100%;" eager-load-css="hero-carousel">
+<hero-carousel style="display:block;width:100%;" eager-load-css="hero-carousel" web-component>
     {% for slide in data.heroCarousel %}
         <carousel-slide class="{{ (loop.first) ? 'is-active' : '' }}">
             <img src="{{ slide.image[0].url }}">
@@ -20,7 +20,7 @@
         </carousel-slide>
     {% endfor %}
     {% if data.heroCarousel|length > 1 %}
-        <carousel-controls eager-load-css="hero-carousel-controls">
+        <carousel-controls eager-load-css="hero-carousel-controls" style="opacity:0;visibility:hidden;transition:all 150ms ease;">
             {% for slide in data.heroCarousel %}
                 <button class="{{ loop.first ? 'is-active': '' }}" data-index="{{ loop.index0 }}" aria-label="switch to slide {{ loop.index }}"></button>
             {% endfor %}

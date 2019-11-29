@@ -119,9 +119,14 @@ class Runtime {
 	 * @see https://v8.dev/features/dynamic-import
 	 */
 	private upgradeToWebComponent(customElementTagName: string, customElement: Element): void {
-		import(`./${customElementTagName}.js`).then(() => {
-			customElement.setAttribute('state', 'mounted');
-		});
+		let el = document.head.querySelector(`link[file="${customElementTagName}.js"]`) as HTMLScriptElement;
+		if (!el) {
+			el = document.createElement('script');
+			el.setAttribute('file', `${customElementTagName}.js`);
+			el.setAttribute('type', 'module');
+			document.head.append(el);
+			el.src = `${window.location.origin}/assets/${customElementTagName}.js`;
+		}
 	}
 
 	/**
