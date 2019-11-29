@@ -1,0 +1,14 @@
+# General
+# --------
+/.env
+/.idea
+/vendor
+.DS_Store
+/node_modules
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# Remove if assets shouldn't be server-side compiled
+# --------
+/public/assets
+/config/pwa-auto.php
