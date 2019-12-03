@@ -3,14 +3,24 @@ class HeroCarouselComponent extends HTMLElement {
 	private buttons: Array<HTMLButtonElement>;
 	private index: number;
 
+	private loop: Function;
+	private time: number;
+	private dirty: boolean;
+	private timer: number;
+
 	constructor() {
 		super();
 		this.slides = Array.from(this.querySelectorAll('carousel-slide'));
 		this.buttons = Array.from(this.querySelectorAll('carousel-controls button'));
 		this.index = 0;
+
+		this.loop = () => {};
+		this.dirty = false;
+		this.timer = 5;
 	}
 
 	private switchSlide(newSlideIndex: number): void {
+		this.dirty = true;
 		const currentSlide = this.slides[this.index];
 		const newSlide = this.slides[newSlideIndex];
 
@@ -24,17 +34,44 @@ class HeroCarouselComponent extends HTMLElement {
 		newSlide.style.zIndex = '5';
 		newSlide.classList.add('is-active');
 
-		this.index = newSlideIndex;
-	}
-
-	private handleButtonClickEvent = (e: Event) => {
-		const button = e.currentTarget as HTMLButtonElement;
 		this.buttons.map(button => {
 			button.classList.remove('is-active');
 		});
-		button.classList.add('is-active');
+		this.buttons[newSlideIndex].classList.add('is-active');
+
+		this.index = newSlideIndex;
+		this.timer = 5;
+		this.dirty = false;
+	}
+
+	private handleButtonClickEvent = (e: Event) => {
+		if (this.dirty) {
+			return;
+		}
+		const button = e.currentTarget as HTMLButtonElement;
 		this.switchSlide(parseInt(button.dataset.index));
 	};
+
+	private callback(): void {
+		const newTime = performance.now();
+		const dt = (newTime - this.time) / 1000;
+		this.time = newTime;
+
+		if (document.hasFocus() && !this.dirty) {
+			this.timer -= dt;
+			if (this.timer <= 0) {
+				let newIndex = this.index + 1;
+				if (newIndex >= this.buttons.length) {
+					newIndex = 0;
+				}
+				this.switchSlide(newIndex);
+			}
+		}
+
+		window.requestAnimationFrame(() => {
+			this.loop();
+		});
+	}
 
 	connectedCallback() {
 		if (this.buttons.length) {
@@ -44,6 +81,10 @@ class HeroCarouselComponent extends HTMLElement {
 			this.buttons.map(button => {
 				button.addEventListener('click', this.handleButtonClickEvent);
 			});
+
+			this.loop = this.callback.bind(this);
+			this.time = performance.now();
+			this.loop();
 		}
 	}
 }
