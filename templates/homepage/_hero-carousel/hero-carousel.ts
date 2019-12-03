@@ -2,7 +2,7 @@ class HeroCarouselComponent extends HTMLElement {
 	private slides: Array<HTMLElement>;
 	private buttons: Array<HTMLButtonElement>;
 	private index: number;
-
+	private progressBar: HTMLElement;
 	private loop: Function;
 	private time: number;
 	private dirty: boolean;
@@ -13,14 +13,15 @@ class HeroCarouselComponent extends HTMLElement {
 		this.slides = Array.from(this.querySelectorAll('carousel-slide'));
 		this.buttons = Array.from(this.querySelectorAll('carousel-controls button'));
 		this.index = 0;
-
+		this.progressBar = this.querySelector('carousel-timer');
 		this.loop = () => {};
 		this.dirty = false;
-		this.timer = 5;
+		this.timer = 0;
 	}
 
 	private switchSlide(newSlideIndex: number): void {
 		this.dirty = true;
+		this.setAttribute('state', 'changing');
 		const currentSlide = this.slides[this.index];
 		const newSlide = this.slides[newSlideIndex];
 
@@ -40,7 +41,9 @@ class HeroCarouselComponent extends HTMLElement {
 		this.buttons[newSlideIndex].classList.add('is-active');
 
 		this.index = newSlideIndex;
-		this.timer = 5;
+		this.timer = 0;
+		this.progressBar.style.transform = `scaleX(0)`;
+		this.progressBar.setAttribute('aria-valuenow', '0');
 		this.dirty = false;
 	}
 
@@ -58,8 +61,11 @@ class HeroCarouselComponent extends HTMLElement {
 		this.time = newTime;
 
 		if (document.hasFocus() && !this.dirty) {
-			this.timer -= dt;
-			if (this.timer <= 0) {
+			this.timer += dt;
+			const progress = this.timer / 5;
+			this.progressBar.style.transform = `scaleX(${progress})`;
+			this.progressBar.setAttribute('aria-valuenow', `${Math.round(progress * 100)}%`);
+			if (this.timer >= 5) {
 				let newIndex = this.index + 1;
 				if (newIndex >= this.buttons.length) {
 					newIndex = 0;
@@ -84,6 +90,7 @@ class HeroCarouselComponent extends HTMLElement {
 
 			this.loop = this.callback.bind(this);
 			this.time = performance.now();
+			this.setAttribute('state', 'running');
 			this.loop();
 		}
 	}

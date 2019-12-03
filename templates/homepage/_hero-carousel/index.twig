@@ -46,5 +46,6 @@
                 <button class="{{ loop.first ? 'is-active': '' }}" data-index="{{ loop.index0 }}" aria-label="switch to slide {{ loop.index }}"></button>
             {% endfor %}
         </carousel-controls>
+        <carousel-timer aria-label="carousels progress bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></carousel-timer>
     {% endif %}
 </hero-carousel>

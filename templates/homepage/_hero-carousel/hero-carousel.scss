@@ -15,6 +15,20 @@ hero-carousel
         box-sizing: border-box;
     }
 
+    carousel-timer
+    {
+        display: inline-block;
+        width: 100%;
+        height: 0.5rem;
+        background-color: rgba(51,51,51,0.3);
+        transform-origin: left center;
+        transform: scaleX(0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
     carousel-slide
     {
         position: absolute;
