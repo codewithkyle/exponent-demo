@@ -65,6 +65,17 @@
             padding: 0 1rem;
             border-color: var(--primary);
             color: var(--primary);
+
+            &:hover,
+            &:focus
+            {
+                background-color: var(--primary-hover-opaque);
+            }
+
+            &:active
+            {
+                background-color: var(--primary-active-opaque);
+            }
         }
     }
 
