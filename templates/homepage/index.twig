@@ -10,8 +10,8 @@
 } %}
 
 {% block content %}
-<article id="homepage" style="display:block;width:100vw;" eager-load-css="homepage">
-	{% include "homepage/_hero-carousel" %}
-	{% include "homepage/_cta-grid" %}
-</article>
+	<article id="homepage" style="display:block;width:100vw;" eager-load-css="homepage">
+		{% include "_blocks/hero-carousel" %}
+		{% include "_blocks/cta-grid" %}
+	</article>
 {% endblock %}
