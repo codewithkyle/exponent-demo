@@ -78,4 +78,9 @@
         height: 52px;
         line-height: 52px;
     }
+
+    &.-rounded
+    {
+        border-radius: 2px;
+    }
 }
