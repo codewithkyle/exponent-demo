@@ -42,6 +42,11 @@ header
         flex-flow: row nowrap;
     }
 
+    a:focus svg
+    {
+        color: var(--primary);
+    }
+
     svg
     {
         color: var(--white);

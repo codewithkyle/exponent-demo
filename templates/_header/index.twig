@@ -17,6 +17,10 @@
 </header>
 <script type="module">
     const header = document.body.querySelector('header');
+    if (window.scrollY >= 100)
+    {
+        header.classList.add('-solid');
+    }
     window.addEventListener('scroll', (e) => {
         if (window.scrollY >= 100)
         {
