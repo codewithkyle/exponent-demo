@@ -20,7 +20,7 @@
         &.-primary
         {
             background-color: var(--primary);
-            color: var(--white);
+            color: var(--font-button);
             border-color: var(--primary);
 
             &:hover,
@@ -48,12 +48,14 @@
             {
                 background-color: var(--primary);
                 border-color: var(--primary);
+                color: var(--font-button);
             }
 
             &:active
             {
                 background-color: var(--primary-active);
                 border-color: var(--primary-active);
+                color: var(--font-button);
             }
         }
     }

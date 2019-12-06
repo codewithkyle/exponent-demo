@@ -1,0 +1,27 @@
+{% extends "_base/page" %}
+
+{% if not craft.app.request.isLivePreview %}
+    {% do eagerLoadElements(entry, [
+        'heroArea',
+        'heroArea.homepageHeroCarousel',
+        'heroArea.homepageHeroCarousel:image',
+        'heroArea.heroImage',
+        'contentMatrix',
+        'contentMatrix.callToActionGrid',
+        'contentMatrix.callToActionGrid:cards',
+        'contentMatrix.callToActionGrid:cards.icon',
+        'contentMatrix.callToActionCards',
+        'contentMatrix.callToActionCards:cards',
+        'contentMatrix.callToActionCards:cards.image'
+    ]) %}
+{% endif %}
+
+{% set data = {
+    'hero': entry.heroArea[0],
+} %}
+
+{% block content %}
+    <article style="display:block;width:100%;">
+        {% include "_heros/" ~ data.hero.type %}
+    </article>
+{% endblock %}

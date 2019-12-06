@@ -1,0 +1,7 @@
+{% set entry = settings.homepageEntry[0] ?? null %}
+
+{% if entry %}
+    {% include "_pages" %}
+{% else %}
+    No homepage entry was provided. Please head to the <a href="{{ siteUrl|trim('/') }}/webmaster/globals/settings">global settings section</a> and select a homepage entry.
+{% endif %}

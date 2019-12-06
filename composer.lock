@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e1481d2a978c9c01de43ca4dfca378e",
+    "content-hash": "aabfc8dd9a3228fa5e4cf0b43a4e236f",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -4103,6 +4103,58 @@
                 "rss": "https://github.com/verbb/smith/commits/v2.atom"
             },
             "time": "2019-04-14T09:09:32+00:00"
+        },
+        {
+            "name": "verbb/super-table",
+            "version": "2.3.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/ccc78891743a9f4f0246a9dddba95eabece54701",
+                "reference": "ccc78891743a9f4f0246a9dddba95eabece54701",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.3.1.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Super Table",
+                "handle": "super-table",
+                "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+                "documentationUrl": "https://github.com/verbb/super-table",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md",
+                "class": "verbb\\supertable\\SuperTable"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\supertable\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "super table"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/super-table/issues?state=open",
+                "source": "https://github.com/verbb/super-table",
+                "docs": "https://github.com/verbb/super-table",
+                "rss": "https://github.com/verbb/super-table/commits/v2.atom"
+            },
+            "time": "2019-11-26T23:29:31+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
