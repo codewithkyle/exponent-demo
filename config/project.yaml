@@ -1,4 +1,4 @@
-dateModified: 1575640676
+dateModified: 1575728264
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -775,10 +775,6 @@ plugins:
       authorField: ''
       authorUrlField: ''
       colorField: ''
-  element-api:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   redactor:
     edition: standard
     enabled: true
@@ -1048,7 +1044,7 @@ superTableBlockTypes:
       78ae7a43-c360-4bef-9d99-55aae777076a:
         name: Icon
         handle: icon
-        instructions: ''
+        instructions: 'Must be an SVG icon.'
         searchable: false
         translationMethod: site
         translationKeyFormat: null

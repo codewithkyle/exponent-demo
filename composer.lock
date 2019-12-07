@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aabfc8dd9a3228fa5e4cf0b43a4e236f",
+    "content-hash": "f04102a8d3d8c3fa5eb0ef17ab36e092",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -478,11 +478,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.16.3",
+            "version": "3.3.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/46871fbfdffaa70e6ea4dc7ab20b5332e0974189",
-                "reference": "46871fbfdffaa70e6ea4dc7ab20b5332e0974189",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/a6d67d9a4317a0ac338cfddb2abd7a4fa78678a9",
+                "reference": "a6d67d9a4317a0ac338cfddb2abd7a4fa78678a9",
                 "shasum": ""
             },
             "require": {
@@ -560,57 +560,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-11-26T14:27:53+00:00"
-        },
-        {
-            "name": "craftcms/element-api",
-            "version": "2.6.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/element-api/zipball/33da444d49950e5adc7aaa3b8e5b917993e6a40b",
-                "reference": "33da444d49950e5adc7aaa3b8e5b917993e6a40b",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC16",
-                "league/fractal": "^0.18.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Element API",
-                "handle": "element-api",
-                "documentationUrl": "https://github.com/craftcms/element-api/blob/v2/README.md"
-            },
-            "autoload": {
-                "psr-4": {
-                    "craft\\elementapi\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pixel & Tonic",
-                    "homepage": "https://pixelandtonic.com/"
-                }
-            ],
-            "description": "Create a JSON API for your elements in Craft",
-            "keywords": [
-                "api",
-                "cms",
-                "craftcms",
-                "json",
-                "yii2"
-            ],
-            "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/element-api/issues?state=open",
-                "source": "https://github.com/craftcms/element-api",
-                "docs": "https://github.com/craftcms/element-api/blob/v2/README.md",
-                "rss": "https://github.com/craftcms/element-api/commits/v2.atom"
-            },
-            "time": "2019-08-01T22:45:15+00:00"
+            "time": "2019-12-03T20:23:49+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -4394,11 +4344,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.28",
+            "version": "5.4.30",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/f1b08aa203cb4731a5c4c9d9328b6fc329341acf",
-                "reference": "f1b08aa203cb4731a5c4c9d9328b6fc329341acf",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/713c7201c2026344e4fb679cbc8e437a97fbc868",
+                "reference": "713c7201c2026344e4fb679cbc8e437a97fbc868",
                 "shasum": ""
             },
             "require": {
@@ -4455,7 +4405,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-11-17T21:08:41+00:00"
+            "time": "2019-12-04T11:04:42+00:00"
         },
         {
             "name": "voku/stop-words",

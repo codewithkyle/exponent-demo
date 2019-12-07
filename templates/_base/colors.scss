@@ -1,5 +1,8 @@
 :root
 {
+    --white: #fff;
+    --black: #0f0f0f;
+
     --font: hsl(0, 0%, 20%);
     --font-light: #595959;
     --font-button: #093416;
@@ -23,7 +26,4 @@
     --primary-active: hsl(130, 65%, 48%);
     --primary-hover-opaque: rgb(57, 213, 82, 0.1);
     --primary-active-opaque: rgba(57, 213, 82, 0.2);
-
-    --white: #fff;
-    --black: #0f0f0f;
 }

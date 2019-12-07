@@ -39,8 +39,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="referrer" content="origin-when-cross-origin" />
         {% hook 'seo' %}
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap" rel="stylesheet">
         
-        <!-- Critical CSS -->
+        <!-- Critical colors -->
         <style>
             :root
             {
@@ -66,7 +69,10 @@
                     --loading-font: #fff;
                 }
             }
+        </style>
 
+        <!-- Reset CSS -->
+        <style>
             *
             {
                 position: relative;
@@ -103,10 +109,10 @@
                 display: block;
                 min-height: 100%;
                 width: 100%;
-                font-size: 1rem;
-                font-weight: 400;
                 -webkit-text-size-adjust: 100%;
-                font-family: system-ui, BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                font-size: 1rem;
+                font-weight: 300;
+                font-family: 'Roboto', system-ui, BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
             }
 
             ul li,
@@ -124,6 +130,16 @@
 				border: none;
 				user-select: none;
 			}
+        </style>
+
+        <!-- Font settings -->
+        <style>
+            :root
+            {
+                --regular: 300;
+                --medium: 500;
+                --heavy: 700;
+            }
         </style>
 
         <!-- Loading animations -->

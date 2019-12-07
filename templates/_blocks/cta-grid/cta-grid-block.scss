@@ -18,18 +18,15 @@ cta-grid-block
 
         h2
         {
-            font-weight: 200;
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             line-height: 3rem;
             margin-bottom: 1rem;
-            opacity: 0.87;
         }
 
         p
         {
             margin-bottom: 1.5rem;
             line-height: 1.618;
-            font-weight: 300;
             color: var(--font-light);
         }
     }
@@ -38,6 +35,26 @@ cta-grid-block
     {
         width: 600px;
         max-width: 100%;
+
+        &:not([count="2"])
+        {
+            a
+            {
+                &:nth-child(even)
+                {
+                    transform: translateY(-2rem);
+                }
+
+                &:hover,
+                &:focus
+                {
+                    &:nth-child(even)
+                    {
+                        transform: translateY(-2.5rem);
+                    }
+                }
+            }
+        }
 
         a
         {
@@ -55,11 +72,6 @@ cta-grid-block
             user-select: none;
             transition: all 300ms ease;
 
-            &:nth-child(even)
-            {
-                transform: translateY(-2rem);
-            }
-
             &:hover,
             &:focus
             {
@@ -67,11 +79,6 @@ cta-grid-block
                 color: var(--font-button);
                 box-shadow: 0 2px 16px rgba(57, 213, 82, 0.6);
                 transform: translateY(-0.5rem);
-
-                &:nth-child(even)
-                {
-                    transform: translateY(-2.5rem);
-                }
 
                 svg
                 {
@@ -95,7 +102,7 @@ cta-grid-block
 
             h3
             {
-                font-weight: 600;
+                font-weight: var(--medium);
                 font-size: 1.125rem;
                 margin-bottom: 0.5rem;
                 display: block;

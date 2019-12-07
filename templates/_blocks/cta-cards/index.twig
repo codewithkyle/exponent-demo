@@ -1,25 +1,33 @@
 <section lazy-load-css="duo-cta-cards buttons" style="width:100%;display:block;">
     <duo-cta-cards>
-        <a class="-card" href="{{ siteUrl|trim('/') }}">
-            <img width="200" src="https://images.unsplash.com/photo-1575425186775-b8de9a427e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80" alt="a nice dog with a nice hat" loading="lazy" style="opacity:0;transition: all 300ms ease-in;" onload="this.style.opacity = '1';">
-            <h3>I want to borrow</h3>
-            <span>
-                Learn More
-                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
-            </span>
-        </a>
-        <a class="-card" href="{{ siteUrl|trim('/') }}">
-            <img width="200" src="https://images.unsplash.com/photo-1575425186775-b8de9a427e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80" alt="a nice dog with a nice hat" loading="lazy" style="opacity:0;transition: all 300ms ease-in;" onload="this.style.opacity = '1';">
-            <h3>I want to invest</h3>
-            <span>
-                Learn More
-                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
-            </span>
-        </a>
+        {% for card in section.cards %}
+            <a class="-card" href="{{ card.customLink.url }}" {{ (card.customLink.target|length) ? 'target="_blank"' }}>
+                <img width="200" src="{{ card.image[0].url }}" alt="{{ card.image[0].alternateDescription }}" loading="lazy" style="opacity:0;transition: all 300ms ease-in;" onload="this.style.opacity = '1';">
+                <h3>{{ card.heading }}</h3>
+                <span>
+                    {% if card.customLink.customText|length %}
+                        {{ card.customLink.customText }}
+                    {% else %}
+                        {{ "Learn More"|t }}
+                    {% endif %}
+                    <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
+                </span>
+            </a>
+        {% endfor %}
         <cta-content>
-            <h2>Its time to make your money work for you</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="{{ siteUrl|trim('/') }}" class="g-button -solid -primary -rounded">View More</a>
+            <h2>{{ section.heading }}</h2>
+            {% if section.copy|length %}
+                {{ section.copy }}
+            {% endif %}
+            {% if section.button.url|length %}
+                <a href="{{ section.button.url }}" {{ (section.button.target|length) ? 'target="_blank"' }} class="g-button -solid -primary -rounded">
+                    {% if section.button.customText|length %}
+                        {{ section.button.customText }}
+                    {% else %}
+                        {{ "View More"|t }}
+                    {% endif %}
+                </a>
+            {% endif %}
         </cta-content>
     </duo-cta-cards>
 </section>
