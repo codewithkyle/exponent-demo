@@ -1,8 +1,9 @@
 <section lazy-load-css="duo-cta-cards buttons" style="width:100%;display:block;">
     <duo-cta-cards>
         {% for card in section.cards %}
+            {% set image = craft.imager.transformImage(card.image[0], { width: 200, mode: 'fit', height: 300, position: card.image[0].getFocalPoint(), jpegQuality: 100, format: 'jpg' }) %}
             <a class="-card" href="{{ card.customLink.url }}" {{ (card.customLink.target|length) ? 'target="_blank"' }}>
-                <img width="200" src="{{ card.image[0].url }}" alt="{{ card.image[0].alternateDescription }}" loading="lazy" style="opacity:0;transition: all 300ms ease-in;" onload="this.style.opacity = '1';">
+                <img width="200" src="{{ image.url }}" alt="{{ card.image[0].alternateDescription }}" loading="lazy" style="opacity:0;transition: all 300ms ease-in;" onload="this.style.opacity = '1';">
                 <h3>{{ card.heading }}</h3>
                 <span>
                     {% if card.customLink.customText|length %}
