@@ -27,10 +27,10 @@ cta-grid-block
 
         p
         {
-            opacity: 0.6;
             margin-bottom: 1.5rem;
             line-height: 1.618;
             font-weight: 300;
+            color: var(--font-light);
         }
     }
 
@@ -64,7 +64,7 @@ cta-grid-block
             &:focus
             {
                 background-color: var(--primary);
-                color: var(--white);
+                color: var(--font-button);
                 box-shadow: 0 2px 16px rgba(57, 213, 82, 0.6);
                 transform: translateY(-0.5rem);
 
@@ -75,13 +75,12 @@ cta-grid-block
 
                 svg
                 {
-                    color: var(--white);
+                    color: var(--font-button);
                 }
 
                 p
                 {
-                    opacity: 0.87;
-                    color: var(--white);
+                    color: var(--font-button);
                 }
             }
 
@@ -105,13 +104,12 @@ cta-grid-block
 
             p
             {
-                opacity: 0.6;
                 display: block;
                 width: 100%;
                 font-size: 0.875 rem;
                 line-height: 1.618;
                 transition: all 300ms ease;
-                color: var(--font);
+                color: var(--font-light);
             }
         }
     }

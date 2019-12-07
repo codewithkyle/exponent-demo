@@ -1,4 +1,4 @@
-dateModified: 1575638331
+dateModified: 1575640676
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -305,7 +305,7 @@ matrixBlockTypes:
   26389be5-df9c-4532-bd07-e3eb41bfce3a:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Call to Action Grid'
-    handle: callToActionGrid
+    handle: ctaGrid
     sortOrder: 1
     fields:
       6c0f8b51-ec08-448e-a23d-6a333f964220:
@@ -448,7 +448,7 @@ matrixBlockTypes:
   32613779-088a-4db7-b32e-4b4fd24feaa2:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Call to Action Cards'
-    handle: callToActionCards
+    handle: ctaCards
     sortOrder: 2
     fields:
       12f1d80f-0bad-42fb-ab06-8e21875c6be1:
@@ -811,7 +811,7 @@ sections:
         enabledByDefault: true
         hasUrls: true
         uriFormat: '{slug}'
-        template: pages/index
+        template: _pages/index
     structure:
       uid: b7395b45-5b5e-4e40-882e-d42b99553051
       maxLevels: null

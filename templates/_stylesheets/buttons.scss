@@ -62,21 +62,21 @@
 
     &.-outline
     {
-        &.-primary
+        &.-black
         {
             padding: 0 1rem;
-            border-color: var(--primary);
-            color: var(--primary);
+            border-color: var(--black);
+            color: var(--black);
 
             &:hover,
             &:focus
             {
-                background-color: var(--primary-hover-opaque);
+                background-color: rgba(#0f0f0f, 0.03);
             }
 
             &:active
             {
-                background-color: var(--primary-active-opaque);
+                background-color: rgba(#0f0f0f, 0.07);
             }
         }
     }

@@ -1,9 +1,13 @@
 <section lazy-load-css="cta-grid-block buttons" style="width:100%;display:block;">
     <cta-grid-block>
         <grid-content>
-            <h2>Some of the investment services we offer</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="{{ siteUrl|trim('/') }}" class="g-button -solid -primary -rounded">View all services</a>
+            <h2>{{ section.heading }}</h2>
+            {% if section.copy|length %}
+                {{ section.copy }}
+            {% endif %}
+            {% if section.button.url|length %}
+                <a href="{{ section.button.url }}" {{ (section.button.target|length) ? 'target="_blank"' }} class="g-button -solid -primary -rounded">{{ section.button.customText }}</a>
+            {% endif %}
         </grid-content>
         <cta-grid>
             <a href="{{ siteUrl|trim('/') }}">

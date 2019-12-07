@@ -1,7 +1,8 @@
 :root
 {
-    --font: #333;
-    --font-button: #292929;
+    --font: hsl(0, 0%, 20%);
+    --font-light: #595959;
+    --font-button: #093416;
     --background: #fff;
 
     --loading-bar: #00BFFF;
@@ -17,7 +18,7 @@
         --loading-background: #232323;
     }
 
-    --primary: rgb(57, 213, 82);
+    --primary: #39d552;
     --primary-hover: hsl(130, 65%, 60%);
     --primary-active: hsl(130, 65%, 48%);
     --primary-hover-opaque: rgb(57, 213, 82, 0.1);
