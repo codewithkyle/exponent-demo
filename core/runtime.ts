@@ -75,6 +75,16 @@ class Runtime {
 						body: document.body.innerHTML,
 					});
 					this.handleWebComponents();
+					import(`${window.location.origin}/assets/pjax.js`).then(() => {
+						broadcaster.message(
+							'pjax',
+							{
+								type: 'init',
+							},
+							'TCP',
+							Infinity
+						);
+					});
 				});
 				break;
 			case 'lazy':

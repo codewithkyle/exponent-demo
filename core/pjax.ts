@@ -84,12 +84,6 @@ class Pjax {
 		window.addEventListener('popstate', this.windowPopstateEvent);
 		/** Update the history state with the required `state.url` value */
 		window.history.replaceState({ url: window.location.href }, document.title, window.location.href);
-		/** Tell Pjax to hijack all viable links */
-		broadcaster.message('pjax', { type: 'hijack-links' });
-		/** Tell Pjax to prefetch links */
-		broadcaster.message('pjax', {
-			type: 'prefetch',
-		});
 	}
 
 	/**
@@ -120,6 +114,14 @@ class Pjax {
 				break;
 			case 'prefetch':
 				this.prefetchLinks();
+				break;
+			case 'init':
+				/** Tell Pjax to hijack all viable links */
+				broadcaster.message('pjax', { type: 'hijack-links' });
+				/** Tell Pjax to prefetch links */
+				broadcaster.message('pjax', {
+					type: 'prefetch',
+				});
 				break;
 			default:
 				if (debug) {
@@ -430,7 +432,7 @@ class Pjax {
 		const urls: Array<string> = [];
 
 		/** Header links */
-		const headerLinks = Array.from(document.body.querySelectorAll('header a[href]'));
+		const headerLinks = Array.from(document.body.querySelectorAll('header a[href]:not([target]):not([pjax-prefetched])'));
 		headerLinks.map((link: HTMLAnchorElement) => {
 			link.setAttribute('pjax-prefetched', 'true');
 			urls.push(link.href);
@@ -468,11 +470,13 @@ class Pjax {
 	private prefetchLink(links: Array<IntersectionObserverEntry>): void {
 		const urls: Array<string> = [];
 		links.map(entry => {
-			const link = entry.target as HTMLAnchorElement;
-			this.io.unobserve(link);
-			urls.push(link.href);
+			if (entry.isIntersecting) {
+				const link = entry.target as HTMLAnchorElement;
+				this.io.unobserve(link);
+				urls.push(link.href);
+			}
 		});
-		if (urls.push) {
+		if (urls.length) {
 			/** Send the requested URLs to the Pjax web worker */
 			this.worker.postMessage({
 				type: 'prefetch',

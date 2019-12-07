@@ -18,7 +18,11 @@
         'contentMatrix.ctaCards:cards',
         'contentMatrix.ctaCards:cards.image',
         'contentMatrix.pullQuote',
-        'contentMatrix.pullQuote:image'
+        'contentMatrix.pullQuote:image',
+        'contentMatrix.ctaBlogCards',
+        'contentMatrix.ctaBlogCards:cards',
+        'contentMatrix.ctaBlogCards:cards.image',
+        'contentMatrix.ctaBlogCards:cards.categories'
     ]) %}
 {% endif %}
 
@@ -28,10 +32,17 @@
 } %}
 
 {% block content %}
-    <article style="display:block;width:100%;">
-        {% include "_heros/" ~ data.hero.type %}
-        {% for section in data.sections %}
-            {% include "_blocks/" ~ section.type|kebab %}
-        {% endfor %}
-    </article>
+    {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
+        {% set imageType = 'webp' %}
+    {% else %}
+        {% set imageType = 'jpg' %}
+    {% endif %}
+    {% cache using key entry.slug ~ "-" ~ imageType %}
+        <article style="display:block;width:100%;">
+            {% include "_heros/" ~ data.hero.type %}
+            {% for section in data.sections %}
+                {% include "_blocks/" ~ section.type|kebab %}
+            {% endfor %}
+        </article>
+    {% endcache %}
 {% endblock %}

@@ -1,5 +1,3 @@
-
-
 <section style="width:100%;display:block;background-color: var(--off-white);">
     <blog-cards lazy-load-css="blog-cards buttons">
         <h2>{{ section.heading }}</h2>
@@ -21,10 +19,21 @@
         {% endif %}
         <cards-grid cards="{{ section.cards|length }}">
             {% for card in section.cards %}
+                {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
+                    {% set image = craft.imager.transformImage(card.image[0], [
+                        { width: 350, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'webp' },
+                        { width: 640, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'webp' },
+                    ]) %}
+                {% else %}
+                    {% set image = craft.imager.transformImage(card.image[0], [
+                        { width: 350, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'jpg' },
+                        { width: 640, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'jpg' },
+                    ]) %}
+                {% endif %}
                 <div>
                     <a href="{{ card.url }}">
                         <img-shim>
-                            <img src="{{ card.image[0].url }}" alt="{{ card.image[0].alternateDescription }}" />
+                            <img src="{{ image[0].url }}" alt="{{ card.image[0].alternateDescription }}" srcset="{{ craft.imager.srcset(image) }}" width="350" loading="lazy" style="opacity:0;transition: opacity 300ms ease-in;" onload="this.style.opacity = '1';" />
                         </img-shim>
                         {% if card.categories|length %}
                             <card-tags>
