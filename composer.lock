@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f04102a8d3d8c3fa5eb0ef17ab36e092",
+    "content-hash": "29f715ac4033c463782463fd70446d2f",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -69,6 +69,48 @@
                 "issues": "https://github.com/aelvan/Imager-Craft/issues"
             },
             "time": "2019-09-21T14:25:19+00:00"
+        },
+        {
+            "name": "anubarak/craft-relabel",
+            "version": "1.3.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anubarak/craft-relabel/zipball/34c13706937c94f841ef48f62e6c5c223e93a3a3",
+                "reference": "34c13706937c94f841ef48f62e6c5c223e93a3a3",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.20"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Relabel",
+                "handle": "relabel",
+                "class": "anubarak\\relabel\\Relabel"
+            },
+            "autoload": {
+                "psr-4": {
+                    "anubarak\\relabel\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robin Schambach",
+                    "homepage": "https://github.com/Anubarak"
+                }
+            ],
+            "description": "Relabel Plugin Craft",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "relabel"
+            ],
+            "time": "2019-10-01T06:12:55+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -4003,6 +4045,55 @@
                 "templating"
             ],
             "time": "2019-11-11T16:52:09+00:00"
+        },
+        {
+            "name": "vaersaagod/matrixmate",
+            "version": "1.2.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vaersaagod/matrixmate/zipball/176a55728ae7925e152bb75e8613bf9035a95295",
+                "reference": "176a55728ae7925e152bb75e8613bf9035a95295",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "MatrixMate",
+                "handle": "matrixmate",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/vaersaagod/matrixmate/master/CHANGELOG.md",
+                "class": "vaersaagod\\matrixmate\\MatrixMate"
+            },
+            "autoload": {
+                "psr-4": {
+                    "vaersaagod\\matrixmate\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Værsågod",
+                    "homepage": "https://vaersaagod.no"
+                }
+            ],
+            "description": "Welding Matrix into shape, mate!",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "matrixmate"
+            ],
+            "support": {
+                "docs": "https://github.com/vaersaagod/matrixmate/blob/master/README.md",
+                "issues": "https://github.com/vaersaagod/matrixmate/issues"
+            },
+            "time": "2019-09-29T10:46:41+00:00"
         },
         {
             "name": "verbb/smith",

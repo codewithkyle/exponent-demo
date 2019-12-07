@@ -36,7 +36,7 @@ pull-quote
     blockquote
     {
         background-color: var(--white);
-        padding: 1.5rem 2rem;
+        padding: 2rem;
         box-shadow: 0 4px 16px rgba(51,51,51,0.1), 0 8px 32px rgba(51,51,51,0.1);
         max-width: 420px;
         display: inline-block;
@@ -52,7 +52,6 @@ pull-quote
             opacity: 0.87;
             color: var(--primary);
             margin-bottom: 1rem;
-            margin-top: 0.5rem;
         }
 
         p

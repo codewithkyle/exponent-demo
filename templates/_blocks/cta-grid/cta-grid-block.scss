@@ -91,6 +91,13 @@ cta-grid-block
                 }
             }
 
+            &:active
+            {
+                box-shadow: 0 1px 4px rgba(57, 213, 82, 0.6);
+                transform: translateY(0.25rem);
+                transition: all 150ms ease-in-out;
+            }
+
             svg
             {
                 margin-bottom: 1.5rem;

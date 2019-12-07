@@ -1,0 +1,46 @@
+
+
+<section style="width:100%;display:block;background-color: var(--off-white);">
+    <blog-cards lazy-load-css="blog-cards buttons">
+        <h2>{{ section.heading }}</h2>
+        {% if section.copy|length or section.button.url|length %}
+            <content-container>
+                {% if section.copy|length %}
+                    {{ section.copy }}
+                {% endif %}
+                {% if section.button.url|length %}
+                    <a href="{{ section.button.url }}" {{ (section.button.target|length) ? 'target="_blank"' }} class="g-button -solid -primary -rounded">
+                        {% if section.button.customText %}
+                            {{ section.button.customText }}
+                        {% else %}
+                            {{ "Learn More"|t }}
+                        {% endif %}
+                    </a>
+                {% endif %}
+            </content-container>
+        {% endif %}
+        <cards-grid cards="{{ section.cards|length }}">
+            {% for card in section.cards %}
+                <div>
+                    <a href="{{ card.url }}">
+                        <img-shim>
+                            <img src="{{ card.image[0].url }}" alt="{{ card.image[0].alternateDescription }}" />
+                        </img-shim>
+                        {% if card.categories|length %}
+                            <card-tags>
+                                {% for tag in card.categories %}
+                                    <card-tag>{{ tag.title }}{{ (not loop.last) ? ',' }}</card-tag>
+                                {% endfor %}
+                            </card-tags>
+                        {% endif %}
+                        <h3>{{ card.title }}</h3>
+                        <h4>
+                            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="clock" class="svg-inline--fa fa-clock fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216zm-148.9 88.3l-81.2-59c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h14c6.6 0 12 5.4 12 12v146.3l70.5 51.3c5.4 3.9 6.5 11.4 2.6 16.8l-8.2 11.3c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg>
+                            {{ card.postDate|date('F j, Y') }}
+                        </h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </cards-grid>
+    </blog-cards>
+</section>
