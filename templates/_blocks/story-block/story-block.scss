@@ -1,0 +1,113 @@
+story-block
+{
+    width: 1024px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 8rem 1rem;
+    position: relative;
+
+    img-shim
+    {
+        background-color: var(--off-white);
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &::before
+        {
+            display: block;
+            width: 100%;
+            padding-bottom: 56.25%;
+            content: "";
+        }
+
+        img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    block-content
+    {
+        padding: 2rem;
+        position: absolute;
+        top: 50%;
+        right: -12rem;
+        transform: translateY(-50%);
+        background-color: var(--white);
+        box-shadow: 0 4px 16px rgba(51,51,51,0.1), 0 8px 32px rgba(51,51,51,0.1);
+        max-width: 620px;
+
+        h3
+        {
+            font-size: 2.5rem;
+            line-height: 3rem;
+            display: block;
+            margin-bottom: 1.5rem;
+            display: block;
+            width: 100%;
+        }
+
+        p
+        {
+            display: block;
+            width: 100%;
+            line-height: 1.618;
+            color: var(--font-light);
+            margin-bottom: 1rem;
+
+            &:last-of-type
+            {
+                margin-bottom: 0;
+            }
+        }
+
+        a
+        {
+            margin-top: 2rem;
+            color: var(--primary);
+            font-weight: var(--medium);
+            transition: color 75ms ease;
+            display: inline-flex;
+            align-items: center;
+            flex-flow: row nowrap;
+
+            &:hover,
+            &:focus
+            {
+                color: var(--primary-hover);
+
+                svg
+                {
+                    color: var(--primary-hover);
+                    transform: translateX(0.5rem);
+                }
+            }
+
+            &:active
+            {
+                color: var(--primary-active);
+
+                svg
+                {
+                    color: var(--primary-active);
+                }
+            }
+
+            svg
+            {
+                width: 12px;
+                height: 12px;
+                color: var(--primary);
+                transform: translateX(4px);
+                transition: all 150ms ease-in-out;
+            }
+        }
+    }
+}
