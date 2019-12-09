@@ -1,0 +1,48 @@
+{% set backgroundImage = section.backgroundImage[0] ?? null %}
+{% if backgroundImage %}
+    {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
+        {% set image = craft.imager.transformImage(backgroundImage, [
+            { width: 320, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
+            { width: 640, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
+            { width: 768, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
+            { width: 1024, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
+            { width: 1280, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
+            { width: 1600, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
+            { width: 1920, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' }
+        ]) %}
+    {% else %}
+        {% set image = craft.imager.transformImage(card.backgroundImage[0], [
+            { width: 320, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
+            { width: 640, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
+            { width: 768, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
+            { width: 1024, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
+            { width: 1280, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
+            { width: 1600, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
+            { width: 1920, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' }
+        ]) %}
+    {% endif %}
+{% endif %}
+<cta-banner lazy-load-css="buttons cta-banner" style="width:100%;display:block;background-color: var(--off-black);">
+    {% if backgroundImage %}
+        <img-shim>
+            <img src="{{ image[0].url }}" srcset="{{ craft.imager.srcset(image) }}" alt="" width="320" style="opacity: 0;transition: opacity 300ms ease-in-out;" onload="this.style.opacity = '1';">
+        </img-shim>
+    {% endif %}
+    <banner-content>
+        {% if section.heading|length %}
+            <h2>{{ section.heading }}</h2>
+        {% endif %}
+        {% if section.copy|length %}
+            {{ section.copy }}
+        {% endif %}
+        {% if section.button.url|length %}
+            <a href="{{ section.button.url }}" {{ (section.button.customText|length) ? 'target="_blank"' }} class="g-button -primary -solid -pill" style="margin-top:2rem;">
+                {% if section.button.customText|length %}
+                    {{ section.button.customText }}
+                {% else %}
+                    {{ "Learn More"|t }}
+                {% endif %}
+            </a>
+        {% endif %}
+    </banner-content>
+</cta-banner>

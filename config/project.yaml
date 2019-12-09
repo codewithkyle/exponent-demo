@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1575735866
+dateModified: 1575895032
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -866,6 +866,150 @@ matrixBlockTypes:
               97b9f72b-cb22-46f2-924f-1e0ec1560459:
                 required: true
                 sortOrder: 1
+  88b90bb6-540c-4c7b-af95-fc0f684bac4b:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: 'Call to Action Banner'
+    handle: ctaBanner
+    sortOrder: 5
+    fields:
+      0cace545-8e17-480c-a097-e34a5c41249b:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      2d472ff8-e829-4e93-b7db-f890121ec3ae:
+        name: 'Background Image'
+        handle: backgroundImage
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Select a Background Image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      4486b911-8753-41a1-8122-576e46acbda3:
+        name: Button
+        handle: button
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: typedlinkfield\fields\LinkField
+        settings:
+          allowCustomText: '1'
+          allowedLinkNames:
+            1: asset
+            3: entry
+            7: email
+            8: tel
+            9: url
+          allowTarget: '1'
+          autoNoReferrer: ''
+          defaultLinkName: entry
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            asset:
+              sources:
+                - 'folder:c6e8a56d-24cf-4b14-a7ab-6174117e0ff4'
+              allowCustomQuery: ''
+            category:
+              sources: '*'
+              allowCustomQuery: ''
+            entry:
+              sources:
+                - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
+              allowCustomQuery: ''
+            site:
+              sites: '*'
+            user:
+              sources: '*'
+              allowCustomQuery: ''
+            custom:
+              disableValidation: ''
+              allowAliases: ''
+            email:
+              disableValidation: ''
+              allowAliases: ''
+            tel:
+              disableValidation: ''
+              allowAliases: ''
+            url:
+              disableValidation: ''
+              allowAliases: ''
+        contentColumnType: text
+        fieldGroup: null
+      48ce1e47-14a9-4533-ba7a-f0a6fe7a8aab:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      278e1aed-668c-4f4b-8a19-419fa5d0d2b3:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0cace545-8e17-480c-a097-e34a5c41249b:
+                required: false
+                sortOrder: 2
+              2d472ff8-e829-4e93-b7db-f890121ec3ae:
+                required: false
+                sortOrder: 1
+              4486b911-8753-41a1-8122-576e46acbda3:
+                required: false
+                sortOrder: 4
+              48ce1e47-14a9-4533-ba7a-f0a6fe7a8aab:
+                required: false
+                sortOrder: 3
   d398a110-20cf-4e20-8e87-03feacd198b0:
     field: dfbb58ad-c345-4000-a5e2-ea3e9d469265
     name: Slide
