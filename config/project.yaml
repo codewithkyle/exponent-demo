@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1575982488
+dateModified: 1575983662
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -866,6 +866,91 @@ matrixBlockTypes:
               97b9f72b-cb22-46f2-924f-1e0ec1560459:
                 required: true
                 sortOrder: 1
+  3641986e-d052-4d1d-9245-eebf18634152:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: TeamShowcase
+    handle: teamShowcase
+    sortOrder: 9
+    fields:
+      9f94f001-ffbe-446f-a788-ae957f7afbb4:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      cd04d06e-c091-4d5f-85f5-446842311024:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      eb9c4fa8-9f5c-460c-b6a5-2d2fa0481894:
+        name: 'Team Members'
+        handle: teamMembers
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: verbb\supertable\fields\SuperTableField
+        settings:
+          minRows: '1'
+          maxRows: ''
+          contentTable: '{{%stc_teammembers}}'
+          propagationMethod: all
+          staticField: ''
+          columns:
+            3ca901d6-5ac6-471b-a591-edf64790e69d:
+              width: ''
+            6fbea8dc-01e4-40e7-bf68-6bd704fdcc4e:
+              width: ''
+            ed635ef8-81aa-409e-bdeb-deb82ba90154:
+              width: ''
+          fieldLayout: row
+          selectionLabel: 'Add a Team Member'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      ca0f4227-f9f2-4d62-acec-49321e42c20b:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              9f94f001-ffbe-446f-a788-ae957f7afbb4:
+                required: false
+                sortOrder: 2
+              cd04d06e-c091-4d5f-85f5-446842311024:
+                required: false
+                sortOrder: 1
+              eb9c4fa8-9f5c-460c-b6a5-2d2fa0481894:
+                required: true
+                sortOrder: 3
   36f269f8-abc0-473f-bb42-b548b20ca077:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Story Block'
@@ -1112,6 +1197,8 @@ matrixBlockTypes:
             0a06a920-e1d2-473a-b2b3-a9ea45cba4af:
               width: ''
             8b280c3d-f8ca-4882-ad1d-94ddaa57c1c4:
+              width: ''
+            991283e8-9e47-401a-994b-91111c7af72f:
               width: ''
             b6351a98-9117-45a4-9802-fd4f6ee8bd89:
               width: ''
@@ -2102,6 +2189,86 @@ superTableBlockTypes:
                 sortOrder: 3
               6f36a17e-1f21-4ffd-b8e4-45d8eb1ee5e1:
                 required: false
+                sortOrder: 2
+  cd5876e4-14c2-4329-a3cb-6a6a1f5295a5:
+    field: eb9c4fa8-9f5c-460c-b6a5-2d2fa0481894
+    fields:
+      2cbc6cec-37be-414a-837b-802bde02bbbe:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add Team Member Photo'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      63e1e2b1-4001-45a4-a282-22c6c1be6576:
+        name: Name
+        handle: membersName
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      77648785-ccff-4cfb-aa1e-f591bfa2cbcc:
+        name: Role
+        handle: membersRole
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      62cc269c-d8bc-4110-9e91-947274863b89:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              2cbc6cec-37be-414a-837b-802bde02bbbe:
+                required: true
+                sortOrder: 3
+              63e1e2b1-4001-45a4-a282-22c6c1be6576:
+                required: true
+                sortOrder: 1
+              77648785-ccff-4cfb-aa1e-f591bfa2cbcc:
+                required: true
                 sortOrder: 2
   dbb10efb-5f17-4e46-b8b9-bde58129c07c:
     field: fca757a4-a2fb-44b4-9eb1-4a31ccb9e6b9
