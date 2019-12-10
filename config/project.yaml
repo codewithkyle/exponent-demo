@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1575897534
+dateModified: 1575977405
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -1010,6 +1010,67 @@ matrixBlockTypes:
               ddcc8605-7ad1-4339-8def-0883f48bfdee:
                 required: true
                 sortOrder: 4
+  3b67176a-1772-410a-9821-6978310d4ae2:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: 'Descriptive List'
+    handle: descriptiveList
+    sortOrder: 7
+    fields:
+      e2a6eb95-bf56-4b5a-be9e-e454372ef4be:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      e7c21c5e-391f-4267-adc8-5f18324e05de:
+        name: Lists
+        handle: lists
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: verbb\supertable\fields\SuperTableField
+        settings:
+          minRows: '1'
+          maxRows: ''
+          contentTable: '{{%stc_9_lists}}'
+          propagationMethod: all
+          staticField: ''
+          columns:
+            15a6b5e7-bfba-49ee-a6e7-30b399019045:
+              width: ''
+            ccf360d7-f1fe-4bb9-b575-a7994bbe9381:
+              width: ''
+            ed829cff-ab58-4e30-a5b4-8e90b7850c3c:
+              width: ''
+          fieldLayout: row
+          selectionLabel: 'Add a List Item'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      7bce03bf-1bd0-4be1-8af3-08c9311daa62:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              e2a6eb95-bf56-4b5a-be9e-e454372ef4be:
+                required: false
+                sortOrder: 1
+              e7c21c5e-391f-4267-adc8-5f18324e05de:
+                required: true
+                sortOrder: 2
   88b90bb6-540c-4c7b-af95-fc0f684bac4b:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Call to Action Banner'
@@ -1648,6 +1709,86 @@ superTableBlockTypes:
                 required: true
                 sortOrder: 2
               fd5361c4-daa6-4803-93b4-0bbf7ea507d2:
+                required: true
+                sortOrder: 3
+  55a8df6d-e7b0-459f-bafe-b2c5e102401a:
+    field: e7c21c5e-391f-4267-adc8-5f18324e05de
+    fields:
+      15a6b5e7-bfba-49ee-a6e7-30b399019045:
+        name: Title
+        handle: descriptiveTitle
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      ccf360d7-f1fe-4bb9-b575-a7994bbe9381:
+        name: Icon
+        handle: icon
+        instructions: 'Icon must be an SVG.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an SVG Icon'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      ed829cff-ab58-4e30-a5b4-8e90b7850c3c:
+        name: Copy
+        handle: descriptiveDetail
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      2855a42a-5cda-4aec-bd18-76f14a597d8e:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              15a6b5e7-bfba-49ee-a6e7-30b399019045:
+                required: true
+                sortOrder: 2
+              ccf360d7-f1fe-4bb9-b575-a7994bbe9381:
+                required: false
+                sortOrder: 1
+              ed829cff-ab58-4e30-a5b4-8e90b7850c3c:
                 required: true
                 sortOrder: 3
   5deb9819-b5aa-4405-bedc-537747ab9b9b:

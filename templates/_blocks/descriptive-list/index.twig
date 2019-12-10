@@ -1,0 +1,16 @@
+<section class="descriptive-list" style="width:100%;display:block;" lazy-load-css="descriptive-list">
+    {% if section.heading|length %}
+        <h2>{{ section.heading }}</h2>
+    {% endif %}
+    <dl>
+        {% for item in section.lists %}
+            <div>
+                {% if item.icon %}
+                    {{ svg(item.icon[0]) }}
+                {% endif %}
+                <dt>{{ item.descriptiveTitle }}</dt>
+                <dd>{{ item.descriptiveDetail }}</dd>
+            </div>
+        {% endfor %}
+    </dl>
+</section>
