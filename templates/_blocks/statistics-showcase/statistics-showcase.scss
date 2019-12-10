@@ -1,0 +1,117 @@
+statistics-showcase
+{
+    width: 1024px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 4rem 1rem 6rem;
+
+    h2
+    {
+        font-size: 2rem;
+        line-height: 2.75rem;
+        width: 300px;
+        display: block;
+        margin: 0 auto 2rem 0;
+    }
+
+    cards-grid
+    {
+        display: grid;
+        width: 100%;
+        gap: 2rem;
+        grid-template-columns: minmax(1px, 1fr);
+
+        &[columns="2"]
+        {
+            @media (min-width: 480px)
+            {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        &[columns="3"]
+        {
+            @media (min-width: 768px)
+            {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        &[columns="4"]
+        {
+            @media (min-width: 480px)
+            {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (min-width: 1024px)
+            {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        stat-card
+        {
+            padding: 1rem 1rem 2.5rem;
+            border-radius: 0.25rem;
+            background-color: var(--white);
+            display: block;
+            max-width: 250px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 6px 32px rgba(51,51,51,0.1), 0 4px 16px rgba(51,51,51,0.1);
+
+            &.has-highlight
+            {
+                background-color: var(--primary);
+                color: var(--font-button);
+                box-shadow: 0 6px 32px rgba(57, 213, 82,0.3), 0 4px 16px rgba(57, 213, 82,0.3);
+
+                svg
+                {
+                    color: var(--font-button);
+                }
+            }
+
+            h3
+            {
+                font-size: 0.875rem;
+                font-weight: var(--medium);
+                opacity: 0.87;
+            }
+
+            svg
+            {
+                width: 20px;
+                height: 20px;
+                color: var(--primary);
+                opacity: 0.87;
+            }
+
+            stat-value
+            {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                font-weight: var(--medium);
+            }
+
+            stat-type
+            {
+                font-size: 1.25rem;
+                line-height: 2.5rem;
+                margin-left: 0.125rem;
+            }
+
+            span
+            {
+                font-size: 0.7rem;
+                color: var(--font-light);
+                display: block;
+                text-align: center;
+                opacity: 0.87;
+            }
+        }
+    }
+}

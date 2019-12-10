@@ -27,6 +27,36 @@ blog-cards
             color: var(--font-light);
             line-height: 1.618;
             margin-bottom: 1rem;
+
+            strong
+            {
+                font-weight: var(--medium);
+            }
+
+            em
+            {
+                font-style: italic;
+            }
+
+            a
+            {
+                font-weight: var(--medium);
+                color: var(--primary);
+                transition: all 75ms ease;
+                cursor: pointer;
+                text-decoration: underline;
+
+                &:hover,
+                &:focus
+                {
+                    color: var(--primary-hover);
+                }
+
+                &:active
+                {
+                    color: var(--primary-active);
+                }
+            }
             
 
             &:last-of-type

@@ -30,6 +30,38 @@ duo-cta-cards
             color: var(--font-light);
             margin-bottom: 1.5rem;
             line-height: 1.618;
+            text-align: justify;
+            hyphens: auto;
+
+            strong
+            {
+                font-weight: var(--medium);
+            }
+
+            em
+            {
+                font-style: italic;
+            }
+
+            a
+            {
+                font-weight: var(--medium);
+                color: var(--primary);
+                transition: all 75ms ease;
+                cursor: pointer;
+                text-decoration: underline;
+
+                &:hover,
+                &:focus
+                {
+                    color: var(--primary-hover);
+                }
+
+                &:active
+                {
+                    color: var(--primary-active);
+                }
+            }
         }
     }
 

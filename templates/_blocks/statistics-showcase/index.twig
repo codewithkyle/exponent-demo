@@ -1,0 +1,32 @@
+<section style="width:100%;display:block;">
+    <statistics-showcase lazy-load-css="statistics-showcase">
+        {% if section.heading|length %}
+            <h2>{{ section.heading }}</h2>
+        {% endif %}
+        <cards-grid columns="{{ section.cards|length }}">
+            {% for card in section.cards %}
+                <div>
+                    <stat-card class="{{ (card.enableHighlight) ? 'has-highlight' }}">
+                        {% if card.cardTitle|length or card.icon %}
+                            <div style="display:flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;">
+                                {% if card.cardTitle|length %}
+                                    <h3>{{ card.cardTitle }}</h3>
+                                {% endif %}
+                                {% if card.icon %}
+                                    {{ svg(card.icon[0]) }}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        <div style="height: 2rem;display: flex;align-items: flex-end;flex-flow: row nowrap;justify-content: center;margin: 3rem 0 0.75rem;">
+                            <stat-value>{{ card.cardvalue }}</stat-value>
+                            {% if card.valueType|length %}
+                                <stat-type>{{ card.valueType }}</stat-type>
+                            {% endif %}
+                        </div>
+                        <span>{{ card.subtext }}</span>
+                    </stat-card>
+                </div>
+            {% endfor %}
+        </cards-grid>
+    </statistics-showcase>
+</section>

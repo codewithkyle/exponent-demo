@@ -22,11 +22,6 @@ cta-banner
 
         p
         {
-            &:first-of-type
-            {
-                margin-top: 1rem;
-            }
-
             max-width: 768px;
             display: block;
             color: var(--white);
@@ -36,9 +31,44 @@ cta-banner
             hyphens: auto;
             text-shadow: 0 1px 3px rgba(255,255,255,0.15);
 
+            &:first-of-type
+            {
+                margin-top: 1rem;
+            }
+
             &:last-of-type
             {
                 margin-bottom: 0;
+            }
+
+            strong
+            {
+                font-weight: var(--medium);
+            }
+
+            em
+            {
+                font-style: italic;
+            }
+
+            a
+            {
+                font-weight: var(--medium);
+                color: var(--primary);
+                transition: all 75ms ease;
+                cursor: pointer;
+                text-decoration: underline;
+
+                &:hover,
+                &:focus
+                {
+                    color: var(--primary-hover);
+                }
+
+                &:active
+                {
+                    color: var(--primary-active);
+                }
             }
         }
     }

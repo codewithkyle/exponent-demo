@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1575977405
+dateModified: 1575982488
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -1071,6 +1071,71 @@ matrixBlockTypes:
               e7c21c5e-391f-4267-adc8-5f18324e05de:
                 required: true
                 sortOrder: 2
+  7fa23f23-3186-4b9c-8381-b316151dd753:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: 'Statistics Showcase'
+    handle: statisticsShowcase
+    sortOrder: 8
+    fields:
+      6c9ceafc-ec03-4d87-922e-8549ba6070a7:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      8d9668f4-2c19-4ef4-9b1d-f837a284ff63:
+        name: Cards
+        handle: cards
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: verbb\supertable\fields\SuperTableField
+        settings:
+          minRows: '1'
+          maxRows: '4'
+          contentTable: '{{%stc_10_cards}}'
+          propagationMethod: all
+          staticField: ''
+          columns:
+            0a06a920-e1d2-473a-b2b3-a9ea45cba4af:
+              width: ''
+            8b280c3d-f8ca-4882-ad1d-94ddaa57c1c4:
+              width: ''
+            b6351a98-9117-45a4-9802-fd4f6ee8bd89:
+              width: ''
+            d28e98c2-b890-4727-abd3-a6ffa39a9ea0:
+              width: ''
+            d75d6ac9-c15f-4da5-9ef8-2ac03310ae46:
+              width: ''
+          fieldLayout: matrix
+          selectionLabel: 'Add a Card'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      8426cf5d-7553-4a46-a8fe-c83f8cf7e9de:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              6c9ceafc-ec03-4d87-922e-8549ba6070a7:
+                required: false
+                sortOrder: 1
+              8d9668f4-2c19-4ef4-9b1d-f837a284ff63:
+                required: true
+                sortOrder: 2
   88b90bb6-540c-4c7b-af95-fc0f684bac4b:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Call to Action Banner'
@@ -1711,6 +1776,141 @@ superTableBlockTypes:
               fd5361c4-daa6-4803-93b4-0bbf7ea507d2:
                 required: true
                 sortOrder: 3
+  2a6e6088-bc78-475b-96bd-0f40d5bf1578:
+    field: 8d9668f4-2c19-4ef4-9b1d-f837a284ff63
+    fields:
+      0a06a920-e1d2-473a-b2b3-a9ea45cba4af:
+        name: Value
+        handle: cardvalue
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      8b280c3d-f8ca-4882-ad1d-94ddaa57c1c4:
+        name: 'Value Type'
+        handle: valueType
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      991283e8-9e47-401a-994b-91111c7af72f:
+        name: 'Enable Highlight'
+        handle: enableHighlight
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Lightswitch
+        settings:
+          default: ''
+        contentColumnType: boolean
+        fieldGroup: null
+      b6351a98-9117-45a4-9802-fd4f6ee8bd89:
+        name: Subtext
+        handle: subtext
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      d28e98c2-b890-4727-abd3-a6ffa39a9ea0:
+        name: 'Card Title'
+        handle: cardTitle
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      d75d6ac9-c15f-4da5-9ef8-2ac03310ae46:
+        name: Icon
+        handle: icon
+        instructions: 'Must be an SVG icon.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an SVG Icon'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      f9f0c0fd-8b10-4454-b9c7-a32e495017c4:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0a06a920-e1d2-473a-b2b3-a9ea45cba4af:
+                required: true
+                sortOrder: 3
+              8b280c3d-f8ca-4882-ad1d-94ddaa57c1c4:
+                required: false
+                sortOrder: 4
+              991283e8-9e47-401a-994b-91111c7af72f:
+                required: false
+                sortOrder: 6
+              b6351a98-9117-45a4-9802-fd4f6ee8bd89:
+                required: true
+                sortOrder: 5
+              d28e98c2-b890-4727-abd3-a6ffa39a9ea0:
+                required: false
+                sortOrder: 1
+              d75d6ac9-c15f-4da5-9ef8-2ac03310ae46:
+                required: false
+                sortOrder: 2
   55a8df6d-e7b0-459f-bafe-b2c5e102401a:
     field: e7c21c5e-391f-4267-adc8-5f18324e05de
     fields:
