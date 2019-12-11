@@ -17,13 +17,15 @@
 {% endif %}
 
 <section style="width:100%;display:block;padding: 6rem 1rem 8rem;">
-    <lazy-image image-state="unseen" lazy-load-css="lazy-image" web-component>
+    <lazy-image lazy-load-css="lazy-image">
         <img 
             src="{{ image[0].url }}" 
-            data-srcset="{{ craft.imager.srcset(image) }}" 
+            srcset="{{ craft.imager.srcset(image) }}" 
             alt="{{ section.image[0].alternateDescription }}" 
             loading="lazy" 
-            width="100" 
+            width="100"
+            style="opacity:0;transition: opacity 300ms ease-out;"
+            onload="this.onload=null;this.style.opacity='1';" 
         />
     </lazy-image>
     {% if section.cite|length %}
