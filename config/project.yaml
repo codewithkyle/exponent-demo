@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1575983662
+dateModified: 1576067538
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -921,15 +921,15 @@ matrixBlockTypes:
         settings:
           minRows: '1'
           maxRows: ''
-          contentTable: '{{%stc_teammembers}}'
+          contentTable: '{{%stc_11_teammembers}}'
           propagationMethod: all
           staticField: ''
           columns:
-            3ca901d6-5ac6-471b-a591-edf64790e69d:
+            2cbc6cec-37be-414a-837b-802bde02bbbe:
               width: ''
-            6fbea8dc-01e4-40e7-bf68-6bd704fdcc4e:
+            63e1e2b1-4001-45a4-a282-22c6c1be6576:
               width: ''
-            ed635ef8-81aa-409e-bdeb-deb82ba90154:
+            77648785-ccff-4cfb-aa1e-f591bfa2cbcc:
               width: ''
           fieldLayout: row
           selectionLabel: 'Add a Team Member'
@@ -1504,6 +1504,91 @@ matrixBlockTypes:
               d1ccd785-6b6f-44bd-9e8b-8f52971a8ffd:
                 required: false
                 sortOrder: 3
+  ead67ad8-67ad-41cc-a12a-64f2c5093bb7:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: 'Rich Text'
+    handle: richText
+    sortOrder: 10
+    fields:
+      12280865-44a6-4ad5-9ecc-2646909fe73d:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Standard.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      861ff55e-f9a2-4430-a6ee-3088823ca207:
+        name: 'Heading Position'
+        handle: headingPosition
+        instructions: 'Adjust the text alignment of the heading.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: '-left'
+              default: '1'
+            -
+              label: Center
+              value: '-center'
+              default: ''
+            -
+              label: Right
+              value: '-right'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      9c9fea6c-c26e-4565-9114-c8ffc2f1ba51:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      3c08c972-4c7a-45f7-8443-c4ba776ff8a0:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              12280865-44a6-4ad5-9ecc-2646909fe73d:
+                required: false
+                sortOrder: 3
+              861ff55e-f9a2-4430-a6ee-3088823ca207:
+                required: false
+                sortOrder: 2
+              9c9fea6c-c26e-4565-9114-c8ffc2f1ba51:
+                required: false
+                sortOrder: 1
 plugins:
   imager:
     edition: standard

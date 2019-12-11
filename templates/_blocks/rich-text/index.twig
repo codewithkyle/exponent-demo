@@ -1,0 +1,10 @@
+<section style="width:100%;display:block;">
+    <rich-text lazy-load-css="rich-text">
+        {% if section.heading|length %}
+            <h2 class="{{ section.headingPosition }}">{{ section.heading }}</h2>
+        {% endif %}
+        {% if section.copy|length %}
+            {{ section.copy }}
+        {% endif %}
+    </rich-text>
+</section>
