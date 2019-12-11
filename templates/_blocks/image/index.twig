@@ -1,0 +1,32 @@
+{% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
+    {% set image = craft.imager.transformImage(section.image[0], [
+        { width: 100, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp', webpQuality: 5 },
+        { width: 320, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp' },
+        { width: 425, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp' },
+        { width: 768, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp' },
+        { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp' }
+    ]) %}
+{% else %}
+    {% set image = craft.imager.transformImage(section.image[0], [
+        { width: 100, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'jpg', jpegQuality: 5 },
+        { width: 320, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'jpg' },
+        { width: 425, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'jpg' },
+        { width: 768, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'jpg' },
+        { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'jpg' }
+    ]) %}
+{% endif %}
+
+<section style="width:100%;display:block;padding: 6rem 1rem 8rem;">
+    <lazy-image image-state="unseen" lazy-load-css="lazy-image" web-component>
+        <img 
+            src="{{ image[0].url }}" 
+            data-srcset="{{ craft.imager.srcset(image) }}" 
+            alt="{{ section.image[0].alternateDescription }}" 
+            loading="lazy" 
+            width="100" 
+        />
+    </lazy-image>
+    {% if section.cite|length %}
+        <image-cite>{{ section.cite }}</image-cite>
+    {% endif %}
+</section>

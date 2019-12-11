@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576067538
+dateModified: 1576067722
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -1156,6 +1156,69 @@ matrixBlockTypes:
               e7c21c5e-391f-4267-adc8-5f18324e05de:
                 required: true
                 sortOrder: 2
+  66cac042-be1f-47d3-b294-35864401e81a:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: Image
+    handle: image
+    sortOrder: 11
+    fields:
+      5654b76d-54f1-47dd-8c25-d1d0d4115298:
+        name: Cite
+        handle: cite
+        instructions: 'Cite the image source or add additional information about the image.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      69699c5a-ce3e-4403-b6e0-a0decfa613cf:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an Image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      5550b1c5-8a59-4f05-9604-e87ecd9dbc56:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              5654b76d-54f1-47dd-8c25-d1d0d4115298:
+                required: false
+                sortOrder: 2
+              69699c5a-ce3e-4403-b6e0-a0decfa613cf:
+                required: true
+                sortOrder: 1
   7fa23f23-3186-4b9c-8381-b316151dd753:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Statistics Showcase'
