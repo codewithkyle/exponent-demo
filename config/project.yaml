@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576067722
+dateModified: 1576069858
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -618,6 +618,93 @@ matrixBlockTypes:
               fca757a4-a2fb-44b4-9eb1-4a31ccb9e6b9:
                 required: true
                 sortOrder: 4
+  2a3cfa63-277e-4107-8ff0-da39883f7d41:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: Video
+    handle: video
+    sortOrder: 12
+    fields:
+      0a91df9f-e2fd-495f-adc2-995f6e73411a:
+        name: 'Video ID'
+        handle: videoId
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: '1'
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c811139e-04da-4259-ad8c-a5eea92c2a8b:
+        name: 'Video Provider'
+        handle: videoProvider
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: YouTube
+              value: youtube
+              default: ''
+            -
+              label: Vimeo
+              value: vimeo
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      c8807ee6-d67c-4662-a7f4-f0e1440b6117:
+        name: 'Thumbnail Image'
+        handle: thumbnailImage
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add a Thumbnail Image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      3c9b2344-2c8c-4fa3-9f9e-0ef645eba077:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0a91df9f-e2fd-495f-adc2-995f6e73411a:
+                required: true
+                sortOrder: 2
+              c811139e-04da-4259-ad8c-a5eea92c2a8b:
+                required: false
+                sortOrder: 1
+              c8807ee6-d67c-4662-a7f4-f0e1440b6117:
+                required: true
+                sortOrder: 3
   3092f2fb-5d05-4f19-88c2-07fecac55b22:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Pull Quote'
