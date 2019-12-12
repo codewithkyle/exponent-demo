@@ -122,8 +122,6 @@ export const NotificationManager = (function() {
 			if (notification.duration) {
 				if (notification.duration > 30) {
 					newNotification.duration = 30;
-				} else if (notification.duration < 10) {
-					newNotification.duration = 10;
 				} else {
 					newNotification.duration = notification.duration;
 				}

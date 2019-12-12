@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576154397
+dateModified: 1576157962
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -1317,6 +1317,148 @@ matrixBlockTypes:
                 required: false
                 sortOrder: 1
               e7c21c5e-391f-4267-adc8-5f18324e05de:
+                required: true
+                sortOrder: 2
+  3f92cf4d-dbff-4a23-886a-6300fa1ae7ce:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: Location
+    handle: location
+    sortOrder: 13
+    fields:
+      12e8ab3d-d978-46e7-bd83-c65a1f90ae0a:
+        name: 'Contact Email'
+        handle: contactEmail
+        instructions: 'Provide a contact email address.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Email
+        settings:
+          placeholder: ''
+        contentColumnType: string
+        fieldGroup: null
+      51b766ea-7e86-47ad-82a9-be48056124d6:
+        name: Name
+        handle: companyName
+        instructions: 'The name of your company or organization.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      6ec52b65-b541-4c7e-b025-e29167f69a03:
+        name: 'Hours of Operation'
+        handle: hoursOfOperation
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: 'Add a Day'
+          maxRows: ''
+          minRows: ''
+          columns:
+            col1:
+              heading: Day
+              handle: day
+              width: ''
+              type: singleline
+            col2:
+              heading: Open
+              handle: open
+              width: ''
+              type: time
+            col3:
+              heading: Close
+              handle: close
+              width: ''
+              type: time
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      a461a974-b511-4399-8a80-866dd3dc8266:
+        name: 'Directions Link'
+        handle: directionsLink
+        instructions: 'Provide a Google Maps link.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: ''
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+      a9f1a1c3-cf31-4302-b534-b4c39eb59f79:
+        name: Map
+        handle: map
+        instructions: 'Copy and paste the Google Map HTML.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: '1'
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      aa0234a8-4cc4-4e93-b9a6-e408eafb7d36:
+        name: Location
+        handle: location
+        instructions: 'Provide your address.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      8be21ab7-8b9a-442a-a8ef-d8f8d1565284:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              12e8ab3d-d978-46e7-bd83-c65a1f90ae0a:
+                required: false
+                sortOrder: 6
+              51b766ea-7e86-47ad-82a9-be48056124d6:
+                required: false
+                sortOrder: 1
+              6ec52b65-b541-4c7e-b025-e29167f69a03:
+                required: false
+                sortOrder: 3
+              a461a974-b511-4399-8a80-866dd3dc8266:
+                required: true
+                sortOrder: 5
+              a9f1a1c3-cf31-4302-b534-b4c39eb59f79:
+                required: true
+                sortOrder: 4
+              aa0234a8-4cc4-4e93-b9a6-e408eafb7d36:
                 required: true
                 sortOrder: 2
   66cac042-be1f-47d3-b294-35864401e81a:

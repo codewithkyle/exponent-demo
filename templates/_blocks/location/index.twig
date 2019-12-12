@@ -1,0 +1,36 @@
+<section style="width:100%;display:block;" lazy-load-css="location-block">
+    <location-block>
+        <map-shim>
+            {{ section.map|raw }}
+        </map-shim>
+        <location-content>
+            {% if section.companyName %}
+                <h3>{{ section.companyName }}</h3>
+            {% endif %}
+            {{ section.location }}
+            {% if section.hoursOfOperation|length %}
+                <dl>
+                    {% for row in section.hoursOfOperation %}
+                        <div style="display:block;width:100%;">
+                            <dt>{{ row.day }}</dt>
+                            <dd>
+                                {% if row.open|length and row.close|length %}
+                                    {{ row.open|date('ga') }} - {{ row.close|date('ga') }}
+                                {% else %}
+                                    {{ "Closed"|t }}
+                                {% endif %}
+                            </dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+            {% endif %}
+            <a class="-button" href="{{ section.directionsLink }}" target="_blank">{{ "Get Directions"|t }}</a>
+            {% if section.contactEmail|length %}
+                <email-button web-component role="button">
+                    <input type="text" value="{{ section.contactEmail }}" style="position:absolute;top:-9999px;left:-9999px;display:inline-block;">
+                    {{ "Email Us"|t }}
+                </email-button>
+            {% endif %}
+        </location-content>
+    </location-block>
+</section>

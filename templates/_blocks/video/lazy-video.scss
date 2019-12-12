@@ -4,7 +4,7 @@ lazy-video-block
     max-width: 100%;
     display: block;
     margin: 0 auto;
-    padding-top: 2rem;
+    padding: 4rem 1rem;
 
     h2
     {
@@ -65,7 +65,7 @@ lazy-video-block
 }
 lazy-video
 {
-    margin: 2rem auto 6rem;
+    margin: 2rem auto 0;
     display: block;
     width: 100%;
     position: relative;

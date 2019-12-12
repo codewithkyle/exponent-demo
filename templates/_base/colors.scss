@@ -8,9 +8,11 @@
     --font: hsl(0, 0%, 20%);
     --font-light: #595959;
     --font-button: #093416;
+    
     --link: #027787;
     --link-hover: #1697A9;
     --link-active: hsl(187, 93%, 23%);
+
     --background: #fff;
 
     --loading-bar-shadow: rgba(0, 191, 255, 0.87);
@@ -35,6 +37,8 @@
     --secondary: #34AABA;
     --secondary-hover: #1697A9;
     --secondary-active: hsl(187, 93%, 23%);
+    --secondary-hover-opaque: rgba(22, 151, 169, 0.05);
+    --secondary-active-opaque: rgba(22, 151, 169, 0.1);
 
     --complementary: #FF5244;
 }
