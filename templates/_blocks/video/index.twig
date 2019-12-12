@@ -6,19 +6,27 @@
     { width: 1024, ratio: 16/9, position: section.thumbnailImage[0].getFocalPoint(), format: imageFormat }
 ]) %}
 
-<section style="width:100%;display:block;padding: 4rem 1rem 6rem;">
-    <lazy-video lazy-load-css="lazy-video loading-spinner" web-component data-video-id="{{ section.videoId }}" data-platform="{{ section.videoProvider }}">
-        <img 
-            src="{{ image[0].url }}" 
-            srcset="{{ craft.imager.srcset(image) }}" 
-            alt="{{ section.thumbnailImage[0].alternateDescription }}" 
-            loading="lazy" 
-            width="100"
-            style="opacity:0;transition: opacity 300ms ease-out;"
-            onload="this.onload=null;this.style.opacity='1';" 
-        />
-        <button aria-label="play video">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>
-        </button>
-    </lazy-video>
+<section style="width:100%;display:block;padding: 4rem 1rem 6rem;" lazy-load-css="lazy-video loading-spinner">
+    <lazy-video-block>
+        {% if section.heading|length %}
+            <h2>{{ section.heading }}</h2>
+        {% endif %}
+        {% if section.copy|length %}
+            {{ section.copy }}
+        {% endif %}
+        <lazy-video web-component data-video-id="{{ section.videoId }}" data-platform="{{ section.videoProvider }}">
+            <img 
+                src="{{ image[0].url }}" 
+                srcset="{{ craft.imager.srcset(image) }}" 
+                alt="{{ section.thumbnailImage[0].alternateDescription }}" 
+                loading="lazy" 
+                width="100"
+                style="opacity:0;transition: opacity 300ms ease-out;"
+                onload="this.onload=null;this.style.opacity='1';" 
+            />
+            <button aria-label="play video">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>
+            </button>
+        </lazy-video>
+    </lazy-video-block>
 </section>

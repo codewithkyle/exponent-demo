@@ -5,10 +5,11 @@
 	"scripts": {
 		"prep": "rm -rf ./public/assets && mkdir ./public/assets && rm -rf ./_compiled",
 		"compile": "tsc",
+		"noscript": "node ./tools/noscript.js",
 		"cleanup": "rm -rf ./_compiled",
 		"build": "npm run prep && npm run compile && node ./tools/script-scrubber.js && node ./tools/cachebust.js && node ./tools/minify.js && node ./tools/sass.js && npm run cleanup",
-		"bundle": "node ./tools/bundler.js",
-		"noscript": "node ./tools/noscript.js"
+		"predeploy": "npm run build && npm run noscript",
+		"bundle": "node ./tools/bundler.js"
 	},
 	"devDependencies": {
 		"glob": "^7.1.6",

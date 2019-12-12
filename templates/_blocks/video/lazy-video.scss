@@ -1,9 +1,73 @@
-lazy-video
+lazy-video-block
 {
-    margin: 4rem auto 6rem;
     width: 1024px;
     max-width: 100%;
     display: block;
+    margin: 0 auto;
+    padding-top: 2rem;
+
+    h2
+    {
+        font-size: 2rem;
+        line-height: 3rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    p
+    {
+        color: var(--font-light);
+        line-height: 1.618;
+        width: 420px;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        strong
+        {
+            font-weight: var(--medium);
+        }
+
+        em
+        {
+            font-style: italic;
+        }
+
+        a
+        {
+            font-weight: var(--medium);
+            color: var(--primary);
+            transition: all 75ms ease;
+            cursor: pointer;
+            text-decoration: underline;
+
+            &:hover,
+            &:focus
+            {
+                color: var(--primary-hover);
+            }
+
+            &:active
+            {
+                color: var(--primary-active);
+            }
+        }
+        
+
+        &:last-of-type
+        {
+            margin-bottom: 0;
+        }
+    }
+}
+lazy-video
+{
+    margin: 2rem auto 6rem;
+    display: block;
+    width: 100%;
     position: relative;
     background-color: var(--off-white);
     cursor: pointer;
