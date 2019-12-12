@@ -8,6 +8,9 @@
     --font: hsl(0, 0%, 20%);
     --font-light: #595959;
     --font-button: #093416;
+    --link: #027787;
+    --link-hover: #1697A9;
+    --link-active: hsl(187, 93%, 23%);
     --background: #fff;
 
     --loading-bar-shadow: rgba(0, 191, 255, 0.87);
@@ -28,4 +31,10 @@
     --primary-active: hsl(130, 65%, 48%);
     --primary-hover-opaque: rgb(57, 213, 82, 0.1);
     --primary-active-opaque: rgba(57, 213, 82, 0.2);
+
+    --secondary: #34AABA;
+    --secondary-hover: #1697A9;
+    --secondary-active: hsl(187, 93%, 23%);
+
+    --complementary: #FF5244;
 }

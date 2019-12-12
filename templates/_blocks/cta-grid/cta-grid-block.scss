@@ -44,7 +44,7 @@ cta-grid-block
             a
             {
                 font-weight: var(--medium);
-                color: var(--primary);
+                color: var(--link);
                 transition: all 75ms ease;
                 cursor: pointer;
                 text-decoration: underline;
@@ -52,12 +52,12 @@ cta-grid-block
                 &:hover,
                 &:focus
                 {
-                    color: var(--primary-hover);
+                    color: var(--link-hover);
                 }
 
                 &:active
                 {
-                    color: var(--primary-active);
+                    color: var(--link-active);
                 }
             }
         }

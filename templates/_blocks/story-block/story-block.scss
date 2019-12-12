@@ -75,7 +75,7 @@ story-block
             a
             {
                 font-weight: var(--medium);
-                color: var(--primary);
+                color: var(--link);
                 transition: all 75ms ease;
                 cursor: pointer;
                 text-decoration: underline;
@@ -83,12 +83,12 @@ story-block
                 &:hover,
                 &:focus
                 {
-                    color: var(--primary-hover);
+                    color: var(--link-hover);
                 }
 
                 &:active
                 {
-                    color: var(--primary-active);
+                    color: var(--link-active);
                 }
             }
 
@@ -101,7 +101,7 @@ story-block
         a
         {
             margin-top: 2rem;
-            color: var(--primary);
+            color: var(--link);
             font-weight: var(--medium);
             transition: color 75ms ease;
             display: inline-flex;
@@ -111,22 +111,22 @@ story-block
             &:hover,
             &:focus
             {
-                color: var(--primary-hover);
+                color: var(--link-hover);
 
                 svg
                 {
-                    color: var(--primary-hover);
+                    color: var(--link-hover);
                     transform: translateX(0.5rem);
                 }
             }
 
             &:active
             {
-                color: var(--primary-active);
+                color: var(--link-active);
 
                 svg
                 {
-                    color: var(--primary-active);
+                    color: var(--link-active);
                 }
             }
 
@@ -134,7 +134,7 @@ story-block
             {
                 width: 12px;
                 height: 12px;
-                color: var(--primary);
+                color: var(--link);
                 transform: translateX(4px);
                 transition: all 150ms ease-in-out;
             }
