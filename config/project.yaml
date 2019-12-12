@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576153554
+dateModified: 1576154397
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -1912,7 +1912,7 @@ sections:
       5d0fd958-be72-4405-989e-030f329741df:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: '{slug}'
+        uriFormat: '{parent.uri}/{slug}'
         template: _pages/index
     structure:
       uid: b7395b45-5b5e-4e40-882e-d42b99553051
