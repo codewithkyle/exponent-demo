@@ -8,11 +8,7 @@
         {% endif %}
         <team-members>
             {% for member in section.teamMembers %}
-                {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
-                    {% set image = craft.imager.transformImage(member.image[0], { width: 300, ratio: 1/1, position: member.image[0].getFocalPoint(), format: 'webp', mode: 'fit' }) %}
-                {% else %}
-                    {% set image = craft.imager.transformImage(member.image[0], { width: 300, ratio: 1/1, position: member.image[0].getFocalPoint(), format: 'jpg', mode: 'fit'  }) %}
-                {% endif %}
+                {% set image = craft.imager.transformImage(member.image[0], { width: 300, ratio: 1/1, position: member.image[0].getFocalPoint(), format: imageFormat, mode: 'fit' }) %}
                 <team-member>
                     <img-shim>
                         <img src="{{ image.url }}" alt="{{ member.image[0].alternateDescription }}" width="300" loading="lazy" style="opacity:0;transition: opacity 300ms ease-in-out;" onload="this.style.opacity = '1';" />

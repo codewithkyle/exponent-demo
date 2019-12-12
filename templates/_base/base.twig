@@ -21,6 +21,12 @@
     {% header "ETag: " ~ page.uid ~ '-' ~ craft.pwa.getCache(page.id) %}
 {% endif %}
 
+{% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
+    {% set imageFormat = 'webp' %}
+{% else %}
+    {% set imageFormat = 'jpg' %}
+{% endif %}
+
 {% spaceless %}
 <!DOCTYPE html>
 <html 

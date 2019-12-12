@@ -1,26 +1,14 @@
 {% set backgroundImage = section.backgroundImage[0] ?? null %}
 {% if backgroundImage %}
-    {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
-        {% set image = craft.imager.transformImage(backgroundImage, [
-            { width: 320, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
-            { width: 640, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
-            { width: 768, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
-            { width: 1024, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
-            { width: 1280, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
-            { width: 1600, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' },
-            { width: 1920, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'webp' }
-        ]) %}
-    {% else %}
-        {% set image = craft.imager.transformImage(card.backgroundImage[0], [
-            { width: 320, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
-            { width: 640, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
-            { width: 768, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
-            { width: 1024, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
-            { width: 1280, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
-            { width: 1600, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' },
-            { width: 1920, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: 'jpg' }
-        ]) %}
-    {% endif %}
+    {% set image = craft.imager.transformImage(backgroundImage, [
+        { width: 320, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat },
+        { width: 640, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat },
+        { width: 768, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat },
+        { width: 1024, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat },
+        { width: 1280, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat },
+        { width: 1600, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat },
+        { width: 1920, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat }
+    ]) %}
 {% endif %}
 <cta-banner lazy-load-css="buttons cta-banner" style="width:100%;display:block;background-color: var(--off-black);">
     {% if backgroundImage %}

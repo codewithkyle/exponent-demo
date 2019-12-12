@@ -1,14 +1,7 @@
-{% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
-    {% set image = craft.imager.transformImage(section.image[0], [
-        { width: 768, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp' },
-        { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint(), format: 'webp' },
-    ]) %}
-{% else %}
-    {% set image = craft.imager.transformImage(section.image[0], [
-        { width: 768, ratio: 16/9, position: section.image[0].getFocalPoint() },
-        { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint() },
-    ]) %}
-{% endif %}
+{% set image = craft.imager.transformImage(section.image[0], [
+    { width: 768, ratio: 16/9, position: section.image[0].getFocalPoint(), format: imageFormat },
+    { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint(), format: imageFormat },
+]) %}
 
 <section style="width:100%;display:block;">
     <pull-quote lazy-load-css="pull-quote">

@@ -19,17 +19,10 @@
         {% endif %}
         <cards-grid cards="{{ section.cards|length }}">
             {% for card in section.cards %}
-                {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
-                    {% set image = craft.imager.transformImage(card.image[0], [
-                        { width: 350, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'webp' },
-                        { width: 640, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'webp' },
-                    ]) %}
-                {% else %}
-                    {% set image = craft.imager.transformImage(card.image[0], [
-                        { width: 350, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'jpg' },
-                        { width: 640, ratio: 16/9, position: card.image[0].getFocalPoint(), format: 'jpg' },
-                    ]) %}
-                {% endif %}
+                {% set image = craft.imager.transformImage(card.image[0], [
+                    { width: 350, ratio: 16/9, position: card.image[0].getFocalPoint(), format: imageFormat },
+                    { width: 640, ratio: 16/9, position: card.image[0].getFocalPoint(), format: imageFormat },
+                ]) %}
                 <div>
                     <a href="{{ card.url }}">
                         <img-shim>
