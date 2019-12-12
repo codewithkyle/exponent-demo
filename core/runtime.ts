@@ -67,9 +67,11 @@ class Runtime {
 		const response: WorkerResponse = e.data;
 		switch (response.type) {
 			case 'eager':
-				this._loadingMessage.innerHTML = `Loading resource: <resource-counter>0</resource-counter<span class="-slash">/</span><resource-total>${response.files.length}</resource-total>`;
+				if (env.domState === 'hard-loading') {
+					this._loadingMessage.innerHTML = `Loading resource: <resource-counter>0</resource-counter<span class="-slash">/</span><resource-total>${response.files.length}</resource-total>`;
+				}
 				this.fetchResources(response.files).then(() => {
-					document.documentElement.setAttribute('state', 'idling');
+					env.setDOMState('idling');
 					this._bodyParserWorker.postMessage({
 						type: 'lazy',
 						body: document.body.innerHTML,
@@ -180,21 +182,27 @@ class Runtime {
 					el.href = `${window.location.origin}/assets/${filename}.css`;
 					el.addEventListener('load', () => {
 						loaded++;
-						this._loadingMessage.innerHTML = `Loading resource: <resource-counter>${loaded}</resource-counter<span class="-slash">/</span><resource-total>${resourceList.length}</resource-total>`;
+						if (env.domState === 'hard-loading') {
+							this._loadingMessage.innerHTML = `Loading resource: <resource-counter>${loaded}</resource-counter<span class="-slash">/</span><resource-total>${resourceList.length}</resource-total>`;
+						}
 						if (loaded === resourceList.length) {
 							resolve();
 						}
 					});
 					el.addEventListener('error', () => {
 						loaded++;
-						this._loadingMessage.innerHTML = `Loading resource: <resource-counter>${loaded}</resource-counter<span class="-slash">/</span><resource-total>${resourceList.length}</resource-total>`;
+						if (env.domState === 'hard-loading') {
+							this._loadingMessage.innerHTML = `Loading resource: <resource-counter>${loaded}</resource-counter<span class="-slash">/</span><resource-total>${resourceList.length}</resource-total>`;
+						}
 						if (loaded === resourceList.length) {
 							resolve();
 						}
 					});
 				} else {
 					loaded++;
-					this._loadingMessage.innerHTML = `Loading resource: <resource-counter>${loaded}</resource-counter<span class="-slash">/</span><resource-total>${resourceList.length}</resource-total>`;
+					if (env.domState === 'hard-loading') {
+						this._loadingMessage.innerHTML = `Loading resource: <resource-counter>${loaded}</resource-counter<span class="-slash">/</span><resource-total>${resourceList.length}</resource-total>`;
+					}
 					if (loaded === resourceList.length) {
 						resolve();
 					}

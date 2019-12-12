@@ -1,9 +1,12 @@
+type DOMState = 'soft-loading' | 'hard-loading' | 'idling' | 'page-loading' | 'page-loading-complete';
+
 class Env {
 	public isDebug: boolean;
 	public connection: NetworkType;
 	public cpu: number;
 	public memory: number | null;
 	public isProduciton: boolean;
+	public domState: DOMState;
 
 	private _tickets: Array<string>;
 
@@ -13,6 +16,7 @@ class Env {
 		this.connection = '4g';
 		this.isDebug = document.documentElement.getAttribute('debug') ? true : false;
 		this.isProduciton = document.documentElement.dataset.environment === 'production';
+		this.domState = 'hard-loading';
 
 		this._tickets = [];
 
@@ -54,7 +58,8 @@ class Env {
 		}
 
 		if (this._tickets.length === 0) {
-			document.documentElement.setAttribute('state', 'idling');
+			this.domState = 'idling';
+			document.documentElement.setAttribute('state', this.domState);
 		}
 	}
 
@@ -63,23 +68,28 @@ class Env {
 	 * @returns a ticket `string` that is required to stop the loading state.
 	 */
 	public startLoading(): string {
-		document.documentElement.setAttribute('state', 'soft-loading');
+		this.domState = 'soft-loading';
+		document.documentElement.setAttribute('state', this.domState);
 		const ticket = this.uuid();
 		this._tickets.push(ticket);
 		return ticket;
 	}
 
 	public startPageTransition(): void {
-		document.documentElement.setAttribute('state', 'page-loading');
+		this.domState = 'page-loading';
+		document.documentElement.setAttribute('state', this.domState);
 	}
 
 	public endPageTransition(): void {
-		document.documentElement.setAttribute('state', 'page-loading-complete');
+		this.domState = 'page-loading-complete';
+		document.documentElement.setAttribute('state', this.domState);
 		setTimeout(() => {
 			if (this._tickets.length) {
-				document.documentElement.setAttribute('state', 'soft-loading');
+				this.domState = 'soft-loading';
+				document.documentElement.setAttribute('state', this.domState);
 			} else {
-				document.documentElement.setAttribute('state', 'idling');
+				this.domState = 'idling';
+				document.documentElement.setAttribute('state', this.domState);
 			}
 		}, 600);
 	}
@@ -94,6 +104,16 @@ class Env {
 			.fill(0)
 			.map(() => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(16))
 			.join('-');
+	}
+
+	/**
+	 * DO NOT USE THIS METHOD unless you have a really good reason, then just be very careful.
+	 * Used to quickly set the DOM state attribute ignoring all loading state procedures.
+	 * @param newState - the new state of the document element
+	 */
+	public setDOMState(newState: DOMState): void {
+		this.domState = newState;
+		document.documentElement.setAttribute('state', this.domState);
 	}
 }
 export const env: Env = new Env();

@@ -50,7 +50,7 @@ function parseCSS(body: string, requestUid: string) {
 	const files: Array<string> = [];
 	if (matches) {
 		matches.map((match: string) => {
-			const filenames = match.trim().split(' ');
+			const filenames = match.trim().split(/\s+/g);
 			if (filenames) {
 				filenames.map(filename => {
 					const cleanFilename = filename
@@ -94,7 +94,7 @@ function parseLazyLoadedCSS(body: string) {
 	if (matches) {
 		matches.map((match: string) => {
 			const clean = match.replace(/(lazy-load-css\=[\'\"])|[\'\"]$/g, '');
-			const filenames = clean.trim().split(' ');
+			const filenames = clean.trim().split(/\s+/g);
 			if (filenames) {
 				filenames.map(filename => {
 					const cleanFilename = filename
@@ -135,7 +135,7 @@ function parseEagerLoadedCSS(body: string) {
 	if (matches) {
 		matches.map((match: string) => {
 			const clean = match.replace(/(eager-load-css\=[\'\"])|[\'\"]$/g, '');
-			const filenames = clean.trim().split(' ');
+			const filenames = clean.trim().split(/\s+/g);
 			if (filenames) {
 				filenames.map(filename => {
 					const cleanFilename = filename
