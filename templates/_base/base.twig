@@ -48,9 +48,6 @@
 
         <!-- Google Font -->
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap">
-        </noscript>
         
         <!-- Critical colors -->
         <style>
@@ -340,63 +337,27 @@
 			<style>	
 				page-loading {
 					display: none;
-				}
-
-				body {
-					padding: 6rem 1rem;
-					background-color: #fafafa;
-					color: rgba(51, 51, 51, 0.87);
-				}
-
-				main {
-					width: 840px;
-					max-width: 100%;
-					margin: 0 auto;
-				}
-
-				article,
-				section {
-					display: block;
-				}
-
-				h1,
-				h2,
-				h3,
-				p,
-				ul,
-				ol,
-				img {
-					margin-bottom: 2rem;
-				}
-
-				h1 {
-					font-size: 3rem;
-				}
-
-				h2 {
-					font-size: 2rem;
-				}
-
-				h3 {
-					font-size: 1.5rem;
-				}
-
-				p {
-					line-height: 1.618;
-				}
-
-				img {
-					display: block;
-					margin: 0 auto 2rem;
-				}
-
-				@media (prefers-color-scheme: dark) {
-					body {
-						background-color: #232323;
-						color: #fff;
-					}
-				}
-			</style>
+                }
+                img
+                {
+                    opacity: 1 !important;
+                }
+                #noscript-message
+                {
+                    position: fixed;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 1rem 1rem 1rem;
+                    background-color: var(--background);
+                    box-shadow: 0 -2px 16px rgba(51,51,51,0.1), -6px 32px rgba(51,51,51,0.1);
+                    border-radius: 0.25rem 0.25rem 0 0;
+                    text-align: center;
+                    z-index: 2000;
+                }
+            </style>
+            <link rel="stylesheet" href="{{ alias('@rootUrl')|trim('/') }}/assets/noscript.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap">
         </noscript>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -428,6 +389,9 @@
             <page-transition-bar></page-transition-bar>
         </page-transition>
         {% block page %}{% endblock %}
+        <noscript>
+            <p id="noscript-message">{{ "Parts of this website require JavaScript. Please re-enable JavaScript and reload the page. We apologize for the inconvenience."|t }}</p>
+        </noscript>
     </body>
 </html>
 {% endspaceless %}

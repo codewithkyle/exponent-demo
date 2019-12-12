@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576069858
+dateModified: 1576153554
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -182,6 +182,38 @@ fields:
       validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: d561440e-7023-4019-9353-546183107fe5
+  d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+    name: SEO
+    handle: seo
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: ether\seo\fields\SeoField
+    settings:
+      titleSuffix: null
+      suffixAsPrefix: null
+      title:
+        -
+          key: 5pm
+          locked: '0'
+          template: '{title}'
+        -
+          key: '2'
+          locked: '1'
+          template: ' - Craft PWA Demo'
+      description: ''
+      socialImage: ''
+      hideSocial: ''
+      robots:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+    contentColumnType: text
+    fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
   daa491b1-dfaa-4358-83fe-d077de8b7db6:
     name: 'Alternate Description'
     handle: alternateDescription
@@ -641,6 +673,44 @@ matrixBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      2df1912e-2613-45e9-9569-6edcb692391f:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      84026c77-9143-467e-a9a9-43d89d02385c:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
       c811139e-04da-4259-ad8c-a5eea92c2a8b:
         name: 'Video Provider'
         handle: videoProvider
@@ -699,6 +769,12 @@ matrixBlockTypes:
               0a91df9f-e2fd-495f-adc2-995f6e73411a:
                 required: true
                 sortOrder: 2
+              2df1912e-2613-45e9-9569-6edcb692391f:
+                required: false
+                sortOrder: 4
+              84026c77-9143-467e-a9a9-43d89d02385c:
+                required: false
+                sortOrder: 5
               c811139e-04da-4259-ad8c-a5eea92c2a8b:
                 required: false
                 sortOrder: 1
@@ -1866,6 +1942,13 @@ sections:
                   989ab03a-ea9d-4cf0-8359-69de483081e6:
                     required: true
                     sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
+                  d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+                    required: false
+                    sortOrder: 1
   78afc566-1070-436c-bfed-09da14d2a064:
     name: 'Hero Blocks'
     handle: heroBlocks
@@ -1965,6 +2048,13 @@ sections:
                 fields:
                   989ab03a-ea9d-4cf0-8359-69de483081e6:
                     required: true
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
+                  d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+                    required: false
                     sortOrder: 1
 siteGroups:
   671e778d-487b-49da-b257-052f3d032d54:
