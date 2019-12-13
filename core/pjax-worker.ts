@@ -120,6 +120,7 @@ class PjaxWorker {
 			fetch(url, {
 				method: 'HEAD',
 				credentials: 'include',
+				cache: 'no-cache',
 			})
 				.then(request => {
 					resolve(request.headers.get('ETag'));
