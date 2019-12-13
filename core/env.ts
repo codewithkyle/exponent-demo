@@ -7,6 +7,7 @@ class Env {
 	public memory: number | null;
 	public isProduciton: boolean;
 	public domState: DOMState;
+	public dataSaver: boolean;
 
 	private _tickets: Array<string>;
 
@@ -17,6 +18,7 @@ class Env {
 		this.isDebug = document.documentElement.getAttribute('debug') ? true : false;
 		this.isProduciton = document.documentElement.dataset.environment === 'production';
 		this.domState = 'hard-loading';
+		this.dataSaver = false;
 
 		this._tickets = [];
 
@@ -25,10 +27,16 @@ class Env {
 
 	private init(): void {
 		try {
-			// @ts-ignore
-			this.connection = window.navigator.connection.effectiveType;
-			// @ts-ignore
-			this.memory = window.navigator.deviceMemory;
+			if ('connection' in navigator) {
+				// @ts-ignore
+				this.connection = window.navigator.connection.effectiveType;
+				// @ts-ignore
+				this.dataSaver = window.navigator.connection.saveData;
+			}
+			if ('deviceMemory' in navigator) {
+				// @ts-ignore
+				this.memory = window.navigator.deviceMemory;
+			}
 		} catch (error) {
 			if (this.isDebug) {
 				console.warn(error);
@@ -120,3 +128,4 @@ class Env {
 export const env: Env = new Env();
 export const debug: boolean = env.isDebug;
 export const uuid: Function = env.uuid;
+export const dataSaver: boolean = env.dataSaver;

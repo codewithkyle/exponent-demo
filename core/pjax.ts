@@ -426,8 +426,8 @@ class Pjax {
 
 	/** Collect primary navigation links and tell the Pjax web worker to prefetch the pages. */
 	private prefetchLinks(): void {
-		/** Require a service worker & at least a 3g connection to continue */
-		if (env.connection === '2g' || (env.connection === 'slow-2g' && 'serviceWorker' in navigator)) {
+		/** Require a service worker & at least a 3g connection & respect the users data saver setting */
+		if (env.connection === '2g' || env.connection === 'slow-2g' || !('serviceWorker' in navigator) || env.dataSaver) {
 			return;
 		}
 		const urls: Array<string> = [];
@@ -452,7 +452,7 @@ class Pjax {
 			urls: urls,
 		});
 
-		/** Require at least a 4g connection to continue */
+		/** Require at least a 4g connection while respecting the users data  */
 		if (env.connection === '3g') {
 			return;
 		}
