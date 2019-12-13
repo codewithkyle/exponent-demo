@@ -8,6 +8,8 @@
     {% set page = entry %}
 {% elseif category is defined %}
     {% set page = category %}
+{% elseif product is defined %}
+    {% set page = product %}
 {% endif %}
 
 {# Tell the browser to cache this page for 30 days #}

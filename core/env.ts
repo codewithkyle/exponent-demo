@@ -107,9 +107,10 @@ class Env {
 	}
 
 	/**
-	 * DO NOT USE THIS METHOD unless you have a really good reason, then just be very careful.
-	 * Used to quickly set the DOM state attribute ignoring all loading state procedures.
+	 * Sets the DOMs state attribute.
+	 * DO NOT USE THIS METHOD. DO NOT MANUALLY SET THE DOMs STATE.
 	 * @param newState - the new state of the document element
+	 * @deprecated since version 0.1.0
 	 */
 	public setDOMState(newState: DOMState): void {
 		this.domState = newState;

@@ -104,6 +104,7 @@ class Pjax {
 				break;
 			case 'navigation-update':
 				this.updateHistory(data.title, data.url, data.history);
+				window.scroll(0, 0);
 				this.collectLinks();
 				this.checkPageRevision();
 				sendPageView(window.location.pathname, document.documentElement.dataset.gaId);

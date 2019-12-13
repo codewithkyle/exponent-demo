@@ -76,6 +76,12 @@ class Runtime {
 						type: 'lazy',
 						body: document.body.innerHTML,
 					});
+				});
+				break;
+			case 'lazy':
+				const ticket = env.startLoading();
+				this.fetchResources(response.files).then(() => {
+					env.stopLoading(ticket);
 					this.handleWebComponents();
 					import(`${window.location.origin}/assets/pjax.js`).then(() => {
 						broadcaster.message(
@@ -87,12 +93,6 @@ class Runtime {
 							Infinity
 						);
 					});
-				});
-				break;
-			case 'lazy':
-				const ticket = env.startLoading();
-				this.fetchResources(response.files).then(() => {
-					env.stopLoading(ticket);
 				});
 				break;
 			case 'parse':

@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576157962
+dateModified: 1576240452
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -52,18 +52,14 @@ fields:
     searchable: true
     translationMethod: none
     translationKeyFormat: null
-    type: craft\redactor\Field
+    type: craft\fields\PlainText
     settings:
-      redactorConfig: Simple.json
-      purifierConfig: ''
-      cleanupHtml: true
-      removeInlineStyles: '1'
-      removeEmptyTags: '1'
-      removeNbsp: '1'
-      purifyHtml: '1'
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '3'
+      charLimit: ''
       columnType: text
-      availableVolumes: ''
-      availableTransforms: '*'
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
   87c839c0-c417-4068-874c-08d371920f07:
@@ -138,26 +134,6 @@ fields:
       maxBlocks: ''
       contentTable: '{{%matrixcontent_contentmatrix}}'
       propagationMethod: all
-    contentColumnType: string
-    fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
-  b9e91bdb-06bd-4c41-9bec-b8e073d88da3:
-    name: 'Homepage Entry'
-    handle: homepageEntry
-    instructions: ''
-    searchable: false
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
-    settings:
-      sources:
-        - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
-      source: null
-      targetSiteId: null
-      viewMode: null
-      limit: '1'
-      selectionLabel: 'Select a Homepage'
-      localizeRelations: false
-      validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
   d74c95ec-0874-4422-96a8-6c4f38586d24:
@@ -287,19 +263,6 @@ globalSets:
             fields:
               97394d4b-065b-43a0-871d-537d30c81c65:
                 required: false
-                sortOrder: 1
-  c27f09af-57aa-403e-afbd-7edb79e21446:
-    name: Settings
-    handle: settings
-    fieldLayouts:
-      8d5c5f8d-e4dd-4d0c-977d-98421c0c6bc4:
-        tabs:
-          -
-            name: Homepage
-            sortOrder: 1
-            fields:
-              b9e91bdb-06bd-4c41-9bec-b8e073d88da3:
-                required: true
                 sortOrder: 1
 matrixBlockTypes:
   056ea73e-bb14-4716-9dbf-e7303f9b8b19:
@@ -2143,6 +2106,50 @@ sections:
                 fields:
                   dfbb58ad-c345-4000-a5e2-ea3e9d469265:
                     required: true
+                    sortOrder: 1
+  8afde5a9-c3c3-4227-ae6f-7d8e3f804226:
+    name: Homepage
+    handle: homepage
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      5d0fd958-be72-4405-989e-030f329741df:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: _pages/index
+    entryTypes:
+      194b3daa-e2b2-464d-8c05-9843c47a1271:
+        name: Homepage
+        handle: homepage
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          1431bdc2-3487-4d46-a550-00a63d139fbc:
+            tabs:
+              -
+                name: 'Hero Area'
+                sortOrder: 1
+                fields:
+                  12626c5a-4720-40e6-9868-4c0bd1b69b77:
+                    required: true
+                    sortOrder: 1
+              -
+                name: Content
+                sortOrder: 2
+                fields:
+                  989ab03a-ea9d-4cf0-8359-69de483081e6:
+                    required: true
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
+                  d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+                    required: false
                     sortOrder: 1
   d05954f0-e647-40c2-8eeb-7119bc40b2e3:
     name: 'Blog Articles'
