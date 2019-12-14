@@ -26,11 +26,10 @@ hero-area
             display: block;
             width: 100%;
             font-weight: 200;
-            animation-delay: 75ms !important;
             opacity: 0;
             transform: translateY(4rem);
             text-shadow: 0 1px 3px rgba(255,255,255,0.15);
-            animation: fadeInUp 900ms forwards cubic-bezier(0.19, 1, 0.22, 1);
+            animation: fadeInUp 900ms 75ms forwards cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         p
@@ -42,7 +41,6 @@ hero-area
             width: 420px;
             max-width: 100%;
             line-height: 2rem;
-            animation-delay: 125ms !important;
             opacity: 0;
             text-shadow: 0 1px 3px rgba(255,255,255,0.15);
             transform: translateY(4rem);
