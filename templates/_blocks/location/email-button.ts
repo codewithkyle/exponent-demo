@@ -8,7 +8,7 @@ class EmailButtonComponent extends HTMLElement {
 		this.input = this.querySelector('input');
 	}
 
-	connectedCallback() {
+	connectedCallback(): void {
 		this.addEventListener('click', () => {
 			if ('clipboard' in navigator) {
 				navigator.clipboard.writeText(this.input.value).then(() => {

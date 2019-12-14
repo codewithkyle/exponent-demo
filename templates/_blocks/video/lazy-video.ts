@@ -45,7 +45,7 @@ class LazyVideoComponent extends HTMLElement {
 		this.append(iframe);
 	}
 
-	private loadVideo(userTriggerd: boolean = false): void {
+	private loadVideo(userTriggerd = false): void {
 		const loadingSpinner = document.createElement('loading-spinner');
 		loadingSpinner.classList.add('-floating');
 		this.append(loadingSpinner);
@@ -75,7 +75,7 @@ class LazyVideoComponent extends HTMLElement {
 		}
 	};
 
-	connectedCallback() {
+	connectedCallback(): void {
 		if (env.connection == '4g') {
 			this.loadVideo();
 		}

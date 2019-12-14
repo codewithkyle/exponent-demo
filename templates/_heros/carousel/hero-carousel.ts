@@ -14,7 +14,7 @@ class HeroCarouselComponent extends HTMLElement {
 		this.buttons = Array.from(this.querySelectorAll('carousel-controls button'));
 		this.index = 0;
 		this.progressBar = this.querySelector('carousel-timer');
-		this.loop = () => {};
+		this.loop = null;
 		this.dirty = false;
 		this.timer = 0;
 	}
@@ -47,7 +47,7 @@ class HeroCarouselComponent extends HTMLElement {
 		this.dirty = false;
 	}
 
-	private handleButtonClickEvent = (e: Event) => {
+	private handleButtonClickEvent = (e: Event): void => {
 		if (this.dirty) {
 			return;
 		}
@@ -79,7 +79,11 @@ class HeroCarouselComponent extends HTMLElement {
 		});
 	}
 
-	connectedCallback() {
+	disconnectedCallback(): void {
+		this.loop = () => {};
+	}
+
+	connectedCallback(): void {
 		if (this.buttons.length) {
 			this.buttons[0].parentElement.style.visibility = 'visible';
 			this.buttons[0].parentElement.style.opacity = '1';
