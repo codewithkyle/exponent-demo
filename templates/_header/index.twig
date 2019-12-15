@@ -8,67 +8,67 @@
 } %}
 
 {% cache globally using key 'navigation' %}
-<header eager-load-css="buttons header">
-    <header-content>
-        <nav>
-            {% for link in navigation.primary %}
-                {% if link.type == 'block' %}
-                    <a href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
-                        {% if link.customLink.customText|length %}
-                            {{ link.customLink.customText }}
-                        {% else %}
-                            {{ link.customLink.text }}
-                        {% endif %}
-                    </a>
-                {% elseif link.type == 'dropdown' and link.links|length %}
-                    <button>
-                        <span>
-                            {{ link.dropdownName }}
-                            <svg style="width:14px;height:14px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
-                        </span>
-                        <ul>
-                            {% for secondaryLink in link.links.all() %}
-                                <li>
-                                    <a href="{{ secondaryLink.customLink.url }}" {{ (secondaryLink.customLink.target|length) ? 'target="_blank"' }}>
-                                        {% if secondaryLink.customLink.customText|length %}
-                                            {{ secondaryLink.customLink.customText }}
-                                        {% else %}
-                                            {{ secondaryLink.customLink.text }}
-                                        {% endif %}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </button>
-                {% endif %}
-            {% endfor %}
-        </nav>
-        <a id="logo" href="{{ navigation.logo.link.url }}" style="display:inline-block;" {{ (navigation.logo.link.target|length) ? 'target="_blank"' }}>
-            <img src="{{ navigation.logo.image.url }}" alt="{{ navigation.logo.image.alternateDescription }}">
-        </a>
-        <utility-nav>
-            {% for link in navigation.utility %}
-                {% if link.type == 'block' %}
-                    <a href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
-                        {% if link.customLink.customText|length %}
-                            {{ link.customLink.customText }}
-                        {% else %}
-                            {{ link.customLink.text }}
-                        {% endif %}
-                    </a>
-                {% elseif link.type == 'button' %}
-                    <a href="{{ link.button.url }}" class="g-button -solid -primary"  {{ (link.button.target|length) ? 'target="_blank"' }}>
-                        {% if link.button.customText|length %}
-                            {{ link.button.customText }}
-                        {% else %}
-                            {{ link.button.text }}
-                        {% endif %}
-                    </a>
-                {% endif %}
-            {% endfor %}            
-        </utility-nav>
-    </header-content>
-</header>
+    <header eager-load-css="buttons header">
+        <header-content>
+            <nav>
+                {% for link in navigation.primary %}
+                    {% if link.type == 'block' %}
+                        <a href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
+                            {% if link.customLink.customText|length %}
+                                {{ link.customLink.customText }}
+                            {% else %}
+                                {{ link.customLink.text }}
+                            {% endif %}
+                        </a>
+                    {% elseif link.type == 'dropdown' and link.links|length %}
+                        <button>
+                            <span>
+                                {{ link.dropdownName }}
+                                <svg style="width:14px;height:14px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
+                            </span>
+                            <ul>
+                                {% for secondaryLink in link.links.all() %}
+                                    <li>
+                                        <a href="{{ secondaryLink.customLink.url }}" {{ (secondaryLink.customLink.target|length) ? 'target="_blank"' }}>
+                                            {% if secondaryLink.customLink.customText|length %}
+                                                {{ secondaryLink.customLink.customText }}
+                                            {% else %}
+                                                {{ secondaryLink.customLink.text }}
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </button>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+            <a id="logo" href="{{ navigation.logo.link.url }}" style="display:inline-block;" {{ (navigation.logo.link.target|length) ? 'target="_blank"' }}>
+                <img src="{{ navigation.logo.image.url }}" alt="{{ navigation.logo.image.alternateDescription }}">
+            </a>
+            <utility-nav>
+                {% for link in navigation.utility %}
+                    {% if link.type == 'block' %}
+                        <a href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
+                            {% if link.customLink.customText|length %}
+                                {{ link.customLink.customText }}
+                            {% else %}
+                                {{ link.customLink.text }}
+                            {% endif %}
+                        </a>
+                    {% elseif link.type == 'button' %}
+                        <a href="{{ link.button.url }}" class="g-button -solid -primary"  {{ (link.button.target|length) ? 'target="_blank"' }}>
+                            {% if link.button.customText|length %}
+                                {{ link.button.customText }}
+                            {% else %}
+                                {{ link.button.text }}
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                {% endfor %}            
+            </utility-nav>
+        </header-content>
+    </header>
 {% endcache %}
 <script type="module">
     const header = document.body.querySelector('header');

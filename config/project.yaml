@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576420805
+dateModified: 1576425571
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -20,11 +20,30 @@ fieldGroups:
     name: Common
   2410ee5f-878f-453b-8a48-bd7b68a81c7b:
     name: Carousel
+  37c853a7-f5d5-40e1-ae75-bdbef6153c29:
+    name: Navigation
+  926e6763-db57-460c-bddd-cff2cd7e2c37:
+    name: Footer
   cd28a480-93fe-445c-b052-5f0ebc13bb6b:
     name: Hero
   d561440e-7023-4019-9353-546183107fe5:
     name: Blog
 fields:
+  061eaf74-e520-44f0-a04f-f84c58808b46:
+    name: 'Social Media'
+    handle: socialMedia
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_socialmedia}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
   12626c5a-4720-40e6-9868-4c0bd1b69b77:
     name: 'Hero Area'
     handle: heroArea
@@ -115,6 +134,68 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  44abd69a-0d46-4c62-8372-28d94928c27e:
+    name: Links
+    handle: footerLinks
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: '1'
+      maxBlocks: '3'
+      contentTable: '{{%matrixcontent_footerlinks}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
+  68c27b1a-ac2c-4d74-8688-fa2d81c3192d:
+    name: 'Phone Number'
+    handle: phoneNumber
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: typedlinkfield\fields\LinkField
+    settings:
+      allowCustomText: ''
+      allowedLinkNames:
+        8: tel
+      allowTarget: ''
+      autoNoReferrer: ''
+      defaultLinkName: tel
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        asset:
+          sources: '*'
+          allowCustomQuery: ''
+        category:
+          sources: '*'
+          allowCustomQuery: ''
+        entry:
+          sources: '*'
+          allowCustomQuery: ''
+        site:
+          sites: '*'
+        user:
+          sources: '*'
+          allowCustomQuery: ''
+        custom:
+          disableValidation: ''
+          allowAliases: ''
+        email:
+          disableValidation: ''
+          allowAliases: ''
+        tel:
+          disableValidation: ''
+          allowAliases: ''
+        url:
+          disableValidation: ''
+          allowAliases: ''
+    contentColumnType: text
+    fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
   87c839c0-c417-4068-874c-08d371920f07:
     name: Heading
     handle: heading
@@ -173,7 +254,7 @@ fields:
       contentTable: '{{%matrixcontent_primarynavigation}}'
       propagationMethod: all
     contentColumnType: string
-    fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+    fieldGroup: 37c853a7-f5d5-40e1-ae75-bdbef6153c29
   989ab03a-ea9d-4cf0-8359-69de483081e6:
     name: Content
     handle: contentMatrix
@@ -203,7 +284,7 @@ fields:
       contentTable: '{{%matrixcontent_utilitynavigation}}'
       propagationMethod: all
     contentColumnType: string
-    fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+    fieldGroup: 37c853a7-f5d5-40e1-ae75-bdbef6153c29
   d74c95ec-0874-4422-96a8-6c4f38586d24:
     name: Categories
     handle: categories
@@ -275,6 +356,18 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  dad42871-ece1-4b19-9228-b1e395c8b305:
+    name: Email
+    handle: email
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Email
+    settings:
+      placeholder: ''
+    contentColumnType: string
+    fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
   dfbb58ad-c345-4000-a5e2-ea3e9d469265:
     name: 'Homepage Hero Carousel'
     handle: homepageHeroCarousel
@@ -343,6 +436,45 @@ globalSets:
                 required: true
                 sortOrder: 1
               a766e290-9fc2-4de5-b44a-cdf0b1ddbd5a:
+                required: false
+                sortOrder: 2
+  7b0a88cf-d757-4d9e-aedd-b09ff22b08e0:
+    name: Footer
+    handle: footer
+    fieldLayouts:
+      d8da7d18-7c2d-413a-a898-fb658978ce11:
+        tabs:
+          -
+            name: General
+            sortOrder: 1
+            fields:
+              061eaf74-e520-44f0-a04f-f84c58808b46:
+                required: false
+                sortOrder: 3
+              87c839c0-c417-4068-874c-08d371920f07:
+                required: true
+                sortOrder: 2
+              eb6a6693-6c19-4c32-a16a-5216a0b1fb71:
+                required: true
+                sortOrder: 1
+          -
+            name: Links
+            sortOrder: 2
+            fields:
+              44abd69a-0d46-4c62-8372-28d94928c27e:
+                required: true
+                sortOrder: 1
+          -
+            name: Location
+            sortOrder: 3
+            fields:
+              2b21fcbf-5341-43c3-a34e-8930968fa5cd:
+                required: true
+                sortOrder: 1
+              68c27b1a-ac2c-4d74-8688-fa2d81c3192d:
+                required: false
+                sortOrder: 3
+              dad42871-ece1-4b19-9228-b1e395c8b305:
                 required: false
                 sortOrder: 2
 matrixBlockTypes:
@@ -483,6 +615,63 @@ matrixBlockTypes:
               c80bec60-4dc2-4ec0-8765-69990fa4b1ce:
                 required: false
                 sortOrder: 2
+  19787b54-c61a-46ea-b5d8-260b1b98ce26:
+    field: 44abd69a-0d46-4c62-8372-28d94928c27e
+    name: Column
+    handle: column
+    sortOrder: 1
+    fields:
+      e2831c25-8763-43f2-9597-10f5b5916443:
+        name: Links
+        handle: links
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: verbb\supertable\fields\SuperTableField
+        settings:
+          minRows: '1'
+          maxRows: ''
+          contentTable: '{{%stc_20_links}}'
+          propagationMethod: all
+          staticField: ''
+          columns:
+            923e2901-1c3a-4013-b2dd-a669a6f055a0:
+              width: ''
+          fieldLayout: row
+          selectionLabel: 'Add a Link'
+        contentColumnType: string
+        fieldGroup: null
+      f0cd6b7f-ef40-41ad-9fa6-9ea02a663b9e:
+        name: Name
+        handle: columnName
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      3151497e-7865-45b0-8554-0ac50843a2d8:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              e2831c25-8763-43f2-9597-10f5b5916443:
+                required: true
+                sortOrder: 2
+              f0cd6b7f-ef40-41ad-9fa6-9ea02a663b9e:
+                required: true
+                sortOrder: 1
   23cab073-61c2-4d88-b17b-86ec2d323da7:
     field: 97394d4b-065b-43a0-871d-537d30c81c65
     name: Link
@@ -1908,6 +2097,65 @@ matrixBlockTypes:
               44f1dc14-7da9-47d9-a440-93d12f2fc43a:
                 required: true
                 sortOrder: 1
+  d2eb8c3f-2cb6-49a5-a4d6-803672718b5f:
+    field: 061eaf74-e520-44f0-a04f-f84c58808b46
+    name: Link
+    handle: block
+    sortOrder: 1
+    fields:
+      5f0d927f-43dc-4da8-bff1-60aa83ae7ae8:
+        name: Link
+        handle: customLink
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: ''
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+      cbb33100-17e6-451c-ad6b-b93f1ee83aea:
+        name: Icon
+        handle: icon
+        instructions: 'This is the social media platforms icon. Must be an SVG. Download SVG icons from https://fontawesome.com/'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an SVG Icon'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      22d63644-3090-492a-bc71-7280d312a5fd:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              5f0d927f-43dc-4da8-bff1-60aa83ae7ae8:
+                required: true
+                sortOrder: 2
+              cbb33100-17e6-451c-ad6b-b93f1ee83aea:
+                required: true
+                sortOrder: 1
   d398a110-20cf-4e20-8e87-03feacd198b0:
     field: dfbb58ad-c345-4000-a5e2-ea3e9d469265
     name: Slide
@@ -2282,6 +2530,21 @@ plugins:
     enabled: true
     schemaVersion: 1.1.0
 relabel:
+  079ec6e3-4770-4239-8866-13082c44803a:
+    field: 2b21fcbf-5341-43c3-a34e-8930968fa5cd
+    fieldLayout: d8da7d18-7c2d-413a-a898-fb658978ce11
+    instructions: ''
+    name: Address
+  50116dd7-fd27-459a-b184-672c1720ac3d:
+    field: eb6a6693-6c19-4c32-a16a-5216a0b1fb71
+    fieldLayout: d8da7d18-7c2d-413a-a898-fb658978ce11
+    instructions: ''
+    name: Logo
+  52ef3b9f-9978-4388-824e-a468da2dd23e:
+    field: 87c839c0-c417-4068-874c-08d371920f07
+    fieldLayout: d8da7d18-7c2d-413a-a898-fb658978ce11
+    instructions: 'This will be used for the copyright disclaimer.'
+    name: 'Legal Company Name'
   af348724-ae1e-4786-8962-844c9c70245b:
     field: 1f2af62d-8411-43b1-b967-0b6921fdb4b1
     fieldLayout: e596da79-ba50-4911-a44c-65fdfdd3cf69
@@ -2763,6 +3026,70 @@ superTableBlockTypes:
               d75d6ac9-c15f-4da5-9ef8-2ac03310ae46:
                 required: false
                 sortOrder: 2
+  2ef6a43d-4701-4490-bb9f-65b0dde9fadc:
+    field: e2831c25-8763-43f2-9597-10f5b5916443
+    fields:
+      923e2901-1c3a-4013-b2dd-a669a6f055a0:
+        name: Link
+        handle: customLink
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: typedlinkfield\fields\LinkField
+        settings:
+          allowCustomText: '1'
+          allowedLinkNames:
+            3: entry
+            9: url
+          allowTarget: '1'
+          autoNoReferrer: ''
+          defaultLinkName: entry
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            asset:
+              sources: '*'
+              allowCustomQuery: ''
+            category:
+              sources: '*'
+              allowCustomQuery: ''
+            entry:
+              sources:
+                - singles
+                - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
+              allowCustomQuery: ''
+            site:
+              sites: '*'
+            user:
+              sources: '*'
+              allowCustomQuery: ''
+            custom:
+              disableValidation: ''
+              allowAliases: ''
+            email:
+              disableValidation: ''
+              allowAliases: ''
+            tel:
+              disableValidation: ''
+              allowAliases: ''
+            url:
+              disableValidation: ''
+              allowAliases: ''
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      d9bb5cd0-e521-4388-acd9-fc9ef20bde17:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              923e2901-1c3a-4013-b2dd-a669a6f055a0:
+                required: true
+                sortOrder: 1
   55a8df6d-e7b0-459f-bafe-b2c5e102401a:
     field: e7c21c5e-391f-4267-adc8-5f18324e05de
     fields:

@@ -1,0 +1,56 @@
+{% cache globally using key 'footer' %}
+    <footer lazy-load-css="footer" style="width:100%;display:block;">
+        <footer-content>
+            <company-info>
+                <img src="{{ footer.image[0].url }}" alt="{{ footer.image[0].alternateDescription }}">
+                <p>
+                    {{ "Copyright"|t }} &copy; {{ now|date('Y') }} {{ footer.heading }}.<br/>
+                    {{ "All right reserved."|t }}
+                </p>
+                {% if footer.socialMedia|length %}
+                    <social-media>
+                        {% for link in footer.socialMedia.all() %}
+                            <a href="{{ link.customLink }}" target="_blank" aria-label="{{ link.icon[0].alternateDescription }}">
+                                {{ svg(link.icon[0]) }}
+                            </a>
+                        {% endfor %}
+                    </social-media>
+                {% endif %}
+            </company-info>
+            {% for column in footer.footerLinks.all() %}
+                <footer-column>
+                    <h4>{{ column.columnName }}</h4>
+                    {% for link in column.links.all() %}
+                        <a href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
+                            {% if link.customLink.customText|length %}
+                                {{ link.customLink.customText }}
+                            {% else %}
+                                {{ link.customLink.text }}
+                            {% endif %}
+                        </a>
+                    {% endfor %}
+                </footer-column>
+            {% endfor %}
+            <company-contact>
+                <h4>{{ "Contact Us"|t }}</h4>
+                <p>{{ footer.body }}</p>
+                {% if footer.email|length %}
+                    <a href="mailto:{{ footer.email }}">
+                        <svg style="width:18px;height:18px;" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM48 96h416c8.8 0 16 7.2 16 16v41.4c-21.9 18.5-53.2 44-150.6 121.3-16.9 13.4-50.2 45.7-73.4 45.3-23.2.4-56.6-31.9-73.4-45.3C85.2 197.4 53.9 171.9 32 153.4V112c0-8.8 7.2-16 16-16zm416 320H48c-8.8 0-16-7.2-16-16V195c22.8 18.7 58.8 47.6 130.7 104.7 20.5 16.4 56.7 52.5 93.3 52.3 36.4.3 72.3-35.5 93.3-52.3 71.9-57.1 107.9-86 130.7-104.7v205c0 8.8-7.2 16-16 16z"></path></svg>
+                        {{ footer.email }}
+                    </a>
+                {% endif %}
+                {% if footer.phoneNumber.url|length %}
+                    <a href="{{ footer.phoneNumber.url }}">
+                        <svg style="width:18px;height:18px;" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="headset" class="svg-inline--fa fa-headset fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M192 224c0-17.67-14.33-32-32-32h-32c-35.35 0-64 28.65-64 64v63.64c0 35.35 28.65 64 64 64h32c17.67 0 32-14.33 32-32V224zm-32 127.64h-32c-17.64 0-32-14.36-32-32V256c0-17.64 14.36-32 32-32h32v127.64zm224 32c35.35 0 64-28.65 64-64V256c0-35.35-28.65-64-64-64h-32c-17.67 0-32 14.33-32 32v127.64c0 17.67 14.33 32 32 32h32zM352 224h32c17.64 0 32 14.36 32 32v63.64c0 17.64-14.36 32-32 32h-32V224zM256 0C113.97 0 3.92 117.82.1 256L0 280c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8l.09-24C35.43 135.19 131.63 32 256 32c123.5 0 224 100.48 224 224v176c0 26.47-21.53 48-48 48h-82.94c1.79-5.03 2.94-10.36 2.94-16 0-26.51-21.49-48-48-48h-64c-26.51 0-48 21.49-48 48s21.49 48 48 48h192c44.12 0 80-35.89 80-80V256C512 114.85 397.16 0 256 0zm48 480h-64c-8.82 0-16-7.18-16-16s7.18-16 16-16h64c8.82 0 16 7.18 16 16s-7.18 16-16 16z"></path></svg>
+                        {% set phoneNumber = footer.phoneNumber.url|replace('tel:', '') %}
+                        {% set firstSeg = phoneNumber|slice(0, 3) %}
+                        {% set secondSeg = phoneNumber|slice(3, 3) %}
+                        {% set thirdSeg = phoneNumber|slice(6, 4) %}
+                        {{ firstSeg }} - {{ secondSeg }} - {{ thirdSeg }}
+                    </a>
+                {% endif %}
+            </company-contact>
+        </footer-content>
+    </footer>
+{% endcache %}
