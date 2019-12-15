@@ -52,7 +52,7 @@ header
 
     a#logo:focus
     {
-        box-shadow: 0 0 0 2px var(--primary-active-opaque);
+        box-shadow: 0 0 0 2px var(--secondary);
     }
 
     nav,
@@ -102,7 +102,7 @@ header
             &:focus-within
             {
                 opacity: 1;
-                
+
                 ul
                 {
                     opacity: 1;
@@ -165,39 +165,31 @@ header
                 li
                 {
                     list-style-type: none;
-                    min-height: 36px;
-                    line-height: 36px;
                     display: block;
-                    padding: 0 3rem 0 1rem;
-                    transition: all 75ms ease;
-                    white-space: nowrap;
-
-                    &:hover,
-                    &:focus
-                    {
-                        background-color: var(--off-white);
-
-                        a
-                        {
-                            color: var(--primary);
-                        }
-                    }
-
-                    &:active
-                    {
-                        background-color: var(--off-white);
-
-                        a
-                        {
-                            color: var(--primary-active);
-                        }
-                    }
 
                     a
                     {
                         color: var(--font);
-                        transition: all 75ms ease;
                         font-size: 0.875rem;
+                        display: block;
+                        line-height: 36px;
+                        min-height: 36px;
+                        padding: 0 3rem 0 1rem;
+                        transition: all 75ms ease;
+                        white-space: nowrap;
+
+                        &:hover,
+                        &:focus
+                        {
+                            background-color: var(--off-white);
+                            color: var(--primary);
+                        }
+
+                        &:active
+                        {
+                            color: var(--primary-active);
+                            background-color: var(--light-grey);
+                        }
                     }
                 }
             }
