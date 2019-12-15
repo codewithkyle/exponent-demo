@@ -1,0 +1,107 @@
+.-article-card
+{
+    display: block;
+    background-color: var(--white);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(51,51,51,0.1), 0 8px 32px rgba(51,51,51,0.1);
+    transition: all 150ms ease-in-out;
+
+    &:hover,
+    &:focus
+    {
+        transform: translateY(-0.25rem);
+        box-shadow: 0 4px 24px rgba(51,51,51,0.1), 0 16px 64px rgba(51,51,51,0.1);
+
+        h3
+        {
+            color: var(--primary);
+        }
+    }
+
+    &:active
+    {
+        transform: translateY(0.25rem);
+        box-shadow: 0 2px 6px rgba(51,51,51,0.1);
+
+        h3
+        {
+            color: var(--primary-active);
+        }
+    }
+
+    img-shim
+    {
+        width: 100;
+        display: block;
+        position: relative;
+
+        &::before
+        {
+            content: "";
+            display: block;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+
+        img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h3
+    {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        color: var(--font-light);
+        display: block;
+        padding: 1rem 2rem;
+        transition: all 75ms ease;
+    }
+
+    h4
+    {
+        font-size: 0.875rem;
+        color: var(--font-light);
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        padding: 0.25rem 2rem 0rem;
+
+        svg
+        {
+            width: 14px;
+            height: 14px;
+            margin-right: 0.5rem;
+        }
+    }
+
+    p
+    {
+        padding: 1.5rem 2rem 2rem;
+        line-height: 1.618;
+        font-size: 0.875rem;
+        color: var(--font-light);
+    }
+
+    card-tags
+    {
+        display: block;
+        width: 100%;
+        padding: 1.5rem 2rem 0;
+
+        card-tag
+        {
+            font-size: 0.875rem;
+            color: var(--font-light);
+            margin-right: 0.25rem;
+        }
+    }
+}

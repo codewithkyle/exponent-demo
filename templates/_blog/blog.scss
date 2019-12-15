@@ -1,0 +1,94 @@
+blog-content
+{
+    display: grid;
+    width: 1200px;
+    max-width: 100%;
+    padding: 6rem 1rem 3rem;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    margin: 0 auto;
+
+    aside
+    {
+        form
+        {
+            display: block;
+
+            input
+            {
+                background-color: var(--off-white);
+                height: 52px;
+                line-height: 52px;
+                padding: 0 1rem;
+                border-radius: 0.25rem;
+                color: var(--font-light);
+                transition: all 75ms ease;
+                display: block;
+                width: 100%;
+                text-overflow: ellipsis;
+
+                &:hover,
+                &:focus
+                {
+                    background-color: var(--light-grey);
+                    color: var(--font);
+                }
+            }
+        }
+
+        h2
+        {
+            display: block;
+            font-weight: var(--medium);
+            margin-bottom: 1rem;
+        }
+
+        a
+        {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+            line-height: 2rem;
+            color: var(--font-light);
+            transition: all 150ms ease-in-out;
+
+            &:hover,
+            &:focus
+            {
+                color: var(--primary-hover);
+                transform: translateX(0.5rem);
+            }
+
+            &:active
+            {
+                color: var(--primary-active);
+                transform: translateX(0.5rem);
+            }
+
+            &:nth-child(odd)
+            {
+                padding-left: 1rem;
+            }
+
+            &.is-active
+            {
+                color: var(--primary);
+            }
+        }
+
+        hr
+        {
+            display: block;
+            margin: 3rem 0;
+            border-bottom: 1px solid var(--light-grey);
+        }
+    }
+
+    section
+    {
+        display: grid;
+        width: 100%;
+        gap: 3rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}

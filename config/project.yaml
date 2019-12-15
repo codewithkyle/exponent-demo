@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576425571
+dateModified: 1576433520
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -2550,6 +2550,11 @@ relabel:
     fieldLayout: e596da79-ba50-4911-a44c-65fdfdd3cf69
     instructions: ''
     name: 'Logo Link'
+  c6b04859-01c0-41d1-8638-be06884f2111:
+    field: 2b21fcbf-5341-43c3-a34e-8930968fa5cd
+    fieldLayout: 4a2d3c63-cba1-465e-82d8-f9893af3e0fd
+    instructions: 'Add a brief description of what the article will cover. This will be displayed on the blog page. This should be the same text that is used for the description on the SEO tab.'
+    name: 'Teaser Text'
   d9869d7e-8faf-48ef-a594-4dd075ac136e:
     field: eb6a6693-6c19-4c32-a16a-5216a0b1fb71
     fieldLayout: e596da79-ba50-4911-a44c-65fdfdd3cf69
@@ -2560,6 +2565,17 @@ relabel:
     fieldLayout: 4a2d3c63-cba1-465e-82d8-f9893af3e0fd
     instructions: 'This image will appear when this article is displayed on another page as a Call to Action card.'
     name: 'Thumbnail Image'
+routes:
+  522515c2-93cc-456a-aab8-567abd5bc2af:
+    template: _blog/index
+    uriParts:
+      - blog/
+      -
+        - slug
+        - '[^\/]+'
+    uriPattern: 'blog/<slug:[^\/]+>'
+    sortOrder: 1
+    siteUid: null
 sections:
   0b291d76-22bf-4e8e-a990-c9d6ace406a4:
     name: Pages
@@ -2607,6 +2623,36 @@ sections:
                 fields:
                   d75f70e4-42ab-49b8-be5b-f174954fa9e6:
                     required: false
+                    sortOrder: 1
+  2df1ce12-f3f3-4917-a290-a212552c2ddf:
+    name: Blog
+    handle: blogSingle
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      5d0fd958-be72-4405-989e-030f329741df:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: blog
+        template: _blog/index
+    entryTypes:
+      4cdfc130-d872-44b8-9066-eedf132ac8b2:
+        name: Blog
+        handle: blogSingle
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          4603c119-892d-4024-83b2-8ed70817c693:
+            tabs:
+              -
+                name: 'Hero Area'
+                sortOrder: 1
+                fields:
+                  12626c5a-4720-40e6-9868-4c0bd1b69b77:
+                    required: true
                     sortOrder: 1
   78afc566-1070-436c-bfed-09da14d2a064:
     name: 'Hero Blocks'
@@ -2732,6 +2778,9 @@ sections:
                 name: Settings
                 sortOrder: 1
                 fields:
+                  2b21fcbf-5341-43c3-a34e-8930968fa5cd:
+                    required: true
+                    sortOrder: 3
                   d74c95ec-0874-4422-96a8-6c4f38586d24:
                     required: false
                     sortOrder: 1

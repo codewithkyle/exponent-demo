@@ -41,12 +41,7 @@
 } %}
 
 {% block content %}
-    {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
-        {% set imageType = 'webp' %}
-    {% else %}
-        {% set imageType = 'jpg' %}
-    {% endif %}
-    {% cache using key entry.slug ~ "-" ~ imageType %}
+    {% cache using key entry.slug ~ "-" ~ imageFormat %}
         <article style="display:block;width:100%;">
             {% include "_heros/" ~ data.hero.type|kebab %}
             {% for section in data.sections %}
