@@ -22,7 +22,7 @@ lazy-video-block
         width: 420px;
         max-width: 100%;
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 1rem;
         text-align: center;
         margin-bottom: 1rem;
 
@@ -59,13 +59,13 @@ lazy-video-block
 
         &:last-of-type
         {
-            margin-bottom: 0;
+            margin-bottom: 2rem;
         }
     }
 }
 lazy-video
 {
-    margin: 2rem auto 0;
+    margin: 0 auto;
     display: block;
     width: 100%;
     position: relative;
