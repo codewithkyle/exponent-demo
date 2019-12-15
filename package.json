@@ -17,6 +17,7 @@
 		"bundle": "node ./tools/bundler.js",
 		"eslint": "eslint -c .eslintrc.js templates/**/*.ts && eslint -c .eslintrc.js controllers/**/*.ts",
 		"stylelint": "stylelint \"templates/**/*.scss\"",
+		"lint": "npm run eslint && npm run stylelint",
 		"precommit": "npm run eslint && npm run stylelint"
 	},
 	"devDependencies": {
