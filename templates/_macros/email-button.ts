@@ -1,4 +1,4 @@
-import { notify } from '../../../packages/notify';
+import { notify } from '../../packages/notify';
 
 class EmailButtonComponent extends HTMLElement {
 	private input: HTMLInputElement;

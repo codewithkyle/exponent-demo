@@ -128,7 +128,8 @@ footer
                 white-space: pre-line;
             }
 
-            a
+            a,
+            email-button
             {
                 line-height: 2rem;
                 color: var(--font-light);
@@ -138,6 +139,7 @@ footer
                 flex-flow: row nowrap;
                 margin-bottom: 0.5rem;
                 font-size: 0.875rem;
+                cursor: pointer;
 
                 &:hover,
                 &:focus

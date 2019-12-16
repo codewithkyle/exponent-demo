@@ -219,7 +219,7 @@ return [
                         'tabs' => [
                             [
                                 'label' => 'Details',
-                                'fields' => ['companyName', 'location', 'hoursOfOperation', 'directionLink', 'contactEmail'],
+                                'fields' => ['companyName', 'location', 'hoursOfOperation', 'directionsLink', 'contactEmail'],
                             ],
                             [
                                 'label' => 'Map',

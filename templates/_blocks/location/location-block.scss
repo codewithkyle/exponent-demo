@@ -8,7 +8,7 @@ location-block
     margin: 0 auto;
     padding: 4rem 1rem;
 
-    map-shim
+    google-map
     {
         width: 620px;
         max-width: 100%;
@@ -26,7 +26,9 @@ location-block
             padding-bottom: 56.25%;
         }
 
-        iframe
+        iframe,
+        map-shim,
+        img
         {
             position: absolute;
             top: 0;

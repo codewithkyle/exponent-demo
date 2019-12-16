@@ -1,8 +1,15 @@
+{% import "_macros" as macro %}
+
+{% set image = craft.imager.transformImage(section.mapImage[0], [
+    { width: 320, ratio: 16/9, position: section.mapImage[0].getFocalPoint(), format: imageFormat },
+    { width: 620, ratio: 16/9, position: section.mapImage[0].getFocalPoint(), format: imageFormat }
+]) %}
+
 <section style="width:100%;display:block;padding:{{ section.spacing }}rem 0;" lazy-load-css="location-block">
     <location-block>
-        <map-shim aria-hidden="true">
-            {{ section.map|raw }}
-        </map-shim>
+        <google-map aria-hidden="true" web-component data-map="{{ section.map }}">
+            <img draggable="false" src="{{ image[0].url }}" srcset="{{ craft.imager.srcset(image) }}" alt="{{ section.mapImage[0].alternateDescription }}" loading="lazy" width="620" style="opacity:0;transition:opacity 300ms ease-out;" onload="this.style.opacity = '1';">
+        </google-map>
         <location-content>
             {% if section.companyName %}
                 <h3>{{ section.companyName }}</h3>
@@ -26,10 +33,7 @@
             {% endif %}
             <a class="-button" href="{{ section.directionsLink }}" target="_blank">{{ "Get Directions"|t }}</a>
             {% if section.contactEmail|length %}
-                <email-button web-component role="button">
-                    <input type="text" value="{{ section.contactEmail }}" style="position:absolute;top:-9999px;left:-9999px;display:inline-block;" aria-hidden="true">
-                    {{ "Email Us"|t }}
-                </email-button>
+                {{ macro.emailButton(section.contactEmail, "Email Us"|t) }}
             {% endif %}
         </location-content>
     </location-block>
