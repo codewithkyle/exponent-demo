@@ -139,6 +139,7 @@ class Runtime {
 	 * Upgrades a custom element into a web component using the dynamic import syntax.
 	 * @param customElementTagName - the JavaScript filename
 	 * @param customElement - the `Element` that has been upgraded
+	 * @todo Switch to dynamic importing once Edge becomes chromium
 	 * @see https://v8.dev/features/dynamic-import
 	 */
 	private upgradeToWebComponent(customElementTagName: string, customElement: Element): void {

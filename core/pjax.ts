@@ -2,6 +2,8 @@ import { broadcaster } from './broadcaster';
 import { debug, env, uuid } from './env';
 import { notify } from '../packages/notify.js';
 import { sendPageView, setupGoogleAnalytics } from './gtags.js';
+import { slide } from '../transitions/slide';
+import { fade } from '../transitions/fade';
 
 interface PjaxState {
 	activeRequestUid: string;
@@ -104,7 +106,6 @@ class Pjax {
 				break;
 			case 'finalize-pjax':
 				this.updateHistory(data.title, data.url, data.history);
-				window.scroll(0, 0);
 				this.collectLinks();
 				this.checkPageRevision();
 				sendPageView(window.location.pathname, document.documentElement.dataset.gaId);
@@ -365,23 +366,17 @@ class Pjax {
 		const request = this.getNavigaitonRequest(requestUid);
 		if (request.requestUid === this.state.activeRequestUid) {
 			env.endPageTransition();
-
-			/** Updates content */
-			const currentMain = document.body.querySelector('main');
-			currentMain.innerHTML = request.body;
-			document.title = request.title;
-
-			/** Tells the Pjax class to update the navigation */
-			broadcaster.message('pjax', {
-				type: 'finalize-pjax',
-				url: request.url,
-				title: request.title,
-				history: request.history,
-			});
-
-			/** Tells the Runtime class to mount any new web components */
-			broadcaster.message('runtime', {
-				type: 'mount-components',
+			fade(request.body).then(() => {
+				document.title = request.title;
+				broadcaster.message('pjax', {
+					type: 'finalize-pjax',
+					url: request.url,
+					title: request.title,
+					history: request.history,
+				});
+				broadcaster.message('runtime', {
+					type: 'mount-components',
+				});
 			});
 		}
 		this.removeNavigationRequest(request.requestUid);
