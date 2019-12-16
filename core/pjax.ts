@@ -2,7 +2,6 @@ import { broadcaster } from './broadcaster';
 import { debug, env, uuid } from './env';
 import { notify } from '../packages/notify.js';
 import { sendPageView, setupGoogleAnalytics } from './gtags.js';
-import { slide } from '../transitions/slide';
 import { fade } from '../transitions/fade';
 
 interface PjaxState {
