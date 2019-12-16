@@ -89,16 +89,18 @@ class Runtime {
 				this.fetchCSS(response.files).then(() => {
 					env.stopLoading(ticket);
 					this.handleWebComponents();
-					import(`${window.location.origin}/assets/pjax.js`).then(() => {
-						broadcaster.message(
-							'pjax',
-							{
-								type: 'init',
-							},
-							'TCP',
-							Infinity
-						);
-					});
+					if (env.connection !== '2g' && env.connection !== 'slow-2g') {
+						import(`${window.location.origin}/assets/pjax.js`).then(() => {
+							broadcaster.message(
+								'pjax',
+								{
+									type: 'init',
+								},
+								'TCP',
+								Infinity
+							);
+						});
+					}
 				});
 				break;
 			case 'parse':
