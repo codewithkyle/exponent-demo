@@ -1,10 +1,16 @@
 import { env, debug } from './env';
 import { broadcaster } from './broadcaster';
 
+interface PjaxResources {
+	eager: Array<string>;
+	lazy: Array<string>;
+}
+
 interface WorkerResponse {
 	type: 'eager' | 'lazy' | 'parse';
-	files: Array<ResourceObject>;
+	files: Array<string>;
 	requestUid: string | null;
+	pjaxFiles: PjaxResources;
 }
 
 type WebComponentLoad = null | 'lazy' | 'eager';
@@ -43,7 +49,7 @@ class Runtime {
 		const { type } = data;
 		switch (type) {
 			case 'load':
-				this.fetchResources(data.resources);
+				this.fetchCSS(data.resources);
 				break;
 			case 'mount-components':
 				this.handleWebComponents();
@@ -70,7 +76,7 @@ class Runtime {
 				if (env.domState === 'hard-loading') {
 					this._loadingMessage.innerHTML = `Loading resource: <resource-counter>0</resource-counter<span class="-slash">/</span><resource-total>${response.files.length}</resource-total>`;
 				}
-				this.fetchResources(response.files).then(() => {
+				this.fetchCSS(response.files).then(() => {
 					env.setDOMState('idling');
 					this._bodyParserWorker.postMessage({
 						type: 'lazy',
@@ -80,7 +86,7 @@ class Runtime {
 				break;
 			case 'lazy':
 				const ticket = env.startLoading();
-				this.fetchResources(response.files).then(() => {
+				this.fetchCSS(response.files).then(() => {
 					env.stopLoading(ticket);
 					this.handleWebComponents();
 					import(`${window.location.origin}/assets/pjax.js`).then(() => {
@@ -96,19 +102,24 @@ class Runtime {
 				});
 				break;
 			case 'parse':
-				/** Fetch the requested CSS files */
-				this.fetchResources(response.files).then(() => {
-					/** Tell the Pjax class that the CSS files have been loaded */
-					broadcaster.message('pjax', {
-						type: 'css-ready',
-						requestUid: response.requestUid,
-					});
-				});
+				this.fetchPjaxResources(response.pjaxFiles, response.requestUid);
 				break;
 			default:
 				console.warn(`Unknown response type from Body Parser worker: ${response.type}`);
 				break;
 		}
+	}
+
+	private fetchPjaxResources(data: PjaxResources, requestUid: string): void {
+		/** Fetch the requested eager CSS files */
+		this.fetchCSS(data.eager).then(() => {
+			/** Tell the Pjax class that the eager CSS files have been loaded */
+			broadcaster.message('pjax', {
+				type: 'css-ready',
+				requestUid: requestUid,
+			});
+			this.fetchCSS(data.lazy);
+		});
 	}
 
 	/**
@@ -162,9 +173,9 @@ class Runtime {
 
 	/**
 	 * Appends resources to the documents head if it hasn't already been loaded.
-	 * @param resourceList - an array of `ResourceObject` objects
+	 * @param resourceList - an array of `string` CSS filenames (excluding the filetype)
 	 */
-	private fetchResources(resourceList: Array<ResourceObject>): Promise<{}> {
+	private fetchCSS(resourceList: Array<string>): Promise<{}> {
 		return new Promise(resolve => {
 			if (resourceList.length === 0) {
 				resolve();
@@ -172,7 +183,7 @@ class Runtime {
 
 			let loaded = 0;
 			for (let i = 0; i < resourceList.length; i++) {
-				const filename = resourceList[i].filename;
+				const filename = resourceList[i];
 				let el = document.head.querySelector(`link[file="${filename}.css"]`) as HTMLLinkElement;
 				if (!el) {
 					el = document.createElement('link');

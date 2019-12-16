@@ -102,7 +102,7 @@ class Pjax {
 			case 'load':
 				this.navigate(data.url, data?.history);
 				break;
-			case 'navigation-update':
+			case 'finalize-pjax':
 				this.updateHistory(data.title, data.url, data.history);
 				window.scroll(0, 0);
 				this.collectLinks();
@@ -373,7 +373,7 @@ class Pjax {
 
 			/** Tells the Pjax class to update the navigation */
 			broadcaster.message('pjax', {
-				type: 'navigation-update',
+				type: 'finalize-pjax',
 				url: request.url,
 				title: request.title,
 				history: request.history,
