@@ -3,6 +3,7 @@ import { debug, env, uuid } from './env';
 import { notify } from '../packages/notify.js';
 import { sendPageView, setupGoogleAnalytics } from './gtags.js';
 import { fade } from '../transitions/fade';
+import { noneAuto } from '../transitions/none';
 
 interface PjaxState {
 	activeRequestUid: string;
@@ -365,18 +366,33 @@ class Pjax {
 		const request = this.getNavigaitonRequest(requestUid);
 		if (request.requestUid === this.state.activeRequestUid) {
 			env.endPageTransition();
-			fade(request.body).then(() => {
-				document.title = request.title;
-				broadcaster.message('pjax', {
-					type: 'finalize-pjax',
-					url: request.url,
-					title: request.title,
-					history: request.history,
+			if (env.connection === '2g' || env.connection === 'slow-2g') {
+				noneAuto(request.body).then(() => {
+					document.title = request.title;
+					broadcaster.message('pjax', {
+						type: 'finalize-pjax',
+						url: request.url,
+						title: request.title,
+						history: request.history,
+					});
+					broadcaster.message('runtime', {
+						type: 'mount-components',
+					});
 				});
-				broadcaster.message('runtime', {
-					type: 'mount-components',
+			} else {
+				fade(request.body).then(() => {
+					document.title = request.title;
+					broadcaster.message('pjax', {
+						type: 'finalize-pjax',
+						url: request.url,
+						title: request.title,
+						history: request.history,
+					});
+					broadcaster.message('runtime', {
+						type: 'mount-components',
+					});
 				});
-			});
+			}
 		}
 		this.removeNavigationRequest(request.requestUid);
 	}
