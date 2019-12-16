@@ -12,7 +12,7 @@
 		"compile": "tsc",
 		"noscript": "node ./tools/noscript.js",
 		"cleanup": "rm -rf ./_compiled",
-		"build": "npm run prep && npm run compile && node ./tools/script-scrubber.js && node ./tools/cachebust.js && node ./tools/minify.js && node ./tools/sass.js && npm run cleanup",
+		"build": "npm run prep && npm run compile && node ./tools/script-scrubber.js && node ./tools/cachebust.js && node ./tools/minify.js && mv public/assets/service-worker.js public/ && node ./tools/sass.js && npm run cleanup",
 		"predeploy": "npm run build && npm run noscript",
 		"bundle": "node ./tools/bundler.js",
 		"eslint": "eslint -c .eslintrc.js templates/**/*.ts && eslint -c .eslintrc.js controllers/**/*.ts",
