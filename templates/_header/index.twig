@@ -13,7 +13,10 @@
             <nav>
                 {% for link in navigation.primary %}
                     {% if link.type == 'block' %}
-                        <a href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
+                        {% set transition = {
+                            direction: (loop.first) ? 1 : -1
+                        } %}
+                        <a pjax-transition="slide" pjax-transition-data="{{ transition|json_encode }}" href="{{ link.customLink.url }}" {{ (link.customLink.target|length) ? 'target="_blank"' }}>
                             {% if link.customLink.customText|length %}
                                 {{ link.customLink.customText }}
                             {% else %}
@@ -29,7 +32,7 @@
                             <ul>
                                 {% for secondaryLink in link.links.all() %}
                                     <li>
-                                        <a href="{{ secondaryLink.customLink.url }}" {{ (secondaryLink.customLink.target|length) ? 'target="_blank"' }}>
+                                        <a pjax-transition="slide" href="{{ secondaryLink.customLink.url }}" {{ (secondaryLink.customLink.target|length) ? 'target="_blank"' }}>
                                             {% if secondaryLink.customLink.customText|length %}
                                                 {{ secondaryLink.customLink.customText }}
                                             {% else %}
