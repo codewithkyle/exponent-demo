@@ -333,7 +333,7 @@ class Pjax {
 				const tempDocument: HTMLDocument = document.implementation.createHTMLDocument('pjax-temp-document');
 				tempDocument.documentElement.innerHTML = body;
 				const currentMain = document.body.querySelector('main');
-				const main = tempDocument.querySelector(`main[data-id="${currentMain.dataset.id}"]`);
+				const main = tempDocument.querySelector(`main`);
 				if (main && currentMain) {
 					/** Tells the runtime class to parse the incoming HTML for any new CSS files */
 					broadcaster.message('runtime', {
