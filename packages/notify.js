@@ -1,33 +1,32 @@
 // @ts-nocheck
-
-export const NotificationManager = (function() {
-	function NotificationManager() {
+export class NotificationManager {
+	constructor() {
 		this.handleCloseClickEvent = this.removeNotification.bind(this);
 		this.handleActionButtonClick = this.activateButton.bind(this);
 		this._queue = [];
-		this._callback = function() {};
+		this._callback = () => {};
 		this._isRunning = false;
 		this._time = 0;
 	}
-	NotificationManager.prototype.activateButton = function(e) {
-		var buttonEl = e.currentTarget;
-		var button = this._queue[0].buttons[parseInt(buttonEl.dataset.index)];
+	activateButton(e) {
+		const buttonEl = e.currentTarget;
+		const button = this._queue[0].buttons[parseInt(buttonEl.dataset.index)];
 		button.callback();
 		this.removeNotification();
-	};
-	NotificationManager.prototype.createNotification = function(notification) {
-		var el = document.createElement('snackbar-component');
+	}
+	createNotification(notification) {
+		const el = document.createElement('snackbar-component');
 		el.setAttribute('position', notification.position);
-		var message = document.createElement('p');
+		const message = document.createElement('p');
 		message.innerText = notification.message;
 		el.appendChild(message);
 		if (notification.closeable || notification.buttons.length) {
-			var actionsWrapper = document.createElement('snackbar-actions');
+			const actionsWrapper = document.createElement('snackbar-actions');
 			if (notification.buttons.length) {
-				for (var i = 0; i < notification.buttons.length; i++) {
-					var button = document.createElement('button');
+				for (let i = 0; i < notification.buttons.length; i++) {
+					const button = document.createElement('button');
 					button.innerText = notification.buttons[i].label;
-					button.dataset.index = '' + i;
+					button.dataset.index = `${i}`;
 					if (notification.buttons[i].ariaLabel) {
 						button.setAttribute('aria-label', notification.buttons[i].ariaLabel);
 					}
@@ -36,7 +35,7 @@ export const NotificationManager = (function() {
 				}
 			}
 			if (notification.closeable) {
-				var closeButton = document.createElement('close-button');
+				const closeButton = document.createElement('close-button');
 				closeButton.setAttribute('aria-label', 'close notification');
 				closeButton.setAttribute('aria-pressed', 'false');
 				closeButton.setAttribute('role', 'button');
@@ -49,15 +48,15 @@ export const NotificationManager = (function() {
 		}
 		document.body.appendChild(el);
 		notification.element = el;
-	};
-	NotificationManager.prototype.removeNotification = function() {
-		var closeButton = this._queue[0].element.querySelector('close-button');
+	}
+	removeNotification() {
+		const closeButton = this._queue[0].element.querySelector('close-button');
 		if (closeButton) {
 			closeButton.removeEventListener('click', this.handleCloseClickEvent);
 		}
-		var buttons = Array.from(this._queue[0].element.querySelectorAll('button'));
+		const buttons = Array.from(this._queue[0].element.querySelectorAll('button'));
 		if (buttons.length) {
-			for (var i = 0; i < buttons.length; i++) {
+			for (let i = 0; i < buttons.length; i++) {
 				buttons[i].removeEventListener('click', this.activateButton);
 			}
 		}
@@ -68,8 +67,8 @@ export const NotificationManager = (function() {
 		} else {
 			this.stopCallback();
 		}
-	};
-	NotificationManager.prototype.startCallback = function() {
+	}
+	startCallback() {
 		if (this._isRunning) {
 			return;
 		}
@@ -78,19 +77,18 @@ export const NotificationManager = (function() {
 		this._time = performance.now();
 		this._callback();
 		this.createNotification(this._queue[0]);
-	};
-	NotificationManager.prototype.stopCallback = function() {
+	}
+	stopCallback() {
 		this._isRunning = false;
-		this._callback = function() {};
-	};
-	NotificationManager.prototype.animationFrameCallback = function() {
-		var _this = this;
+		this._callback = () => {};
+	}
+	animationFrameCallback() {
 		if (this._queue.length === 0 || !this._isRunning) {
 			this.stopCallback();
 			return;
 		}
-		var newTime = performance.now();
-		var deltaTime = (newTime - this._time) / 1000;
+		const newTime = performance.now();
+		const deltaTime = (newTime - this._time) / 1000;
 		this._time = newTime;
 		if (document.hasFocus() && this._queue[0].duration !== Infinity) {
 			this._queue[0].duration -= deltaTime;
@@ -98,14 +96,14 @@ export const NotificationManager = (function() {
 				this.removeNotification();
 			}
 		}
-		window.requestAnimationFrame(function() {
-			_this._callback();
+		window.requestAnimationFrame(() => {
+			this._callback();
 		});
-	};
-	NotificationManager.prototype.validateNotification = function(notification) {
-		return new Promise(function(resolve, reject) {
-			var newNotification = {};
-			var warnings = [];
+	}
+	validateNotification(notification) {
+		return new Promise((resolve, reject) => {
+			const newNotification = {};
+			let warnings = [];
 			if (notification.element) {
 				reject('Notifications create their own HTMLElement, do not provide one.');
 			}
@@ -120,11 +118,7 @@ export const NotificationManager = (function() {
 				newNotification.closeable = false;
 			}
 			if (notification.duration) {
-				if (notification.duration > 30) {
-					newNotification.duration = 30;
-				} else {
-					newNotification.duration = notification.duration;
-				}
+				newNotification.duration = notification.duration;
 				if (notification.duration === Infinity && newNotification.closeable) {
 					newNotification.duration = Infinity;
 				}
@@ -152,10 +146,10 @@ export const NotificationManager = (function() {
 				newNotification.position = 'bottom center';
 			}
 			if (notification.buttons) {
-				var buttons = [];
-				for (var i = 0; i < notification.buttons.length; i++) {
-					var button = {};
-					var newWarnings = [];
+				const buttons = [];
+				for (let i = 0; i < notification.buttons.length; i++) {
+					const button = {};
+					const newWarnings = [];
 					if (notification.buttons[i].label) {
 						button.label = notification.buttons[i].label;
 					} else {
@@ -173,7 +167,7 @@ export const NotificationManager = (function() {
 					if (notification.buttons[i].ariaLabel) {
 						button.ariaLabel = notification.buttons[i].ariaLabel;
 					}
-					warnings = warnings.concat(newWarnings);
+					warnings = [...warnings, ...newWarnings];
 					if (newWarnings.length === 0) {
 						buttons.push(button);
 					}
@@ -191,30 +185,28 @@ export const NotificationManager = (function() {
 			}
 			resolve({ validNotification: newNotification, warnings: warnings });
 		});
-	};
-	NotificationManager.prototype.notify = function(notification) {
-		var _this = this;
+	}
+	notify(notification) {
 		this.validateNotification(notification)
-			.then(function(response) {
-				if (_this._queue.length === 0 || !response.validNotification.force) {
-					_this._queue.push(response.validNotification);
-				} else if (_this._queue.length > 0 && response.validNotification.force) {
-					_this._queue.splice(1, 0, response.validNotification);
-					_this.removeNotification();
+			.then(response => {
+				if (this._queue.length === 0 || !response.validNotification.force) {
+					this._queue.push(response.validNotification);
+				} else if (this._queue.length > 0 && response.validNotification.force) {
+					this._queue.splice(1, 0, response.validNotification);
+					this.removeNotification();
 				}
-				_this.startCallback();
+				this.startCallback();
 				if (response.warnings.length !== 0) {
-					for (var i = 0; i < response.warnings.length; i++) {
+					for (let i = 0; i < response.warnings.length; i++) {
 						console.warn(response.warnings[i]);
 					}
 				}
 			})
-			.catch(function(error) {
+			.catch(error => {
 				console.error(error);
 			});
-	};
-	return NotificationManager;
-})();
+	}
+}
 
 const globalManager = new NotificationManager();
 export const notify = globalManager.notify.bind(globalManager);
