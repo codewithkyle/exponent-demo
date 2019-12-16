@@ -10,7 +10,7 @@
         { width: 1920, ratio: 4/1, position: backgroundImage.getFocalPoint(), format: imageFormat }
     ]) %}
 {% endif %}
-<cta-banner lazy-load-css="buttons cta-banner" style="width:100%;display:block;background-color: var(--off-black);">
+<cta-banner lazy-load-css="buttons cta-banner" style="width:100%;display:block;background-color: var(--off-black);margin:{{ section.spacing }}rem 0;">
     {% if backgroundImage %}
         <img-shim>
             <img src="{{ image[0].url }}" srcset="{{ craft.imager.srcset(image) }}" alt="" width="320" style="opacity: 0;transition: opacity 300ms ease-in-out;" onload="this.style.opacity = '1';">

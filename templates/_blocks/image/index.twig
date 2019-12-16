@@ -6,7 +6,7 @@
     { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint(), format: imageFormat }
 ]) %}
 
-<section style="width:100%;display:block;padding: 4rem 1rem;">
+<section style="width:100%;display:block;padding: 4rem 1rem;padding:{{ section.spacing }}rem 0;">
     <lazy-image lazy-load-css="lazy-image">
         <img 
             src="{{ image[0].url }}" 

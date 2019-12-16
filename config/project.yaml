@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576433912
+dateModified: 1576496502
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -501,6 +501,35 @@ matrixBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      27e7545b-4f42-4dbc-987c-cd607af6bbfc:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       7ccbd874-ac73-4f87-bbeb-8793bfa8afc6:
         name: Cards
         handle: cards
@@ -606,6 +635,9 @@ matrixBlockTypes:
               003f7711-1094-4419-963d-a2260509a76b:
                 required: true
                 sortOrder: 1
+              27e7545b-4f42-4dbc-987c-cd607af6bbfc:
+                required: false
+                sortOrder: 5
               7ccbd874-ac73-4f87-bbeb-8793bfa8afc6:
                 required: true
                 sortOrder: 4
@@ -768,6 +800,35 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      eca9a201-1006-4502-ba69-e987cf195c56:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       eecc284d-9c0f-4d46-99b8-5c781f3178c6:
         name: Button
         handle: button
@@ -875,6 +936,9 @@ matrixBlockTypes:
               6c0f8b51-ec08-448e-a23d-6a333f964220:
                 required: false
                 sortOrder: 2
+              eca9a201-1006-4502-ba69-e987cf195c56:
+                required: false
+                sortOrder: 5
               eecc284d-9c0f-4d46-99b8-5c781f3178c6:
                 required: false
                 sortOrder: 3
@@ -945,6 +1009,35 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      b30c198e-4d2e-4e47-8bad-2127441857b5:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       c811139e-04da-4259-ad8c-a5eea92c2a8b:
         name: 'Video Provider'
         handle: videoProvider
@@ -1009,6 +1102,9 @@ matrixBlockTypes:
               84026c77-9143-467e-a9a9-43d89d02385c:
                 required: false
                 sortOrder: 5
+              b30c198e-4d2e-4e47-8bad-2127441857b5:
+                required: false
+                sortOrder: 6
               c811139e-04da-4259-ad8c-a5eea92c2a8b:
                 required: false
                 sortOrder: 1
@@ -1086,6 +1182,35 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      e6913465-c8d5-41d7-858f-3d7b35127053:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       f1f07582-9f49-4bc2-ad16-19d7ac32f7a5:
         name: Title
         handle: authorsTitle
@@ -1119,6 +1244,9 @@ matrixBlockTypes:
               6acb40ff-a261-4f88-bca4-37dbacdcd2cc:
                 required: true
                 sortOrder: 1
+              e6913465-c8d5-41d7-858f-3d7b35127053:
+                required: false
+                sortOrder: 5
               f1f07582-9f49-4bc2-ad16-19d7ac32f7a5:
                 required: false
                 sortOrder: 3
@@ -1244,6 +1372,35 @@ matrixBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      c626cbea-2b31-4777-892f-44b313e0509f:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       e3f237dd-ad91-4dff-84d5-0fbe6396228e:
         tabs:
@@ -1263,6 +1420,9 @@ matrixBlockTypes:
               97b9f72b-cb22-46f2-924f-1e0ec1560459:
                 required: true
                 sortOrder: 1
+              c626cbea-2b31-4777-892f-44b313e0509f:
+                required: false
+                sortOrder: 5
   3641986e-d052-4d1d-9245-eebf18634152:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: TeamShowcase
@@ -1307,6 +1467,35 @@ matrixBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      d9ae20e8-8a62-4dff-8daf-a8f9656d27ab:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       eb9c4fa8-9f5c-460c-b6a5-2d2fa0481894:
         name: 'Team Members'
         handle: teamMembers
@@ -1345,6 +1534,9 @@ matrixBlockTypes:
               cd04d06e-c091-4d5f-85f5-446842311024:
                 required: false
                 sortOrder: 1
+              d9ae20e8-8a62-4dff-8daf-a8f9656d27ab:
+                required: false
+                sortOrder: 4
               eb9c4fa8-9f5c-460c-b6a5-2d2fa0481894:
                 required: true
                 sortOrder: 3
@@ -1391,6 +1583,35 @@ matrixBlockTypes:
           availableVolumes: ''
           availableTransforms: '*'
         contentColumnType: text
+        fieldGroup: null
+      477607c8-4cab-4554-aca5-bf2b4bc59e99:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
         fieldGroup: null
       6cf79057-5dd5-4ed9-8eeb-0db2abeb9275:
         name: Link
@@ -1486,6 +1707,9 @@ matrixBlockTypes:
               348ad03e-c99f-41bd-a926-05ab718099d3:
                 required: true
                 sortOrder: 2
+              477607c8-4cab-4554-aca5-bf2b4bc59e99:
+                required: false
+                sortOrder: 5
               6cf79057-5dd5-4ed9-8eeb-0db2abeb9275:
                 required: false
                 sortOrder: 3
@@ -1514,6 +1738,35 @@ matrixBlockTypes:
           charLimit: ''
           columnType: text
         contentColumnType: text
+        fieldGroup: null
+      e5b9cb8d-069f-4f72-9034-74f7a50d8696:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
         fieldGroup: null
       e7c21c5e-391f-4267-adc8-5f18324e05de:
         name: Lists
@@ -1550,6 +1803,9 @@ matrixBlockTypes:
               e2a6eb95-bf56-4b5a-be9e-e454372ef4be:
                 required: false
                 sortOrder: 1
+              e5b9cb8d-069f-4f72-9034-74f7a50d8696:
+                required: false
+                sortOrder: 3
               e7c21c5e-391f-4267-adc8-5f18324e05de:
                 required: true
                 sortOrder: 2
@@ -1619,6 +1875,35 @@ matrixBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      83c67282-ab10-4ccf-8743-4945419a7dd9:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       a461a974-b511-4399-8a80-866dd3dc8266:
         name: 'Directions Link'
         handle: directionsLink
@@ -1670,6 +1955,33 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      e04ee2f7-c8b9-4928-8e6b-c30bedb14093:
+        name: 'Map Image'
+        handle: mapImage
+        instructions: 'This is the backup image of the map. If the user has JavaScript disabled this image will be displayed instead of the interactive Google Map.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an Image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       8be21ab7-8b9a-442a-a8ef-d8f8d1565284:
         tabs:
@@ -1679,22 +1991,28 @@ matrixBlockTypes:
             fields:
               12e8ab3d-d978-46e7-bd83-c65a1f90ae0a:
                 required: false
-                sortOrder: 6
+                sortOrder: 7
               51b766ea-7e86-47ad-82a9-be48056124d6:
                 required: false
                 sortOrder: 1
               6ec52b65-b541-4c7e-b025-e29167f69a03:
                 required: false
                 sortOrder: 3
+              83c67282-ab10-4ccf-8743-4945419a7dd9:
+                required: false
+                sortOrder: 8
               a461a974-b511-4399-8a80-866dd3dc8266:
                 required: true
-                sortOrder: 5
+                sortOrder: 6
               a9f1a1c3-cf31-4302-b534-b4c39eb59f79:
                 required: true
                 sortOrder: 4
               aa0234a8-4cc4-4e93-b9a6-e408eafb7d36:
                 required: true
                 sortOrder: 2
+              e04ee2f7-c8b9-4928-8e6b-c30bedb14093:
+                required: true
+                sortOrder: 5
   62d1276f-9647-449a-ac4a-5e7932b6134d:
     field: 97394d4b-065b-43a0-871d-537d30c81c65
     name: Dropdown
@@ -1758,6 +2076,35 @@ matrixBlockTypes:
     handle: image
     sortOrder: 11
     fields:
+      205c3256-e612-435f-ab5f-a0a0db7f001c:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       5654b76d-54f1-47dd-8c25-d1d0d4115298:
         name: Cite
         handle: cite
@@ -1809,6 +2156,9 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              205c3256-e612-435f-ab5f-a0a0db7f001c:
+                required: false
+                sortOrder: 3
               5654b76d-54f1-47dd-8c25-d1d0d4115298:
                 required: false
                 sortOrder: 2
@@ -1837,6 +2187,35 @@ matrixBlockTypes:
           charLimit: ''
           columnType: text
         contentColumnType: text
+        fieldGroup: null
+      83441711-9c61-4264-b3eb-f1f1c550bd09:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
         fieldGroup: null
       8d9668f4-2c19-4ef4-9b1d-f837a284ff63:
         name: Cards
@@ -1879,6 +2258,9 @@ matrixBlockTypes:
               6c9ceafc-ec03-4d87-922e-8549ba6070a7:
                 required: false
                 sortOrder: 1
+              83441711-9c61-4264-b3eb-f1f1c550bd09:
+                required: false
+                sortOrder: 3
               8d9668f4-2c19-4ef4-9b1d-f837a284ff63:
                 required: true
                 sortOrder: 2
@@ -2007,6 +2389,35 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      e00ebb36-3325-470f-b0a5-1a9342c626fe:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       278e1aed-668c-4f4b-8a19-419fa5d0d2b3:
         tabs:
@@ -2026,6 +2437,9 @@ matrixBlockTypes:
               48ce1e47-14a9-4533-ba7a-f0a6fe7a8aab:
                 required: false
                 sortOrder: 3
+              e00ebb36-3325-470f-b0a5-1a9342c626fe:
+                required: false
+                sortOrder: 5
   88fb79e3-d34f-411f-ae2b-759ac8e35896:
     field: a766e290-9fc2-4de5-b44a-cdf0b1ddbd5a
     name: Button
@@ -2320,6 +2734,35 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      2c4c166c-99bd-4e24-9e6f-b6c937dade6b:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       861ff55e-f9a2-4430-a6ee-3088823ca207:
         name: 'Heading Position'
         handle: headingPosition
@@ -2372,6 +2815,9 @@ matrixBlockTypes:
               12280865-44a6-4ad5-9ecc-2646909fe73d:
                 required: false
                 sortOrder: 3
+              2c4c166c-99bd-4e24-9e6f-b6c937dade6b:
+                required: false
+                sortOrder: 4
               861ff55e-f9a2-4430-a6ee-3088823ca207:
                 required: false
                 sortOrder: 2

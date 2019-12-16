@@ -3,7 +3,7 @@
     { width: 1024, ratio: 16/9, position: section.image[0].getFocalPoint(), format: imageFormat },
 ]) %}
 
-<section style="width:100%;display:block;">
+<section style="width:100%;display:block;padding:{{ section.spacing }}rem 0;">
     <story-block lazy-load-css="story-block">
         <img-shim>
             <img width="768" src="{{ image[0].url }}" srcset="{{ craft.imager.srcset(image) }}" alt="{{ section.image[0].alternateDescription }}" style="opacity:0;transition:opacity 300ms ease-in;" onload="this.style.opacity = '1';" loading="lazy" />

@@ -1,4 +1,4 @@
-<section lazy-load-css="duo-cta-cards buttons" style="width:100%;display:block;">
+<section lazy-load-css="duo-cta-cards buttons" style="width:100%;display:block;padding:{{ section.spacing }}rem 0;">
     <duo-cta-cards>
         {% for card in section.cards %}
             {% set image = craft.imager.transformImage(card.image[0], { width: 200, height: 300, position: card.image[0].getFocalPoint(), format: imageFormat, mode: 'fit' }) %}
