@@ -3,9 +3,9 @@
 		"outDir": "_compiled",
 		"allowJs": true,
 		"checkJs": true,
-		"target": "es2019",
-		"module": "esnext",
-		"lib": ["dom", "esnext"]
+		"target": "ES2019",
+		"module": "ESNext",
+		"lib": ["DOM", "ES2019"]
 	},
 	"include": ["templates", "controllers", "packages", "core", "globals.d.ts"],
 	"exclude": ["vendor", "node_modules"]
