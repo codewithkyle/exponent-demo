@@ -48,12 +48,12 @@
                     </form>
                     <hr noshade="true">
                     <h2>{{ "Categories"|t }}</h2>
-                    <a href="{{ siteUrl|trim('/') }}/blog" class="{{ (activeCategory is not defined) ? 'is-active' }}">{{ "All Categories"|t }}</a>
+                    <a href="{{ siteUrl|trim('/') }}/blog" class="{{ (activeCategory is not defined) ? 'is-active' }}" pjax-view-id="blog-cards" pjax-transition-data="no-scroll">{{ "All Categories"|t }}</a>
                     {% for category in categories %}
-                        <a href="{{ siteUrl|trim('/') }}/blog/{{ category.slug }}" class="{{ (activeCategory is defined and activeCategory.slug == category.slug) ? 'is-active' }}">{{ category.title }}</a>
+                        <a pjax-view-id="blog-cards" pjax-transition-data="no-scroll" href="{{ siteUrl|trim('/') }}/blog/{{ category.slug }}" class="{{ (activeCategory is defined and activeCategory.slug == category.slug) ? 'is-active' }}">{{ category.title }}</a pjax-view-id="blog-cards">
                     {% endfor %}
                 </aside>
-                <section>
+                <section pjax-id="blog-cards">
                     {% for card in articles %}
                         {% include "_blog/article-card" %}
                     {% endfor %}

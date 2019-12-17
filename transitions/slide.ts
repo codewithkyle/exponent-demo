@@ -1,4 +1,4 @@
-export function slide(newHTML: string, transitionData: string | null): Promise<{}> {
+export function slide(selector: string, newHTML: string, transitionData: string | null): Promise<{}> {
 	return new Promise(resolve => {
 		const data = JSON.parse(transitionData) ?? { direction: 1 };
 
@@ -9,8 +9,8 @@ export function slide(newHTML: string, transitionData: string | null): Promise<{
 		});
 
 		/** Prepare for update */
-		const currentMain = document.body.querySelector('main');
-		const newMain = document.createElement('main');
+		const currentMain = document.body.querySelector(selector) as HTMLElement;
+		const newMain = document.createElement(selector) as HTMLElement;
 		newMain.innerHTML = newHTML;
 		newMain.dataset.id = currentMain.dataset.id;
 		newMain.style.transform = `translateX(${100 * -data.direction}vw)`;
