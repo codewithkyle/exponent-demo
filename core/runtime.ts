@@ -1,6 +1,7 @@
 import { env, debug } from './env';
 import { broadcaster } from './broadcaster';
 import { fetchCSS } from './fetch-css';
+import { fetchJS } from './fetch-js';
 
 interface PjaxResources {
 	eager: Array<string>;
@@ -91,11 +92,7 @@ class Runtime {
 					env.stopLoading(ticket);
 					this.handleWebComponents();
 					if (env.connection !== '2g' && env.connection !== 'slow-2g') {
-						// Update to dynamic import syntax after dropping Edge support
-						const script = document.createElement('script');
-						script.type = 'module';
-						script.src = `${window.location.origin}/assets/pjax.js`;
-						script.addEventListener('load', () => {
+						fetchJS('pjax').then(() => {
 							broadcaster.message(
 								'pjax',
 								{
@@ -105,7 +102,6 @@ class Runtime {
 								Infinity
 							);
 						});
-						document.head.append(script);
 					}
 				});
 				break;
@@ -151,15 +147,9 @@ class Runtime {
 	 * @see https://v8.dev/features/dynamic-import
 	 */
 	private upgradeToWebComponent(customElementTagName: string, customElement: Element): void {
-		let el = document.head.querySelector(`link[file="${customElementTagName}.js"]`) as HTMLScriptElement;
-		if (!el) {
-			el = document.createElement('script');
-			el.setAttribute('file', `${customElementTagName}.js`);
-			el.setAttribute('type', 'module');
-			document.head.append(el);
-			el.src = `${window.location.origin}/assets/${customElementTagName}.js`;
+		fetchJS(customElementTagName).then(() => {
 			customElement.setAttribute('component-state', 'mounted');
-		}
+		});
 	}
 
 	/**

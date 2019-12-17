@@ -2,12 +2,12 @@ import { env } from './env';
 
 /**
  * Appends resources to the documents head if it hasn't already been loaded.
- * @param resourceList - a filename `sting` or an array of `string` CSS filenames (excluding the filetype)
+ * @param resourceList - a filename `sting` or an array of `string` CSS filenames -- exclude the file extension if local
  * @param local - if `true` files are fetched from `public/assets/` otherwise filenames are treated as URLs
  */
 export function fetchCSS(filenames: string | Array<string>, local = true): Promise<{}> {
 	return new Promise(resolve => {
-		const resourceList = [...filenames];
+		const resourceList = filenames instanceof Array ? filenames : [filenames];
 		if (resourceList.length === 0) {
 			resolve();
 		}
@@ -17,12 +17,13 @@ export function fetchCSS(filenames: string | Array<string>, local = true): Promi
 		let loaded = 0;
 		for (let i = 0; i < resourceList.length; i++) {
 			const filename = resourceList[i];
-			let el = document.head.querySelector(`link[file="${filename}.css"]`) as HTMLLinkElement;
+			let el: HTMLLinkElement = local ? document.head.querySelector(`link[file="${filename}.css"]`) : document.head.querySelector(`link[href="${filename}"]`);
 			if (!el) {
 				el = document.createElement('link');
-				el.setAttribute('file', `${filename}.css`);
-				document.head.append(el);
-				el.setAttribute('rel', 'stylesheet');
+				if (local) {
+					el.setAttribute('file', `${filename}.css`);
+				}
+				el.rel = 'stylesheet';
 				if (local) {
 					el.href = `${window.location.origin}/assets/${filename}.css`;
 				} else {
@@ -46,6 +47,7 @@ export function fetchCSS(filenames: string | Array<string>, local = true): Promi
 						resolve();
 					}
 				});
+				document.head.append(el);
 			} else {
 				loaded++;
 				if (env.domState === 'hard-loading') {
