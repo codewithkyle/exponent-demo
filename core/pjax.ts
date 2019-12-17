@@ -218,7 +218,10 @@ class Pjax {
 	/**
 	 * Creates and sends a navigation request to the Pjax web worker and queues navigation request.
 	 * @param url - the URL of the requested page
+	 * @param transition - the name of the desired transition effect
+	 * @param transitionData - optional data that could modify the transition
 	 * @param history - how Pjax should handle the windows history manipulation
+	 * @param targetEl - the `pjax-id` attribute value
 	 */
 	private navigate(url: string, transition: string = null, transitionData: string = null, history: 'push' | 'replace' = 'push', targetEl: string = null): void {
 		env.startPageTransition();
