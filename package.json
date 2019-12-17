@@ -18,7 +18,7 @@
 		"stylelint": "stylelint \"templates/**/*.scss\"",
 		"lint": "npm run eslint && npm run stylelint",
 		"prettier": "prettier --write \"templates/**/*.ts\" && prettier --write \"controllers/**/*.ts\" && prettier --write \"transitions/**/*.ts\"",
-		"precommit": "npm run prettier && npm run eslint && npm run stylelint && git add .",
+		"precommit": "npm run eslint && npm run stylelint",
 		"predeploy": "npm run prettier && npm run build && npm run noscript && npm run eslint && npm run stylelint"
 	},
 	"devDependencies": {
