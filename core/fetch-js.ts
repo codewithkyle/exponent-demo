@@ -1,9 +1,8 @@
 /**
  * Appends JavaScript resources to the documents head if it hasn't already been loaded.
- * @param resourceList - a filename `sting` or an array of `string` JS filenames -- exclude the file extension if local
- * @param local - if `true` files are fetched from `public/assets/` otherwise filenames are treated as URLs
+ * @param filenames - a filename `sting` or an array of `string` JS filenames or a URL -- exclude the file path and extension if local
  */
-export function fetchJS(filenames: string | Array<string>, local = true): Promise<{}> {
+export function fetchJS(filenames: string | Array<string>): Promise<{}> {
 	return new Promise(resolve => {
 		const resourceList = filenames instanceof Array ? filenames : [filenames];
 		if (resourceList.length === 0) {
@@ -13,6 +12,7 @@ export function fetchJS(filenames: string | Array<string>, local = true): Promis
 		let loaded = 0;
 		for (let i = 0; i < resourceList.length; i++) {
 			const filename = resourceList[i];
+			const local = filename.slice(0, 7).toLowerCase() !== 'http://' && filename.slice(0, 8).toLowerCase() !== 'https://';
 			let el: HTMLScriptElement = local ? document.head.querySelector(`script[file="${filename}.js"]`) : document.head.querySelector(`script[src="${filename}"]`);
 			if (!el) {
 				el = document.createElement('script');
