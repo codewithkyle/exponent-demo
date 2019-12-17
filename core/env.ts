@@ -1,4 +1,5 @@
 type DOMState = 'soft-loading' | 'hard-loading' | 'idling' | 'page-loading' | 'page-loading-complete';
+type NetworkType = '4g' | '3g' | '2g' | 'slow-2g';
 
 class Env {
 	public isDebug: boolean;

@@ -14,7 +14,7 @@
 		"cleanup": "rm -rf ./_compiled",
 		"build": "npm run prep && npm run compile && node ./tools/script-scrubber.js && node ./tools/cachebust.js && node ./tools/minify.js && mv public/assets/service-worker.js public/ && node ./tools/sass.js && npm run cleanup",
 		"bundle": "node ./tools/bundler.js",
-		"eslint": "eslint -c .eslintrc.js templates/**/*.ts && eslint -c .eslintrc.js controllers/**/*.ts",
+		"eslint": "eslint -c .eslintrc.js \"templates/**/*.ts\" && eslint -c .eslintrc.js \"controllers/**/*.ts\"",
 		"stylelint": "stylelint \"templates/**/*.scss\"",
 		"lint": "npm run eslint && npm run stylelint",
 		"prettier": "prettier --write \"templates/**/*.ts\" && prettier --write \"controllers/**/*.ts\" && prettier --write \"transitions/**/*.ts\"",
