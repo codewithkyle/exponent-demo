@@ -365,6 +365,14 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
 
+        <!-- Web Components polyfill for Edge -->
+        <script>
+            if (/Edge/.test(navigator.userAgent)) {
+                document.write('<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.0/webcomponents-bundle.js"><\/script>');
+            }
+        </script>
+
+
         <link rel="preload" href="{{ alias('@rootUrl')|trim('/') }}/assets/env.js" as="script" crossorigin="anonymous">
         <link rel="preload" href="{{ alias('@rootUrl')|trim('/') }}/assets/broadcaster.js" as="script" crossorigin="anonymous">
         <script type="module" src="{{ alias('@rootUrl')|trim('/') }}/assets/runtime.js"></script>

@@ -90,7 +90,11 @@ class Runtime {
 					env.stopLoading(ticket);
 					this.handleWebComponents();
 					if (env.connection !== '2g' && env.connection !== 'slow-2g') {
-						import(`${window.location.origin}/assets/pjax.js`).then(() => {
+						// Update to dynamic import syntax after dropping Edge support
+						const script = document.createElement('script');
+						script.type = 'module';
+						script.src = `${window.location.origin}/assets/pjax.js`;
+						script.addEventListener('load', () => {
 							broadcaster.message(
 								'pjax',
 								{
@@ -100,6 +104,7 @@ class Runtime {
 								Infinity
 							);
 						});
+						document.head.append(script);
 					}
 				});
 				break;
