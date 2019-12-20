@@ -1,4 +1,5 @@
-import { env } from '../../../core/env';
+// @ts-ignore
+import { env } from 'env';
 
 class GoogleMapComponent extends HTMLElement {
 	connectedCallback() {

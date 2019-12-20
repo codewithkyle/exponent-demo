@@ -1,4 +1,5 @@
-import { env } from '../../../core/env';
+// @ts-ignore
+import { env } from 'env';
 
 class LazyVideoComponent extends HTMLElement {
 	private video: HTMLIFrameElement | null;

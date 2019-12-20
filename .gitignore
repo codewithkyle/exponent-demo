@@ -2,7 +2,6 @@
 # --------
 /.env
 /.idea
-/vendor
 .DS_Store
 /node_modules
 /public/uploads/*
@@ -13,3 +12,5 @@
 # --------
 /public/assets
 /config/pwa-auto.php
+/vendor
+/public/resources-cachebust.json

@@ -8,11 +8,11 @@
 		"url": "https://kyleandrews.dev/"
 	},
 	"scripts": {
-		"prep": "rm -rf ./public/assets && mkdir ./public/assets && rm -rf ./_compiled",
+		"prep": "rm -rf ./_compiled",
 		"compile": "tsc",
-		"noscript": "node ./tools/noscript.js",
 		"cleanup": "rm -rf ./_compiled",
-		"build": "npm run prep && npm run compile && node ./tools/script-scrubber.js && node ./tools/cachebust.js && node ./tools/minify.js && mv public/assets/service-worker.js public/ && node ./tools/sass.js && npm run cleanup",
+		"sass": "node ./tooling/sass.js",
+		"build": "npm run prep && npm run compile && npm run sass && djinnjs -e dev && npm run cleanup",
 		"bundle": "node ./tools/bundler.js",
 		"eslint": "eslint -c .eslintrc.js \"templates/**/*.ts\" && eslint -c .eslintrc.js \"controllers/**/*.ts\"",
 		"stylelint": "stylelint \"templates/**/*.scss\"",
