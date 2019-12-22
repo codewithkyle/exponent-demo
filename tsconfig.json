@@ -5,7 +5,8 @@
 		"checkJs": true,
 		"target": "ES2019",
 		"module": "ESNext",
-		"lib": ["DOM", "ES2019"]
+		"lib": ["DOM", "ES2019"],
+		"moduleResolution": "Node"
 	},
 	"include": ["templates", "controllers", "packages", "core", "globals.d.ts"],
 	"exclude": ["vendor", "node_modules"]

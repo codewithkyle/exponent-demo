@@ -1,5 +1,4 @@
-// @ts-ignore
-import { env } from 'env';
+import { env } from 'djinnjs/dist/core/env';
 
 class GoogleMapComponent extends HTMLElement {
 	connectedCallback() {
