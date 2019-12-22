@@ -1,4 +1,4 @@
-import { env } from 'djinnjs/dist/core/env';
+import { env } from 'djinnjs/env';
 
 class LazyVideoComponent extends HTMLElement {
 	private video: HTMLIFrameElement | null;
