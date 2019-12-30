@@ -1,9 +1,8 @@
 const sass = require('node-sass');
 const glob = require('glob');
 const fs = require('fs');
-const path = require('path');
 
-const cwd = process.cwd();
+const sourceDir = 'templates';
 
 class SassCompiler {
 	constructor() {
@@ -34,7 +33,7 @@ class SassCompiler {
 
 	getFiles() {
 		return new Promise((resolve, reject) => {
-			glob('templates/**/*.scss', (error, files) => {
+			glob(`${sourceDir}/**/*.scss`, (error, files) => {
 				if (error) {
 					reject(error);
 				}

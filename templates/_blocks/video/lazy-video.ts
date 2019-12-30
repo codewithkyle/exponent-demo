@@ -1,3 +1,4 @@
+// @ts-ignore
 import { env } from 'djinnjs/env';
 
 class LazyVideoComponent extends HTMLElement {

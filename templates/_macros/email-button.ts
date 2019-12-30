@@ -1,3 +1,4 @@
+// @ts-ignore
 import { notify } from 'djinnjs/notify';
 
 class EmailButtonComponent extends HTMLElement {
