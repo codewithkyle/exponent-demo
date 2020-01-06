@@ -7,7 +7,7 @@ return [
                 'groups' => [
                     [
                         'label' => 'Basic Content',
-                        'types' => ['richText', 'image', 'video'],
+                        'types' => ['richText', 'image', 'video', 'photoGallery'],
                     ],
                     [
                         'label' => 'Content',
