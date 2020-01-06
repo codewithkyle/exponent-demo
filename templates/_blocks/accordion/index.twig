@@ -3,17 +3,17 @@
         {% if section.heading|length %}
             <h2>{{ section.heading }}</h2>
         {% endif %}
-        <dl  columns="{{ section.layout }}">
+        <accordion-list  columns="{{ section.layout }}">
             {% for item in section.blocks %}
                 <div>
                     <input type="checkbox" id="accordion-item-{{ loop.index0 }}" aria-hidden="true" tabindex="-1">
                     <label for="accordion-item-{{ loop.index0 }}" tabindex="0" onkeypress="this.click();this.focus();">
-                        <dt>{{ item.heading }}</dt>
+                        <accordion-heading>{{ item.heading }}</accordion-heading>
                         <svg style="width:24px;height:24px;" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" class="svg-inline--fa fa-plus fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg>
                     </label>
-                    <dd>{{ item.copy }}</dd>
+                    <accordion-content>{{ item.copy }}</accordion-content>
                 </div>
             {% endfor %}
-        </dl>
+        </accordion-list>
     </accordion-component>
 </section>
