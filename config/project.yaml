@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576506044
+dateModified: 1578315037
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -2511,6 +2511,125 @@ matrixBlockTypes:
               44f1dc14-7da9-47d9-a440-93d12f2fc43a:
                 required: true
                 sortOrder: 1
+  aeeca2b6-8e92-40d2-bb0e-27c1c84bfba8:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: Accordion
+    handle: accordion
+    sortOrder: 14
+    fields:
+      1326ee99-ff81-4db2-90b8-a63c290474c1:
+        name: Blocks
+        handle: blocks
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: verbb\supertable\fields\SuperTableField
+        settings:
+          minRows: ''
+          maxRows: ''
+          contentTable: '{{%stc_21_blocks}}'
+          propagationMethod: all
+          staticField: ''
+          columns:
+            288f262d-7862-4b4f-a625-08e4443f795a:
+              width: ''
+            c1a9d83b-3fe7-49cc-bf55-849bbb026394:
+              width: ''
+          fieldLayout: row
+          selectionLabel: ''
+        contentColumnType: string
+        fieldGroup: null
+      4d33e6df-fa64-426d-b467-15245cd58ca8:
+        name: Layout
+        handle: layout
+        instructions: 'Enter the number of columns.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: 'Single Column'
+              value: '1'
+              default: '1'
+            -
+              label: 'Two Columns'
+              value: '1 2'
+              default: ''
+            -
+              label: 'Three Columns'
+              value: '1 2 3'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      92f46036-f5cb-42cb-8c3a-15fff832cbd6:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      cdde3802-4851-44de-9b9d-514335b621b5:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: ''
+            -
+              label: Default
+              value: '2'
+              default: '1'
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      93c9dbeb-7c03-45ee-ab7d-a4745d657fab:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              1326ee99-ff81-4db2-90b8-a63c290474c1:
+                required: true
+                sortOrder: 3
+              4d33e6df-fa64-426d-b467-15245cd58ca8:
+                required: true
+                sortOrder: 2
+              92f46036-f5cb-42cb-8c3a-15fff832cbd6:
+                required: false
+                sortOrder: 1
+              cdde3802-4851-44de-9b9d-514335b621b5:
+                required: false
+                sortOrder: 4
   d2eb8c3f-2cb6-49a5-a4d6-803672718b5f:
     field: 061eaf74-e520-44f0-a04f-f84c58808b46
     name: Link
@@ -3585,6 +3704,60 @@ superTableBlockTypes:
               923e2901-1c3a-4013-b2dd-a669a6f055a0:
                 required: true
                 sortOrder: 1
+  53605715-7346-4b6b-9618-206203eb5e7d:
+    field: 1326ee99-ff81-4db2-90b8-a63c290474c1
+    fields:
+      288f262d-7862-4b4f-a625-08e4443f795a:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c1a9d83b-3fe7-49cc-bf55-849bbb026394:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      a5df64aa-2b2f-4962-a4d5-88872b6f1ca4:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              288f262d-7862-4b4f-a625-08e4443f795a:
+                required: true
+                sortOrder: 1
+              c1a9d83b-3fe7-49cc-bf55-849bbb026394:
+                required: true
+                sortOrder: 2
   55a8df6d-e7b0-459f-bafe-b2c5e102401a:
     field: e7c21c5e-391f-4267-adc8-5f18324e05de
     fields:

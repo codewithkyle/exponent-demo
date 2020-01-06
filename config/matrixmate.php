@@ -11,7 +11,7 @@ return [
                     ],
                     [
                         'label' => 'Content',
-                        'types' => ['pullQuote', 'storyBlock', 'descriptiveList', 'statisticsShowcase', 'teamShowcase', 'location'],
+                        'types' => ['pullQuote', 'storyBlock', 'descriptiveList', 'statisticsShowcase', 'teamShowcase', 'location', 'accordion'],
                     ],
                     [
                         'label' => 'Calls to Action',
@@ -224,6 +224,23 @@ return [
                             [
                                 'label' => 'Map',
                                 'fields' => ['map', 'mapImage'],
+                            ],
+                            [
+                                'label' => 'Spacing',
+                                'fields' => ['spacing'],
+                            ]
+                        ],
+                        'defaultTabName' => 'Misc',
+                    ],
+                    'accordion' => [
+                        'tabs' => [
+                            [
+                                'label' => 'Details',
+                                'fields' => ['heading', 'layout'],
+                            ],
+                            [
+                                'label' => 'Content',
+                                'fields' => ['blocks'],
                             ],
                             [
                                 'label' => 'Spacing',
