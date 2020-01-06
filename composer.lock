@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "63a98cf8857f516c0fc96682f60ad09c",
+    "content-hash": "53a3e2230aa4584c8180b77c338d8192",
     "packages": [
         {
             "name": "aelvan/imager",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/b9f01d7bfb6e05a6688c676d7bbfcc50a68f5d29",
-                "reference": "b9f01d7bfb6e05a6688c676d7bbfcc50a68f5d29",
+                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/276566432675882057deaff1f1ef4375087be2dc",
+                "reference": "276566432675882057deaff1f1ef4375087be2dc",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +68,7 @@
                 "docs": "https://github.com/aelvan/Imager-Craft/blob/craft3/README.md",
                 "issues": "https://github.com/aelvan/Imager-Craft/issues"
             },
-            "time": "2019-09-21T14:25:19+00:00"
+            "time": "2019-12-30T11:31:44+00:00"
         },
         {
             "name": "anubarak/craft-relabel",
@@ -114,11 +114,11 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.117.2",
+            "version": "3.130.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3dc81df70f1cdf2842c85915548bffb870c1e1da",
-                "reference": "3dc81df70f1cdf2842c85915548bffb870c1e1da",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/916356edb5c30fa564d02de94bde51a9c0bb4469",
+                "reference": "916356edb5c30fa564d02de94bde51a9c0bb4469",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-11-15T19:21:02+00:00"
+            "time": "2020-01-02T19:13:50+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -1177,11 +1177,11 @@
         },
         {
             "name": "google/cloud",
-            "version": "v0.118.0",
+            "version": "v0.121.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/d7b702609ade87a43bda6427de28d9e3399d050e",
-                "reference": "d7b702609ade87a43bda6427de28d9e3399d050e",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/ff43ecd8ccae62e2a57026d4b17fd3e9e3492526",
+                "reference": "ff43ecd8ccae62e2a57026d4b17fd3e9e3492526",
                 "shasum": ""
             },
             "require": {
@@ -1198,41 +1198,41 @@
                 "rize/uri-template": "~0.3"
             },
             "replace": {
-                "google/cloud-asset": "0.4.0",
-                "google/cloud-automl": "0.8.0",
+                "google/cloud-asset": "0.5.0",
+                "google/cloud-automl": "0.8.1",
                 "google/cloud-bigquery": "1.12.1",
-                "google/cloud-bigquerydatatransfer": "0.14.0",
-                "google/cloud-bigtable": "1.1.0",
+                "google/cloud-bigquerydatatransfer": "0.15.0",
+                "google/cloud-bigtable": "1.1.1",
                 "google/cloud-common-protos": "0.2.0",
                 "google/cloud-container": "0.11.0",
                 "google/cloud-core": "1.34.0",
-                "google/cloud-dataproc": "0.15.1",
-                "google/cloud-datastore": "1.10.0",
-                "google/cloud-debugger": "0.19.1",
+                "google/cloud-dataproc": "0.16.0",
+                "google/cloud-datastore": "1.10.1",
+                "google/cloud-debugger": "0.20.0",
                 "google/cloud-dialogflow": "0.10.0",
-                "google/cloud-dlp": "0.22.0",
+                "google/cloud-dlp": "0.24.0",
                 "google/cloud-error-reporting": "0.15.0",
                 "google/cloud-firestore": "1.10.0",
-                "google/cloud-iot": "0.9.0",
+                "google/cloud-iot": "0.10.0",
                 "google/cloud-kms": "1.7.0",
                 "google/cloud-language": "0.21.0",
                 "google/cloud-logging": "1.18.0",
                 "google/cloud-monitoring": "0.19.0",
                 "google/cloud-oslogin": "0.10.0",
-                "google/cloud-pubsub": "1.18.0",
+                "google/cloud-pubsub": "1.19.0",
                 "google/cloud-redis": "0.11.0",
                 "google/cloud-scheduler": "1.1.0",
                 "google/cloud-security-center": "0.2.0",
-                "google/cloud-spanner": "1.21.0",
-                "google/cloud-speech": "0.27.0",
-                "google/cloud-storage": "1.16.0",
-                "google/cloud-talent": "0.8.0",
+                "google/cloud-spanner": "1.22.0",
+                "google/cloud-speech": "0.29.0",
+                "google/cloud-storage": "1.16.1",
+                "google/cloud-talent": "0.8.2",
                 "google/cloud-tasks": "1.4.0",
                 "google/cloud-text-to-speech": "0.5.0",
-                "google/cloud-trace": "0.15.0",
+                "google/cloud-trace": "0.16.0",
                 "google/cloud-translate": "1.6.0",
-                "google/cloud-videointelligence": "1.7.0",
-                "google/cloud-vision": "0.24.0",
+                "google/cloud-videointelligence": "1.7.1",
+                "google/cloud-vision": "0.24.1",
                 "google/cloud-web-risk": "0.3.0",
                 "google/cloud-web-security-scanner": "0.3.0"
             },
@@ -1377,7 +1377,7 @@
                 "translation",
                 "vision"
             ],
-            "time": "2019-11-13T23:47:09+00:00"
+            "time": "2019-12-17T22:51:23+00:00"
         },
         {
             "name": "google/common-protos",
@@ -1509,11 +1509,11 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.10.0",
+            "version": "v3.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/5dffdd2c84112e6c91fd84f92e3df96649426881",
-                "reference": "5dffdd2c84112e6c91fd84f92e3df96649426881",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/0864882396746542ead01fc002e1644b9490dbe8",
+                "reference": "0864882396746542ead01fc002e1644b9490dbe8",
                 "shasum": ""
             },
             "require": {
@@ -1537,15 +1537,15 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2019-10-03T20:08:37+00:00"
+            "time": "2019-12-14T00:45:36+00:00"
         },
         {
             "name": "grpc/grpc",
-            "version": "1.25.0",
+            "version": "1.26.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/bdb165d6712db0cfcc35edae2d14fb2b00cabc88",
-                "reference": "bdb165d6712db0cfcc35edae2d14fb2b00cabc88",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/6b22409ff46a1c245a28efd16867870b13c3cbcc",
+                "reference": "6b22409ff46a1c245a28efd16867870b13c3cbcc",
                 "shasum": ""
             },
             "require": {
@@ -1569,7 +1569,7 @@
             "keywords": [
                 "rpc"
             ],
-            "time": "2019-11-07T00:47:40+00:00"
+            "time": "2019-12-21T02:28:51+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2201,11 +2201,11 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.25.2",
+            "version": "1.25.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d5e2fb341cb44f7e2ab639d12a1e5901091ec287",
-                "reference": "d5e2fb341cb44f7e2ab639d12a1e5901091ec287",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fa82921994db851a8becaf3787a9e73c5976b6f1",
+                "reference": "fa82921994db851a8becaf3787a9e73c5976b6f1",
                 "shasum": ""
             },
             "require": {
@@ -2256,19 +2256,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2019-11-13T10:00:05+00:00"
+            "time": "2019-12-20T14:15:16+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
-                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/52168cb9472de06979613d365c7f1ab8798be895",
+                "reference": "52168cb9472de06979613d365c7f1ab8798be895",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.4.0",
+                "symfony/polyfill-mbstring": "^1.4"
             },
             "bin": [
                 "bin/jp.php"
@@ -2276,7 +2277,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -2302,7 +2303,7 @@
                 "json",
                 "jsonpath"
             ],
-            "time": "2016-12-03T22:08:25+00:00"
+            "time": "2019-12-30T18:03:34+00:00"
         },
         {
             "name": "nystudio107/craft-eagerbeaver",
@@ -2842,16 +2843,17 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.8.0",
+            "version": "3.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
-                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7779489a47d443f845271badbdcedfe4df8e06fb",
+                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb",
                 "shasum": ""
             },
             "require": {
-                "paragonie/random_compat": "^1.0|^2.0|9.99.99",
-                "php": "^5.4 || ^7.0",
+                "ext-json": "*",
+                "paragonie/random_compat": "^1 | ^2 | 9.99.99",
+                "php": "^5.4 | ^7 | ^8",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "replace": {
@@ -2860,9 +2862,10 @@
             "suggest": {
                 "ext-ctype": "Provides support for PHP Ctype functions",
                 "ext-libsodium": "Provides the PECL libsodium extension for use with the SodiumRandomGenerator",
+                "ext-openssl": "Provides the OpenSSL extension for use with the OpenSslGenerator",
                 "ext-uuid": "Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator",
-                "ircmaxell/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
                 "moontoast/math": "Provides support for converting UUID to 128-bit integer (in string form).",
+                "paragonie/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
                 "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
                 "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
             },
@@ -2875,12 +2878,20 @@
             "autoload": {
                 "psr-4": {
                     "Ramsey\\Uuid\\": "src/"
-                }
+                },
+                "files": [
+                    "src/functions.php"
+                ]
             },
             "license": [
                 "MIT"
             ],
             "authors": [
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
+                },
                 {
                     "name": "Marijn Huizendveld",
                     "email": "marijn.huizendveld@gmail.com"
@@ -2888,11 +2899,6 @@
                 {
                     "name": "Thibaud Fabre",
                     "email": "thibaud@aztech.io"
-                },
-                {
-                    "name": "Ben Ramsey",
-                    "email": "ben@benramsey.com",
-                    "homepage": "https://benramsey.com"
                 }
             ],
             "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
@@ -2902,7 +2908,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-07-19T23:38:55+00:00"
+            "time": "2019-12-17T08:18:51+00:00"
         },
         {
             "name": "rize/uri-template",
