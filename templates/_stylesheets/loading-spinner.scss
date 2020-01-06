@@ -26,6 +26,9 @@ loading-spinner
 
     &.-floating
     {
+        position: absolute;
+        top: 50%;
+        left: 50%;
         margin-left: -$spinner-width/2;
         margin-top: -$spinner-height/2;
         animation: circleRailSpinnerFloating $spinner-speed infinite linear;

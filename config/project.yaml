@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578315037
+dateModified: 1578316543
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -2509,6 +2509,81 @@ matrixBlockTypes:
             sortOrder: 1
             fields:
               44f1dc14-7da9-47d9-a440-93d12f2fc43a:
+                required: true
+                sortOrder: 1
+  97c95e99-3458-49db-a330-254d33020614:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: 'Photo Gallery'
+    handle: photoGallery
+    sortOrder: 15
+    fields:
+      a760346a-fb4b-4fdf-8742-f24ffa9579e3:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      da78cdef-071a-4689-a48a-cdfbe3b9f69a:
+        name: Images
+        handle: images
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:70427868-1571-42b8-8751-e98127021aa8'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: ''
+          selectionLabel: 'Add Images'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      1fd2415b-bd9c-44be-8964-5d6218b03039:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              a760346a-fb4b-4fdf-8742-f24ffa9579e3:
+                required: false
+                sortOrder: 2
+              da78cdef-071a-4689-a48a-cdfbe3b9f69a:
                 required: true
                 sortOrder: 1
   aeeca2b6-8e92-40d2-bb0e-27c1c84bfba8:

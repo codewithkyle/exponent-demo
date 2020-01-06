@@ -249,6 +249,19 @@ return [
                         ],
                         'defaultTabName' => 'Misc',
                     ],
+                    'photoGallery' => [
+                        'tabs' => [
+                            [
+                                'label' => 'Images',
+                                'fields' => ['images'],
+                            ],
+                            [
+                                'label' => 'Spacing',
+                                'fields' => ['spacing'],
+                            ]
+                        ],
+                        'defaultTabName' => 'Misc',
+                    ],
                 ],
             ],
             'section:blog' => [
