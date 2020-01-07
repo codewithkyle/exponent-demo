@@ -1,0 +1,51 @@
+$primary: var(--primary);
+$grey-1: #F7F7F7;
+$grey-2: #E1E1E1;
+$grey-3: #F0F0F0;
+$grey-4: #B1B1B1;
+$font: var(--font);
+$error: #f86a6a;
+$border-radius: 0.25rem;
+
+.solid-fieldset
+{
+    display: inline-block;
+    width: 100%;
+    min-width: 256px;
+    padding: 3rem 1rem 1.15rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: $border-radius;
+    border-color: $grey-2;
+    background-color: $grey-1;
+
+    legend
+    {
+        position: absolute;
+        top: 0.75rem;
+        left: 1.5rem;
+        margin: 0;
+        font-size: 1.15rem;
+        user-select: none;
+    }
+
+    p
+    {
+        display: block;
+        opacity: 0.87;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+        font-size: 0.875rem;
+        user-select: none;
+    }
+
+    & > *
+    {
+        margin-bottom: 0.75rem;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+}

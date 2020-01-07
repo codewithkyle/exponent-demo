@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578316543
+dateModified: 1578402339
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -28,6 +28,8 @@ fieldGroups:
     name: Hero
   d561440e-7023-4019-9353-546183107fe5:
     name: Blog
+  fb2e717b-b8b5-4964-90fb-8055d528d3b7:
+    name: Forms
 fields:
   061eaf74-e520-44f0-a04f-f84c58808b46:
     name: 'Social Media'
@@ -270,6 +272,21 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  9a975e5f-4339-4848-a3c5-009593aed48a:
+    name: Form
+    handle: form
+    instructions: 'Create a new form. Use the Page Break block to split your form into multiple sections.'
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: '1'
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_form}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   a766e290-9fc2-4de5-b44a-cdf0b1ddbd5a:
     name: 'Utility Navigation'
     handle: utilityNavigation
@@ -285,6 +302,47 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 37c853a7-f5d5-40e1-ae75-bdbef6153c29
+  c403a734-1d72-497f-8454-25f54976cb54:
+    name: Options
+    handle: options
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Table
+    settings:
+      addRowLabel: 'Add an Option'
+      maxRows: ''
+      minRows: '1'
+      columns:
+        col1:
+          heading: Options
+          handle: options
+          width: ''
+          type: singleline
+      defaults:
+        -
+          col1: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
+  cedaaef7-67ee-4a76-9410-b815e30765e2:
+    name: Recipients
+    handle: recipients
+    instructions: 'Enter the email address that will receive the form submissions. If adding several emails separate each email with a comma.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: '1'
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   d74c95ec-0874-4422-96a8-6c4f38586d24:
     name: Categories
     handle: categories
@@ -647,6 +705,78 @@ matrixBlockTypes:
               c80bec60-4dc2-4ec0-8765-69990fa4b1ce:
                 required: false
                 sortOrder: 2
+  065b14ac-d572-4fcb-97e2-af37e58d8195:
+    field: 9a975e5f-4339-4848-a3c5-009593aed48a
+    name: 'Three Columns'
+    handle: threeColumns
+    sortOrder: 3
+    fields:
+      d8dc0ada-5971-4e6b-be06-0e2dd3813e9d:
+        name: Inputs
+        handle: inputs
+        instructions: 'Select 3 inputs for this row.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:e0f8f7aa-377e-4413-92fd-fca9360a3588'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '3'
+          selectionLabel: 'Add Inputs'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      ad8aad3a-5acd-4855-87a0-7c512ca7637d:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              d8dc0ada-5971-4e6b-be06-0e2dd3813e9d:
+                required: true
+                sortOrder: 1
+  0bda36fd-0f74-423e-a004-b971ac67567a:
+    field: 9a975e5f-4339-4848-a3c5-009593aed48a
+    name: 'Single Column'
+    handle: singleColumn
+    sortOrder: 1
+    fields:
+      c0a57fe0-20dc-4896-8886-84ac5bc6f5eb:
+        name: Inputs
+        handle: inputs
+        instructions: 'Select an input entry this row.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:e0f8f7aa-377e-4413-92fd-fca9360a3588'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Add an Input'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      eb29c988-94ee-4dd2-af5c-6d9f9c6dba6a:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              c0a57fe0-20dc-4896-8886-84ac5bc6f5eb:
+                required: true
+                sortOrder: 1
   19787b54-c61a-46ea-b5d8-260b1b98ce26:
     field: 44abd69a-0d46-4c62-8372-28d94928c27e
     name: Column
@@ -2596,7 +2726,7 @@ matrixBlockTypes:
         name: Blocks
         handle: blocks
         instructions: ''
-        searchable: false
+        searchable: true
         translationMethod: site
         translationKeyFormat: null
         type: verbb\supertable\fields\SuperTableField
@@ -2644,7 +2774,7 @@ matrixBlockTypes:
         name: Heading
         handle: heading
         instructions: ''
-        searchable: false
+        searchable: true
         translationMethod: none
         translationKeyFormat: null
         type: craft\fields\PlainText
@@ -2705,6 +2835,17 @@ matrixBlockTypes:
               cdde3802-4851-44de-9b9d-514335b621b5:
                 required: false
                 sortOrder: 4
+  c6f8f119-21d0-4be5-8c0d-349bacd64733:
+    field: 9a975e5f-4339-4848-a3c5-009593aed48a
+    name: 'Page Break'
+    handle: pageBreak
+    sortOrder: 4
+    fieldLayouts:
+      698740e0-c9b5-420e-94eb-2b47d8e3e4bd:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
   d2eb8c3f-2cb6-49a5-a4d6-803672718b5f:
     field: 061eaf74-e520-44f0-a04f-f84c58808b46
     name: Link
@@ -2901,6 +3042,130 @@ matrixBlockTypes:
               d1ccd785-6b6f-44bd-9e8b-8f52971a8ffd:
                 required: false
                 sortOrder: 3
+  d709cdf4-a747-4297-8048-6bc3d1dfae18:
+    field: 9a975e5f-4339-4848-a3c5-009593aed48a
+    name: 'Two Columns'
+    handle: twoColumns
+    sortOrder: 2
+    fields:
+      c6ec10af-07d5-4393-8343-f4790b5b9ea3:
+        name: Inputs
+        handle: inputs
+        instructions: 'Select 2 inputs for this row.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:e0f8f7aa-377e-4413-92fd-fca9360a3588'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '2'
+          selectionLabel: 'Add Inputs'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      832424f2-0388-4fe8-9868-4fed86c45b35:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              c6ec10af-07d5-4393-8343-f4790b5b9ea3:
+                required: true
+                sortOrder: 1
+  e581feb6-41ff-4425-8c60-5339d3f8c652:
+    field: 989ab03a-ea9d-4cf0-8359-69de483081e6
+    name: Form
+    handle: form
+    sortOrder: 16
+    fields:
+      0f9b5033-bfd7-432f-a8f0-590cfb3ebf6d:
+        name: Spacing
+        handle: spacing
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: None
+              value: '0'
+              default: '1'
+            -
+              label: Default
+              value: '2'
+              default: ''
+            -
+              label: x2
+              value: '4'
+              default: ''
+            -
+              label: x4
+              value: '6'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      1bbb1dea-c192-4467-acb9-77cf4002e656:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      47eaddbe-dc68-431a-9e7c-3e592233bd9d:
+        name: Form
+        handle: form
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:18672325-a634-45e6-80d6-12655718fb87'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Select a Form'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      185d5143-24c1-44dc-98d9-2c97203dc8be:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0f9b5033-bfd7-432f-a8f0-590cfb3ebf6d:
+                required: false
+                sortOrder: 3
+              1bbb1dea-c192-4467-acb9-77cf4002e656:
+                required: false
+                sortOrder: 1
+              47eaddbe-dc68-431a-9e7c-3e592233bd9d:
+                required: true
+                sortOrder: 2
   ead67ad8-67ad-41cc-a12a-64f2c5093bb7:
     field: 989ab03a-ea9d-4cf0-8359-69de483081e6
     name: 'Rich Text'
@@ -3264,6 +3529,39 @@ sections:
                   d75f70e4-42ab-49b8-be5b-f174954fa9e6:
                     required: false
                     sortOrder: 1
+  18672325-a634-45e6-80d6-12655718fb87:
+    name: Forms
+    handle: forms
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      5d0fd958-be72-4405-989e-030f329741df:
+        enabledByDefault: true
+        hasUrls: false
+        uriFormat: ''
+        template: null
+    entryTypes:
+      975e1589-b37c-42e3-9c20-851a7210ef2f:
+        name: Form
+        handle: form
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          b421e65a-8ecb-48bd-af60-f8de2cb4a7d5:
+            tabs:
+              -
+                name: Forms
+                sortOrder: 1
+                fields:
+                  9a975e5f-4339-4848-a3c5-009593aed48a:
+                    required: true
+                    sortOrder: 2
+                  cedaaef7-67ee-4a76-9410-b815e30765e2:
+                    required: true
+                    sortOrder: 1
   2df1ce12-f3f3-4917-a290-a212552c2ddf:
     name: Blog
     handle: blogSingle
@@ -3447,6 +3745,98 @@ sections:
                 fields:
                   d75f70e4-42ab-49b8-be5b-f174954fa9e6:
                     required: false
+                    sortOrder: 1
+  e0f8f7aa-377e-4413-92fd-fca9360a3588:
+    name: 'Form Inputs'
+    handle: formInputs
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      5d0fd958-be72-4405-989e-030f329741df:
+        enabledByDefault: true
+        hasUrls: false
+        uriFormat: ''
+        template: null
+    entryTypes:
+      138b0ade-2f63-4588-9144-b3837751439a:
+        name: 'Email Input'
+        handle: emailInput
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 2
+      459aa46d-f2f3-4646-a73b-1d28ec666248:
+        name: 'Text Input'
+        handle: textInput
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 1
+      75d9904b-2985-4f6a-ad37-1f31bfabe406:
+        name: Checkboxes
+        handle: checkboxes
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 5
+        fieldLayouts:
+          096ef834-38f0-4508-a7c9-783e7a379a0f:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  c403a734-1d72-497f-8454-25f54976cb54:
+                    required: true
+                    sortOrder: 1
+      d20e18f9-a337-4c6a-9d4f-aa5a4fe7fcd6:
+        name: Textarea
+        handle: textarea
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 3
+      d8b705c4-1868-466d-9ace-8f8a34fc5414:
+        name: Lightswitch
+        handle: lightswitch
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 6
+      e91e5c61-064d-4434-a523-8d72babfbca3:
+        name: 'Radio Buttons'
+        handle: radioButtons
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 4
+        fieldLayouts:
+          0d62b7ce-5a14-46b0-accf-eb222f79760b:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  c403a734-1d72-497f-8454-25f54976cb54:
+                    required: true
+                    sortOrder: 1
+      f4b1ff77-89d9-4cc2-ab55-2f02cf9d8de5:
+        name: Select
+        handle: select
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 7
+        fieldLayouts:
+          b6c18d86-9b54-44cd-aacf-311c79979388:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  c403a734-1d72-497f-8454-25f54976cb54:
+                    required: true
                     sortOrder: 1
 siteGroups:
   671e778d-487b-49da-b257-052f3d032d54:
@@ -4308,7 +4698,7 @@ superTableBlockTypes:
                 required: true
                 sortOrder: 4
 system:
-  edition: pro
+  edition: solo
   name: $SYSTEM_NAME
   live: true
   schemaVersion: 3.3.3

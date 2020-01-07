@@ -44,4 +44,10 @@ class PwaModuleVariable
             return '0';
         }
     }
+
+    public function makeMD5Hash($string)
+    {
+        $hashed = md5($string);
+        return $hashed;
+    }
 }

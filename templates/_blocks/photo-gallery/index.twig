@@ -13,7 +13,7 @@
                     { width: 1024, ratio: 16/9, position: image.getFocalPoint(), format: imageFormat }
                 ]) %}
                 <button aria-label="select photo {{ loop.index }}" data-index="{{ loop.index0 }}">
-                    <img aria-hidden="true" src="{{ images[0].url }}" alt="{{ image.alternateDescription }}" data-srcset="{{ craft.imager.srcset(images) }}">
+                    <img width="100" loading="lazy" aria-hidden="true" src="{{ images[0].url }}" alt="{{ image.alternateDescription }}" data-srcset="{{ craft.imager.srcset(images) }}">
                 </button>
             {% endfor %}
         </photo-thumbnails>

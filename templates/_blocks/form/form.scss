@@ -1,0 +1,51 @@
+form-component
+{
+    width: 1024px;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+    padding: 4rem 0;
+
+    h2
+    {
+        font-size: 2rem;
+        line-height: 3rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    form
+    {
+        width: 840px;
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+
+        form-grid
+        {
+            display: grid;
+            width: 100%;
+            gap: 1rem;
+            grid-template-columns: minmax(1px, 1fr);
+            margin-bottom: 1rem;
+
+            &[columns="2"]
+            {
+                @media (min-width: 768px)
+                {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            &[columns="3"]
+            {
+                @media (min-width: 840px)
+                {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+        }
+    }
+}

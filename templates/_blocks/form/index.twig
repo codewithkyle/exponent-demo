@@ -1,0 +1,34 @@
+<section style="width:100%;display:block;padding:{{ section.spacing }}rem 1rem;">
+    <form-component web-component lazy-load-css="form buttons">
+        {% if section.heading|length %}
+            <h2>{{ section.heading }}</h2>
+        {% endif %}
+        <form method="POST" action="/submit-form">
+            <input type="hidden" name="recipients" value="{{ craft.pwa.makeMD5Hash(section.form[0].recipients) }}">
+            {% for row in section.form[0].form %}
+                {% set columns = 1 %}
+                {% if row.type == 'twoColumns' %}
+                    {% set columns = 2 %}
+                {% elseif row.type == 'threeColumns' %}
+                    {% set columns = 3 %}
+                {% endif %}
+                <form-grid columns="{{ columns }}">
+                    {% for input in row.inputs.all() %}
+                        {% include "_blocks/form/inputs/" ~ input.type|kebab %}
+                    {% endfor %}
+                </form-grid>
+            {% endfor %}
+            <div style="display: block;width: 100%;text-align: right;">
+                <button style="opacity:0;visibility: hidden;" class="g-button -solid -primary" type="submit">{{ "Submit"|t }}</button>
+            </div>
+        </form>
+    </form-component>
+</section>
+<noscript>
+    <style>
+        form-component form button {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+</noscript>
