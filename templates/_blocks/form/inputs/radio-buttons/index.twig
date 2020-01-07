@@ -3,7 +3,7 @@
     {% for option in input.options %}
         <radio-component>
             <input type="radio" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ input.title|camel }}" value="{{ option.options }}" {{ (loop.first) ? 'checked' }}>
-            <label for="{{ input.title|camel }}-{{ option.options|camel }}">
+            <label for="{{ input.title|camel }}-{{ option.options|camel }}" tabindex="0">
                 <radio-icon aria-label="round radio icon"></radio-icon>
                 <span>{{ option.options }}</span>
             </label>

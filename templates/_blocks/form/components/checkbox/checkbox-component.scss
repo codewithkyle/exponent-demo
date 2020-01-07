@@ -45,7 +45,8 @@ checkbox-component
         flex-flow: row nowrap;
         user-select: none;
 
-        &:hover
+        &:hover,
+        &:focus
         {
             checkbox-icon
             {
