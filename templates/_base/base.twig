@@ -182,10 +182,12 @@
                 opacity: 1;
             }
 
-            page-loading span
+            page-loading file-loading-message,
+            page-loading file-loading-value
             {
                 line-height: 1.618;
-                display: block;
+                display: inline-block;
+                margin: 0 0.25rem 0.5rem;
                 font-size: 1.125rem;
                 font-weight: 400;
                 font-family: system-ui, BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -201,7 +203,7 @@
                 position: relative;
                 background-color: var(--loading-bar);
                 overflow: hidden;
-                display: inline-block;
+                display: block;
                 box-shadow: inset 0 0 2px rgba(51,51,51,0.15);
             }
 
@@ -381,7 +383,8 @@
         {# Full screen loading animation #}
         <page-loading>
             <div>
-                <span>Loading page</span>
+                <file-loading-message>Loading page</file-loading-message>
+                <file-loading-value></file-loading-value>
                 <page-loading-bar>
                     <bar-one></bar-one>
                     <bar-two></bar-two>

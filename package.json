@@ -22,27 +22,27 @@
 		"predeploy": "npm run prettier && npm run eslint && npm run stylelint && npm run build && npm run noscript"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^2.12.0",
-		"@typescript-eslint/parser": "^2.12.0",
+		"@typescript-eslint/eslint-plugin": "^2.15.0",
+		"@typescript-eslint/parser": "^2.15.0",
 		"eslint": "^6.8.0",
-		"eslint-config-prettier": "^6.7.0",
+		"eslint-config-prettier": "^6.9.0",
 		"eslint-plugin-prettier": "^3.1.2",
 		"glob": "^7.1.6",
 		"husky": "^3.1.0",
 		"minify": "^4.1.3",
 		"node-sass": "^4.13.0",
 		"prettier": "1.19.1",
-		"rollup": "^1.27.14",
+		"rollup": "^1.29.0",
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-node-resolve": "^5.2.0",
-		"stylelint": "^12.0.0",
+		"stylelint": "^12.0.1",
 		"stylelint-config-recommended": "^3.0.0",
 		"tslint": "^5.20.1",
 		"typescript": "^3.7.4"
 	},
 	"dependencies": {
 		"@codewithkyle/notifyjs": "^1.0.0",
-		"djinnjs": "0.0.5",
+		"djinnjs": "0.0.11",
 		"uuid": "^3.3.3"
 	},
 	"husky": {

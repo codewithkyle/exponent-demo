@@ -1,5 +1,7 @@
 module.exports = {
-	src: './_compiled',
+	src: "./_compiled",
 	noCachePattern: /(\/webmaster\/)|(\/cpresources\/)|(index\.php)|(cachebust\.js)|(\/pwa\/)|(\.json)$/gi,
-	cachebustURL: '/pwa/cachebust.json',
+	cachebustURL: "/pwa/cachebust.json",
+	env: "dev",
+	usePercentage: true,
 };
