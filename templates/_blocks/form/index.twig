@@ -1,3 +1,10 @@
+{% set numOfPages = 0 %}
+{% set totalPages = 1 %}
+{% for row in section.form[0].form %}
+    {% if row.type == 'pageBreak' %}
+        {% set totalPages = totalPages + 1 %}
+    {% endif %}
+{% endfor %}
 <section style="width:100%;display:block;padding:{{ section.spacing }}rem 1rem;">
     <form-component web-component lazy-load-css="form buttons">
         {% if section.heading|length %}
@@ -5,21 +12,40 @@
         {% endif %}
         <form method="POST" action="/submit-form">
             <input type="hidden" name="recipients" value="{{ craft.pwa.makeMD5Hash(section.form[0].recipients) }}">
+            <form-page>
             {% for row in section.form[0].form %}
-                {% set columns = 1 %}
-                {% if row.type == 'twoColumns' %}
-                    {% set columns = 2 %}
-                {% elseif row.type == 'threeColumns' %}
-                    {% set columns = 3 %}
+                {% if row.type == 'pageBreak' %}
+                    {% set numOfPages = numOfPages + 1 %}
+                    <div style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                        <form-page-count>Page {{ numOfPages }}&sol;{{ totalPages }}</form-page-count>
+                        <button class="g-button -solid -primary" type="button" data-next-page="{{ numOfPages }}">{{ "Next"|t }}</button>
+                    </div>
+                    </form-page>
+                    {% if not loop.last %}
+                        <form-page style="display: none;">
+                    {% endif %}
+                {% else %}
+                    {% set columns = 1 %}
+                    {% if row.type == 'twoColumns' %}
+                        {% set columns = 2 %}
+                    {% elseif row.type == 'threeColumns' %}
+                        {% set columns = 3 %}
+                    {% endif %}
+                    <form-grid columns="{{ columns }}">
+                        {% for input in row.inputs.all() %}
+                            {% include "_blocks/form/inputs/" ~ input.type|kebab %}
+                        {% endfor %}
+                    </form-grid>
                 {% endif %}
-                <form-grid columns="{{ columns }}">
-                    {% for input in row.inputs.all() %}
-                        {% include "_blocks/form/inputs/" ~ input.type|kebab %}
-                    {% endfor %}
-                </form-grid>
             {% endfor %}
-            <div style="display: block;width: 100%;text-align: right;">
-                <button style="opacity:0;visibility: hidden;" class="g-button -solid -primary" type="submit">{{ "Submit"|t }}</button>
+            </form-page>
+            <div style="display: {{ (numOfPages > 0) ? 'none' : 'flex' }};width: 100%;justify-content: space-between;align-items: center;">
+                <form-page-count>
+                    {% if totalPages > 1 %}
+                        Page {{ totalPages }}&sol;{{ totalPages }}  
+                    {% endif %}
+                </form-page-count>
+                <button class="g-button -solid -primary" type="submit">{{ "Submit"|t }}</button>
             </div>
         </form>
     </form-component>

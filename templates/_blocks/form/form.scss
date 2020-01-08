@@ -23,6 +23,19 @@ form-component
         max-width: 100%;
         margin: 0 auto;
 
+        form-page
+        {
+            display: block;
+            width: 100%;
+        }
+
+        form-page-count
+        {
+            color: var(--font-light);
+            font-size: 0.75rem;
+            margin-left: 0.25rem;
+        }
+
         form-grid
         {
             display: grid;
