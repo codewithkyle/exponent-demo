@@ -372,6 +372,12 @@
             }
         </script>
 
+        <!-- Polyfill for Intersection Observer -->
+        <script>
+            if (!('IntersectionObserver' in window) || !('IntersectionObserverEntry' in window) || !('intersectionRatio' in window.IntersectionObserverEntry.prototype)) {
+                document.write('<script src="{{ alias('@rootUrl')|trim('/') }}/polyfills/intersection-observer.js"><\/script>');
+            }
+        </script>
 
         <link rel="preload" href="{{ alias('@rootUrl')|trim('/') }}/assets/env.js" as="script" crossorigin="anonymous">
         <link rel="preload" href="{{ alias('@rootUrl')|trim('/') }}/assets/broadcaster.js" as="script" crossorigin="anonymous">
