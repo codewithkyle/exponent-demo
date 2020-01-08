@@ -1,20 +1,20 @@
 // @ts-ignore
-import { notify } from 'djinnjs/notify';
+import { notify } from "djinnjs/notify";
 
 class EmailButtonComponent extends HTMLElement {
 	private input: HTMLInputElement;
 
 	constructor() {
 		super();
-		this.input = this.querySelector('input');
+		this.input = this.querySelector("input");
 	}
 
 	connectedCallback(): void {
-		this.addEventListener('click', () => {
-			if ('clipboard' in navigator) {
+		this.addEventListener("click", () => {
+			if ("clipboard" in navigator) {
 				navigator.clipboard.writeText(this.input.value).then(() => {
 					notify({
-						message: 'Email address copied to clipboard.',
+						message: "Email address copied to clipboard.",
 						closeable: true,
 						duration: 2,
 					});
@@ -22,9 +22,9 @@ class EmailButtonComponent extends HTMLElement {
 			} else {
 				this.input.select();
 				this.input.setSelectionRange(0, 99999);
-				document.execCommand('copy');
+				document.execCommand("copy");
 				notify({
-					message: 'Email address copied to clipboard.',
+					message: "Email address copied to clipboard.",
 					closeable: true,
 					duration: 2,
 				});
@@ -32,4 +32,4 @@ class EmailButtonComponent extends HTMLElement {
 		});
 	}
 }
-customElements.define('email-button', EmailButtonComponent);
+customElements.define("email-button", EmailButtonComponent);

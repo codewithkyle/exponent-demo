@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578483692
+dateModified: 1578490852
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -46,6 +46,23 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
+  08896665-1094-4e21-96a5-9d91a43837a0:
+    name: 'Success Message'
+    handle: successMessage
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   12626c5a-4720-40e6-9868-4c0bd1b69b77:
     name: 'Hero Area'
     handle: heroArea
@@ -3568,9 +3585,12 @@ sections:
                 name: Forms
                 sortOrder: 1
                 fields:
+                  08896665-1094-4e21-96a5-9d91a43837a0:
+                    required: false
+                    sortOrder: 2
                   9a975e5f-4339-4848-a3c5-009593aed48a:
                     required: true
-                    sortOrder: 2
+                    sortOrder: 3
                   cedaaef7-67ee-4a76-9410-b815e30765e2:
                     required: true
                     sortOrder: 1

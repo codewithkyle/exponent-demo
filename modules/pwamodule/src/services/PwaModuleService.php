@@ -17,6 +17,7 @@ use craft\base\Component;
 use craft\helpers\FileHelper;
 use yii\redis\Cache;
 use yii\redis\Connection;
+use craft\helpers\StringHelper;
 
 /**
  * @author    Kyle Andrews
@@ -114,5 +115,47 @@ class PwaModuleService extends Component
             fwrite($file,"<?php\nreturn [\n\t'contentCache' => '" . time() . "',\n];");
             fclose($file);
         }
+    }
+
+    public function submitForm($params)
+    {
+        $response = [
+            "success" => true,
+            "errors" => []
+        ];
+        $formId = $params['formId'];
+        $form = \craft\elements\Entry::find()
+                ->id($formId)
+                ->with(['form', 'form.singleColumn:inputs', 'form.twoColumns:inputs', 'form.threeColumns:inputs'])
+                ->one();
+        if (!$form)
+        {
+            $response['success'] = false;
+            return $response;
+        }
+
+        foreach ($form['form'] as $block)
+        {
+            if (isset($block['inputs']))
+            {
+                foreach ($block['inputs'] as $input)
+                {
+                    if (isset($input['required']) && $input->required)
+                    {
+                        $handle = StringHelper::toCamelCase($input->title);
+                        if (empty($params[$handle]))
+                        {
+                            $response['success'] = false;
+                            $response['errors'][] = [
+                                'input' => $handle,
+                                'error' => 'This field is required.'
+                            ];
+                        }
+                    }
+                }
+            }
+        }
+
+        return $response;
     }
 }

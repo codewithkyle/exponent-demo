@@ -5,13 +5,17 @@
         {% set totalPages = totalPages + 1 %}
     {% endif %}
 {% endfor %}
+{% set successMessage = "The form was successfully submitted. Thank you."|t %}
+{% if section.form[0].successMessage|length %}
+    {% set successMessage = section.form[0].successMessage %}
+{% endif %}
 <section style="width:100%;display:block;padding:{{ section.spacing }}rem 1rem;">
-    <form-component web-component lazy-load-css="form buttons">
+    <form-component web-component lazy-load-css="form buttons"  data-success-message="{{ successMessage }}">
         {% if section.heading|length %}
             <h2>{{ section.heading }}</h2>
         {% endif %}
-        <form method="POST" action="/submit-form">
-            <input type="hidden" name="recipients" value="{{ craft.pwa.makeMD5Hash(section.form[0].recipients) }}">
+        <form method="POST" action="/pwa/form-submit">
+            <input type="hidden" name="formId" value="{{ section.form[0].id }}">
             <form-page>
             {% for row in section.form[0].form %}
                 {% if row.type == 'pageBreak' %}

@@ -3,9 +3,9 @@ export function noneAuto(newHTML: string): Promise<{}> {
 		window.scroll({
 			top: 0,
 			left: 0,
-			behavior: 'auto',
+			behavior: "auto",
 		});
-		const main = document.body.querySelector('main');
+		const main = document.body.querySelector("main");
 		main.innerHTML = newHTML;
 		resolve();
 	});
@@ -15,9 +15,9 @@ export function noneScroll(newHTML: string): Promise<{}> {
 		window.scroll({
 			top: 0,
 			left: 0,
-			behavior: 'smooth',
+			behavior: "smooth",
 		});
-		const main = document.body.querySelector('main');
+		const main = document.body.querySelector("main");
 		main.innerHTML = newHTML;
 		resolve();
 	});

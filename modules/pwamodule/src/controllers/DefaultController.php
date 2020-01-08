@@ -44,4 +44,13 @@ class DefaultController extends Controller
         $response = PwaModule::getInstance()->pwaModuleService->cachebust();
         return json_encode($response);
     }
+
+    public function actionFormSubmit()
+    {
+        $this->requireAcceptsJson();
+        $this->requirePostRequest();
+        $request = Craft::$app->getRequest();
+        $response = PwaModule::getInstance()->pwaModuleService->submitForm($request->getBodyParams());
+        return json_encode($response);
+    }
 }

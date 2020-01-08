@@ -3,29 +3,29 @@ class SolidSelectComponent extends HTMLElement {
 
 	constructor() {
 		super();
-		this._select = this.querySelector('select');
+		this._select = this.querySelector("select");
 	}
 
 	private handleBlurEvent: EventListener = this.validate.bind(this);
 
 	private validate(): void {
-		if (this._select.value === '') {
-			this._select.classList.remove('has-value');
+		if (this._select.value === "") {
+			this._select.classList.remove("has-value");
 		} else {
-			this._select.classList.add('has-value');
+			this._select.classList.add("has-value");
 		}
 
-		if (!this._select.validity.valid && !this._select.classList.contains('is-invalid')) {
-			this._select.classList.add('is-invalid');
+		if (!this._select.validity.valid && !this._select.classList.contains("is-invalid")) {
+			this._select.classList.add("is-invalid");
 			this._select.reportValidity();
 		} else {
-			this._select.classList.remove('is-invalid');
+			this._select.classList.remove("is-invalid");
 		}
 	}
 
 	connectedCallback() {
-		this._select.addEventListener('blur', this.handleBlurEvent);
+		this._select.addEventListener("blur", this.handleBlurEvent);
 	}
 }
 
-customElements.define('solid-select-component', SolidSelectComponent);
+customElements.define("solid-select-component", SolidSelectComponent);

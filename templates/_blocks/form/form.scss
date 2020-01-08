@@ -16,12 +16,41 @@ form-component
         margin-bottom: 2rem;
     }
 
+    success-message
+    {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: var(--success);
+    }
+
     form
     {
         width: 840px;
         display: block;
         max-width: 100%;
         margin: 0 auto;
+
+        &.has-errors
+        {
+            form-page
+            {
+                display: block !important;
+            }
+            form-page-count
+            {
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+            .-page-break-button-wrapper
+            {
+                display: none !important;
+            }
+            .-submit-button-wrapper
+            {
+                display: flex !important;
+            }
+        }
 
         form-page
         {
