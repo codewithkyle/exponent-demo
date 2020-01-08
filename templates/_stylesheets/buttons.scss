@@ -26,14 +26,16 @@
             &:hover,
             &:focus
             {
-                background-color: var(--primary-hover);
-                border-color: var(--primary-hover);
+                background-color: var(--font-button);
+                border-color: var(--font-button);
+                color: var(--primary);
             }
 
             &:active
             {
-                background-color: var(--primary-active);
-                border-color: var(--primary-active);
+                background-color: var(--black);
+                border-color: var(--black);
+                color: var(--primary);
             }
         }
 

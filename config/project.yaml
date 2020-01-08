@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578402339
+dateModified: 1578483692
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -469,6 +469,18 @@ fields:
       validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+    name: Required
+    handle: required
+    instructions: 'When enabled this field will be required.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
 globalSets:
   5dc50dc7-d2d3-4937-99d7-1ef59d1513f3:
     name: Navigation
@@ -3766,6 +3778,16 @@ sections:
         titleLabel: Label
         titleFormat: ''
         sortOrder: 2
+        fieldLayouts:
+          d3298032-0c89-46b1-aa7a-40dd9ce7c2c2:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 1
       459aa46d-f2f3-4646-a73b-1d28ec666248:
         name: 'Text Input'
         handle: textInput
@@ -3773,6 +3795,16 @@ sections:
         titleLabel: Label
         titleFormat: ''
         sortOrder: 1
+        fieldLayouts:
+          e6b18b44-66f7-4482-830e-0bcebbb19cf3:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 1
       75d9904b-2985-4f6a-ad37-1f31bfabe406:
         name: Checkboxes
         handle: checkboxes
@@ -3797,6 +3829,16 @@ sections:
         titleLabel: Label
         titleFormat: ''
         sortOrder: 3
+        fieldLayouts:
+          d70e5855-4c70-4ec4-8813-43215c1f1fea:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 1
       d8b705c4-1868-466d-9ace-8f8a34fc5414:
         name: Lightswitch
         handle: lightswitch
@@ -3804,6 +3846,16 @@ sections:
         titleLabel: Label
         titleFormat: ''
         sortOrder: 6
+        fieldLayouts:
+          2fe72523-5f01-44fd-80cd-709225407db7:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 1
       e91e5c61-064d-4434-a523-8d72babfbca3:
         name: 'Radio Buttons'
         handle: radioButtons
@@ -3821,6 +3873,9 @@ sections:
                   c403a734-1d72-497f-8454-25f54976cb54:
                     required: true
                     sortOrder: 1
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 2
       f4b1ff77-89d9-4cc2-ab55-2f02cf9d8de5:
         name: Select
         handle: select
@@ -3838,6 +3893,9 @@ sections:
                   c403a734-1d72-497f-8454-25f54976cb54:
                     required: true
                     sortOrder: 1
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 2
 siteGroups:
   671e778d-487b-49da-b257-052f3d032d54:
     name: Default

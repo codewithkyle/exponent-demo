@@ -1,5 +1,5 @@
 <solid-select-component web-component lazy-load-css="solid-select-component">
-    <select name="{{ input.title|camel }}" id="{{ input.title|camel }}">
+    <select name="{{ input.title|camel }}" id="{{ input.title|camel }}" {{ input.required ? 'required' }}>
         <option value=""></option>
         {% for option in input.options %}
             <option value="{{ option.options|camel }}">{{ option.options }}</option>

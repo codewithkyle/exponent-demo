@@ -1,4 +1,4 @@
 <solid-input-component lazy-load-css="solid-input-component" web-component>
-    <input type="text" name="{{ input.title|camel }}" id="{{ input.title|camel }}">
+    <input type="text" name="{{ input.title|camel }}" id="{{ input.title|camel }}" {{ input.required ? 'required' }}>
     <label for="{{ input.title|camel }}">{{ input.title }}</label>
 </solid-input-component>

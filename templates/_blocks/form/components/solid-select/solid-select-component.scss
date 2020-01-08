@@ -40,7 +40,7 @@ solid-select-component
         {
             & + label
             {
-                transform: translateY(0.125rem) scale(0.75);
+                transform: translateY(0.25rem) scale(0.75);
             }
         }
 
@@ -57,13 +57,13 @@ solid-select-component
 
         &:focus
         {
-            border-width: 0 0 2px 0;
+            border-width: 0 0 1px 0;
             border-color: $primary;
 
             & + label
             {
                 color: $primary;
-                transform: translateY(0.125rem) scale(0.75);
+                transform: translateY(0.25rem) scale(0.75);
             }
         }
 
@@ -74,7 +74,7 @@ solid-select-component
             & + label
             {
                 color: $error;
-                transform: translateY(0.125rem) scale(0.75);
+                transform: translateY(0.25rem) scale(0.75);
             }
         }
     }

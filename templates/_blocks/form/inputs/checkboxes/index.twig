@@ -1,7 +1,7 @@
 <fieldset class="solid-fieldset" lazy-load-css="solid-fieldset checkbox-component">
     <legend>{{ input.title }}</legend>
     {% for option in input.options %}
-        <checkbox-component>
+        <checkbox-component web-component>
             <input type="checkbox" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ option.options|camel }}" />
             <label for="{{ input.title|camel }}-{{ option.options|camel }}" tabindex="0">
                 <checkbox-icon aria-label="square checkbox icon">
