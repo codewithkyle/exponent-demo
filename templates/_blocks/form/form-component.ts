@@ -1,4 +1,5 @@
 import { env } from "djinnjs/env";
+import { notify } from "@codewithkyle/notifyjs";
 
 interface FormError {
 	input: string;
@@ -78,6 +79,11 @@ class FormComponent extends HTMLElement {
 			if (request.ok) {
 				const response = await request.json();
 				if (response.success) {
+					notify({
+						message: "The from was successfully submitted.",
+						duration: 3,
+						closeable: true,
+					});
 					this.form.reset();
 					this.switchPage(0);
 					this.resetInputs();

@@ -19,7 +19,8 @@
 		"lint": "npm run eslint && npm run stylelint",
 		"prettier": "prettier --write \"templates/**/*.ts\" && prettier --write \"controllers/**/*.ts\" && prettier --write \"transitions/**/*.ts\"",
 		"precommit": "npm run eslint && npm run stylelint",
-		"predeploy": "npm run prettier && npm run eslint && npm run stylelint && npm run build && npm run noscript"
+		"predeploy": "npm run prettier && npm run eslint && npm run stylelint && npm run build && npm run noscript",
+		"pack": "snowpack"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^2.15.0",
@@ -35,6 +36,7 @@
 		"rollup": "^1.29.0",
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-node-resolve": "^5.2.0",
+		"snowpack": "^1.0.2",
 		"stylelint": "^12.0.1",
 		"stylelint-config-recommended": "^3.0.0",
 		"tslint": "^5.20.1",
@@ -42,12 +44,16 @@
 	},
 	"dependencies": {
 		"@codewithkyle/notifyjs": "^1.0.0",
-		"djinnjs": "0.0.11",
 		"uuid": "^3.3.3"
 	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "npm run precommit"
 		}
+	},
+	"snowpack": {
+		"webDependencies": [
+			"@codewithkyle/notifyjs"
+		]
 	}
 }
