@@ -80,7 +80,7 @@ class FormComponent extends HTMLElement {
 				const response = await request.json();
 				if (response.success) {
 					notify({
-						message: "The from was successfully submitted.",
+						message: this.dataset.successMessage.length ? this.dataset.successMessage : "The from was successfully submitted.",
 						duration: 3,
 						closeable: true,
 					});
