@@ -37,7 +37,6 @@
     {% if isDebug and currentUser and currentUser['admin'] or craft.app.config.env == 'dev' or craft.app.config.env == 'staging'  %}
         debug="true"
     {% endif %} 
-    data-csrf="{{ craft.app.request.csrfToken }}" 
     data-environment="{{ craft.app.config.env }}" 
     data-ga-id=""
 >

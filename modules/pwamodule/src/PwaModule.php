@@ -112,6 +112,7 @@ class PwaModule extends Module
             function (RegisterUrlRulesEvent $event) {
                 $event->rules['/pwa/cachebust'] = 'pwa-module/default/cachebust';
                 $event->rules['/pwa/form-submit'] = 'pwa-module/default/form-submit';
+                $event->rules['/pwa/get-csrf'] = 'pwa-module/default/get-csrf';
             }
         );
 
