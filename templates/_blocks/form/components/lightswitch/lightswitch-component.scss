@@ -1,0 +1,167 @@
+$primary: var(--primary);
+$primary-hover-opacity: var(--primary-hover-opaque);
+$primary-active-opacity: var(--primary-active-opaque);
+$black: #333;
+$white: #fff;
+
+lightswitch-component
+{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+
+    input
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        &:checked{
+            & + label{
+                lightswitch-icon{
+                    lightswitch-track{
+                        background-color: $primary;
+                        border-color: $primary;
+                    }
+
+                    lightswitch-knob{
+                        transform: translate(16px, -50%);
+                        
+                        &:after{
+                            background-color: $primary;
+                            border-color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    label
+    {
+        min-height: 3.5rem;
+        width: 100%;
+        min-width: 256px;
+        cursor: pointer;
+        padding-left: 3.5rem;
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        user-select: none;
+
+        &:hover
+        {
+            lightswitch-icon{
+                lightswitch-knob{
+                    &:before{
+                        transform: scale(0.87);
+                    }
+                }
+            }
+        }
+
+        &:active
+        {
+            lightswitch-icon{
+                lightswitch-knob{
+                    &:before{
+                        transform: scale(1);
+                        background-color: $primary-active-opacity;
+                        transition: all 75ms ease-in-out;
+                    }
+                }
+            }
+        }
+
+        lightswitch-icon{
+            width: 32px;
+            height: 14px;
+            position: absolute;
+            top: 50%;
+            left: 0.25rem;
+            transform: translateY(-56%);
+
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+            {
+                lightswitch-track{
+                    display: none;
+                }
+
+                lightswitch-knob{
+                    transform: translate(0, -50%) !important;
+                    flex-flow: column wrap;
+
+                    &:before{
+                        display: none;
+                    }
+
+                    &:after{
+                        position: relative;
+                    }
+                }
+            }
+    
+            lightswitch-track{
+                display: inline-block;
+                background-color: $black;
+                border-radius: 7px;
+                height: 14px;
+                width: 32px;
+                border: 1px solid $black;
+                opacity: 0.38;
+                transition: all 150ms ease-in-out;
+            }
+    
+            lightswitch-knob{
+                width: 20px;
+                height: 20px;
+                pointer-events: none;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(-2px, -50%);
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 150ms ease-in-out;
+
+                &::after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: $white;
+                    border-color: $white;
+                    border-radius: 50%;
+                    transition: all 150ms ease-in-out;
+                    box-shadow: 0 1px 3px rgba(51,51,15,0.1), 0 2px 6px rgba(51,51,15,0.1);
+                    border: 10px solid $white;
+                    box-sizing: border-box;
+                }
+
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 50%;
+                    position: absolute;
+                    background-color: $primary-hover-opacity;
+                    transform: scale(0);
+                    transition: all 75ms ease-in-out;
+                }
+            }
+        }
+        
+        span
+        {
+            display: inline-block;
+            user-select: none;
+            line-height: 1.618;
+        }
+    }
+}

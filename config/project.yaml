@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578490852
+dateModified: 1578570489
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -153,6 +153,24 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  363ddaa2-40fb-44f3-872c-dca10a7b4868:
+    name: Step
+    handle: step
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Number
+    settings:
+      defaultValue: '1'
+      min: '1'
+      max: null
+      decimals: 0
+      size: null
+      prefix: ''
+      suffix: ''
+    contentColumnType: integer(10)
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   44abd69a-0d46-4c62-8372-28d94928c27e:
     name: Links
     handle: footerLinks
@@ -215,6 +233,24 @@ fields:
           allowAliases: ''
     contentColumnType: text
     fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
+  842e644b-8402-4600-9e87-59775f0ddec7:
+    name: Maximum
+    handle: maximum
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Number
+    settings:
+      defaultValue: null
+      min: null
+      max: null
+      decimals: 0
+      size: null
+      prefix: ''
+      suffix: ''
+    contentColumnType: integer(10)
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   87c839c0-c417-4068-874c-08d371920f07:
     name: Heading
     handle: heading
@@ -303,6 +339,24 @@ fields:
       contentTable: '{{%matrixcontent_form}}'
       propagationMethod: all
     contentColumnType: string
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
+  a6daf6ce-38fd-42d4-887c-d75b76d9e467:
+    name: Minimum
+    handle: minimum
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Number
+    settings:
+      defaultValue: null
+      min: null
+      max: null
+      decimals: 0
+      size: null
+      prefix: ''
+      suffix: ''
+    contentColumnType: integer(10)
     fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   a766e290-9fc2-4de5-b44a-cdf0b1ddbd5a:
     name: 'Utility Navigation'
@@ -3808,6 +3862,23 @@ sections:
                   f236dba4-2574-4b17-8455-c7ea5f8656e5:
                     required: false
                     sortOrder: 1
+      25d0e3e0-30a7-4b43-9746-61d77227ef81:
+        name: Date
+        handle: date
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 9
+        fieldLayouts:
+          e3ca07e8-5537-4411-95ff-c2151b77b764:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 1
       459aa46d-f2f3-4646-a73b-1d28ec666248:
         name: 'Text Input'
         handle: textInput
@@ -3841,6 +3912,32 @@ sections:
                 fields:
                   c403a734-1d72-497f-8454-25f54976cb54:
                     required: true
+                    sortOrder: 1
+      7f5d3721-13d3-44ed-bbe5-7d61db19ecac:
+        name: Number
+        handle: number
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 8
+        fieldLayouts:
+          95d69db9-175f-48e9-9aa6-4387061548e3:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  363ddaa2-40fb-44f3-872c-dca10a7b4868:
+                    required: false
+                    sortOrder: 4
+                  842e644b-8402-4600-9e87-59775f0ddec7:
+                    required: false
+                    sortOrder: 3
+                  a6daf6ce-38fd-42d4-887c-d75b76d9e467:
+                    required: false
+                    sortOrder: 2
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
                     sortOrder: 1
       d20e18f9-a337-4c6a-9d4f-aa5a4fe7fcd6:
         name: Textarea

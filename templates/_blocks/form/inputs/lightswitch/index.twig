@@ -1,0 +1,10 @@
+<lightswitch-component lazy-load-css="lightswitch-component">
+    <input type="checkbox" name="{{ input.title|camel }}" id="{{ input.title|camel }}" {{ input.required ? 'required' }} />
+    <label for="{{ input.title|camel }}"">
+        <lightswitch-icon aria-hidden="true">
+            <lightswitch-track></lightswitch-track>
+            <lightswitch-knob></lightswitch-knob>
+        </lightswitch-icon>
+        <span>{{ input.title }}</span>
+    </label>
+</lightswitch-component>

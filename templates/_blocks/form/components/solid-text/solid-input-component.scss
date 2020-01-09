@@ -29,6 +29,7 @@ solid-input-component
         border-color: $grey-2;
         background-color: $grey-1;
 
+        &[type="date"],
         &.has-value
         {
             & + label
