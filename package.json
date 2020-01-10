@@ -13,18 +13,19 @@
 		"cleanup": "rm -rf ./_compiled",
 		"sass": "node ./tooling/sass.js",
 		"build": "npm run prep && npm run compile && npm run sass && djinnjs -e dev && npm run cleanup",
-		"bundle": "node ./tools/bundler.js",
 		"eslint": "eslint -c .eslintrc.js \"templates/**/*.ts\" && eslint -c .eslintrc.js \"controllers/**/*.ts\"",
 		"stylelint": "stylelint \"templates/**/*.scss\"",
 		"lint": "npm run eslint && npm run stylelint",
 		"prettier": "prettier --write \"templates/**/*.ts\" && prettier --write \"controllers/**/*.ts\" && prettier --write \"transitions/**/*.ts\"",
 		"precommit": "npm run eslint && npm run stylelint",
 		"predeploy": "npm run prettier && npm run eslint && npm run stylelint && npm run build && npm run noscript",
-		"pack": "snowpack"
+		"bundle": "npm run unpack",
+		"unpack": "snowpack"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^2.15.0",
 		"@typescript-eslint/parser": "^2.15.0",
+		"djinnjs": "0.0.11",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.9.0",
 		"eslint-plugin-prettier": "^3.1.2",
@@ -44,7 +45,6 @@
 	},
 	"dependencies": {
 		"@codewithkyle/notifyjs": "^1.0.3",
-		"djinnjs": "0.0.11",
 		"uuid": "^3.3.3"
 	},
 	"husky": {
