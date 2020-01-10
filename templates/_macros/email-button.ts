@@ -1,5 +1,4 @@
-// @ts-ignore
-import { notify } from "djinnjs/notify";
+import { notify } from "@codewithkyle/notifyjs";
 
 class EmailButtonComponent extends HTMLElement {
 	private input: HTMLInputElement;
