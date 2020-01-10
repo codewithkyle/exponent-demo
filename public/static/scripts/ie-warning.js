@@ -10,19 +10,23 @@ ieWarningShim.style.cssText =
 	'display:flex; justify-content:center; flex-direction:column; align-items:center; height:100vh; width:100vw; background-color:white; position:fixed; top:0; left:0; z-index:9999999999; overflow:hidden; font-family: "Arial", serif;';
 var browsers = [
 	{
+		name: "Chrome",
 		downloadLink: "https://www.google.com/chrome/",
 		icon: window.location.origin + "/static/images/ie-warning/chrome.png",
 	},
 	{
+		name: "FIrefox",
 		downloadLink: "https://www.mozilla.org/en-US/firefox/new/",
 		icon: window.location.origin + "/static/images/ie-warning/firefox.png",
 	},
 	{
+		name: "Safari",
 		downloadLink: "https://support.apple.com/downloads/safari",
 		icon: window.location.origin + "/static/images/ie-warning/safari.png",
 	},
 	{
-		downloadLink: "https://www.microsoft.com/en-us/windows/microsoft-edge",
+		name: "Microsoft Edge",
+		downloadLink: "https://www.microsoftedgeinsider.com/en-us/download",
 		icon: window.location.origin + "/static/images/ie-warning/edge.png",
 	},
 ];
@@ -43,6 +47,7 @@ for (var i = 0; i < browsers.length; i++) {
 	});
 	var broswerLogo = document.createElement("img");
 	broswerLogo.src = browsers[i].icon;
+	broswerLogo.alt = `${browsers[i].name} logo`;
 	broswerLogo.style.cssText = "width:80px;height:80px;";
 	browserLink.appendChild(broswerLogo);
 	logoShim.appendChild(browserLink);
