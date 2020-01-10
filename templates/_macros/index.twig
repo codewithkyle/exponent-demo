@@ -1,5 +1,5 @@
 {% macro emailButton(email, copy) %}
-    <email-button web-component role="button">
+    <email-button web-component role="button" lazy-load-css="snackbar">
         <input type="text" value="{{ email }}" style="position:absolute;top:-9999px;left:-9999px;display:inline-block;" aria-hidden="true">
         {{ copy|raw }}
     </email-button>
