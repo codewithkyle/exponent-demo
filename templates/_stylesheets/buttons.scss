@@ -39,6 +39,11 @@
             }
         }
 
+        &.-secondary
+        {
+            background-color: pink;
+        }
+
         &.-black
         {
             background-color: var(--black);

@@ -1,8 +1,15 @@
-const sass = require('node-sass');
-const glob = require('glob');
-const fs = require('fs');
+const sass = require("node-sass");
+const glob = require("glob");
+const fs = require("fs");
 
-const sourceDir = 'templates';
+const sourceDir = "templates";
+
+const mode = process.env.NODE_ENV === "production" ? "production" : "development";
+
+let output = "_css";
+if (mode === "development") {
+	output = "_compiled/css";
+}
 
 class SassCompiler {
 	constructor() {
@@ -21,11 +28,11 @@ class SassCompiler {
 
 	preflight() {
 		return new Promise(resolve => {
-			if (!fs.existsSync('_compiled')) {
-				fs.mkdirSync('_compiled');
+			if (!fs.existsSync("_css")) {
+				fs.mkdirSync("_css");
 			}
-			if (!fs.existsSync('_compiled/css')) {
-				fs.mkdirSync('_compiled/css');
+			if (mode === "development" && !fs.existsSync("_compiled/css")) {
+				fs.mkdirSync("_compiled/css");
 			}
 			resolve();
 		});
@@ -52,19 +59,19 @@ class SassCompiler {
 				sass.render(
 					{
 						file: file,
-						outputStyle: 'compressed',
+						outputStyle: "compressed",
 					},
 					(error, result) => {
 						if (error) {
 							reject(`${error.message} at line ${error.line} ${error.file}`);
 						} else {
-							let fileName = result.stats.entry.replace(/.*\//g, '').toLowerCase();
-							fileName = fileName.replace(/(.scss)|(.sass)/g, '').trim();
+							let fileName = result.stats.entry.replace(/.*\//g, "").toLowerCase();
+							fileName = fileName.replace(/(.scss)|(.sass)/g, "").trim();
 							if (fileName) {
-								const newFile = `_compiled/css/${fileName}.css`;
+								const newFile = `${output}/${fileName}.css`;
 								fs.writeFile(newFile, result.css.toString(), error => {
 									if (error) {
-										reject('Something went wrong saving the file' + error);
+										reject("Something went wrong saving the file" + error);
 									}
 
 									count++;
@@ -73,7 +80,7 @@ class SassCompiler {
 									}
 								});
 							} else {
-								reject('Something went wrong with the file name of ' + result.stats.entry);
+								reject("Something went wrong with the file name of " + result.stats.entry);
 							}
 						}
 					}
