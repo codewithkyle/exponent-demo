@@ -15,7 +15,7 @@ var browsers = [
 		icon: window.location.origin + "/static/images/ie-warning/chrome.png",
 	},
 	{
-		name: "FIrefox",
+		name: "Firefox",
 		downloadLink: "https://www.mozilla.org/en-US/firefox/new/",
 		icon: window.location.origin + "/static/images/ie-warning/firefox.png",
 	},
@@ -63,7 +63,7 @@ var closeWarningShim = document.createElement("div");
 var closeWarningButton = document.createElement("button");
 closeWarningButton.style.cssText =
 	"line-height: 48px; height: 48px; padding: 0 2rem; margin:2rem 0 0; border-radius: 0.125rem; font-size: 0.875rem; text-decoration: none; color: #fff; background-color: #55acee; box-shadow: 0 1px 3px rgba(51,51,51,0.1), 0 2px 8px rgba(51,51,51,0.1);text-transform:uppercase;font-weight:600;";
-closeWarningButton.innerHTML = "Continue to Website Regardless";
+closeWarningButton.innerHTML = "Continue anyways";
 closeWarningShim.appendChild(closeWarningButton);
 closeWarningButton.addEventListener("click", function() {
 	document.documentElement.removeChild(ieWarningShim);
