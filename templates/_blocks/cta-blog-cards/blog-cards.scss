@@ -41,7 +41,7 @@ blog-cards
             a
             {
                 font-weight: var(--font-medium);
-                color: var(--link);
+                color: var(--primary-800);
                 transition: all 75ms ease-in-out;
                 cursor: pointer;
                 text-decoration: underline;
@@ -49,12 +49,12 @@ blog-cards
                 &:hover,
                 &:focus
                 {
-                    color: var(--link-hover);
+                    color: var(--primary-700);
                 }
 
                 &:active
                 {
-                    color: var(--link-active);
+                    color: var(--primary-900);
                 }
             }
             

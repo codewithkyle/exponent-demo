@@ -1,5 +1,6 @@
 :root
 {
+    // Ya basic
     --white: #fff;
     --black: #000;
 
@@ -57,20 +58,6 @@
     --primary-700: #2B6CB0;
     --primary-800: #2C5282;
     --primary-900: #2A4365;
-    
-    --link: #027787;
-    --link-hover: #1697A9;
-    --link-active: hsl(187, 93%, 23%);
-
-    --background: #fff;
-
-    --secondary: #34AABA;
-    --secondary-hover: #1697A9;
-    --secondary-active: hsl(187, 93%, 23%);
-    --secondary-hover-opaque: rgba(22, 151, 169, 0.05);
-    --secondary-active-opaque: rgba(22, 151, 169, 0.1);
-
-    --complementary: #FF5244;
 
     // Box Shadows
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);

@@ -72,7 +72,7 @@ location-block
             a
             {
                 font-weight: var(--font-medium);
-                color: var(--link);
+                color: var(--primary-800);
                 transition: all 75ms ease-in-out;
                 cursor: pointer;
                 text-decoration: underline;
@@ -80,12 +80,12 @@ location-block
                 &:hover,
                 &:focus
                 {
-                    color: var(--link-hover);
+                    color: var(--primary-700);
                 }
 
                 &:active
                 {
-                    color: var(--link-active);
+                    color: var(--primary-900);
                 }
             }
         }
@@ -120,7 +120,7 @@ location-block
             line-height: 36px;
             font-size: 0.875rem;
             font-weight: var(--font-medium);
-            color: var(--link);
+            color: var(--primary-800);
             position: relative;
             transition: all 75ms ease-in-out;
             cursor: pointer;
@@ -134,21 +134,22 @@ location-block
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: transparent;
                 border-radius: 0.25rem;
                 transition: all 75ms ease-in-out;
                 transform-origin: center;
                 transform: scale(0);
+                background-color: var(--primary-500);
+                opacity: 0;
             }
 
             &:hover,
             &:focus
             {
-                color: var(--link-hover);
+                color: var(--primary-700);
 
                 &::before
                 {
-                    background-color: var(--secondary-hover-opaque);
+                    opacity: 0.06;
                     transition: background-color 150ms ease, transform 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     transform: scale(1);
                 }
@@ -156,11 +157,11 @@ location-block
 
             &:active
             {
-                color: var(--link-active);
+                color: var(--primary-900);
 
                 &::before
                 {
-                    background-color: var(--secondary-active-opaque);
+                    opacity: 0.1;
                     transition: all 75ms ease-in-out;
                     transform: scale(1);
                 }
