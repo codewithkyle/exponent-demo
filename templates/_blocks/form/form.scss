@@ -21,7 +21,7 @@ form-component
         display: block;
         width: 100%;
         text-align: center;
-        color: var(--success);
+        color: var(--success-500);
     }
 
     form
@@ -60,7 +60,7 @@ form-component
 
         form-page-count
         {
-            color: var(--font-light);
+            color: var(--grey-700);
             font-size: 0.75rem;
             margin-left: 0.25rem;
         }

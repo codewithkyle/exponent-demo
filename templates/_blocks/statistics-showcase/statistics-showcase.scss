@@ -65,12 +65,12 @@ statistics-showcase
             &.has-highlight
             {
                 background-color: var(--primary);
-                color: var(--font-button);
+                color: var(--grey-800);
                 box-shadow: 0 6px 32px rgba(57, 213, 82,0.3), 0 4px 16px rgba(57, 213, 82,0.3);
 
                 svg
                 {
-                    color: var(--font-button);
+                    color: var(--grey-800);
                 }
             }
 
@@ -106,7 +106,7 @@ statistics-showcase
             span
             {
                 font-size: 0.7rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 display: block;
                 text-align: center;
             }

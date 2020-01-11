@@ -16,7 +16,7 @@ header
 
         svg
         {
-            color: var(--font);   
+            color: var(--grey-800);   
         }
 
         nav,
@@ -25,7 +25,7 @@ header
             a,
             button
             {
-                color: var(--font);
+                color: var(--grey-800);
             }
         }
     }
@@ -169,7 +169,7 @@ header
 
                     a
                     {
-                        color: var(--font);
+                        color: var(--grey-800);
                         font-size: 0.875rem;
                         display: block;
                         line-height: 36px;
@@ -181,14 +181,14 @@ header
                         &:hover,
                         &:focus
                         {
-                            background-color: var(--off-white);
+                            background-color: var(--grey-100);
                             color: var(--primary);
                         }
 
                         &:active
                         {
                             color: var(--primary-active);
-                            background-color: var(--light-grey);
+                            background-color: var(--grey-200);
                         }
                     }
                 }

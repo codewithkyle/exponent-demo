@@ -9,7 +9,7 @@ pull-quote
 
     img-shim
     {
-        background-color: var(--off-white);
+        background-color: var(--grey-100);
         position: relative;
         display: block;
         width: 100%;
@@ -57,7 +57,7 @@ pull-quote
         p
         {
             line-height: 1.618;
-            color: var(--font-light);
+            color: var(--grey-700);
             margin-bottom: 1rem;
 
             strong
@@ -101,7 +101,7 @@ pull-quote
         span
         {
             margin-top: 0.75rem;
-            color: var(--font-light);
+            color: var(--grey-700);
             display: block;
             font-size: 0.875rem;
         }

@@ -24,7 +24,7 @@ blog-cards
 
         p
         {
-            color: var(--font-light);
+            color: var(--grey-700);
             line-height: 1.618;
             margin-bottom: 1rem;
 
@@ -158,7 +158,7 @@ blog-cards
             {
                 font-size: 1.25rem;
                 line-height: 2rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 display: block;
                 padding: 1.5rem 2rem;
                 text-align: center;
@@ -168,7 +168,7 @@ blog-cards
             h4
             {
                 font-size: 0.875rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: center;
@@ -194,7 +194,7 @@ blog-cards
                 card-tag
                 {
                     font-size: 0.875rem;
-                    color: var(--font-light);
+                    color: var(--grey-700);
                     margin-right: 0.25rem;
                 }
             }

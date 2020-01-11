@@ -16,12 +16,12 @@ blog-content
 
             input
             {
-                background-color: var(--off-white);
+                background-color: var(--grey-100);
                 height: 52px;
                 line-height: 52px;
                 padding: 0 1rem;
                 border-radius: 0.25rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 transition: all 75ms ease;
                 display: block;
                 width: 100%;
@@ -30,8 +30,8 @@ blog-content
                 &:hover,
                 &:focus
                 {
-                    background-color: var(--light-grey);
-                    color: var(--font);
+                    background-color: var(--grey-200);
+                    color: var(--grey-800);
                 }
             }
         }
@@ -49,7 +49,7 @@ blog-content
             vertical-align: top;
             width: 50%;
             line-height: 2rem;
-            color: var(--font-light);
+            color: var(--grey-700);
             transition: all 150ms ease-in-out;
 
             &:hover,
@@ -80,7 +80,7 @@ blog-content
         {
             display: block;
             margin: 3rem 0;
-            border-bottom: 1px solid var(--light-grey);
+            border-bottom: 1px solid var(--grey-200);
         }
     }
 

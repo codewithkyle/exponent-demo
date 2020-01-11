@@ -1,6 +1,6 @@
 footer
 {
-    border-top: 1px solid var(--light-grey);
+    border-top: 1px solid var(--grey-200);
     padding: 4rem 1rem 3rem;
     margin-top: 6rem;
 
@@ -15,7 +15,7 @@ footer
         company-info
         {
             padding-right: 4rem;
-            border-right: 1px solid var(--light-grey);
+            border-right: 1px solid var(--grey-200);
             padding-bottom: 4rem;
 
             img
@@ -27,7 +27,7 @@ footer
 
             p
             {
-                color: var(--font-light);
+                color: var(--grey-700);
                 display: block;
                 font-size: 0.875rem;
                 font-weight: var(--medium);
@@ -60,7 +60,7 @@ footer
                     {
                         font-size: 18px;
                         height: 18px;
-                        color: var(--font-light);
+                        color: var(--grey-700);
                         position: absolute;
                         transition: all 75ms ease;
                     }
@@ -79,14 +79,14 @@ footer
             {
                 font-weight: var(--medium);
                 display: block;
-                color: var(--font-light);
+                color: var(--grey-700);
                 margin-bottom: 0.5rem;
             }
 
             a
             {
                 font-size: 0.875rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 display: block;
                 line-height: 2rem;
                 transition: all 150ms ease-in-out;
@@ -115,13 +115,13 @@ footer
             {
                 font-weight: var(--medium);
                 display: block;
-                color: var(--font-light);
+                color: var(--grey-700);
                 margin-bottom: 0.5rem;
             }
 
             p
             {
-                color: var(--font-light);
+                color: var(--grey-700);
                 margin-bottom: 0.5rem;
                 line-height: 2rem;
                 font-size: 0.875rem;
@@ -132,7 +132,7 @@ footer
             email-button
             {
                 line-height: 2rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 transition: all 75ms ease;
                 display: flex;
                 align-items: center;

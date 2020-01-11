@@ -6,7 +6,7 @@ lazy-image
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    background-color: var(--off-white);
+    background-color: var(--grey-100);
 
     &[image-state=unseen]
     {
@@ -55,7 +55,7 @@ image-cite
     text-align: center;
     font-size: 0.75rem;
     margin-top: 1rem;
-    color: var(--font-light);
+    color: var(--grey-700);
     line-height: 1.618;
     width: 100%;
 }

@@ -59,7 +59,7 @@
     {
         font-size: 1.5rem;
         line-height: 2.25rem;
-        color: var(--font-light);
+        color: var(--grey-700);
         display: block;
         padding: 1rem 2rem;
         transition: all 75ms ease;
@@ -68,7 +68,7 @@
     h4
     {
         font-size: 0.875rem;
-        color: var(--font-light);
+        color: var(--grey-700);
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -88,7 +88,7 @@
         padding: 1.5rem 2rem 2rem;
         line-height: 1.618;
         font-size: 0.875rem;
-        color: var(--font-light);
+        color: var(--grey-700);
     }
 
     card-tags
@@ -100,7 +100,7 @@
         card-tag
         {
             font-size: 0.875rem;
-            color: var(--font-light);
+            color: var(--grey-700);
             margin-right: 0.25rem;
         }
     }

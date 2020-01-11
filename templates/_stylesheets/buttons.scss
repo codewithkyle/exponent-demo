@@ -20,14 +20,14 @@
         &.-primary
         {
             background-color: var(--primary);
-            color: var(--font-button);
+            color: var(--grey-800);
             border-color: var(--primary);
 
             &:hover,
             &:focus
             {
-                background-color: var(--font-button);
-                border-color: var(--font-button);
+                background-color: var(--grey-800);
+                border-color: var(--grey-800);
                 color: var(--primary);
             }
 
@@ -55,14 +55,14 @@
             {
                 background-color: var(--primary);
                 border-color: var(--primary);
-                color: var(--font-button);
+                color: var(--grey-800);
             }
 
             &:active
             {
                 background-color: var(--primary-active);
                 border-color: var(--primary-active);
-                color: var(--font-button);
+                color: var(--grey-800);
             }
         }
     }

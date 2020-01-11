@@ -16,7 +16,7 @@ team-showcase
 
     p
     {
-        color: var(--font-light);
+        color: var(--grey-700);
         line-height: 1.618;
         width: 420px;
         max-width: 100%;
@@ -93,7 +93,7 @@ team-showcase
                 width: 100%;
                 position: relative;
                 margin-bottom: 1rem;
-                background-color: var(--off-white);
+                background-color: var(--grey-100);
 
                 &::before
                 {
@@ -126,7 +126,7 @@ team-showcase
             {
                 display: block;
                 font-size: 0.75rem;
-                color: var(--font-light);
+                color: var(--grey-700);
                 text-transform: uppercase;
             }
         }

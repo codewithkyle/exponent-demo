@@ -16,7 +16,7 @@ location-block
         position: relative;
         overflow: hidden;
         display: inline-block;
-        background-color: var(--off-white);
+        background-color: var(--grey-100);
 
         &::before
         {
@@ -56,7 +56,7 @@ location-block
         p
         {
             line-height: 1.618;
-            color: var(--font-light);
+            color: var(--grey-700);
             margin-bottom: 1rem;
 
             strong
