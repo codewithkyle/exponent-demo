@@ -27,7 +27,7 @@ team-showcase
 
         strong
         {
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
         }
 
         em
@@ -37,7 +37,7 @@ team-showcase
 
         a
         {
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
             color: var(--link);
             transition: all 75ms ease-in-out;
             cursor: pointer;
@@ -117,7 +117,7 @@ team-showcase
             h3
             {
                 font-size: 1rem;
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
                 margin-bottom: 0.75rem;
                 display: block;
             }

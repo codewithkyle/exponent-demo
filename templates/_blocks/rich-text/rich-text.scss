@@ -66,7 +66,7 @@ rich-text
 
         strong
         {
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
         }
 
         em
@@ -76,7 +76,7 @@ rich-text
 
         a
         {
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
             color: var(--link);
             transition: all 75ms ease-in-out;
             cursor: pointer;

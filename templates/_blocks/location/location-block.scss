@@ -47,7 +47,7 @@ location-block
         {
             font-size: 1.5rem;
             line-height: 2rem;
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
             margin-bottom: 1rem;
             display: block;
             width: 100%;
@@ -61,7 +61,7 @@ location-block
 
             strong
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
             }
 
             em
@@ -71,7 +71,7 @@ location-block
 
             a
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
                 color: var(--link);
                 transition: all 75ms ease-in-out;
                 cursor: pointer;
@@ -104,7 +104,7 @@ location-block
 
             dt
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
                 margin-right: 0.5rem;
             }
         }
@@ -119,7 +119,7 @@ location-block
             text-transform: uppercase;
             line-height: 36px;
             font-size: 0.875rem;
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
             color: var(--link);
             position: relative;
             transition: all 75ms ease-in-out;

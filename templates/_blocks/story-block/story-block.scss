@@ -63,7 +63,7 @@ story-block
 
             strong
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
             }
 
             em
@@ -73,7 +73,7 @@ story-block
 
             a
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
                 color: var(--link);
                 transition: all 75ms ease-in-out;
                 cursor: pointer;
@@ -101,7 +101,7 @@ story-block
         {
             margin-top: 2rem;
             color: var(--link);
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
             transition: color 75ms ease-in-out;
             display: inline-flex;
             align-items: center;

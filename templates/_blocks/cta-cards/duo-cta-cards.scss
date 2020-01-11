@@ -35,7 +35,7 @@ duo-cta-cards
 
             strong
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
             }
 
             em
@@ -45,7 +45,7 @@ duo-cta-cards
 
             a
             {
-                font-weight: var(--medium);
+                font-weight: var(--font-medium);
                 color: var(--link);
                 transition: all 75ms ease-in-out;
                 cursor: pointer;
@@ -108,7 +108,7 @@ duo-cta-cards
 
         h3
         {
-            font-weight: var(--medium);
+            font-weight: var(--font-medium);
             font-size: 1.5rem;
             display: block;
             padding: 1.5rem;
