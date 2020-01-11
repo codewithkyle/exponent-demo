@@ -47,12 +47,12 @@ lazy-video-block
             &:hover,
             &:focus
             {
-                color: var(--primary-hover);
+                color: var(--primary-400);
             }
 
             &:active
             {
-                color: var(--primary-active);
+                color: var(--primary-600);
             }
         }
         
@@ -183,7 +183,7 @@ lazy-video
         border-radius: 50%;
         box-shadow: 0 1px 3px rgba(51,51,51,0.3), 0 4px 24px rgba(51,51,51,0.3);
         background-color: var(--white);
-        color: var(--primary);
+        color: var(--primary-500);
         transition: all 150ms ease-in-out;
         position: absolute;
         top: 50%;

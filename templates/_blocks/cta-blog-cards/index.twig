@@ -7,7 +7,7 @@
                     {{ section.copy }}
                 {% endif %}
                 {% if section.button.url|length %}
-                    <a href="{{ section.button.url }}" {{ (section.button.target|length) ? 'target="_blank"' }} class="g-button -solid -primary -rounded">
+                    <a href="{{ section.button.url }}" {{ (section.button.target|length) ? 'target="_blank"' }} class="button -solid -primary -rounded">
                         {% if section.button.customText %}
                             {{ section.button.customText }}
                         {% else %}

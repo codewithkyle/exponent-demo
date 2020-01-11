@@ -55,13 +55,13 @@ blog-content
             &:hover,
             &:focus
             {
-                color: var(--primary-hover);
+                color: var(--primary-400);
                 transform: translateX(0.5rem);
             }
 
             &:active
             {
-                color: var(--primary-active);
+                color: var(--primary-600);
                 transform: translateX(0.5rem);
             }
 
@@ -72,7 +72,7 @@ blog-content
 
             &.is-active
             {
-                color: var(--primary);
+                color: var(--primary-500);
             }
         }
 

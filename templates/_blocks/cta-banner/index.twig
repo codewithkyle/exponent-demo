@@ -24,7 +24,7 @@
             {{ section.copy }}
         {% endif %}
         {% if section.button.url|length %}
-            <a href="{{ section.button.url }}" {{ (section.button.customText|length) ? 'target="_blank"' }} class="g-button -primary -solid -pill" style="margin-top:2rem;">
+            <a href="{{ section.button.url }}" {{ (section.button.customText|length) ? 'target="_blank"' }} class="button -primary -solid -pill" style="margin-top:2rem;">
                 {% if section.button.customText|length %}
                     {{ section.button.customText }}
                 {% else %}

@@ -57,7 +57,7 @@
                             {% endif %}
                         </a>
                     {% elseif link.type == 'button' %}
-                        <a href="{{ link.button.url }}" class="g-button -solid -primary"  {{ (link.button.target|length) ? 'target="_blank"' }}>
+                        <a href="{{ link.button.url }}" class="button -solid -primary"  {{ (link.button.target|length) ? 'target="_blank"' }}>
                             {% if link.button.customText|length %}
                                 {{ link.button.customText }}
                             {% else %}
