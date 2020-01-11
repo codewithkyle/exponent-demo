@@ -26,7 +26,7 @@
                 <div>
                     <a href="{{ card.url }}">
                         <img-shim>
-                            <img src="{{ image[0].url }}" alt="{{ card.image[0].alternateDescription }}" srcset="{{ craft.imager.srcset(image) }}" width="350" loading="lazy" style="opacity:0;transition: opacity 300ms ease-in;" onload="this.style.opacity = '1';" />
+                            <img draggable="false" src="{{ image[0].url }}" alt="{{ card.image[0].alternateDescription }}" srcset="{{ craft.imager.srcset(image) }}" width="350" loading="lazy" style="opacity:0;transition: opacity 300ms ease-in;" onload="this.style.opacity = '1';" />
                         </img-shim>
                         {% if card.categories|length %}
                             <card-tags>
