@@ -16,6 +16,9 @@
         {% endif %}
         <form method="POST" action="/pwa/form-submit">
             <input type="hidden" name="formId" value="{{ section.form[0].id }}">
+            <noscript>
+                {{ csrfInput() }}
+            </noscript>
             <form-page>
             {% for row in section.form[0].form %}
                 {% if row.type == 'pageBreak' %}
