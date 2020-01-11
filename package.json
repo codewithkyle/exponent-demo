@@ -11,18 +11,17 @@
 		"prep": "rm -rf ./_compiled && rm -rf ./_css",
 		"compile": "tsc",
 		"cleanup": "rm -rf ./_compiled && rm -rf ./_css",
-		"sass": "node ./tooling/sass.js",
-		"build": "npm run prep && npm run compile && cross-env NODE_ENV=dev npm run sass && djinnjs -e dev && npm run cleanup",
-		"production": "npm run prep && npm run compile && cross-env NODE_ENV=production npm run sass && npm run purgecss && djinnjs -e dev && npm run cleanup",
+		"sass:dev": "cssmonster --e dev",
+		"sass:prod": "cssmonster",
+		"build": "npm run prep && npm run compile && npm run sass:dev && djinnjs -e dev && npm run cleanup",
+		"production": "npm run prep && npm run compile && npm run sass:prod && npm run purgecss && djinnjs -e dev && npm run cleanup",
 		"eslint": "eslint -c .eslintrc.js \"templates/**/*.ts\"",
 		"stylelint": "stylelint \"templates/**/*.scss\"",
 		"lint": "npm run eslint && npm run stylelint",
 		"prettier": "prettier --write \"templates/**/*.ts\"",
 		"precommit": "npm run eslint && npm run stylelint",
 		"predeploy": "npm run prettier && npm run eslint && npm run stylelint && npm run production",
-		"bundle": "npm run unpack",
-		"unpack": "snowpack",
-		"purgecss": "node ./tooling/purgecss.js"
+		"unpack": "snowpack"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^2.15.0",
@@ -49,6 +48,7 @@
 	"dependencies": {
 		"@codewithkyle/notifyjs": "^1.0.3",
 		"djinnjs": "0.0.13",
+		"normalize.css": "^8.0.1",
 		"uuid": "^3.3.3"
 	},
 	"husky": {
