@@ -8,7 +8,7 @@
         { width: 1600, ratio: 16/9, position: data.hero.heroImage[0].getFocalPoint(), format: imageFormat },
         { width: 1920, ratio: 16/9, position: data.hero.heroImage[0].getFocalPoint(), format: imageFormat }
     ]) %}
-    <img alt="{{ data.hero.heroImage[0].alternateDescription }}" src="{{ image[0].url }}" srcset="{{ craft.imager.srcset(image) }}" width="1920" loading="lazy" style="opacity:0;transition:all 300ms ease;" onload="this.style.opacity = '1';">
+    <img alt="{{ data.hero.heroImage[0].alternateDescription }}" src="{{ image[0].url }}" srcset="{{ craft.imager.srcset(image) }}" width="1920" loading="lazy" style="opacity:0;transition:all 300ms ease-in-out;" onload="this.style.opacity = '1';">
     {% if data.hero.heading|length or data.hero.body|length %}
         <content-wrapper eager-load-css="hero-area-content">
             <div style="display:inline-block;">

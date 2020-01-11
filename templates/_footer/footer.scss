@@ -62,7 +62,7 @@ footer
                         height: 18px;
                         color: var(--grey-700);
                         position: absolute;
-                        transition: all 75ms ease;
+                        transition: all 75ms ease-in-out;
                     }
                 }
             }
@@ -133,7 +133,7 @@ footer
             {
                 line-height: 2rem;
                 color: var(--grey-700);
-                transition: all 75ms ease;
+                transition: all 75ms ease-in-out;
                 display: flex;
                 align-items: center;
                 flex-flow: row nowrap;

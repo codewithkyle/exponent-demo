@@ -37,12 +37,18 @@
                         {% set columns = 2 %}
                     {% elseif row.type == 'threeColumns' %}
                         {% set columns = 3 %}
+                    {% elseif row.type == 'copy' %}
+                        {% set columns = null %}
                     {% endif %}
-                    <form-grid columns="{{ columns }}">
-                        {% for input in row.inputs.all() %}
-                            {% include "_blocks/form/inputs/" ~ input.type|kebab %}
-                        {% endfor %}
-                    </form-grid>
+                    {% if columns %}
+                        <form-grid columns="{{ columns }}">
+                            {% for input in row.inputs.all() %}
+                                {% include "_blocks/form/inputs/" ~ input.type|kebab %}
+                            {% endfor %}
+                        </form-grid>
+                    {% else %}
+                        {{ row.copy }}
+                    {% endif %}
                 {% endif %}
             {% endfor %}
             </form-page>

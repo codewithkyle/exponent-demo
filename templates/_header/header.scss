@@ -7,7 +7,7 @@ header
     padding: 0 1rem;
     z-index: 1000;
     background-color: transparent;
-    transition: all 150ms ease;
+    transition: all 150ms ease-in-out;
 
     &.-solid
     {
@@ -63,13 +63,13 @@ header
         {
             color: var(--white);
             font-size: 1rem;
-            transition: all 150ms ease;
+            transition: all 150ms ease-in-out;
             font-weight: var(--medium);
 
             &:not(.button)
             {
                 opacity: 0.87;
-                transition: all 75ms ease;
+                transition: all 75ms ease-in-out;
 
                 &:hover,
                 &:focus
@@ -175,7 +175,7 @@ header
                         line-height: 36px;
                         min-height: 36px;
                         padding: 0 3rem 0 1rem;
-                        transition: all 75ms ease;
+                        transition: all 75ms ease-in-out;
                         white-space: nowrap;
 
                         &:hover,

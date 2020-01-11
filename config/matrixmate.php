@@ -374,5 +374,15 @@ return [
                 'hideUngroupedTypes' => true,
             ]
         ],
+        'form' => [
+            '*' => [
+                'groups' => [
+                    [
+                        'label' => 'Inputs',
+                        'types' => ['singleColumn', 'twoColumns', 'threeColumns'],
+                    ],
+                ],
+            ]
+        ]
     ],
 ];

@@ -62,7 +62,7 @@
         color: var(--grey-700);
         display: block;
         padding: 1rem 2rem;
-        transition: all 75ms ease;
+        transition: all 75ms ease-in-out;
     }
 
     h4

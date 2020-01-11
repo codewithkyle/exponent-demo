@@ -89,5 +89,76 @@ form-component
                 }
             }
         }
+
+        p
+        {
+            margin-bottom: 1rem;
+            line-height: 1.618;
+            color: var(--grey-700);
+            display: block;
+            width: 100%;
+
+            &:last-child
+            {
+                margin-bottom: 0;
+            }
+
+            strong
+            {
+                font-weight: var(--medium);
+            }
+
+            em
+            {
+                font-style: italic;
+            }
+
+            a
+            {
+                font-weight: var(--medium);
+                color: var(--link);
+                transition: all 75ms ease-in-out;
+                cursor: pointer;
+                text-decoration: underline;
+
+                &:hover,
+                &:focus
+                {
+                    color: var(--link-hover);
+                }
+
+                &:active
+                {
+                    color: var(--link-active);
+                }
+            }
+        }
+
+        ul
+        {
+            li
+            {
+                list-style-type: disc;
+            }
+        }
+
+        ol
+        {
+            li
+            {
+                list-style-type: initial;
+            }
+        }
+
+        ul,
+        ol
+        {
+            margin-bottom: 1rem;
+
+            &:last-child
+            {
+                margin-bottom: 0;
+            }
+        }
     }
 }

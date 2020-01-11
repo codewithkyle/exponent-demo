@@ -75,7 +75,7 @@ story-block
             {
                 font-weight: var(--medium);
                 color: var(--link);
-                transition: all 75ms ease;
+                transition: all 75ms ease-in-out;
                 cursor: pointer;
                 text-decoration: underline;
 
@@ -102,7 +102,7 @@ story-block
             margin-top: 2rem;
             color: var(--link);
             font-weight: var(--medium);
-            transition: color 75ms ease;
+            transition: color 75ms ease-in-out;
             display: inline-flex;
             align-items: center;
             flex-flow: row nowrap;

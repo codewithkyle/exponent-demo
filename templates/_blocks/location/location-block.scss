@@ -73,7 +73,7 @@ location-block
             {
                 font-weight: var(--medium);
                 color: var(--link);
-                transition: all 75ms ease;
+                transition: all 75ms ease-in-out;
                 cursor: pointer;
                 text-decoration: underline;
 
@@ -122,7 +122,7 @@ location-block
             font-weight: var(--medium);
             color: var(--link);
             position: relative;
-            transition: all 75ms ease;
+            transition: all 75ms ease-in-out;
             cursor: pointer;
 
             &::before
@@ -161,7 +161,7 @@ location-block
                 &::before
                 {
                     background-color: var(--secondary-active-opaque);
-                    transition: all 75ms ease;
+                    transition: all 75ms ease-in-out;
                     transform: scale(1);
                 }
             }

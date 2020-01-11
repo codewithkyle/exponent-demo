@@ -22,7 +22,7 @@ blog-content
                 padding: 0 1rem;
                 border-radius: 0.25rem;
                 color: var(--grey-700);
-                transition: all 75ms ease;
+                transition: all 75ms ease-in-out;
                 display: block;
                 width: 100%;
                 text-overflow: ellipsis;
