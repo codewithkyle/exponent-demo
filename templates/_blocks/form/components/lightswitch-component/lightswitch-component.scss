@@ -74,7 +74,8 @@ lightswitch-component
         user-select: none;
         position: relative;
 
-        &:hover
+        &:hover,
+        &:focus
         {
             lightswitch-icon{
                 lightswitch-knob{

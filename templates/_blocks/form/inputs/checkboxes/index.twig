@@ -1,12 +1,12 @@
 <fieldset-component {{ input.required ? 'required web-component' }}>
-    <fieldset lazy-load-css="fieldset checkbox-component">
+    <fieldset lazy-load-css="fieldset">
         <legend>{{ input.title }}</legend>
         {% if input.helperText|length %}
             <p>{{ input.helperText }}</p>
         {% endif %}
         {% for option in input.options %}
-            <checkbox-component>
-                <input type="checkbox" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ option.options|camel }}" />
+            <checkbox-component web-component lazy-load-css="checkbox-component">
+                <input type="checkbox" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ option.options|camel }}" tabindex="-1" />
                 <label for="{{ input.title|camel }}-{{ option.options|camel }}" tabindex="0">
                     <checkbox-icon aria-label="square checkbox icon">
                         <svg viewBox="0 0 24 24" aria-hidden="true">

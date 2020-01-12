@@ -37,7 +37,8 @@ radio-component
         flex-flow: row nowrap;
         user-select: none;
 
-        &:hover
+        &:hover,
+        &:focus
         {
             radio-icon
             {
