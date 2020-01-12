@@ -19,6 +19,8 @@ use yii\redis\Cache;
 use yii\redis\Connection;
 use craft\helpers\StringHelper;
 use GuzzleHttp\Client;
+use craft\mail\Message;
+use craft\helpers\UrlHelper;
 
 /**
  * @author    Kyle Andrews
@@ -180,17 +182,19 @@ class PwaModuleService extends Component
             }
         }
 
+        $html = '';
         foreach ($form['form'] as $block)
         {
             if (isset($block['inputs']))
             {
                 foreach ($block['inputs'] as $input)
                 {
+                    $handle = StringHelper::toCamelCase($input->title);
                     if (isset($input['required']) && $input->required)
                     {
-                        $handle = StringHelper::toCamelCase($input->title);
                         if ($input->type == 'checkboxes')
                         {
+                            $html .= '<strong>' . $input->title . ':</strong><ul>';
                             $hasOneCheck = false;
                             foreach ($input['options'] as $option)
                             {
@@ -198,6 +202,7 @@ class PwaModuleService extends Component
                                 if (isset($params[$optionHandle]))
                                 {
                                     $hasOneCheck = true;
+                                    $html .= '<li>' . $option['options'] . '</li>';
                                 }
                             }
                             if (!$hasOneCheck)
@@ -208,9 +213,27 @@ class PwaModuleService extends Component
                                     'error' => 'This field is required.'
                                 ];
                             }
+                            $html .= '</ul><br>';
                         }
                         else
                         {
+                            if ($input->type == 'lightswitch')
+                            {
+                                if ($params[$handle] == 'on')
+                                {
+                                    $html .= '<strong>' . $input->title . ':</strong> true';
+                                }
+                                else
+                                {
+                                    $html .= '<strong>' . $input->title . ':</strong> false';
+                                }
+                                $html .= '<br>';
+                            }
+                            else
+                            {
+                                $html .= '<strong>' . $input->title . ':</strong> ' . $params[$handle];
+                                $html .= '<br>';
+                            }
                             if (empty($params[$handle]) || !isset($params[$handle]))
                             {
                                 $response['success'] = false;
@@ -225,6 +248,38 @@ class PwaModuleService extends Component
             }
         }
 
+        if ($response['success'])
+        {
+            $recipients = array_map('trim', explode(',', $form['recipients']));
+            $this->_sendMail($html, 'New ' . $form->title . ' Response', $recipients);
+        }
+
         return $response;
     }
+
+    // Private Methods
+    // =========================================================================
+
+    private function _sendMail($html, $subject, $mail = null, array $attachments = array()): bool
+{
+    $settings = Craft::$app->projectConfig->get('email');
+    $message = new Message();
+
+    $message->setFrom([$settings['fromEmail'] => $settings['fromName']]);
+    $message->setTo($mail);
+    $message->setSubject($subject);
+    $message->setHtmlBody($html);
+    if (!empty($attachments) && \is_array($attachments)) {
+
+        foreach ($attachments as $fileId) {
+            if ($file = Craft::$app->assets->getAssetById((int)$fileId)) {
+                $message->attach($this->getFolderPath() . '/' . $file->filename, array(
+                    'fileName' => $file->title . '.' . $file->getExtension()
+                ));
+            }
+        }
+    }
+
+    return Craft::$app->mailer->send($message);
+}
 }
