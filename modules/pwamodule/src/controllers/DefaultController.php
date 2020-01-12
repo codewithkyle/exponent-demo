@@ -47,10 +47,13 @@ class DefaultController extends Controller
 
     public function actionFormSubmit()
     {
-        $this->requireAcceptsJson();
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
         $response = PwaModule::getInstance()->pwaModuleService->submitForm($request->getBodyParams());
+        if ($request->getBodyParam('redirectUrl'))
+        {
+            return $this->redirect($request->getBodyParam('redirectUrl'));
+        }
         return json_encode($response);
     }
 

@@ -14,10 +14,17 @@
         {% if section.heading|length %}
             <h2>{{ section.heading }}</h2>
         {% endif %}
-        <form method="POST" action="/pwa/form-submit">
+        {% if craft.app.request.getParam('success') %}
+            <div style="display:block;width:100%;text-align: center;margin-bottom: 3rem;">
+                <p style="display:inline-block;color:var(--success-800);line-height:2rem;height:2rem;border-radius:1rem;padding:0 1rem;background-color:var(--success-100);font-weight:var(--font-normal);">{{ successMessage }}</p>
+            </div>
+        {% endif %}
+        <form method="POST">
             <input type="hidden" name="formId" value="{{ section.form[0].id }}">
             <noscript>
                 {{ csrfInput() }}
+                {{ actionInput('pwa-module/default/form-submit') }}
+                <input type="hidden" name="redirectUrl" value="{{ craft.app.request.absoluteUrl ~ '?success=true' }}">
             </noscript>
             <form-page>
             {% for row in section.form[0].form %}
