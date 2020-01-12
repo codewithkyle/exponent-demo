@@ -4,6 +4,34 @@ lightswitch-component
     width: 100%;
     position: relative;
 
+    &.is-invalid
+    {
+        label
+        {
+            span
+            {
+                color: var(--danger-800);
+            }
+
+            lightswitch-icon{
+                lightswitch-track{
+                    background-color: var(--danger-200) !important;
+                }
+
+                lightswitch-knob{
+                    &:after{
+                        background-color: var(--danger-500) !important;
+                        border-color: var(--danger-500) !important;
+                    }
+
+                    &::before{
+                        background-color: var(--danger-500);
+                    }
+                }
+            }
+        }
+    }
+
     input
     {
         position: absolute;

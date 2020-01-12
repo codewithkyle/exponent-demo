@@ -32,7 +32,42 @@ class FormComponent extends HTMLElement {
 				valid = false;
 				input.reportValidity();
 			}
+
+			if (input.type === "checkbox") {
+				if (!input.checkValidity() && input.required) {
+					input.parentElement.classList.add("is-invalid");
+				} else {
+					input.parentElement.classList.remove("is-invalid");
+				}
+			}
 		});
+
+		if (valid) {
+			page.querySelectorAll("fieldset-component").forEach(fieldset => {
+				if (fieldset.getAttribute("required") !== null) {
+					let foundOneCheck = false;
+					const inputs = fieldset.querySelectorAll("input");
+					inputs.forEach((input: HTMLInputElement) => {
+						if (input.checked) {
+							foundOneCheck = true;
+						}
+					});
+					if (!foundOneCheck) {
+						valid = false;
+						fieldset.classList.add("is-invalid");
+						inputs.forEach((input: HTMLInputElement) => {
+							input.parentElement.classList.add("is-invalid");
+						});
+					} else {
+						fieldset.classList.remove("is-invalid");
+						inputs.forEach((input: HTMLInputElement) => {
+							input.parentElement.classList.remove("is-invalid");
+						});
+					}
+				}
+			});
+		}
+
 		return valid;
 	}
 
@@ -80,7 +115,7 @@ class FormComponent extends HTMLElement {
 				const response = await request.json();
 				if (response.success) {
 					notify({
-						message: this.dataset.successMessage.length ? this.dataset.successMessage : "The from was successfully submitted.",
+						message: this.dataset.successMessage,
 						duration: 3,
 						closeable: true,
 					});
@@ -105,9 +140,7 @@ class FormComponent extends HTMLElement {
 
 	private resetInputs(): void {
 		this.form.querySelectorAll("input, select, textarea").forEach((input: HTMLInputElement) => {
-			if (input.value === "") {
-				input.classList.remove("has-value");
-			}
+			input.parentElement.classList.remove("has-value");
 		});
 	}
 

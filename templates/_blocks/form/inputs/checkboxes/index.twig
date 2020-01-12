@@ -1,16 +1,18 @@
-<fieldset lazy-load-css="fieldset checkbox-component">
-    <legend>{{ input.title }}</legend>
-    {% for option in input.options %}
-        <checkbox-component web-component>
-            <input type="checkbox" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ option.options|camel }}" />
-            <label for="{{ input.title|camel }}-{{ option.options|camel }}" tabindex="0">
-                <checkbox-icon aria-label="square checkbox icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke="currentColor" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                    </svg>
-                </checkbox-icon>
-                <span>{{ option.options }}</span>
-            </label>
-        </checkbox-component>
-    {% endfor %}
-</fieldset>
+<fieldset-component {{ input.required ? 'required web-component' }}>
+    <fieldset lazy-load-css="fieldset checkbox-component">
+        <legend>{{ input.title }}</legend>
+        {% for option in input.options %}
+            <checkbox-component>
+                <input type="checkbox" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ option.options|camel }}" />
+                <label for="{{ input.title|camel }}-{{ option.options|camel }}" tabindex="0">
+                    <checkbox-icon aria-label="square checkbox icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke="currentColor" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                        </svg>
+                    </checkbox-icon>
+                    <span>{{ option.options }}</span>
+                </label>
+            </checkbox-component>
+        {% endfor %}
+    </fieldset>
+</fieldset-component>

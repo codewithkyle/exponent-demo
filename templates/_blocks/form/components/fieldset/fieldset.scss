@@ -1,3 +1,19 @@
+fieldset-component{
+    &.is-invalid
+    {
+        fieldset
+        {
+            border-color: var(--danger-200);
+            background-color: var(--danger-100);
+
+            legend,
+            p
+            {
+                color: var(--danger-800);
+            }
+        }
+    }
+}
 fieldset
 {
     display: inline-block;

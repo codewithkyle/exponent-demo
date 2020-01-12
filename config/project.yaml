@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578756943
+dateModified: 1578834036
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -3979,10 +3979,13 @@ sections:
                 fields:
                   20610b64-6cb6-4673-ae04-a92d599313ff:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                   c403a734-1d72-497f-8454-25f54976cb54:
                     required: true
                     sortOrder: 1
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 2
       7f5d3721-13d3-44ed-bbe5-7d61db19ecac:
         name: Number
         handle: number

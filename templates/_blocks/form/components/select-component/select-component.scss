@@ -15,12 +15,12 @@ select-component
     {
         select
         {
-            border-color: var(--danger-400) !important;
+            border-color: var(--danger-500) !important;
         }
 
         label
         {
-            color: var(--danger-500) !important;
+            color: var(--danger-800) !important;
             transform: translateY(0.25rem) scale(0.75);
         }
     }

@@ -19,7 +19,7 @@
                 <p style="display:inline-block;color:var(--success-800);line-height:2rem;height:2rem;border-radius:1rem;padding:0 1rem;background-color:var(--success-100);font-weight:var(--font-normal);">{{ successMessage }}</p>
             </div>
         {% endif %}
-        <form method="POST">
+        <form method="POST" novalidate>
             <input type="hidden" name="formId" value="{{ section.form[0].id }}">
             <noscript>
                 {{ csrfInput() }}
