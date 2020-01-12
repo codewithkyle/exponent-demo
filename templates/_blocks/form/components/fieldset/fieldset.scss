@@ -1,0 +1,36 @@
+fieldset
+{
+    display: inline-block;
+    width: 100%;
+    min-width: 16rem;
+    padding: 3rem 1rem 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.25rem;
+    border-color: var(--grey-200);
+    background-color: var(--grey-100);
+
+    legend
+    {
+        position: absolute;
+        top: 0.75rem;
+        left: 1.5rem;
+        margin: 0;
+        font-size: 1.15rem;
+        user-select: none;
+        color: var(--grey-800);
+        font-weight: var(--font-normal);
+        font-family: var(--font-system);
+    }
+
+    p
+    {
+        display: block;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+        font-size: 0.875rem;
+        color: var(--grey-800);
+        font-weight: var(--font-normal);
+        font-family: var(--font-system);
+    }
+}

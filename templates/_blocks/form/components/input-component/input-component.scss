@@ -58,6 +58,14 @@ input-component
                 transform: translateY(0.25rem) scale(0.75);
             }
         }
+
+        &[type="date"]
+        {
+            & + label
+            {
+                transform: translateY(0.25rem) scale(0.75);
+            }
+        }
     }
 
     label
