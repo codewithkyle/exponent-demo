@@ -1,5 +1,8 @@
 <fieldset lazy-load-css="fieldset radio-component">
     <legend>{{ input.title }}</legend>
+    {% if input.helperText|length %}
+        <p>{{ input.helperText }}</p>
+    {% endif %}
     {% for option in input.options %}
         <radio-component>
             <input type="radio" id="{{ input.title|camel }}-{{ option.options|camel }}" name="{{ input.title|camel }}" value="{{ option.options }}" {{ (loop.first and input.required) ? 'checked' }}>

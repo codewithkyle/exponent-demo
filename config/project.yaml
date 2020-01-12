@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578834036
+dateModified: 1578836881
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -143,18 +143,14 @@ fields:
     searchable: false
     translationMethod: none
     translationKeyFormat: null
-    type: craft\redactor\Field
+    type: craft\fields\PlainText
     settings:
-      redactorConfig: Helper.json
-      purifierConfig: ''
-      cleanupHtml: true
-      removeInlineStyles: '1'
-      removeEmptyTags: '1'
-      removeNbsp: '1'
-      purifyHtml: '1'
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '1'
+      charLimit: ''
       columnType: text
-      availableVolumes: ''
-      availableTransforms: '*'
     contentColumnType: text
     fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   2b21fcbf-5341-43c3-a34e-8930968fa5cd:
@@ -3929,9 +3925,29 @@ sections:
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 9
+        sortOrder: 10
         fieldLayouts:
           e3ca07e8-5537-4411-95ff-c2151b77b764:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  20610b64-6cb6-4673-ae04-a92d599313ff:
+                    required: false
+                    sortOrder: 2
+                  f236dba4-2574-4b17-8455-c7ea5f8656e5:
+                    required: false
+                    sortOrder: 1
+      3518b8c1-1790-4995-9239-db7c88bbb806:
+        name: 'Telephone Input'
+        handle: telephoneInput
+        hasTitleField: true
+        titleLabel: Label
+        titleFormat: ''
+        sortOrder: 3
+        fieldLayouts:
+          d9b36792-1890-44ce-8a68-973317c1cd02:
             tabs:
               -
                 name: Options
@@ -3969,7 +3985,7 @@ sections:
         hasTitleField: true
         titleLabel: Label
         titleFormat: ''
-        sortOrder: 5
+        sortOrder: 6
         fieldLayouts:
           096ef834-38f0-4508-a7c9-783e7a379a0f:
             tabs:
@@ -3992,7 +4008,7 @@ sections:
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 8
+        sortOrder: 9
         fieldLayouts:
           95d69db9-175f-48e9-9aa6-4387061548e3:
             tabs:
@@ -4021,7 +4037,7 @@ sections:
         hasTitleField: true
         titleLabel: Label
         titleFormat: ''
-        sortOrder: 3
+        sortOrder: 4
         fieldLayouts:
           d70e5855-4c70-4ec4-8813-43215c1f1fea:
             tabs:
@@ -4041,7 +4057,7 @@ sections:
         hasTitleField: true
         titleLabel: Label
         titleFormat: ''
-        sortOrder: 6
+        sortOrder: 7
         fieldLayouts:
           2fe72523-5f01-44fd-80cd-709225407db7:
             tabs:
@@ -4061,7 +4077,7 @@ sections:
         hasTitleField: true
         titleLabel: Label
         titleFormat: ''
-        sortOrder: 4
+        sortOrder: 5
         fieldLayouts:
           0d62b7ce-5a14-46b0-accf-eb222f79760b:
             tabs:
@@ -4084,7 +4100,7 @@ sections:
         hasTitleField: true
         titleLabel: Label
         titleFormat: ''
-        sortOrder: 7
+        sortOrder: 8
         fieldLayouts:
           b6c18d86-9b54-44cd-aacf-311c79979388:
             tabs:

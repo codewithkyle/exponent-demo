@@ -54,7 +54,9 @@
                             {% endfor %}
                         </form-grid>
                     {% else %}
-                        {{ row.copy }}
+                        <form-copy>
+                            {{ row.copy }}
+                        </form-copy>
                     {% endif %}
                 {% endif %}
             {% endfor %}

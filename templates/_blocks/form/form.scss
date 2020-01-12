@@ -90,74 +90,81 @@ form-component
             }
         }
 
-        p
+        form-copy
         {
-            margin-bottom: 1rem;
-            line-height: 1.618;
-            color: var(--grey-700);
             display: block;
             width: 100%;
+            min-height: 3rem;
 
-            &:last-child
+            p
             {
-                margin-bottom: 0;
-            }
+                margin-bottom: 1rem;
+                line-height: 1.618;
+                color: var(--grey-700);
+                display: block;
+                width: 100%;
 
-            strong
-            {
-                font-weight: var(--font-medium);
-            }
-
-            em
-            {
-                font-style: italic;
-            }
-
-            a
-            {
-                font-weight: var(--font-medium);
-                color: var(--primary-800);
-                transition: all 75ms ease-in-out;
-                cursor: pointer;
-                text-decoration: underline;
-
-                &:hover,
-                &:focus
+                &:last-child
                 {
-                    color: var(--primary-700);
+                    margin-bottom: 0;
                 }
 
-                &:active
+                strong
                 {
-                    color: var(--primary-900);
+                    font-weight: var(--font-medium);
+                }
+
+                em
+                {
+                    font-style: italic;
+                }
+
+                a
+                {
+                    font-weight: var(--font-medium);
+                    color: var(--primary-800);
+                    transition: all 75ms ease-in-out;
+                    cursor: pointer;
+                    text-decoration: underline;
+
+                    &:hover,
+                    &:focus
+                    {
+                        color: var(--primary-700);
+                    }
+
+                    &:active
+                    {
+                        color: var(--primary-900);
+                    }
                 }
             }
-        }
 
-        ul
-        {
-            li
+            ul
             {
-                list-style-type: disc;
+                li
+                {
+                    list-style-type: disc;
+                }
             }
-        }
 
-        ol
-        {
-            li
+            ol
             {
-                list-style-type: initial;
+                li
+                {
+                    list-style-type: initial;
+                }
             }
-        }
 
-        ul,
-        ol
-        {
-            margin-bottom: 1rem;
-
-            &:last-child
+            ul,
+            ol
             {
-                margin-bottom: 0;
+                margin-bottom: 1rem;
+
+                &:last-child
+                {
+                    margin-bottom: 0;
+                }
             }
         }
     }
