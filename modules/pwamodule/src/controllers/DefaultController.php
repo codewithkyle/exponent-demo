@@ -55,8 +55,8 @@ class DefaultController extends Controller
             "errors" => []
         ];
 
-        $honeypot = $request->getBodyParam('first_name');
-        if (!$honeypot)
+        $honeypot = $request->getBodyParam('field1');
+        if (empty($honeypot))
         {
             $response = PwaModule::getInstance()->pwaModuleService->submitForm($request->getBodyParams()); 
         }

@@ -73,12 +73,23 @@ class FormComponent extends HTMLElement {
 
 	private reportErrors(errors: Array<FormError>): void {
 		errors.map(error => {
-			const input = this.form.querySelector(`[name="${error.input}"]`) as HTMLInputElement;
-			if (input) {
-				input.setCustomValidity(error.error);
-				input.reportValidity();
-				input.addEventListener("change", () => {
-					input.setCustomValidity("");
+			const input = this.form.querySelector(`[name="${error.input}"]`);
+			if (input instanceof HTMLInputElement) {
+				if (input.type !== "radio") {
+					input.setCustomValidity(error.error);
+					input.reportValidity();
+					input.parentElement.classList.add("is-invalid");
+				} else {
+					const fieldset = input.closest("fieldset-component");
+					fieldset.classList.add("is-invalid");
+					fieldset.querySelectorAll("input").forEach(inputEl => {
+						inputEl.parentElement.classList.add("is-invalid");
+					});
+				}
+			} else {
+				input.classList.add("is-invalid");
+				input.querySelectorAll("input").forEach(inputEl => {
+					inputEl.parentElement.classList.add("is-invalid");
 				});
 			}
 		});
@@ -128,6 +139,9 @@ class FormComponent extends HTMLElement {
 						this.reportErrors(response.errors);
 					}
 				}
+			} else {
+				const response = await request.text();
+				console.log(response);
 			}
 			env.stopLoading(ticket);
 			this.subButton.style.pointerEvents = "all";

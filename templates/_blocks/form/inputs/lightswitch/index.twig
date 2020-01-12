@@ -1,5 +1,5 @@
 <lightswitch-component lazy-load-css="lightswitch-component" web-component>
-    <input type="checkbox" name="{{ input.title|camel }}" id="{{ input.title|camel }}" {% if input.required %}required{% endif %} onchange="this.parentElement.classList.remove('is-invalid');"  tabindex="-1" />
+    <input type="checkbox" name="{{ input.title|camel }}" id="{{ input.title|camel }}" {% if input.required %}required{% endif %}  tabindex="-1" />
     <label for="{{ input.title|camel }}" tabindex="0">
         <lightswitch-icon aria-hidden="true">
             <lightswitch-track></lightswitch-track>

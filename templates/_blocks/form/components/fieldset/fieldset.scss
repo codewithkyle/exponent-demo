@@ -18,6 +18,7 @@ fieldset
 {
     display: inline-block;
     width: 100%;
+    min-height: 100%;
     min-width: 16rem;
     padding: 3rem 1rem 1rem !important;
     border-width: 2px;
@@ -44,6 +45,7 @@ fieldset
         display: block;
         padding: 0 0.5rem;
         margin-bottom: 0.5rem;
+        line-height: 1.618;
         font-size: 0.875rem;
         color: var(--grey-700);
         font-weight: var(--font-normal);

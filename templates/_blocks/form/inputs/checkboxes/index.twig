@@ -1,4 +1,4 @@
-<fieldset-component {{ input.required ? 'required web-component' }}>
+<fieldset-component {{ input.required ? 'required web-component' }} name="{{ input.title|camel }}">
     <fieldset lazy-load-css="fieldset">
         <legend>{{ input.title }}</legend>
         {% if input.helperText|length %}

@@ -144,13 +144,36 @@ class PwaModuleService extends Component
                     if (isset($input['required']) && $input->required)
                     {
                         $handle = StringHelper::toCamelCase($input->title);
-                        if (empty($params[$handle]))
+                        if ($input->type == 'checkboxes')
                         {
-                            $response['success'] = false;
-                            $response['errors'][] = [
-                                'input' => $handle,
-                                'error' => 'This field is required.'
-                            ];
+                            $hasOneCheck = false;
+                            foreach ($input['options'] as $option)
+                            {
+                                $optionHandle = StringHelper::toCamelCase($option['options']);
+                                if (isset($params[$optionHandle]))
+                                {
+                                    $hasOneCheck = true;
+                                }
+                            }
+                            if (!$hasOneCheck)
+                            {
+                                $response['success'] = false;
+                                $response['errors'][] = [
+                                    'input' => $handle,
+                                    'error' => 'This field is required.'
+                                ];
+                            }
+                        }
+                        else
+                        {
+                            if (empty($params[$handle]) || !isset($params[$handle]))
+                            {
+                                $response['success'] = false;
+                                $response['errors'][] = [
+                                    'input' => $handle,
+                                    'error' => 'This field is required.'
+                                ];
+                            }
                         }
                     }
                 }
