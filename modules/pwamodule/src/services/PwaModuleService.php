@@ -123,6 +123,7 @@ class PwaModuleService extends Component
             "success" => true,
             "errors" => []
         ];
+
         $formId = $params['formId'];
         $form = \craft\elements\Entry::find()
                 ->id($formId)

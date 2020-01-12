@@ -49,7 +49,18 @@ class DefaultController extends Controller
     {
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
-        $response = PwaModule::getInstance()->pwaModuleService->submitForm($request->getBodyParams());
+        
+        $response = [
+            "success" => true,
+            "errors" => []
+        ];
+
+        $honeypot = $request->getBodyParam('first_name');
+        if (!$honeypot)
+        {
+            $response = PwaModule::getInstance()->pwaModuleService->submitForm($request->getBodyParams()); 
+        }
+        
         if ($request->getBodyParam('redirectUrl'))
         {
             return $this->redirect($request->getBodyParam('redirectUrl'));
