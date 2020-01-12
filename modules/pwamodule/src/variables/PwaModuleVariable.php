@@ -50,4 +50,9 @@ class PwaModuleVariable
         $hashed = md5($string);
         return $hashed;
     }
+
+    public function getPublicKey()
+    {
+        return Craft::$app->getenv('RECAPTCHA_PUBLIC_KEY');
+    }
 }

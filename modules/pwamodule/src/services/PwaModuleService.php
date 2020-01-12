@@ -18,6 +18,7 @@ use craft\helpers\FileHelper;
 use yii\redis\Cache;
 use yii\redis\Connection;
 use craft\helpers\StringHelper;
+use GuzzleHttp\Client;
 
 /**
  * @author    Kyle Andrews
@@ -131,7 +132,18 @@ class PwaModuleService extends Component
             return $response;
         }
 
-        if (isset($params['spam_prevention']))
+        $formId = $params['formId'];
+        $form = \craft\elements\Entry::find()
+                ->id($formId)
+                ->with(['form', 'form.singleColumn:inputs', 'form.twoColumns:inputs', 'form.threeColumns:inputs'])
+                ->one();
+        if (!$form)
+        {
+            $response['success'] = false;
+            return $response;
+        }
+
+        if ($form['spamPrevention'] == 'simpleMath')
         {
             $firstNumber = $params['simple_math_first'];
             $secondNumber = $params['simple_math_second'];
@@ -146,16 +158,26 @@ class PwaModuleService extends Component
                 ];
             }
         }
-
-        $formId = $params['formId'];
-        $form = \craft\elements\Entry::find()
-                ->id($formId)
-                ->with(['form', 'form.singleColumn:inputs', 'form.twoColumns:inputs', 'form.threeColumns:inputs'])
-                ->one();
-        if (!$form)
+        else if ($form['spamPrevention'] == 'recaptcha')
         {
-            $response['success'] = false;
-            return $response;
+            $key = Craft::$app->globals->getSetByHandle('formSettings')->getFieldValue('recaptchaPrivateKey');
+            if (isset($params['recaptcha']) && !empty($key))
+            {
+                $token = $params['recaptcha'];
+                $client = new Client();
+                $recaptchaResponse = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
+                    'query' => [
+                        'secret' => $key,
+                        'response' => $token
+                    ]
+                ]);
+                $result = json_decode($recaptchaResponse->getBody(), true);
+                // Quickly return fake success when a bot is detected
+                if (number_format($result['score'], 1) < 0.5)
+                {
+                    return $response;
+                }
+            }
         }
 
         foreach ($form['form'] as $block)

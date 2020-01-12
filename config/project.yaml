@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578846632
+dateModified: 1578849723
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -189,9 +189,9 @@ fields:
     contentColumnType: integer(10)
     fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   3c823c86-be7d-457e-af87-1cd1848ba97d:
-    name: 'reCAPTCHA Private Key'
+    name: 'reCAPTCHA Secret Key'
     handle: recaptchaPrivateKey
-    instructions: ''
+    instructions: 'Get your keys from https://www.google.com/recaptcha/admin/create'
     searchable: false
     translationMethod: none
     translationKeyFormat: null
@@ -328,9 +328,9 @@ fields:
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
   881002da-d3cf-49a5-8d7b-71744857f2f5:
-    name: 'reCAPTCHA Public Key'
+    name: 'reCAPTCHA Site Key'
     handle: recaptchaPublicKey
-    instructions: ''
+    instructions: 'Get your keys from https://www.google.com/recaptcha/admin/create'
     searchable: false
     translationMethod: none
     translationKeyFormat: null
