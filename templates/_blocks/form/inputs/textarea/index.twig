@@ -2,3 +2,13 @@
     <textarea name="{{ input.title|camel }}" id="{{ input.title|camel }}" rows="5" {{ input.required ? 'required' }}></textarea>
     <label for="{{ input.title|camel }}">{{ input.title }}</label>
 </textarea-component>
+<noscript>
+    <style>
+        textarea-component label{
+            transform: translateY(0.25rem) scale(0.75);
+        }
+        textarea-component textarea{
+            background-color: var(--grey-100);
+        }
+    </style>
+</noscript>

@@ -2,3 +2,13 @@
     <input type="email" name="{{ input.title|camel }}" id="{{ input.title|camel }}" {{ input.required ? 'required' }}>
     <label for="{{ input.title|camel }}">{{ input.title }}</label>
 </input-component>
+<noscript>
+    <style>
+        input-component label{
+            transform: translateY(0.25rem) scale(0.75);
+        }
+        input-component input{
+            background-color: var(--grey-100);
+        }
+    </style>
+</noscript>
