@@ -21,6 +21,7 @@ use craft\helpers\StringHelper;
 use GuzzleHttp\Client;
 use craft\mail\Message;
 use craft\helpers\UrlHelper;
+use craft\elements\Entry;
 
 /**
  * @author    Kyle Andrews
@@ -135,7 +136,7 @@ class PwaModuleService extends Component
         }
 
         $formId = $params['formId'];
-        $form = \craft\elements\Entry::find()
+        $form = Entry::find()
                 ->id($formId)
                 ->with(['form', 'form.singleColumn:inputs', 'form.twoColumns:inputs', 'form.threeColumns:inputs'])
                 ->one();
@@ -182,7 +183,7 @@ class PwaModuleService extends Component
             }
         }
 
-        $html = '';
+        $html = '<strong>Submitted: </strong> ' . date("F j, Y") . '<br>';
         foreach ($form['form'] as $block)
         {
             if (isset($block['inputs']))
@@ -213,7 +214,7 @@ class PwaModuleService extends Component
                                     'error' => 'This field is required.'
                                 ];
                             }
-                            $html .= '</ul><br>';
+                            $html .= '</ul>';
                         }
                         else
                         {
@@ -252,6 +253,7 @@ class PwaModuleService extends Component
         {
             $recipients = array_map('trim', explode(',', $form['recipients']));
             $this->_sendMail($html, 'New ' . $form->title . ' Response', $recipients);
+            $this->_generateSubmissionEntry($form->title, $html);
         }
 
         return $response;
@@ -259,6 +261,25 @@ class PwaModuleService extends Component
 
     // Private Methods
     // =========================================================================
+
+    private function _generateSubmissionEntry($title, $html): bool
+    {
+        $admin = \craft\elements\User::find()->admin()->one();
+        $section = Craft::$app->sections->getSectionByHandle('formSubmissions');
+        $entryTypes = $section->getEntryTypes();
+        $entryType = reset($entryTypes);
+        $entry = new Entry([
+            'sectionId' => $section->id,
+            'typeId' => $entryType->id,
+            'fieldLayoutId' => $entryType->fieldLayoutId,
+            'authorId' => $admin->id,
+            'title' => date("Y-m-d H:i:s") . ' - ' . $title,
+            'slug' => date("Y-m-d-H-i-s"),
+            'postDate' => new \DateTime(),
+        ]);
+        $entry->setFieldValue('submissionData', $html);
+        return Craft::$app->elements->saveElement($entry);
+    }
 
     private function _sendMail($html, $subject, $mail = null, array $attachments = array()): bool
 {

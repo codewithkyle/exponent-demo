@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578849723
+dateModified: 1578862903
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -170,6 +170,27 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  340bc320-5bf1-49dc-9173-cbe7fbaed08d:
+    name: 'Submission Data'
+    handle: submissionData
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: NoOp.json
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: ''
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   363ddaa2-40fb-44f3-872c-dca10a7b4868:
     name: Step
     handle: step
@@ -3646,6 +3667,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.1.0
+  preparse-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.5
 relabel:
   079ec6e3-4770-4239-8866-13082c44803a:
     field: 2b21fcbf-5341-43c3-a34e-8930968fa5cd
@@ -3905,6 +3930,36 @@ sections:
                 sortOrder: 3
                 fields:
                   d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+                    required: false
+                    sortOrder: 1
+  c0c47280-b0bc-417f-8c90-2df9a07b6438:
+    name: 'Form Submissions'
+    handle: formSubmissions
+    type: channel
+    enableVersioning: false
+    propagationMethod: all
+    siteSettings:
+      5d0fd958-be72-4405-989e-030f329741df:
+        enabledByDefault: true
+        hasUrls: false
+        uriFormat: ''
+        template: null
+    entryTypes:
+      96b8ba03-1d03-4ec1-8eaa-f2572fb4021e:
+        name: Submission
+        handle: submission
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          2e561389-3de7-488c-9c06-5697358a1c03:
+            tabs:
+              -
+                name: Data
+                sortOrder: 1
+                fields:
+                  340bc320-5bf1-49dc-9173-cbe7fbaed08d:
                     required: false
                     sortOrder: 1
   d05954f0-e647-40c2-8eeb-7119bc40b2e3:
@@ -5055,7 +5110,7 @@ superTableBlockTypes:
                 required: true
                 sortOrder: 4
 system:
-  edition: solo
+  edition: pro
   name: $SYSTEM_NAME
   live: true
   schemaVersion: 3.3.3
