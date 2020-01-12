@@ -62,13 +62,18 @@
                 {% endif %}
             {% endfor %}
             </form-page>
-            <div class="-submit-button-wrapper" style="display: {{ (numOfPages > 0) ? 'none' : 'flex' }};width: 100%;justify-content: space-between;align-items: center;">
-                <form-page-count>
-                    {% if totalPages > 1 %}
-                        Page {{ totalPages }}&sol;{{ totalPages }}  
-                    {% endif %}
-                </form-page-count>
-                <button class="button -solid -primary" type="submit">{{ "Submit"|t }}</button>
+            <div class="-submit-button-wrapper" style="display: {{ (numOfPages > 0) ? 'none' : 'block' }};width: 100%;">
+                {% if section.form[0].spamPrevention != 'none' %}
+                    {% include "_blocks/form/spam-prevention/" ~ section.form[0].spamPrevention|kebab %}
+                {% endif %}
+                <div style="justify-content: space-between;align-items: center;display:flex;width: 100%;">
+                    <form-page-count>
+                        {% if totalPages > 1 %}
+                            Page {{ totalPages }}&sol;{{ totalPages }}  
+                        {% endif %}
+                    </form-page-count>
+                    <button class="button -solid -primary" type="submit">{{ "Submit"|t }}</button>
+                </div>
             </div>
         </form>
     </form-component>

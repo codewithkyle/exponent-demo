@@ -14,6 +14,7 @@ class FormComponent extends HTMLElement {
 	private subButton: HTMLButtonElement;
 	private csrf: string;
 	private submittedDuringCSRFFetch: boolean;
+	private submitWrapper: HTMLElement;
 	constructor() {
 		super();
 		this.submittedDuringCSRFFetch = false;
@@ -23,11 +24,12 @@ class FormComponent extends HTMLElement {
 		this.pages = Array.from(this.form.querySelectorAll("form-page"));
 		this.subButton = this.form.querySelector('button[type="submit"]');
 		this.csrf = null;
+		this.submitWrapper = this.querySelector(".-submit-button-wrapper");
 	}
 
 	private validatePage(page: HTMLElement): boolean {
 		let valid = true;
-		page.querySelectorAll("input, select, textarea").forEach((input: HTMLInputElement) => {
+		page.querySelectorAll(`input:not([type="hidden"]), select, textarea`).forEach((input: HTMLInputElement) => {
 			if (!input.checkValidity() && valid) {
 				valid = false;
 				input.reportValidity();
@@ -46,7 +48,7 @@ class FormComponent extends HTMLElement {
 			page.querySelectorAll("fieldset-component").forEach(fieldset => {
 				if (fieldset.getAttribute("required") !== null) {
 					let foundOneCheck = false;
-					const inputs = fieldset.querySelectorAll("input");
+					const inputs = fieldset.querySelectorAll(`input:not([type="hidden"])`);
 					inputs.forEach((input: HTMLInputElement) => {
 						if (input.checked) {
 							foundOneCheck = true;
@@ -82,13 +84,13 @@ class FormComponent extends HTMLElement {
 				} else {
 					const fieldset = input.closest("fieldset-component");
 					fieldset.classList.add("is-invalid");
-					fieldset.querySelectorAll("input").forEach(inputEl => {
+					fieldset.querySelectorAll(`input:not([type="hidden"])`).forEach(inputEl => {
 						inputEl.parentElement.classList.add("is-invalid");
 					});
 				}
 			} else {
 				input.classList.add("is-invalid");
-				input.querySelectorAll("input").forEach(inputEl => {
+				input.querySelectorAll(`input:not([type="hidden"])`).forEach(inputEl => {
 					inputEl.parentElement.classList.add("is-invalid");
 				});
 			}
@@ -153,7 +155,7 @@ class FormComponent extends HTMLElement {
 	private handleFormSubmit: EventListener = this.submitForm.bind(this);
 
 	private resetInputs(): void {
-		this.form.querySelectorAll("input, select, textarea").forEach((input: HTMLInputElement) => {
+		this.form.querySelectorAll(`input:not([type="hidden"]), select, textarea`).forEach((input: HTMLInputElement) => {
 			input.parentElement.classList.remove("has-value");
 		});
 	}
@@ -164,9 +166,9 @@ class FormComponent extends HTMLElement {
 		this.pages[this.currPageIndex].style.display = "block";
 
 		if (this.pages.length - 1 === this.currPageIndex) {
-			this.subButton.parentElement.style.display = "flex";
+			this.submitWrapper.style.display = "block";
 		} else {
-			this.subButton.parentElement.style.display = "none";
+			this.submitWrapper.style.display = "none";
 		}
 	}
 

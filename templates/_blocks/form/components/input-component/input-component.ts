@@ -3,7 +3,7 @@ class InputComponent extends HTMLElement {
 
 	constructor() {
 		super();
-		this.input = this.querySelector("input");
+		this.input = this.querySelector(`input:not([type="hidden"])`);
 	}
 
 	private validate(): void {

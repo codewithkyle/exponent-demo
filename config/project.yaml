@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578836881
+dateModified: 1578846632
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -188,6 +188,23 @@ fields:
       suffix: ''
     contentColumnType: integer(10)
     fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
+  3c823c86-be7d-457e-af87-1cd1848ba97d:
+    name: 'reCAPTCHA Private Key'
+    handle: recaptchaPrivateKey
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: '1'
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   44abd69a-0d46-4c62-8372-28d94928c27e:
     name: Links
     handle: footerLinks
@@ -250,6 +267,31 @@ fields:
           allowAliases: ''
     contentColumnType: text
     fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
+  6adf60da-6ee5-43d8-aa81-f0dbe2441bff:
+    name: 'Spam Prevention'
+    handle: spamPrevention
+    instructions: 'Simple Math will require the user to answer a simple math question such as 2 + 3. Google reCAPTCHA requires reCAPTCHA keys, set the keys in the Globals section.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Dropdown
+    settings:
+      optgroups: true
+      options:
+        -
+          label: None
+          value: none
+          default: '1'
+        -
+          label: 'Simple Math'
+          value: simpleMath
+          default: ''
+        -
+          label: reCAPTCHA
+          value: recaptcha
+          default: ''
+    contentColumnType: string
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   842e644b-8402-4600-9e87-59775f0ddec7:
     name: Maximum
     handle: maximum
@@ -285,6 +327,23 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
+  881002da-d3cf-49a5-8d7b-71744857f2f5:
+    name: 'reCAPTCHA Public Key'
+    handle: recaptchaPublicKey
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: '1'
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
   9629fa55-f666-4eba-8292-f79ae3c7e03b:
     name: 'Hero Image'
     handle: heroImage
@@ -570,6 +629,22 @@ fields:
     contentColumnType: boolean
     fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
 globalSets:
+  0b91c6bb-6dbd-4657-a025-19ef9e76a0f4:
+    name: 'Form Settings'
+    handle: formSettings
+    fieldLayouts:
+      7a91af7c-684a-41fb-8e77-e34a0b442a2c:
+        tabs:
+          -
+            name: Settings
+            sortOrder: 1
+            fields:
+              3c823c86-be7d-457e-af87-1cd1848ba97d:
+                required: false
+                sortOrder: 2
+              881002da-d3cf-49a5-8d7b-71744857f2f5:
+                required: false
+                sortOrder: 1
   5dc50dc7-d2d3-4937-99d7-1ef59d1513f3:
     name: Navigation
     handle: navigation
@@ -3696,9 +3771,12 @@ sections:
                   08896665-1094-4e21-96a5-9d91a43837a0:
                     required: false
                     sortOrder: 2
+                  6adf60da-6ee5-43d8-aa81-f0dbe2441bff:
+                    required: false
+                    sortOrder: 3
                   9a975e5f-4339-4848-a3c5-009593aed48a:
                     required: true
-                    sortOrder: 3
+                    sortOrder: 4
                   cedaaef7-67ee-4a76-9410-b815e30765e2:
                     required: true
                     sortOrder: 1

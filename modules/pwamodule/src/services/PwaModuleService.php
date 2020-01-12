@@ -124,6 +124,29 @@ class PwaModuleService extends Component
             "errors" => []
         ];
 
+        // Quickly return fake success when a bot is detected
+        $honeypot = $params['field1'];
+        if (!empty($honeypot))
+        {
+            return $response;
+        }
+
+        if (isset($params['spam_prevention']))
+        {
+            $firstNumber = $params['simple_math_first'];
+            $secondNumber = $params['simple_math_second'];
+            $usersAnswer = $params['spam_prevention'];
+            $actualAnswer = $firstNumber + $secondNumber;
+            if ($usersAnswer != $actualAnswer)
+            {
+                $response['success'] = false;
+                $response['errors'][] = [
+                    'input' => 'spam_prevention',
+                    'error' => 'This answer provided was incorrect. Try again.',
+                ];
+            }
+        }
+
         $formId = $params['formId'];
         $form = \craft\elements\Entry::find()
                 ->id($formId)
