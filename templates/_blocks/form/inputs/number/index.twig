@@ -12,7 +12,7 @@
 {% if input.step %}
     {% set step = 'step="' ~ input.step ~ '"' %}
 {% endif %}
-<solid-input-component lazy-load-css="solid-input-component" web-component>
+<input-component lazy-load-css="input-component" web-component>
     <input type="number" name="{{ input.title|camel }}" id="{{ input.title|camel }}" {{ input.required ? 'required' }} {{ minimum }} {{ maximum }} {{ step }}>
     <label for="{{ input.title|camel }}">{{ input.title }}</label>
-</solid-input-component>
+</input-component>
