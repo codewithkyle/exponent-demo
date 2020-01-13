@@ -10,10 +10,10 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578927073
+dateModified: 1578927478
 email:
-  fromEmail: codingwithkyle@gmail.com
-  fromName: $SYSTEM_NAME
+  fromEmail: noreply@exponent.local
+  fromName: 'Exponent CMS'
   template: ''
   transportType: craft\mail\transportadapters\Smtp
   transportSettings:
