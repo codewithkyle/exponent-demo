@@ -10,11 +10,13 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578925665
+dateModified: 1578926348
 email:
   fromEmail: codingwithkyle@gmail.com
-  fromName: 'Craft PWA'
+  fromName: $SYSTEM_NAME
+  template: ''
   transportType: craft\mail\transportadapters\Sendmail
+  transportSettings: null
 fieldGroups:
   0e5caedc-3ce5-4116-8378-d114d694a4b9:
     name: Common
@@ -3750,6 +3752,7 @@ plugins:
     settings:
       sitemapName: sitemap
       sitemapLimit: '1000'
+      removeAlternateUrls: ''
       titleSuffix: null
       title:
         -
@@ -3759,7 +3762,7 @@ plugins:
         -
           key: '2'
           locked: '1'
-          template: ' - Craft PWA Demo'
+          template: ' - Exponent'
       description: ''
       socialImage: ''
       metaTemplate: _base/seo
