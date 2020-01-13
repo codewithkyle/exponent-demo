@@ -12,11 +12,11 @@
         }
     </style>
     <header class="-utility">
-        <a id="logo" href="{{ siteUrl }}" no-pjax>
+        <a id="logo" href="{{ siteUrl }}">
             <img src="{{ generalSettings.image[0].url }}" alt="{{ generalSettings.image[0].alternateDescription }}">
         </a>
     </header>
-    <main eager-load-css="normalize variables base page-transition soft-loading utility">
+    <main pjax-id="utility" eager-load-css="normalize variables base page-transition soft-loading utility">
         {% block content %}{% endblock %}
     </main>
     <footer class="-utility">

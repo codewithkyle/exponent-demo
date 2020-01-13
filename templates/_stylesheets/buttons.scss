@@ -9,6 +9,7 @@
     font-size: var(--text-sm);
     text-transform: uppercase;
     user-select: none;
+    border-radius: 0.125rem;
     font-weight: var(--font-medium);
     cursor: pointer;
     transition: all 75ms ease-in-out;
@@ -19,23 +20,23 @@
 
         &.-primary
         {
-            background-color: var(--primary-500);
-            border-color: var(--primary-500);
-            color: var(--grey-900);
+            background-color: var(--primary-700);
+            border-color: var(--primary-700);
+            color: var(--white);
 
             &:hover,
             &:focus
             {
-                background-color: var(--primary-400);
-                border-color: var(--primary-400);
-                color: var(--grey-900);
+                background-color: var(--primary-600);
+                border-color: var(--primary-600);
+                color: var(--white);
             }
 
             &:active
             {
-                background-color: var(--primary-600);
-                border-color: var(--primary-600);
-                color: var(--grey-900);
+                background-color: var(--primary-800);
+                border-color: var(--primary-800);
+                color: var(--white);
             }
         }
 
