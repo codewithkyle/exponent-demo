@@ -1,4 +1,4 @@
-{% extends "_base/form" %}
+{% extends "_base/utility" %}
 
 {% if not craft.app.request.isLivePreview %}
     {% do eagerLoadElements(entry, [
@@ -23,7 +23,6 @@
     <style>
         body {
             background-color: var(--grey-200);
-            padding: 6rem 0;
         }
         form-shell {
             display: block;

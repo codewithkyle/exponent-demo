@@ -5,30 +5,10 @@
         body{
             background-color: var(--grey-200);
         }
-        footer{
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--grey-800);
-            font-size: var(--text-xs);
-            padding: 1rem;
-        }
-        footer a{
-            margin-left: 1rem;
-            transition: all 75ms ease-in-out;
-        }
-        footer a:hover,
-        footer a:focus
-        {
-            color: var(--primary-600);
-            text-decoration: underline;
-        }
         main{
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            min-height: calc(100vh - 2rem);
+            display: block;
+            padding: 8rem 0 4rem;
         }
     </style>
     <header class="-utility">
@@ -39,7 +19,7 @@
     <main eager-load-css="normalize variables base page-transition soft-loading utility">
         {% block content %}{% endblock %}
     </main>
-    <footer>
+    <footer class="-utility">
         <span>&copy; {{ now|date('Y') }} {{ generalSettings.companyName }}</span>
         {% if generalSettings.privacyPolicy.url|length %}
             <a href="{{ generalSettings.privacyPolicy.url }}">{{ "Privacy Policy"|t }}</a>

@@ -1,6 +1,6 @@
 {% import "_macros" as macro %}
 {% cache globally using key 'footer' %}
-    <footer lazy-load-css="footer" style="width:100%;display:block;">
+    <footer class="-base" lazy-load-css="footer" style="width:100%;display:block;">
         <footer-content>
             <company-info>
                 <img src="{{ footer.image[0].url }}" alt="{{ footer.image[0].alternateDescription }}">

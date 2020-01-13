@@ -1,5 +1,35 @@
 {% extends "_base/utility" %}
 
+{% import "_macros" as inputs %}
+
 {% block content %}
-    
+    <style>
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <login-form eager-load-css="buttons login-form">
+        <form method="post" accept-charset="UTF-8">
+            <h1>{{ "Sign In"|t }}</h1>
+
+            {{ csrfInput() }}
+            <noscript>
+                {{ actionInput('users/login') }}
+            </noscript>
+        
+            {{ inputs.email('Email Address'|t, true) }}
+            {{ inputs.password('Password'|t, true) }}
+
+            <div style="width:100%;display:flex;justify-content: space-between;align-items: center;flex-flow: row;">
+                <a href="{{ siteUrl|trim('/') }}/forgot-password">Forget your password?</a>
+                <button type="submit" class="button -solid -primary">{{ "Sign In"|t }}</button>
+            </div>
+        </form>
+        <p>
+            {{ "Don't have an account?"|t }}
+            <a href="{{ siteUrl|trim('/') }}/signup">{{ "Create one now"|t }}</a>
+        </p>
+    </login-form eager-load-css="buttons login-form">
 {% endblock %}
