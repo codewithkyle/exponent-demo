@@ -10,9 +10,9 @@
             align-items: center;
         }
     </style>
-    <login-form eager-load-css="buttons login-form">
+    <user-form eager-load-css="buttons login-form">
         <form method="post" accept-charset="UTF-8">
-            <h1>{{ "Create Your Account"|t }}</h1>
+            <h1>{{ "Create Account"|t }}</h1>
 
             {{ csrfInput() }}
             <noscript>
@@ -37,12 +37,12 @@
 
             <div style="width:100%;display:flex;justify-content: space-between;align-items: center;flex-flow: row;">
                 <a href="{{ siteUrl|trim('/') }}/forgot-password">Forget your password?</a>
-                <button type="submit" class="button -solid -primary">{{ "Sign In"|t }}</button>
+                <button type="submit" class="button -solid -primary">{{ "Sign Up"|t }}</button>
             </div>
         </form>
         <p>
             {{ "Already have an account?"|t }}
             <a href="{{ siteUrl|trim('/') }}/login">{{ "Sign In"|t }}</a>
         </p>
-    </login-form eager-load-css="buttons login-form">
+    </user-form eager-load-css="buttons login-form">
 {% endblock %}

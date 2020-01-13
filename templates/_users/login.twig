@@ -10,7 +10,7 @@
             align-items: center;
         }
     </style>
-    <login-form eager-load-css="buttons login-form">
+    <user-form eager-load-css="buttons login-form">
         <form method="post" accept-charset="UTF-8">
             <h1>{{ "Sign In"|t }}</h1>
 
@@ -44,5 +44,5 @@
             {{ "Don't have an account?"|t }}
             <a href="{{ siteUrl|trim('/') }}/register">{{ "Create one now"|t }}</a>
         </p>
-    </login-form eager-load-css="buttons login-form">
+    </user-form eager-load-css="buttons login-form">
 {% endblock %}
