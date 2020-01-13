@@ -10,13 +10,20 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578926348
+dateModified: 1578927073
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: $SYSTEM_NAME
   template: ''
-  transportType: craft\mail\transportadapters\Sendmail
-  transportSettings: null
+  transportType: craft\mail\transportadapters\Smtp
+  transportSettings:
+    host: $EMAIL_HOST_NAME
+    port: $EMAIL_PORT
+    useAuthentication: '1'
+    username: $EMAIL_USERNAME
+    password: $EMAIL_PASSWORD
+    encryptionMethod: tls
+    timeout: '10'
 fieldGroups:
   0e5caedc-3ce5-4116-8378-d114d694a4b9:
     name: Common
