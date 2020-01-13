@@ -40,7 +40,7 @@ textarea-component
         background-color: var(--grey-100);
         color: var(--grey-800);
         transition: all 75ms ease-in-out;
-        font-size: 1rem;
+        font-size: var(--text-base);
         text-overflow: ellipsis;
         font-family: var(--font-system);
         font-weight: var(--font-normal);
@@ -74,7 +74,7 @@ textarea-component
         font-family: var(--font-system);
         transform: translateY(1.125rem) scale(1);
         transform-origin: left center;
-        font-size: 1rem;
+        font-size: var(--text-base);
         transition: all 75ms ease-in-out;
     }
 }

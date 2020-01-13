@@ -62,7 +62,7 @@ header
         button
         {
             color: var(--white);
-            font-size: 1rem;
+            font-size: var(--text-base);
             transition: all 150ms ease-in-out;
             font-weight: var(--font-medium);
 
@@ -170,7 +170,7 @@ header
                     a
                     {
                         color: var(--grey-800);
-                        font-size: 0.875rem;
+                        font-size: var(--text-sm);
                         display: block;
                         line-height: 36px;
                         min-height: 36px;

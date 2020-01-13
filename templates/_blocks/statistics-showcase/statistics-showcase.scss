@@ -8,7 +8,7 @@ statistics-showcase
 
     h2
     {
-        font-size: 2rem;
+        font-size: var(--text-4xl);
         line-height: 2.75rem;
         width: 300px;
         display: block;
@@ -69,7 +69,7 @@ statistics-showcase
 
             h3
             {
-                font-size: 0.875rem;
+                font-size: var(--text-sm);
                 font-weight: var(--font-medium);
                 opacity: 0.87;
             }
@@ -91,7 +91,7 @@ statistics-showcase
 
             stat-type
             {
-                font-size: 1.25rem;
+                font-size: var(--text-xl);
                 line-height: 2.5rem;
                 margin-left: 0.125rem;
             }

@@ -7,7 +7,7 @@ blog-cards
 
     h2
     {
-        font-size: 2rem;
+        font-size: var(--text-4xl);
         line-height: 3rem;
         display: block;
         text-align: center;
@@ -156,7 +156,7 @@ blog-cards
 
             h3
             {
-                font-size: 1.25rem;
+                font-size: var(--text-xl);
                 line-height: 2rem;
                 color: var(--grey-700);
                 display: block;
@@ -167,7 +167,7 @@ blog-cards
 
             h4
             {
-                font-size: 0.875rem;
+                font-size: var(--text-sm);
                 color: var(--grey-700);
                 display: flex;
                 flex-flow: row nowrap;
@@ -193,7 +193,7 @@ blog-cards
 
                 card-tag
                 {
-                    font-size: 0.875rem;
+                    font-size: var(--text-sm);
                     color: var(--grey-700);
                     margin-right: 0.25rem;
                 }

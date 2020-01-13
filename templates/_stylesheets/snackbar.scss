@@ -54,7 +54,7 @@ snackbar-component {
 	p {
 		padding: 0.875rem 1rem;
 		line-height: 1.618;
-		font-size: 0.875rem;
+		font-size: var(--text-sm);
 	}
 
 	snackbar-actions {
@@ -67,7 +67,7 @@ snackbar-component {
 		button {
 			user-select: none;
 			font-weight: 500;
-			font-size: 0.875rem;
+			font-size: var(--text-sm);
 			height: 2.5rem;
 			line-height: 2.5rem;
 			padding: 0 0.5rem;

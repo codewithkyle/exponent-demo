@@ -85,7 +85,7 @@ helper-text
     {
         vertical-align: top;
         display: inline;
-        font-size: 0.875rem;
+        font-size: var(--text-sm);
         color: var(--grey-700);
         user-select: none;
         line-height: 24px;

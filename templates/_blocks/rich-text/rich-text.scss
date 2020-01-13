@@ -8,7 +8,7 @@ rich-text
 
     h2
     {
-        font-size: 2rem;
+        font-size: var(--text-4xl);
         line-height: 3rem;
         display: block;
         text-align: center;

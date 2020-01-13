@@ -108,7 +108,7 @@ accordion-component
         accordion-heading
         {
             display: block;
-            font-size: 1.25rem;
+            font-size: var(--text-xl);
             line-height: 1.5rem;
             font-weight: var(--font-medium);
             transition: color 75ms ease-in-out;

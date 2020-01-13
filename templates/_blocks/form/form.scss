@@ -8,7 +8,7 @@ form-component
 
     h2
     {
-        font-size: 2rem;
+        font-size: var(--text-4xl);
         line-height: 3rem;
         display: block;
         width: 100%;
@@ -61,7 +61,7 @@ form-component
         form-page-count
         {
             color: var(--grey-700);
-            font-size: 0.75rem;
+            font-size: var(--text-xs);
             margin-left: 0.25rem;
         }
 

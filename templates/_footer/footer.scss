@@ -29,7 +29,7 @@ footer
             {
                 color: var(--grey-700);
                 display: block;
-                font-size: 0.875rem;
+                font-size: var(--text-sm);
                 font-weight: var(--font-medium);
                 margin-bottom: 1rem;
                 line-height: 2rem;
@@ -85,7 +85,7 @@ footer
 
             a
             {
-                font-size: 0.875rem;
+                font-size: var(--text-sm);
                 color: var(--grey-700);
                 display: block;
                 line-height: 2rem;
@@ -124,7 +124,7 @@ footer
                 color: var(--grey-700);
                 margin-bottom: 0.5rem;
                 line-height: 2rem;
-                font-size: 0.875rem;
+                font-size: var(--text-sm);
                 white-space: pre-line;
             }
 
@@ -138,7 +138,7 @@ footer
                 align-items: center;
                 flex-flow: row nowrap;
                 margin-bottom: 0.5rem;
-                font-size: 0.875rem;
+                font-size: var(--text-sm);
                 cursor: pointer;
 
                 &:hover,

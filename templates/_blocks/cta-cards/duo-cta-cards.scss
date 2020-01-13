@@ -109,7 +109,7 @@ duo-cta-cards
         h3
         {
             font-weight: var(--font-medium);
-            font-size: 1.5rem;
+            font-size: var(--text-2xl);
             display: block;
             padding: 1.5rem;
             width: 100%;
@@ -123,7 +123,7 @@ duo-cta-cards
             flex-flow: row nowrap;
             align-items: center;
             width: 100%;
-            font-size: 1.125rem;
+            font-size: var(--text-lg);
             padding: 0 1.5rem 1.5rem;
 
             svg
