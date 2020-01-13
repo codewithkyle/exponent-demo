@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578862903
+dateModified: 1578875486
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -3775,9 +3775,9 @@ sections:
     siteSettings:
       5d0fd958-be72-4405-989e-030f329741df:
         enabledByDefault: true
-        hasUrls: false
-        uriFormat: ''
-        template: null
+        hasUrls: true
+        uriFormat: 'form/{slug}'
+        template: _forms/index.twig
     entryTypes:
       975e1589-b37c-42e3-9c20-851a7210ef2f:
         name: Form
