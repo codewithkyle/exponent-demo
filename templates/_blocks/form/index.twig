@@ -1,3 +1,5 @@
+	
+{% import "_macros" as inputs %}
 {% set numOfPages = 0 %}
 {% set totalPages = 1 %}
 {% for row in section.form[0].form %}
@@ -50,8 +52,31 @@
                     {% endif %}
                     {% if columns %}
                         <form-grid columns="{{ columns }}">
-                            {% for input in row.inputs.all() %}
-                                {% include "_blocks/form/inputs/" ~ input.type|kebab %}
+                            {% for input in row.inputs %}
+                                {% switch(input.type) %}
+                                    {% case 'textInput' %}
+                                        {{ inputs.text(input.title, input.required, input.helperText) }}
+                                    {% case 'emailInput' %}
+                                        {{ inputs.email(input.title, input.required, input.helperText) }}
+                                    {% case 'telephoneInput' %}
+                                        {{ inputs.telephone(input.title, input.required, input.helperText) }}
+                                    {% case 'textarea' %}
+                                        {{ inputs.textarea(input.title, input.required, input.helperText) }}
+                                    {% case 'radioButtons' %}
+                                        {{ inputs.radioButtons(input.title, input.required, input.options, input.helperText) }}
+                                    {% case 'checkboxes' %}
+                                        {{ inputs.checkboxes(input.title, input.required, input.options, input.helperText) }}
+                                    {% case 'lightswitch' %}
+                                        {{ inputs.lightswitch(input.title, input.required, input.helperText) }}
+                                    {% case 'select' %}
+                                        {{ inputs.select(input.title, input.required, input.options, input.helperText) }}
+                                    {% case 'number' %}
+                                        {{ inputs.number(input.title, input.required, input.helperText, input.minimum, input.maximum, input.step) }}
+                                    {% case 'date' %}
+                                        {{ inputs.date(input.title, input.required, input.helperText) }}
+                                    {% default %}
+                                        <span>{{ "Unknown input type:"|t }} {{ input.type }}</span>
+                                {% endswitch %}
                             {% endfor %}
                         </form-grid>
                     {% else %}

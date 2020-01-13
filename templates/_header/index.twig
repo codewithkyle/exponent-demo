@@ -8,7 +8,7 @@
 } %}
 
 {% cache globally using key 'navigation' %}
-    <header eager-load-css="buttons header">
+    <header class="-base" eager-load-css="buttons header">
         <header-content>
             <nav>
                 {% for link in navigation.primary %}

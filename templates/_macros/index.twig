@@ -4,3 +4,260 @@
         {{ copy|raw }}
     </email-button>
 {% endmacro %}
+
+{% macro checkboxes(title, required, options, helperText = null) %}
+    <fieldset-component {{ required ? 'required web-component' }} name="{{ title|camel }}">
+        <fieldset lazy-load-css="fieldset">
+            <legend>{{ title }}</legend>
+            {% if helperText|length %}
+                <p>{{ helperText }}</p>
+            {% endif %}
+            {% for option in options %}
+                <checkbox-component web-component lazy-load-css="checkbox-component">
+                    <input type="checkbox" id="{{ title|camel }}-{{ option.options|camel }}" name="{{ option.options|camel }}" tabindex="-1" />
+                    <label for="{{ title|camel }}-{{ option.options|camel }}" tabindex="0">
+                        <checkbox-icon aria-label="square checkbox icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke="currentColor" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                            </svg>
+                        </checkbox-icon>
+                        <span>{{ option.options }}</span>
+                    </label>
+                </checkbox-component>
+            {% endfor %}
+        </fieldset>
+    </fieldset-component>
+{% endmacro %}
+
+{% macro date(title, required, helperText = null) %}
+    <input-component lazy-load-css="input-component" web-component>
+        <input type="date" name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }}>
+        <label for="{{ title|camel }}">{{ title }}</label>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </input-component>
+    <noscript>
+        <style>
+            input-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            input-component input{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}
+
+{% macro email(title, required, helperText = null) %}
+    <input-component lazy-load-css="input-component" web-component>
+        <input type="email" name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }} inputmode="email" autocomplete="email">
+        <label for="{{ title|camel }}">{{ title }}</label>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </input-component>
+    <noscript>
+        <style>
+            input-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            input-component input{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}
+
+{% macro lightswitch(title, required, helperText = null) %}
+    <lightswitch-component lazy-load-css="lightswitch-component" web-component>
+        <input type="checkbox" name="{{ title|camel }}" id="{{ title|camel }}" {% if required %}required{% endif %}  tabindex="-1" />
+        <label for="{{ title|camel }}" tabindex="0">
+            <lightswitch-icon aria-hidden="true">
+                <lightswitch-track></lightswitch-track>
+                <lightswitch-knob></lightswitch-knob>
+            </lightswitch-icon>
+            <span>
+                {{ title }}
+                {% if helperText|length %}
+                    <helper-text lazy-load-css="helper-text" class="-floating" tabindex="0">
+                        <helper-icon aria-label="information alert symbol">
+                            <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                        </helper-icon>
+                        <p>{{ helperText }}</p>
+                    </helper-text>
+                {% endif %}
+            </span>
+        </label>
+    </lightswitch-component>
+{% endmacro %}
+
+{% macro number(title, required, helperText = null, minimum = null, maximum = null, step = null) %}
+{% if minimum %}
+    {% set minimum = 'min="' ~ minimum ~ '"' %}
+{% endif %}
+{% if maximum %}
+    {% set maximum = 'max="' ~ maximum ~ '"' %}
+{% endif %}
+{% if step %}
+    {% set step = 'step="' ~ step ~ '"' %}
+{% endif %}
+    <input-component lazy-load-css="input-component" web-component>
+        <input type="number" name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }} {{ minimum }} {{ maximum }} {{ step }} inputmode="numeric">
+        <label for="{{ title|camel }}">{{ title }}</label>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </input-component>
+    <noscript>
+        <style>
+            input-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            input-component input{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}
+
+{% macro radioButtons(title, required, options, helperText = null) %}
+    <fieldset-component {{ required ? 'required web-component' }}>
+        <fieldset lazy-load-css="fieldset">
+            <legend>{{ title }}</legend>
+            {% if helperText|length %}
+                <p>{{ helperText }}</p>
+            {% endif %}
+            {% for option in options %}
+                <radio-component web-component lazy-load-css="radio-component">
+                    <input type="radio" id="{{ title|camel }}-{{ option.options|camel }}" name="{{ title|camel }}" value="{{ option.options }}" {{ (loop.first and required) ? 'checked' }}  tabindex="-1" />
+                    <label for="{{ title|camel }}-{{ option.options|camel }}" tabindex="0">
+                        <radio-icon aria-label="round radio icon"></radio-icon>
+                        <span>{{ option.options }}</span>
+                    </label>
+                </radio-component>    
+            {% endfor %}
+        </fieldset>
+    </fieldset-component>
+{% endmacro %}
+
+{% macro select(title, required, options, helperText = null) %}
+    <select-component web-component lazy-load-css="select-component">
+        <select name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }}>
+            <option value=""></option>
+            {% for option in options %}
+                <option value="{{ option.options|camel }}">{{ option.options }}</option>
+            {% endfor %}
+        </select>
+        <label for="{{ title|camel }}">{{ title }}</label>
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </select-component>
+    <noscript>
+        <style>
+            select-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            select-component input{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}
+
+{% macro telephone(title, required, helperText = null) %}
+    <input-component lazy-load-css="input-component" web-component>
+        <input type="tel" name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }} inputmode="tel" autocomplete="tel">
+        <label for="{{ title|camel }}">{{ title }}</label>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </input-component>
+    <noscript>
+        <style>
+            input-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            input-component input{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}
+
+{% macro text(title, required, helperText = null) %}
+    <input-component lazy-load-css="input-component" web-component>
+        <input type="text" name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }}>
+        <label for="{{ title|camel }}">{{ title }}</label>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </input-component>
+    <noscript>
+        <style>
+            input-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            input-component input{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}
+
+{% macro textarea(title, required, helperText = null) %}
+    <textarea-component lazy-load-css="textarea-component" web-component>
+        <textarea name="{{ title|camel }}" id="{{ title|camel }}" rows="5" {{ required ? 'required' }}></textarea>
+        <label for="{{ title|camel }}">{{ title }}</label>
+        {% if helperText|length %}
+            <helper-text lazy-load-css="helper-text">
+                <helper-icon aria-label="information alert symbol">
+                    <svg style="width:8px;height:8px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg style="width:12px;height:12px">
+                </helper-icon>
+                <p>{{ helperText }}</p>
+            </helper-text>
+        {% endif %}
+    </textarea-component>
+    <noscript>
+        <style>
+            textarea-component label{
+                transform: translateY(0.25rem) scale(0.75);
+            }
+            textarea-component textarea{
+                background-color: var(--grey-100);
+            }
+        </style>
+    </noscript>
+{% endmacro %}

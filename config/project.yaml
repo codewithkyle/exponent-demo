@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578875486
+dateModified: 1578918399
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -22,6 +22,8 @@ fieldGroups:
     name: Carousel
   37c853a7-f5d5-40e1-ae75-bdbef6153c29:
     name: Navigation
+  471a455f-49cf-4efd-9553-d6e82034ac85:
+    name: Company
   926e6763-db57-460c-bddd-cff2cd7e2c37:
     name: Footer
   cd28a480-93fe-445c-b052-5f0ebc13bb6b:
@@ -241,6 +243,57 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 926e6763-db57-460c-bddd-cff2cd7e2c37
+  49ea454a-4aac-487c-905b-5a98f320f1ea:
+    name: 'Privacy Policy'
+    handle: privacyPolicy
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: typedlinkfield\fields\LinkField
+    settings:
+      allowCustomText: ''
+      allowedLinkNames:
+        1: asset
+        3: entry
+        9: url
+      allowTarget: ''
+      autoNoReferrer: ''
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        asset:
+          sources:
+            - 'folder:c6e8a56d-24cf-4b14-a7ab-6174117e0ff4'
+          allowCustomQuery: ''
+        category:
+          sources: '*'
+          allowCustomQuery: ''
+        entry:
+          sources:
+            - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
+          allowCustomQuery: ''
+        site:
+          sites: '*'
+        user:
+          sources: '*'
+          allowCustomQuery: ''
+        custom:
+          disableValidation: ''
+          allowAliases: ''
+        email:
+          disableValidation: ''
+          allowAliases: ''
+        tel:
+          disableValidation: ''
+          allowAliases: ''
+        url:
+          disableValidation: ''
+          allowAliases: ''
+    contentColumnType: text
+    fieldGroup: 471a455f-49cf-4efd-9553-d6e82034ac85
   68c27b1a-ac2c-4d74-8688-fa2d81c3192d:
     name: 'Phone Number'
     handle: phoneNumber
@@ -365,6 +418,57 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: fb2e717b-b8b5-4964-90fb-8055d528d3b7
+  8be41fce-7814-43ab-91b2-1a29d809cb98:
+    name: 'Terms of Service'
+    handle: termsOfService
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: typedlinkfield\fields\LinkField
+    settings:
+      allowCustomText: ''
+      allowedLinkNames:
+        1: asset
+        3: entry
+        9: url
+      allowTarget: ''
+      autoNoReferrer: ''
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        asset:
+          sources:
+            - 'folder:c6e8a56d-24cf-4b14-a7ab-6174117e0ff4'
+          allowCustomQuery: ''
+        category:
+          sources: '*'
+          allowCustomQuery: ''
+        entry:
+          sources:
+            - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
+          allowCustomQuery: ''
+        site:
+          sites: '*'
+        user:
+          sources: '*'
+          allowCustomQuery: ''
+        custom:
+          disableValidation: ''
+          allowAliases: ''
+        email:
+          disableValidation: ''
+          allowAliases: ''
+        tel:
+          disableValidation: ''
+          allowAliases: ''
+        url:
+          disableValidation: ''
+          allowAliases: ''
+    contentColumnType: text
+    fieldGroup: 471a455f-49cf-4efd-9553-d6e82034ac85
   9629fa55-f666-4eba-8292-f79ae3c7e03b:
     name: 'Hero Image'
     handle: heroImage
@@ -470,6 +574,23 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 37c853a7-f5d5-40e1-ae75-bdbef6153c29
+  b106a471-dd90-46ee-b695-21b16f4e5604:
+    name: 'Company Name'
+    handle: companyName
+    instructions: 'Provide the name of your company or organization.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 471a455f-49cf-4efd-9553-d6e82034ac85
   c403a734-1d72-497f-8454-25f54976cb54:
     name: Options
     handle: options
@@ -730,6 +851,28 @@ globalSets:
                 sortOrder: 3
               dad42871-ece1-4b19-9228-b1e395c8b305:
                 required: false
+                sortOrder: 2
+  7b807694-2be7-4bb9-a658-277c17ce158f:
+    name: 'General Settings'
+    handle: generalSettings
+    fieldLayouts:
+      a6a4ed45-6b45-4d22-8489-6b7564a31c69:
+        tabs:
+          -
+            name: Settings
+            sortOrder: 1
+            fields:
+              49ea454a-4aac-487c-905b-5a98f320f1ea:
+                required: false
+                sortOrder: 3
+              8be41fce-7814-43ab-91b2-1a29d809cb98:
+                required: false
+                sortOrder: 4
+              b106a471-dd90-46ee-b695-21b16f4e5604:
+                required: true
+                sortOrder: 1
+              eb6a6693-6c19-4c32-a16a-5216a0b1fb71:
+                required: true
                 sortOrder: 2
 matrixBlockTypes:
   056ea73e-bb14-4716-9dbf-e7303f9b8b19:
@@ -3692,6 +3835,11 @@ relabel:
     fieldLayout: e596da79-ba50-4911-a44c-65fdfdd3cf69
     instructions: ''
     name: 'Logo Link'
+  bc4b3cb6-8017-4190-9e2d-5f581727ed0f:
+    field: eb6a6693-6c19-4c32-a16a-5216a0b1fb71
+    fieldLayout: a6a4ed45-6b45-4d22-8489-6b7564a31c69
+    instructions: 'This version of the logo will be used in the footer and utility pages such as login, signup, and direct link forms.'
+    name: Logo
   c6b04859-01c0-41d1-8638-be06884f2111:
     field: 2b21fcbf-5341-43c3-a34e-8930968fa5cd
     fieldLayout: 4a2d3c63-cba1-465e-82d8-f9893af3e0fd
@@ -5117,9 +5265,9 @@ system:
   timeZone: America/Detroit
 users:
   requireEmailVerification: true
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoVolumeUid: null
+  allowPublicRegistration: true
+  defaultGroup: ''
+  photoVolumeUid: 70427868-1571-42b8-8751-e98127021aa8
   photoSubpath: ''
 volumes:
   70427868-1571-42b8-8751-e98127021aa8:
