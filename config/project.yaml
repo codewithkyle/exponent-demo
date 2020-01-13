@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578918399
+dateModified: 1578925665
 email:
   fromEmail: codingwithkyle@gmail.com
   fromName: 'Craft PWA'
@@ -3865,6 +3865,20 @@ routes:
         - '[^\/]+'
     uriPattern: 'blog/<slug:[^\/]+>'
     sortOrder: 1
+    siteUid: null
+  69f8a29f-c432-4643-a15c-048fba89a4cf:
+    template: _users/login.twig
+    uriParts:
+      - login
+    uriPattern: login
+    sortOrder: 2
+    siteUid: null
+  ece00b1d-b88e-43a2-a8fb-83834763a665:
+    template: _users/register.twig
+    uriParts:
+      - register
+    uriPattern: register
+    sortOrder: 3
     siteUid: null
 sections:
   0b291d76-22bf-4e8e-a990-c9d6ace406a4:

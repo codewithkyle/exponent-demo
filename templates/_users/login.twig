@@ -1,0 +1,48 @@
+{% extends "_base/utility" %}
+
+{% import "_macros" as inputs %}
+
+{% block content %}
+    <style>
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <login-form eager-load-css="buttons login-form">
+        <form method="post" accept-charset="UTF-8">
+            <h1>{{ "Sign In"|t }}</h1>
+
+            {{ csrfInput() }}
+            <noscript>
+                {{ actionInput('users/login') }}
+            </noscript>
+        
+            <input-component lazy-load-css="input-component" web-component>
+                <input type="email" name="loginName" id="loginName" required inputmode="email">
+                <label for="loginName">{{ "Email Address"|t }}</label>
+            </input-component>
+            <noscript>
+                <style>
+                    input-component label{
+                        transform: translateY(0.25rem) scale(0.75);
+                    }
+                    input-component input{
+                        background-color: var(--grey-100);
+                    }
+                </style>
+            </noscript>
+            {{ inputs.password('Password'|t, true) }}
+
+            <div style="width:100%;display:flex;justify-content: space-between;align-items: center;flex-flow: row;">
+                <a href="{{ siteUrl|trim('/') }}/forgot-password">Forget your password?</a>
+                <button type="submit" class="button -solid -primary">{{ "Sign In"|t }}</button>
+            </div>
+        </form>
+        <p>
+            {{ "Don't have an account?"|t }}
+            <a href="{{ siteUrl|trim('/') }}/register">{{ "Create one now"|t }}</a>
+        </p>
+    </login-form eager-load-css="buttons login-form">
+{% endblock %}
