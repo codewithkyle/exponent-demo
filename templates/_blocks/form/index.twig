@@ -52,7 +52,7 @@
                     {% endif %}
                     {% if columns %}
                         <form-grid columns="{{ columns }}">
-                            {% for input in row.inputs %}
+                            {% for input in row.inputs.all() %}
                                 {% switch(input.type) %}
                                     {% case 'textInput' %}
                                         {{ inputs.text(input.title, input.required, input.helperText) }}
