@@ -141,9 +141,6 @@ class FormComponent extends HTMLElement {
 						this.reportErrors(response.errors);
 					}
 				}
-			} else {
-				const response = await request.text();
-				console.log(response);
 			}
 			env.stopLoading(ticket);
 			this.subButton.style.pointerEvents = "all";

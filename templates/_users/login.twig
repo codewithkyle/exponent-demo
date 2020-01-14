@@ -10,7 +10,7 @@
             align-items: center;
         }
     </style>
-    <user-form eager-load-css="buttons login-form">
+    <user-form eager-load-css="buttons login-form snackbar" web-component data-route="/actions/users/login" data-redirect="/">
         <form method="post" accept-charset="UTF-8">
             <h1>{{ "Sign In"|t }}</h1>
 
@@ -40,7 +40,7 @@
                 <button type="submit" class="button -solid -primary">{{ "Sign In"|t }}</button>
             </div>
         </form>
-        <p>
+        <p id="alt-message">
             {{ "Don't have an account?"|t }}
             <a href="{{ siteUrl|trim('/') }}/register">{{ "Create one now"|t }}</a>
         </p>
