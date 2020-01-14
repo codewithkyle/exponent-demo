@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578927478
+dateModified: 1579008735
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -3866,6 +3866,13 @@ relabel:
     instructions: 'This image will appear when this article is displayed on another page as a Call to Action card.'
     name: 'Thumbnail Image'
 routes:
+  1e4a500f-d2f0-440b-8920-f81c02655b36:
+    template: users/forgot-password.twig
+    uriParts:
+      - forgot-password
+    uriPattern: forgot-password
+    sortOrder: 4
+    siteUid: null
   522515c2-93cc-456a-aab8-567abd5bc2af:
     template: _blog/index
     uriParts:
@@ -3877,14 +3884,14 @@ routes:
     sortOrder: 1
     siteUid: null
   69f8a29f-c432-4643-a15c-048fba89a4cf:
-    template: _users/login.twig
+    template: users/login.twig
     uriParts:
       - login
     uriPattern: login
     sortOrder: 2
     siteUid: null
   ece00b1d-b88e-43a2-a8fb-83834763a665:
-    template: _users/register.twig
+    template: users/register.twig
     uriParts:
       - register
     uriPattern: register

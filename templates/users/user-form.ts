@@ -66,6 +66,9 @@ class UserFormComponent extends HTMLElement {
 					input.parentElement.classList.add("is-invalid");
 				});
 			}
+		} else {
+			const response = await request.text();
+			console.log(response);
 		}
 		env.stopLoading(ticket);
 	}

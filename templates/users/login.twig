@@ -1,7 +1,5 @@
 {% extends "_base/utility" %}
-
 {% import "_macros" as inputs %}
-
 {% block content %}
     <style>
         main{
@@ -14,8 +12,8 @@
         <form method="post" accept-charset="UTF-8">
             <h1>{{ "Sign In"|t }}</h1>
 
-            {{ csrfInput() }}
             <noscript>
+                {{ csrfInput() }}
                 {{ actionInput('users/login') }}
             </noscript>
         

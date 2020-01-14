@@ -45,10 +45,8 @@
         <success-message style="{{ success ? 'display:block;' : 'display:none;' }}">
             <h1>{{ "Your account has been created"|t }}</h1>
             <p>
-                {{ "Check your email for an acitivation link. The email can take up to 10 minutes to arrive and if you don't see the email check the spam folder"|t }}
-            </p>
-            <p>
-                {{ "If you are having issues recieving your activation link please"|t }}
+                {{ "Check your email for an activation link."|t }}
+                {{ "If you don't receive your account activation link after 10 minutes please"|t }}
                 <a href="{{ siteUrl|trim('/') }}/form/general-support">{{ "contact support"|t }}.</a>
             </p>
         </success-message>

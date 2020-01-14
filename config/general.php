@@ -11,12 +11,14 @@
 return [
     // Global settings
     '*' => [
-        'defaultWeekStartDay'   => 1,
-        'omitScriptNameInUrls'  => true,
-        'cpTrigger'             => 'webmaster',
-        'securityKey'           => getenv('SECURITY_KEY'),
-        'useProjectConfigFile'  => true,
-        'useEmailAsUsername'    => true,
+        'defaultWeekStartDay'               => 1,
+        'omitScriptNameInUrls'              => true,
+        'cpTrigger'                         => 'webmaster',
+        'securityKey'                       => getenv('SECURITY_KEY'),
+        'useProjectConfigFile'              => true,
+        'useEmailAsUsername'                => true,
+        'setPasswordPath'                   => 'users/set-password',
+        'autoLoginAfterAccountActivation'   => true,
     ],
 
     // Dev environment settings
