@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1579093163
+dateModified: 1579094730
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -3984,7 +3984,7 @@ sections:
           b421e65a-8ecb-48bd-af60-f8de2cb4a7d5:
             tabs:
               -
-                name: Forms
+                name: Settings
                 sortOrder: 1
                 fields:
                   08896665-1094-4e21-96a5-9d91a43837a0:
@@ -3993,10 +3993,17 @@ sections:
                   6adf60da-6ee5-43d8-aa81-f0dbe2441bff:
                     required: false
                     sortOrder: 3
-                  9a975e5f-4339-4848-a3c5-009593aed48a:
-                    required: true
+                  914d1a3a-5aa5-4e1c-9a26-5db3837b2f9b:
+                    required: false
                     sortOrder: 4
                   cedaaef7-67ee-4a76-9410-b815e30765e2:
+                    required: true
+                    sortOrder: 1
+              -
+                name: Form
+                sortOrder: 2
+                fields:
+                  9a975e5f-4339-4848-a3c5-009593aed48a:
                     required: true
                     sortOrder: 1
   2df1ce12-f3f3-4917-a290-a212552c2ddf:
