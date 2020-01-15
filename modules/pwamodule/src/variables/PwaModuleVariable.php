@@ -55,4 +55,14 @@ class PwaModuleVariable
     {
         return Craft::$app->getenv('RECAPTCHA_PUBLIC_KEY');
     }
+
+    public function checkRequireLogin($entry)
+    {
+        $requiresLogin = false;
+        if (!empty($entry) && isset($entry['requireLogin']))
+        {
+            $requiresLogin = PwaModule::getInstance()->pwaModuleService->checkRequireLogin($entry);
+        }
+        return $requiresLogin;
+    }
 }

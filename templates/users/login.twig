@@ -1,5 +1,9 @@
 {% extends "_base/utility" %}
 {% import "_macros" as inputs %}
+{% set redirect = craft.app.request.getParam('redirect') %}
+{% if not redirect %}
+    {% set redirect = '/' %}
+{% endif %}
 {% block content %}
     <style>
         main{
@@ -8,7 +12,7 @@
             align-items: center;
         }
     </style>
-    <user-form eager-load-css="buttons login-form snackbar" web-component data-route="/actions/users/login" data-redirect="/">
+    <user-form eager-load-css="buttons login-form snackbar" web-component data-route="/actions/users/login" data-redirect="{{ redirect }}">
         <form method="post" accept-charset="UTF-8">
             <h1>{{ "Sign In"|t }}</h1>
 

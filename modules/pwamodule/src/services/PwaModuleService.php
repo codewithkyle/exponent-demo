@@ -259,6 +259,21 @@ class PwaModuleService extends Component
         return $response;
     }
 
+    public function checkRequireLogin($entry)
+    {
+        $requiresLogin = false;
+        $currEntry = $entry;
+        do
+        {
+            if ($currEntry->requireLogin){
+                $requiresLogin = true;
+                break;
+            }
+            $currEntry = $currEntry->getParent();
+        } while ($currEntry !== null || $requiresLogin);
+        return $requiresLogin;
+    }
+
     // Private Methods
     // =========================================================================
 

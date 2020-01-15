@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1579008735
+dateModified: 1579093163
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -478,6 +478,18 @@ fields:
           allowAliases: ''
     contentColumnType: text
     fieldGroup: 471a455f-49cf-4efd-9553-d6e82034ac85
+  914d1a3a-5aa5-4e1c-9a26-5db3837b2f9b:
+    name: 'Require Login'
+    handle: requireLogin
+    instructions: 'When enabled the user will need to be logged in to see this page or any child pages.'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 0e5caedc-3ce5-4116-8378-d114d694a4b9
   9629fa55-f666-4eba-8292-f79ae3c7e03b:
     name: 'Hero Image'
     handle: heroImage
@@ -3939,12 +3951,15 @@ sections:
                     required: true
                     sortOrder: 1
               -
-                name: SEO
+                name: Settings
                 sortOrder: 3
                 fields:
-                  d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+                  914d1a3a-5aa5-4e1c-9a26-5db3837b2f9b:
                     required: false
                     sortOrder: 1
+                  d75f70e4-42ab-49b8-be5b-f174954fa9e6:
+                    required: false
+                    sortOrder: 2
   18672325-a634-45e6-80d6-12655718fb87:
     name: Forms
     handle: forms

@@ -12,15 +12,18 @@
     {% set page = product %}
 {% endif %}
 
-{# Tell the browser to cache this page for 30 days #}
-{% set expiry = now|date_modify('+30 days') %}
-
-{% header "Cache-Control: max-age=" ~ (expiry.timestamp - now.timestamp) %}
-{% header "Pragma: cache" %}
-{% header "Expires: " ~ expiry|date('D, d M Y H:i:s', 'GMT') ~ " GMT" %}
-{% header "Access-Control-Expose-Headers: etag" %}
-{% if page.uid %}
-    {% header "ETag: " ~ page.uid ~ '-' ~ craft.pwa.getCache(page.id) %}
+{% set requireLogin = craft.pwa.checkRequireLogin(page) %}
+{% if requireLogin and not currentUser%}
+    {% redirect '/login?redirect=' ~ craft.app.request.pathInfo %}
+{% elseif not requireLogin %}
+    {% set expiry = now|date_modify('+7 days') %}
+    {% header "Cache-Control: max-age=" ~ (expiry.timestamp - now.timestamp) %}
+    {% header "Pragma: cache" %}
+    {% header "Expires: " ~ expiry|date('D, d M Y H:i:s', 'GMT') ~ " GMT" %}
+    {% header "Access-Control-Expose-Headers: etag" %}
+    {% if page.uid %}
+        {% header "ETag: " ~ page.uid ~ '-' ~ craft.pwa.getCache(page.id) %}
+    {% endif %}
 {% endif %}
 
 {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
