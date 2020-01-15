@@ -1,7 +1,6 @@
 import { env } from "djinnjs/env";
 import { notify } from "@codewithkyle/notifyjs";
 import { broadcaster } from "djinnjs/broadcaster";
-import { fetchJS } from "djinnjs/fetch";
 
 class UserFormComponent extends HTMLElement {
 	private form: HTMLFormElement;
