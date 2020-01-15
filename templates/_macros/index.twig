@@ -30,9 +30,10 @@
 {% endmacro %}
 
 {% macro date(title, required, helperText = null) %}
-    <input-component lazy-load-css="input-component" web-component>
+    <date-component lazy-load-css="date-component flatpickr" web-component>
         <input type="date" name="{{ title|camel }}" id="{{ title|camel }}" {{ required ? 'required' }}>
         <label for="{{ title|camel }}">{{ title }}</label>
+        <flatpickr-shell></flatpickr-shell>
         {% if helperText|length %}
             <helper-text lazy-load-css="helper-text">
                 <helper-icon aria-label="information alert symbol">
@@ -41,7 +42,7 @@
                 <p>{{ helperText }}</p>
             </helper-text>
         {% endif %}
-    </input-component>
+    </date-component>
     <noscript>
         <style>
             input-component label{
