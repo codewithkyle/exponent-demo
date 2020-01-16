@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1579177625
+dateModified: 1579178906
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -126,6 +126,7 @@ fields:
           sources:
             - singles
             - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+            - 'section:18672325-a634-45e6-80d6-12655718fb87'
             - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
           allowCustomQuery: ''
         site:
@@ -1000,7 +1001,9 @@ matrixBlockTypes:
               allowCustomQuery: ''
             entry:
               sources:
+                - singles
                 - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
@@ -1232,6 +1235,7 @@ matrixBlockTypes:
               sources:
                 - singles
                 - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
@@ -2135,7 +2139,9 @@ matrixBlockTypes:
               allowCustomQuery: ''
             entry:
               sources:
+                - singles
                 - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
@@ -2836,7 +2842,9 @@ matrixBlockTypes:
               allowCustomQuery: ''
             entry:
               sources:
+                - singles
                 - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
@@ -3282,8 +3290,8 @@ matrixBlockTypes:
         settings:
           allowCustomText: '1'
           allowedLinkNames:
+            1: asset
             3: entry
-            4: site
             7: email
             8: tel
             9: url
@@ -3295,13 +3303,18 @@ matrixBlockTypes:
           enableTitle: ''
           typeSettings:
             asset:
-              sources: '*'
+              sources:
+                - 'folder:c6e8a56d-24cf-4b14-a7ab-6174117e0ff4'
               allowCustomQuery: ''
             category:
               sources: '*'
               allowCustomQuery: ''
             entry:
-              sources: '*'
+              sources:
+                - singles
+                - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
+                - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
               sites: '*'
@@ -3683,6 +3696,7 @@ matrixBlockTypes:
               sources:
                 - singles
                 - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
@@ -4525,8 +4539,6 @@ superTableBlockTypes:
           allowedLinkNames:
             1: asset
             3: entry
-            4: site
-            5: user
             7: email
             8: tel
             9: url
@@ -4546,6 +4558,9 @@ superTableBlockTypes:
               allowCustomQuery: ''
             entry:
               sources:
+                - singles
+                - 'section:d05954f0-e647-40c2-8eeb-7119bc40b2e3'
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
@@ -5270,6 +5285,8 @@ superTableBlockTypes:
               allowCustomQuery: ''
             entry:
               sources:
+                - singles
+                - 'section:18672325-a634-45e6-80d6-12655718fb87'
                 - 'section:0b291d76-22bf-4e8e-a990-c9d6ace406a4'
               allowCustomQuery: ''
             site:
