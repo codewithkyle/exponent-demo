@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1579094730
+dateModified: 1579177625
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
