@@ -3,20 +3,31 @@ footer.-base
     border-top: 1px solid var(--grey-200);
     padding: 4rem 1rem 3rem;
     margin-top: 6rem;
+    text-align: center;
 
     footer-content
     {
-        max-width: 1024px;
-        width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
+        text-align: left;
+        display: inline-flex;
+        flex-flow: column wrap;
         margin: 0 auto;
+
+        @media (min-width: 768px){
+            max-width: 1024px;
+            width: 100%;
+            align-items: flex-start;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
         
         company-info
         {
-            padding-right: 4rem;
-            border-right: 1px solid var(--grey-200);
             padding-bottom: 4rem;
+            
+            @media (min-width: 768px){
+                padding-right: 4rem;
+                border-right: 1px solid var(--grey-200);
+            }
 
             img
             {
@@ -70,10 +81,12 @@ footer.-base
 
         footer-column
         {
-
-            padding-left: 4rem;
             padding-bottom: 2rem;
             min-height: 100%;
+
+            @media (min-width: 768px){
+                padding-left: 4rem;
+            }
 
             h4
             {
@@ -108,8 +121,11 @@ footer.-base
 
         company-contact
         {
-            padding-left: 4rem;
             float: right;
+
+            @media (min-width: 768px){
+                padding-left: 4rem;
+            }
 
             h4
             {
