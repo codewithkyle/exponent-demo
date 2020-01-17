@@ -1,6 +1,6 @@
 .button
 {
-    display: inline-block;
+    display: block;
     height: 36px;
     line-height: 36px;
     border-width: 1px;
@@ -13,6 +13,11 @@
     font-weight: var(--font-medium);
     cursor: pointer;
     transition: all 75ms ease-in-out;
+    text-align: center;
+
+    @media (min-width: 768px){
+        display: inline-block;
+    }
 
     &.-solid
     {
@@ -123,5 +128,9 @@
     &.-pill
     {
         border-radius: 18px;
+    }
+
+    &.-inline{
+        display: inline-block;
     }
 }

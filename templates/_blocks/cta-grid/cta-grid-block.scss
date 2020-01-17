@@ -5,22 +5,36 @@ cta-grid-block
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-flow: row nowrap;
+    flex-flow: column wrap;
     margin: 0 auto;
-    padding: 6rem 1rem 4rem;
+    padding: 4rem 1rem;
+
+    @media (min-width: 1024px){
+        padding: 6rem 1rem 4rem;
+        flex-flow: row nowrap;
+    }
 
     grid-content
     {
         display: inline-block;
-        max-width: 420px;
+        max-width: 640px;
         width: 100%;
         flex: 1;
 
+        @media (min-width: 1024px){
+            max-width: 420px;
+        }
+
         h2
         {
-            font-size: 2.5rem;
-            line-height: 3rem;
+            font-size: var(--text-3xl);
+            line-height: 1.618;
             margin-bottom: 1rem;
+
+            @media (min-width: 768px){
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
         }
 
         p
@@ -28,8 +42,6 @@ cta-grid-block
             margin-bottom: 1.5rem;
             line-height: 1.618;
             color: var(--grey-700);
-            hyphens: auto;
-            text-align: justify;
 
             strong
             {
@@ -67,22 +79,27 @@ cta-grid-block
     {
         width: 600px;
         max-width: 100%;
+        margin-top: 2rem;
 
-        &:not([count="2"])
-        {
-            a
+        @media (min-width: 1024px){
+            margin-top: 0;
+
+            &:not([count="2"])
             {
-                &:nth-child(even)
-                {
-                    transform: translateY(-2rem);
-                }
-
-                &:hover,
-                &:focus
+                a
                 {
                     &:nth-child(even)
                     {
-                        transform: translateY(-2.5rem);
+                        transform: translateY(-2rem);
+                    }
+    
+                    &:hover,
+                    &:focus
+                    {
+                        &:nth-child(even)
+                        {
+                            transform: translateY(-2.5rem);
+                        }
                     }
                 }
             }
@@ -94,7 +111,7 @@ cta-grid-block
             border-radius: 0.5rem;
             background-color: var(--white);
             box-shadow: var(--shadow-md);
-            width: calc(50% - 2rem);
+            width: calc(100% - 2rem);
             margin: 1rem;
             display: inline-flex;
             flex-flow: column wrap;
@@ -128,6 +145,10 @@ cta-grid-block
                 box-shadow: var(--shadow-md);
                 transform: translateY(0.25rem);
                 transition: all 150ms ease-in-out;
+            }
+
+            @media (min-width:768px){
+                width: calc(50% - 2rem);
             }
 
             svg
