@@ -107,8 +107,8 @@ hero-carousel
         h1
         {
             color: var(--white);
-            font-size: 1.75rem;
-            line-height: 2rem;
+            font-size: 2rem;
+            line-height: 2.25rem;
             margin-bottom: 1rem;
             display: block;
             width: 100%;
@@ -136,7 +136,6 @@ hero-carousel
             opacity: 0;
             text-shadow: 0 1px 3px rgba(255,255,255,0.15);
             transform: translateY(4rem);
-            font-size: var(--text-sm);
 
             @media (min-width: 768px){
                 line-height: 2rem;
