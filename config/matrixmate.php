@@ -64,8 +64,8 @@ return [
                                 'fields' => ['image'],
                             ],
                             [
-                                'label' => 'Spacing',
-                                'fields' => ['spacing'],
+                                'label' => 'Settings',
+                                'fields' => ['spacing', 'position'],
                             ]
                         ],
                         'defaultTabName' => 'Misc',

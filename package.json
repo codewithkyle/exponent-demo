@@ -14,7 +14,7 @@
 		"sass:dev": "cssmonster --e dev",
 		"sass:prod": "cssmonster",
 		"build": "npm run prep && npm run compile && npm run sass:dev && djinnjs -e dev && npm run cleanup",
-		"production": "npm run prep && npm run compile && npm run sass:prod && npm run purgecss && djinnjs -e dev && npm run cleanup",
+		"production": "npm run prep && npm run compile && npm run sass:prod && djinnjs -e dev && npm run cleanup",
 		"eslint": "eslint -c .eslintrc.js \"templates/**/*.ts\"",
 		"stylelint": "stylelint \"templates/**/*.scss\"",
 		"lint": "npm run eslint && npm run stylelint",

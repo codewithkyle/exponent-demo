@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1579178906
+dateModified: 1579265040
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -1676,6 +1676,31 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      c3b9881e-63f2-466c-b4cc-19fde9c5de58:
+        name: Position
+        handle: position
+        instructions: 'Select where the pull quote block will be positioned over the image.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Bottom
+              value: '-bottom'
+              default: ''
+            -
+              label: Left
+              value: '-left'
+              default: '1'
+            -
+              label: Right
+              value: '-right'
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       e6913465-c8d5-41d7-858f-3d7b35127053:
         name: Spacing
         handle: spacing
@@ -1738,6 +1763,9 @@ matrixBlockTypes:
               6acb40ff-a261-4f88-bca4-37dbacdcd2cc:
                 required: true
                 sortOrder: 1
+              c3b9881e-63f2-466c-b4cc-19fde9c5de58:
+                required: true
+                sortOrder: 6
               e6913465-c8d5-41d7-858f-3d7b35127053:
                 required: false
                 sortOrder: 5
