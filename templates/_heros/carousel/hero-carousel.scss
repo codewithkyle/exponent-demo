@@ -129,7 +129,6 @@ hero-carousel
             color: var(--white);
             margin-bottom: 1.5rem;
             font-weight: 300;
-            font-size: var(--text-lg);
             display: block;
             width: 100%;
             line-height: 1.618;
@@ -137,11 +136,11 @@ hero-carousel
             opacity: 0;
             text-shadow: 0 1px 3px rgba(255,255,255,0.15);
             transform: translateY(4rem);
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
 
             @media (min-width: 768px){
                 line-height: 2rem;
-                font-size: 1rem;
+                font-size: var(--text-lg);
             }
         }
 

@@ -48,7 +48,7 @@
 	},
 	"dependencies": {
 		"@codewithkyle/notifyjs": "^1.0.3",
-		"djinnjs": "0.0.14",
+		"djinnjs": "0.0.15",
 		"flatpickr": "^4.6.3",
 		"normalize.css": "^8.0.1",
 		"uuid": "^3.3.3"

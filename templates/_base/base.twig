@@ -42,6 +42,7 @@
     {% endif %} 
     data-environment="{{ craft.app.config.env }}" 
     data-ga-id=""
+    style="width:100vw;overflow-x:hidden;display:block;"
 >
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -318,7 +319,7 @@
 
         <script type="text/javascript" nomodule src="{{ alias('@rootUrl')|trim('/') }}/static/scripts/ie-warning.js"></script>
     </head>
-    <body>
+    <body style="width:100vw;overflow-x:hidden;display:block;">
         {# Full screen loading animation #}
         <page-loading>
             <div>
