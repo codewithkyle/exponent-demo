@@ -53,31 +53,6 @@ pull-quote
             margin-bottom: -4rem;
         }
 
-        /* purgecss start ignore */
-        &.-left{
-            @media (min-width: 1600px){
-                margin-bottom: 0;
-                display: inline-block;
-                position: absolute;
-                width: 420px;
-                top: 50%;
-                left: -8rem;
-                transform: translateY(-50%);
-            }
-        }
-        &.-right{
-            @media (min-width: 1600px){
-                margin-bottom: 0;
-                display: inline-block;
-                position: absolute;
-                width: 420px;
-                top: 50%;
-                right: -8rem;
-                transform: translateY(-50%);
-            }
-        }
-        /* purgecss end ignore */
-
         svg
         {
             width: 32px;
@@ -140,3 +115,27 @@ pull-quote
         }
     }
 }
+
+/* purgecss start ignore */
+@media (min-width: 1600px){
+    pull-quote blockquote.-left{
+        margin-bottom: 0;
+        display: inline-block;
+        position: absolute;
+        width: 420px;
+        top: 50%;
+        left: -8rem;
+        transform: translateY(-50%);
+    }
+
+    pull-quote blockquote.-right{
+        margin-bottom: 0;
+        display: inline-block;
+        position: absolute;
+        width: 420px;
+        top: 50%;
+        right: -8rem;
+        transform: translateY(-50%);
+    }
+}
+/* purgecss end ignore */
