@@ -10,7 +10,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1579265040
+dateModified: 1579469582
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -3878,6 +3878,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.5
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 relabel:
   079ec6e3-4770-4239-8866-13082c44803a:
     field: 2b21fcbf-5341-43c3-a34e-8930968fa5cd

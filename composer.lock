@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "88728c40fae81063797408e548079d25",
+    "content-hash": "28ca9d03bd40c0b495bbd8da39a8f943",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -646,6 +646,56 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
             "time": "2020-01-14T21:16:40+00:00"
+        },
+        {
+            "name": "craftcms/element-api",
+            "version": "2.6.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/element-api/zipball/33da444d49950e5adc7aaa3b8e5b917993e6a40b",
+                "reference": "33da444d49950e5adc7aaa3b8e5b917993e6a40b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC16",
+                "league/fractal": "^0.18.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Element API",
+                "handle": "element-api",
+                "documentationUrl": "https://github.com/craftcms/element-api/blob/v2/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\elementapi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Create a JSON API for your elements in Craft",
+            "keywords": [
+                "api",
+                "cms",
+                "craftcms",
+                "json",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/element-api/issues?state=open",
+                "source": "https://github.com/craftcms/element-api",
+                "docs": "https://github.com/craftcms/element-api/blob/v2/README.md",
+                "rss": "https://github.com/craftcms/element-api/commits/v2.atom"
+            },
+            "time": "2019-08-01T22:45:15+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
