@@ -1,6 +1,6 @@
 import { env } from "djinnjs/env";
 import { notify } from "@codewithkyle/notifyjs";
-import { broadcaster } from "djinnjs/broadcaster";
+import { message } from "djinnjs/broadcaster";
 
 class UserFormComponent extends HTMLElement {
 	private form: HTMLFormElement;
@@ -45,7 +45,7 @@ class UserFormComponent extends HTMLElement {
 					this.form.style.display = "none";
 					this.successMessage.style.display = "block";
 				} else if (this.dataset.redirect) {
-					broadcaster.message("pjax", {
+					message("pjax", {
 						type: "load",
 						url: `${this.dataset.redirect}`,
 					});

@@ -1,5 +1,5 @@
 // @ts-ignore
-import { env } from "djinnjs/env";
+import { env, dataSaver } from "djinnjs/env";
 
 class LazyVideoComponent extends HTMLElement {
 	private video: HTMLIFrameElement | null;
@@ -77,10 +77,9 @@ class LazyVideoComponent extends HTMLElement {
 	};
 
 	connectedCallback(): void {
-		if (env.connection == "4g") {
+		if (env.connection === "4g" && !dataSaver) {
 			this.loadVideo();
 		}
-
 		this.addEventListener("click", this.handleButtonClickEvent);
 	}
 }
