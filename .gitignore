@@ -17,3 +17,4 @@ dragoman
 /vendor
 /public/resources-cachebust.json
 /public/service-worker.js
+/public/broadcaster-worker.min.js
