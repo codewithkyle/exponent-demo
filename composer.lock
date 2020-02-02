@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5669efe2ef61f95563c85a3e3e076e16",
+    "content-hash": "16823bea0b45568c1b9d380e5ef750c7",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -563,11 +563,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.0.2",
+            "version": "3.4.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/e2d587086a4fe1a5b09d401c0e8824908f160346",
-                "reference": "e2d587086a4fe1a5b09d401c0e8824908f160346",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/658755fb36447e1f690d17d5126e556f97754b45",
+                "reference": "658755fb36447e1f690d17d5126e556f97754b45",
                 "shasum": ""
             },
             "require": {
@@ -648,7 +648,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-01-29T01:42:32+00:00"
+            "time": "2020-01-31T23:38:50+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -5023,11 +5023,11 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.4.0",
+            "version": "2.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/0c42d9f41a984678569fb030c387754726769a84",
-                "reference": "0c42d9f41a984678569fb030c387754726769a84",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/a5a210bec8ba034b19016b2de3701bf3685be010",
+                "reference": "a5a210bec8ba034b19016b2de3701bf3685be010",
                 "shasum": ""
             },
             "require": {
@@ -5072,7 +5072,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-01-29T07:15:52+00:00"
+            "time": "2020-02-02T06:45:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5312,11 +5312,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.38",
+            "version": "5.4.39",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/0991729d5ca364078b00fe0e107f87ec0d53b0d7",
-                "reference": "0991729d5ca364078b00fe0e107f87ec0d53b0d7",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/e462e8985a80cbd927765fd7e09f52bb103c9797",
+                "reference": "e462e8985a80cbd927765fd7e09f52bb103c9797",
                 "shasum": ""
             },
             "require": {
@@ -5373,7 +5373,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2020-01-14T13:30:41+00:00"
+            "time": "2020-01-30T15:12:06+00:00"
         },
         {
             "name": "voku/stop-words",
