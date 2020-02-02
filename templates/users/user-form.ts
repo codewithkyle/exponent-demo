@@ -1,5 +1,7 @@
 import { env } from "djinnjs/env";
 import { notify } from "@codewithkyle/notifyjs";
+
+// @ts-ignore
 import { message } from "djinnjs/broadcaster";
 
 class UserFormComponent extends HTMLElement {

@@ -6,6 +6,10 @@
     </IfModule>
 </FilesMatch>
 
+<IfModule mod_mime.c>
+  AddType text/javascript js mjs
+</IfModule>
+
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType image/jpg "access 1 year"
