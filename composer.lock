@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "16823bea0b45568c1b9d380e5ef750c7",
+    "content-hash": "8c555c15e215ec59a89ddceccec5a4aa",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -563,11 +563,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/658755fb36447e1f690d17d5126e556f97754b45",
-                "reference": "658755fb36447e1f690d17d5126e556f97754b45",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
+                "reference": "8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
                 "shasum": ""
             },
             "require": {
@@ -648,7 +648,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-01-31T23:38:50+00:00"
+            "time": "2020-02-04T00:47:42+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -5023,11 +5023,11 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.4.3",
+            "version": "2.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/a5a210bec8ba034b19016b2de3701bf3685be010",
-                "reference": "a5a210bec8ba034b19016b2de3701bf3685be010",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/746cc0122329dff4548227caa68852222bceabee",
+                "reference": "746cc0122329dff4548227caa68852222bceabee",
                 "shasum": ""
             },
             "require": {
@@ -5072,7 +5072,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-02-02T06:45:49+00:00"
+            "time": "2020-02-03T01:25:40+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
