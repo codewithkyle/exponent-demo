@@ -26,6 +26,10 @@
     {% endif %}
 {% endif %}
 
+{% if craft.app.config.env == 'dev' or craft.app.config.env == 'staging' or currentUser and currentUser['admin'] %}
+    {% header "Feature-Policy:  oversized-images 'self'(2.0) *(inf); unoptimized-lossy-images 'self'(0.5) *(inf); unoptimized-lossless-images 'self'(1) *(inf); unoptimized-lossless-images-strict 'self'(1) *(inf);" %}
+{% endif %}
+
 {% if craft.imager.serverSupportsWebp() and craft.imager.clientSupportsWebp() %}
     {% set imageFormat = 'webp' %}
 {% else %}
