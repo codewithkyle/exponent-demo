@@ -1,0 +1,20 @@
+{
+	"sizes": [
+		{
+			"resourceType": "script",
+			"budget": 100
+		},
+		{
+			"resourceType": "stylesheet",
+			"budget": 100
+		},
+		{
+			"resourceType": "image",
+			"budget": 300
+		},
+		{
+			"resourceType": "total",
+			"budget": 1000
+		}
+	]
+}

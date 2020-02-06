@@ -16,6 +16,9 @@ const flags = {
 };
 const config = {
 	extends: "lighthouse:default",
+	settings: {
+		budgetPath: "./budget.json",
+	},
 };
 launchChromeAndRunLighthouse("http://exponent.local/", flags, config).then(res => {
 	const report = JSON.parse(res.report);
@@ -46,4 +49,8 @@ launchChromeAndRunLighthouse("http://exponent.local/", flags, config).then(res =
 		console.log(`Form Labels: ${report.audits["label"].score === 1 ? "Passed" : "Failed"}`);
 	}
 	console.log("");
+	console.log("---=[ Budget ]=---");
+	for (let i = 0; i < report.audits["resource-summary"].details.items.length; i++) {
+		console.log(`${report.audits["resource-summary"].details.items[i].label}: ${Math.round(report.audits["resource-summary"].details.items[i].size * 0.001)}kb`);
+	}
 });
