@@ -1,20 +1,23 @@
 {
-	"sizes": [
+	"resources": [
 		{
-			"resourceType": "script",
-			"budget": 100
+			"type": "script",
+			"total": 100,
+			"single": 5
 		},
 		{
-			"resourceType": "stylesheet",
-			"budget": 100
+			"type": "stylesheet",
+			"total": 100,
+			"single": 5
 		},
 		{
-			"resourceType": "image",
-			"budget": 300
+			"type": "image",
+			"total": 300,
+			"single": 15
 		},
 		{
-			"resourceType": "total",
-			"budget": 1000
+			"type": "total",
+			"total": 1000
 		}
 	]
 }

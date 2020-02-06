@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c555c15e215ec59a89ddceccec5a4aa",
+    "content-hash": "6ab7bca2b7f57d7c05228b42340b45ee",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -563,11 +563,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
-                "reference": "8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/9cf6b233afb68fb4988f21f8a55d4420b3dbb16b",
+                "reference": "9cf6b233afb68fb4988f21f8a55d4420b3dbb16b",
                 "shasum": ""
             },
             "require": {
@@ -648,7 +648,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-02-04T00:47:42+00:00"
+            "time": "2020-02-05T21:42:11+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -2389,11 +2389,11 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.63",
+            "version": "1.0.64",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8132daec326565036bc8e8d1876f77ec183a7bd6",
-                "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d13c43dbd4b791f815215959105a008515d1a2e0",
+                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0",
                 "shasum": ""
             },
             "require": {
@@ -2459,7 +2459,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-01-04T16:30:31+00:00"
+            "time": "2020-02-05T18:14:17+00:00"
         },
         {
             "name": "league/fractal",
