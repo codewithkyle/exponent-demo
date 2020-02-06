@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ab7bca2b7f57d7c05228b42340b45ee",
+    "content-hash": "439e44dc2df5d2b002f422a2f470fa2a",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -283,59 +283,6 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
-        },
-        {
-            "name": "chasegiunta/scss",
-            "version": "1.0.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chasegiunta/craft-scss/zipball/e65c64e5ce94fd6a21ce188fa59a7d9bd8540bc9",
-                "reference": "e65c64e5ce94fd6a21ce188fa59a7d9bd8540bc9",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0",
-                "leafo/scssphp": "^0.7.4"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "SCSS",
-                "handle": "scss",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/chasegiunta/scss/master/CHANGELOG.md",
-                "components": {
-                    "scssService": "chasegiunta\\scss\\services\\ScssService"
-                },
-                "class": "chasegiunta\\scss\\Scss"
-            },
-            "autoload": {
-                "psr-4": {
-                    "chasegiunta\\scss\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chase Giunta",
-                    "homepage": "https://chasegiunta.com"
-                }
-            ],
-            "description": "Compiler for SCSS",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "scss"
-            ],
-            "support": {
-                "docs": "https://github.com/chasegiunta/scss/blob/master/README.md",
-                "issues": "https://github.com/chasegiunta/scss/issues"
-            },
-            "time": "2018-06-04T17:15:09+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -1150,39 +1097,6 @@
                 "docs": "https://github.com/ethercreative/seo/blob/v3/README.md"
             },
             "time": "2019-12-18T16:52:52+00:00"
-        },
-        {
-            "name": "ether/splash",
-            "version": "3.0.5",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ethercreative/splash/zipball/6eb3d2aee5f907b1a29844ad53847746a179d3f5",
-                "reference": "6eb3d2aee5f907b1a29844ad53847746a179d3f5",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC1",
-                "ext-curl": "*"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "splash",
-                "name": "Splash",
-                "developer": "Ether Creative",
-                "developerUrl": "https://ethercreative.co.uk",
-                "class": "ether\\splash\\Splash",
-                "schemaVersion": "3.0.0"
-            },
-            "autoload": {
-                "psr-4": {
-                    "ether\\splash\\": "src/"
-                }
-            },
-            "description": "Quickly and easily get beautiful Unsplash images in Craft!",
-            "support": {
-                "issues": "https://github.com/ethercreative/splash"
-            },
-            "time": "2019-04-16T10:33:50+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

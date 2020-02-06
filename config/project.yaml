@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: 3792c713-0019-44c3-82e8-95e53d11ee65
-dateModified: 1580303458
+dateModified: 1580995502
 email:
   fromEmail: noreply@exponent.local
   fromName: 'Exponent CMS'
@@ -5369,10 +5369,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.1.0
-  scss:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   seo:
     edition: standard
     enabled: true
@@ -5408,15 +5404,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  splash:
-    edition: standard
-    enabled: true
-    schemaVersion: 3.0.0
-    settings:
-      authorField: ''
-      authorUrlField: ''
-      colorField: ''
-      volume: '1'
   super-table:
     edition: standard
     enabled: true
