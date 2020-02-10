@@ -27,7 +27,7 @@ return [
         'siteUrl'               => getenv('DEV_URL'),
         'devMode'               => true,
         'allowUpdates'          => true,
-        'enableTemplateCaching' => false,
+        'enableTemplateCaching' => true,
         'testToEmailAddress'    => getenv('DEV_EMAIL_ADDRESS'),
         'aliases' => [
             '@rootUrl' => getenv('DEV_URL'),

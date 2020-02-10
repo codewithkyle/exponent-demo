@@ -45,7 +45,7 @@
 	"dependencies": {
 		"@codewithkyle/notifyjs": "^1.0.3",
 		"cssmonster": "^0.1.1",
-		"djinnjs": "0.0.20",
+		"djinnjs": "0.0.21",
 		"flatpickr": "^4.6.3"
 	},
 	"husky": {
