@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "439e44dc2df5d2b002f422a2f470fa2a",
+    "content-hash": "a2c7e080683dff928f5cb555eb17086c",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -510,11 +510,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.4",
+            "version": "3.4.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9cf6b233afb68fb4988f21f8a55d4420b3dbb16b",
-                "reference": "9cf6b233afb68fb4988f21f8a55d4420b3dbb16b",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/6ebc29ebbf3ee0b79527aef965b552212127f3c1",
+                "reference": "6ebc29ebbf3ee0b79527aef965b552212127f3c1",
                 "shasum": ""
             },
             "require": {
@@ -595,7 +595,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-02-05T21:42:11+00:00"
+            "time": "2020-02-07T20:26:40+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -3632,11 +3632,11 @@
         },
         {
             "name": "sebastianlenz/linkfield",
-            "version": "1.0.19",
+            "version": "1.0.20",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/136c7fcc221d8f53ef903be215f2929a19218a69",
-                "reference": "136c7fcc221d8f53ef903be215f2929a19218a69",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/8e12cf38767a0c9214bc6fbe3bce77175db970e6",
+                "reference": "8e12cf38767a0c9214bc6fbe3bce77175db970e6",
                 "shasum": ""
             },
             "require": {
@@ -3659,7 +3659,7 @@
                 "MIT"
             ],
             "description": "A Craft field type for selecting links",
-            "time": "2019-04-29T12:35:50+00:00"
+            "time": "2020-02-07T20:24:27+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -5042,11 +5042,11 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.21",
+            "version": "4.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/a96c8d4e688128dd9b98d2796c9cfcad399c25db",
-                "reference": "a96c8d4e688128dd9b98d2796c9cfcad399c25db",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/4c23b8b88430834ee3eaee30d2bc373ef1ba19eb",
+                "reference": "4c23b8b88430834ee3eaee30d2bc373ef1ba19eb",
                 "shasum": ""
             },
             "require": {
@@ -5086,7 +5086,7 @@
                 "security",
                 "xss"
             ],
-            "time": "2019-12-30T14:57:06+00:00"
+            "time": "2020-02-06T14:46:13+00:00"
         },
         {
             "name": "voku/arrayy",
@@ -5186,11 +5186,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/a691852adbf7518370332fd7921292d8dad34e7e",
-                "reference": "a691852adbf7518370332fd7921292d8dad34e7e",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/a3801f5facf187a28cc2cae7b98a540c36406dc4",
+                "reference": "a3801f5facf187a28cc2cae7b98a540c36406dc4",
                 "shasum": ""
             },
             "require": {
@@ -5222,7 +5222,7 @@
                 "clean",
                 "php"
             ],
-            "time": "2020-01-27T08:58:33+00:00"
+            "time": "2020-02-06T21:46:48+00:00"
         },
         {
             "name": "voku/portable-utf8",
